@@ -1,0 +1,212 @@
+@import './loaderAnimations.css';
+.loader14Active {
+  position: relative;
+  display: inline-block;
+}
+
+.loader14Hidden {
+  display: none;
+}
+
+.loader14Active.loader14Block {
+  display: block;
+}
+
+.loader14Inner {
+  width: 60px;
+  height: 60px;
+  display: inline-block;
+}
+
+/* ========================================SIZES================================================ */
+
+.loader14Inner.loader14SMALL {
+  width: 12px;
+  height: 12px;
+}
+
+.loader14Inner.loader14MEDIUM {
+  width: 15px;
+  height: 15px;
+}
+
+.loader14Inner.loader14LARGE {
+  width: 18px;
+  height: 18px;
+}
+
+.loader14Inner.loader14MEDIUM_LARGE {
+  width: 26px;
+  height: 26px;
+}
+
+.loader14Inner.loader14EXTRA_LARGE {
+  width: 32px;
+  height: 32px;
+}
+
+/* ========================================CIRCULAR + CIRCULAR_BOLT_LOADER================================================ */
+
+.loader14CircularBolt>div {
+  height: 60px;
+  width: 60px;
+  position: absolute;
+  display: inline-block;
+}
+
+.loader14Circular {
+  height: 60px;
+  width: 60px;
+}
+
+.loader14Circular.constantWhite {
+  border-top-color: var(--constantWhite);
+  border-right-color: var(--constantTransparent);
+  border-bottom-color: var(--constantWhite);
+  border-left-color: var(--constantWhite);
+}
+
+.loader14Circular, .loader14CircularBolt>div:first-child {
+  top: 0px;
+  left: 0px;
+  border: 2px solid var(--primaryBg);
+  border-width: 2px;
+  border-top-color: var(--primaryClr);
+  border-right-color: var(--constantTransparent);
+  border-bottom-color: var(--primaryClr);
+  border-left-color: var(--primaryClr);
+  border-radius: 50%;
+  animation: rotate 0.8s infinite linear;
+}
+
+.loader14CircularBolt>div:last-child {
+  top: 12px;
+  left: 22px;
+  height: 40px;
+  width: 18px;
+  background-image: url('./images/boltGreen.svg');
+  background-repeat: no-repeat;
+  background-position: revert;
+  animation: wink324 1s ease-in-out infinite alternate;
+}
+
+.loader14Circular.growwRed, .loader14CircularBolt.growwRed>div:first-child {
+  border-top-color: var(--growwRed);
+  border-right-color: var(--constantTransparent);
+  border-bottom-color: var(--growwRed);
+  border-left-color: var(--growwRed);
+}
+
+.loader14CircularBolt.growwRed>div:last-child {
+  background-image: url('./images/boltRed.svg');
+}
+
+/* ========================================CANDLE_STICK_LOADER================================================ */
+
+.loader14CandleStick {
+  display: flex;
+  height: 60px;
+  width: 60px;
+  align-items: center;
+  justify-content: center;
+  transform: rotateX(180deg);
+}
+
+.loader14CandleStick:before {
+  content: '';
+  position: absolute;
+  width: 150%;
+  top: 0;
+  border-bottom: 1px dashed var(--growwRed);
+  animation: chartUpDown 3s 0s ease-in-out infinite alternate;
+}
+
+.loader14CandleStick>div {
+  position: relative;
+  width: 10px;
+  height: 60px;
+  margin-right: 5px;
+}
+
+.loader14CandleStick>div:before {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 0px;
+  background: var(--primaryClr);
+  height: 50px;
+  width: 1px;
+  transform: translateX(-50%);
+}
+
+.loader14CandleStick>div:after {
+  content: '';
+  position: absolute;
+  width: 10px;
+  left: -50%;
+  transform: translateX(-50%);
+  margin: 0 5px;
+  animation: upDown 1s 0s ease-in-out infinite alternate;
+}
+
+.loader14CandleStick>div:nth-child(even):before, .loader14CandleStick>div:nth-child(even):after {
+  background: var(--primaryClr);
+}
+
+.loader14CandleStick>div:nth-child(odd):before, .loader14CandleStick>div:nth-child(odd):after {
+  background: var(--growwRed);
+}
+
+.loader14CandleStick>div:nth-child(1):after {
+  min-height: 15px;
+  animation-delay: 0.1s;
+}
+
+.loader14CandleStick>div:nth-child(2):after {
+  min-height: 25px;
+  animation-delay: 0.2s;
+}
+
+.loader14CandleStick>div:nth-child(3):after {
+  min-height: 30px;
+  animation-delay: 0.3s;
+}
+
+.loader14CandleStick>div:nth-child(4):after {
+  min-height: 40px;
+  animation-delay: 0.4s;
+}
+
+/* ========================================LINEAR_LOADER================================================ */
+
+.loader14Linear {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  overflow: hidden;
+  width: 100%;
+  height: 4px;
+  background-color: var(--primaryClr10);
+}
+
+.loader14Indeterminate {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.loader14Indeterminate:before {
+  content: '';
+  position: absolute;
+  height: 100%;
+  background-color: var(--primaryClr);
+  animation: indeterminate_first3312 1.5s infinite ease-out;
+}
+
+.loader14Indeterminate:after {
+  content: '';
+  position: absolute;
+  height: 100%;
+  background-color: var(--primaryClr10);
+  animation: indeterminate_second3312 1.5s infinite ease-in;
+}

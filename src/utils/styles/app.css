@@ -1,0 +1,76 @@
+@import './fonts/font.css';
+@import './icons/icon.css';
+@import './grid.css';
+@import './preloader.css';
+@import './typography.css';
+@import './utility.css';
+@import './theme.css';
+html {
+  box-sizing: border-box;
+}
+
+#root {
+  /*
+    z-index variables
+    toastify(900) -> popup(800) -> video playback(700) ->
+    sidebar(600) -> Header(500) -> dropdown(400) -> fix bottom btn(300)
+  */
+  --zindex900: 900;
+  --zindex800: 800;
+  --zindex700: 700;
+  --zindex600: 600;
+  --zindex500: 500;
+  --zindex400: 400;
+  --zindex300: 300;
+}
+
+*, *::before, *::after {
+  box-sizing: inherit;
+}
+
+::selection {
+  color: none;
+  background: none;
+}
+
+/* For Mozilla Firefox */
+
+::-moz-selection {
+  color: none;
+  background: none;
+}
+
+div, span, i {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+body {
+  background: var(--primaryBg) !important;
+  color: var(--text) !important;
+  margin: 0px;
+  box-sizing: border-box;
+  font-weight: 400;
+  font-family: Roboto, system-ui;
+  min-width: 320px;
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  color: #2b6ef7;
+  text-decoration: none;
+}
+
+input[type=number]::-webkit-inner-spin-button, input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type=number] {
+  -moz-appearance: textfield;
+}

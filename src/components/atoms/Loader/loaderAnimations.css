@@ -1,0 +1,61 @@
+@keyframes rotate {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+
+  @keyframes wink324 {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  @keyframes upDown {
+    0% , 100%{
+      transform: translateY(5px);
+    }
+
+    50% {
+      transform: translateY(15px);
+    }
+  }
+
+
+  @keyframes chartUpDown {
+    0% , 100%{
+      transform: translateY(10px);
+    }
+
+    50% {
+      transform: translateY(45px);
+    }
+  }
+
+
+  @keyframes indeterminate_first3312 {
+    0% {
+      left: -100%;
+      width: 100%;
+    }
+    100% {
+      left: 100%;
+      width: 10%;
+    }
+  }
+
+  @keyframes indeterminate_second3312 {
+    0% {
+      left: -150%;
+      width: 100%;
+    }
+    100% {
+      left: 100%;
+      width: 10%;
+    }
+  }

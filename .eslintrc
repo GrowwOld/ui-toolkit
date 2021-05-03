@@ -1,0 +1,20 @@
+{
+  "extends": "@groww-tech/eslint-config",
+  "globals": {
+    "__BROWSER__": false,
+    "__PWA_ENV__": false,
+    "__LOCAL__": false
+  },
+  "settings": {
+    "import/resolver": {
+      "node": {
+        "extensions": [
+          ".js",
+          ".jsx",
+          ".ts",
+          ".tsx"
+        ]
+      }
+    }
+  }
+}
