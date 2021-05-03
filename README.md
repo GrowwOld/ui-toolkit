@@ -1,4 +1,4 @@
-# Groww Ui-Toolkit
+# Groww UI-Toolkit
 
 React UI library used by Groww. 
 
