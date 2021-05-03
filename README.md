@@ -1,19 +1,6 @@
-# Chidori
+# Groww Ui-Toolkit
 
-A lightening nature UI library that impowers Groww's frontend development.
-
-
-## Tech
-
-Chidori uses a number of open source projects to work properly:
-
-- [React](https://reactjs.org) Javascript library for building UI
-- [Storybook](https://storybook.js.org/) UI Development tool to build isolated component faster and easier.
-- [Yarn](https://yarnpkg.com/) Package Manager
-- [Typescript](https://www.typescriptlang.org) Typed JavaScript at Any Scale
-- [Rollup](https://rollup.js) Module Bundler for JS
-- [Babel](https://babeljs.io) Javascirpt Compiler
-
+React UI library used by Groww. 
 
 ## Installation
 
