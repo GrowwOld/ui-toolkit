@@ -2,7 +2,8 @@ import React, { useState } from 'react';
 import { Story } from "@storybook/react";
 import { action } from '@storybook/addon-actions';
 
-import { RadioButtonGroup, RadioButtonGroupProps, RADIO_DIRECTION } from '../src/components/molecules';
+import { Props as RadioButtonGroupProps } from '../src/components/molecules/RadioButtonGroup/RadioButtonGroup';
+import { RadioButtonGroup, RADIO_DIRECTION } from '../src/components/molecules';
 
 export default {
   title: 'RadioButtonGroup',
