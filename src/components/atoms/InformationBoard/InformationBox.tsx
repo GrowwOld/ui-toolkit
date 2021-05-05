@@ -96,7 +96,7 @@ type DefaultProps = {
   width: number | 'auto';
   height: number | 'auto';
   informationBoxClass: string;
-  informationBoxStyle: object;
+  informationBoxStyle: React.CSSProperties;
   type: 'DEFAULT' | 'POSITIVE' | 'NEUTRAL' | 'ERROR' | 'WARNING';
 }
 

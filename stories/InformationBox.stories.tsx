@@ -1,7 +1,8 @@
 import React from 'react';
 import { Story } from "@storybook/react";
 
-import { InformationBox, InformationBoxProps, MI_ICON_LIST } from '../src/components/atoms';
+import { Props as InformationBoxProps } from '../src/components/atoms/InformationBoard/InformationBox';
+import { InformationBox, MI_ICON_LIST } from '../src/components/atoms';
 
 export default {
   title: 'InformationBox',
