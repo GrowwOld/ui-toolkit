@@ -61,6 +61,6 @@ type DefaultProps = {
   direction: ValueOf<typeof POPOVER_POSITIONS>
 }
 
-type Props = RequiredProps & DefaultProps;
+export type Props = RequiredProps & DefaultProps;
 
 export default Popover;

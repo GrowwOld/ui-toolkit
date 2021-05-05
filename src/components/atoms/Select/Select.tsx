@@ -199,6 +199,6 @@ type DefaultProps = {
   activeOptionBoxClass: string
 }
 
-type Props = RequiredProps & DefaultProps;
+export type Props = RequiredProps & DefaultProps;
 
 export default Select;
