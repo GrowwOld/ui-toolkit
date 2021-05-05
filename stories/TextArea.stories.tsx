@@ -2,7 +2,8 @@ import React from 'react';
 import { Story } from "@storybook/react";
 import { action } from '@storybook/addon-actions';
 
-import { TextArea, TextAreaProps } from '../src/components/atoms';
+import { Props as TextAreaProps } from '../src/components/atoms/TextArea/TextArea';
+import { TextArea } from '../src/components/atoms';
 
 export default {
   title: 'TextArea',
@@ -65,11 +66,11 @@ Basic.args = {
   error: "there's an error",
   placeholder: "start typing here",
 
-  onEnterPress: (e: any) => action('OnenterPress'),
-  onBackspace: (e: any) => action('onBackspace'),
-  onFocus: (e: any) => action('onFocus'),
-  onKeyDown: (e: any) => action('onKeyDown'),
-  onKeyPress: (e: any) => action('onKeyPress')
+  onEnterPress: action('OnEnterPress'),
+  onBackspace: action('onBackspace'),
+  onFocus: action('onFocus'),
+  onKeyDown: action('onKeyDown'),
+  onKeyPress: action('onKeyPress')
 }
 
 

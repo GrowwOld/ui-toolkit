@@ -20,11 +20,8 @@ const TextArea = (props: Props) => {
     parentDivClass,
 
     // event handlers
-    onKeyPress,
-    onFocus,
     onEnterPress,
     onBackspace,
-    onKeyDown,
 
     ...restProps
   } = props;
@@ -46,13 +43,12 @@ const TextArea = (props: Props) => {
       }
 
       <textarea
+        {...restProps}
         className={textAreaClassName}
         style={textAreaStyle}
-
         onCopy={disableCopyPaste ? (e) => onCopy(e) : () => { }}
         onPaste={disableCopyPaste ? (e) => onPaste(e) : () => { }}
         onKeyUp={(e) => onKeyUp(e, props)}
-        {...restProps}
       />
 
       {
@@ -97,9 +93,6 @@ const onKeyUp = (event: React.KeyboardEvent<HTMLTextAreaElement>, props: Props) 
 
 
 const defaultProps: DefaultProps = {
-  id: "",
-  rows: 5,
-  cols: 10,
   value: "",
   disabled: false,
   labelStyle: {},
@@ -111,12 +104,8 @@ const defaultProps: DefaultProps = {
   error: "there's an error",
   placeholder: "start typing here",
 
-  onChange: () => { },
   onEnterPress: () => { },
   onBackspace: () => { },
-  onFocus: () => { },
-  onKeyDown: () => { },
-  onKeyPress: () => { }
 }
 
 
@@ -125,9 +114,6 @@ type RequiredProps = {
 
 
 type DefaultProps = {
-  id: string,
-  rows: number;
-  cols: number;
   error: string;
   value: string;
   label?: string;
@@ -140,18 +126,13 @@ type DefaultProps = {
   parentDivClass: string;
   disableCopyPaste: boolean,
 
-
-  onChange: (e: React.FormEvent) => void;
   onEnterPress: (e: React.KeyboardEvent) => void;
   onBackspace: (e: React.KeyboardEvent) => void;
-  onFocus: (e: React.FocusEvent) => void;
-  onKeyDown: (e: React.KeyboardEvent) => void;
-  onKeyPress: (e: React.KeyboardEvent) => void;
 }
 
 
 TextArea.defaultProps = defaultProps;
 
-export type Props = RequiredProps & DefaultProps;
+export type Props = RequiredProps & DefaultProps & React.TextareaHTMLAttributes<HTMLTextAreaElement>;
 
 export default React.memo(TextArea);
