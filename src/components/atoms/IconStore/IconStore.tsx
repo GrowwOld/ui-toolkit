@@ -84,7 +84,7 @@ class IconStore extends React.PureComponent<Props, State> {
     let tempClass = "is31IconWrapper";
 
     if (badgeValue) {
-      tempClass += " pos-rel";
+      tempClass += " pos-rel hihi";
     }
 
     return tempClass;
