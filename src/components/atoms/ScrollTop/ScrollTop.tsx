@@ -28,10 +28,6 @@ const ScrollTop = (props: Props) => {
 
       const showElement = (pageYOffset > offset || pageYOffset > 2000) && (!show); // added 2000px check for places where we have infinite scroll
 
-      console.log(show, pageYOffset, 200);
-
-      // console.log(offset, pageYOffset, pageYOffset > offset, pageYOffset > 2000, show);
-
       if (hideElement) {
         toggleShow(false);
       }
@@ -51,9 +47,6 @@ const ScrollTop = (props: Props) => {
       });
     }
   };
-
-  console.log(show);
-
 
   return (
     <div className={cn('scroll11', { 'scroll11FadeIn': show, 'scroll11FadeOut': !show })} style={props.style} onClick={handleIconClick}>
