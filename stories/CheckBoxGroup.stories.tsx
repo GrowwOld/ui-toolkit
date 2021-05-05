@@ -2,7 +2,8 @@ import React, { useState } from 'react';
 import { Story } from "@storybook/react";
 import { action } from '@storybook/addon-actions';
 
-import { CheckBoxGroup, CheckBoxGroupProps, CHECKBOX_DIRECTION } from '../src/components/molecules';
+import { Props as CheckBoxGroupProps } from '../src/components/molecules/CheckBoxGroup/CheckBoxGroup';
+import { CheckBoxGroup, CHECKBOX_DIRECTION } from '../src/components/molecules';
 
 export default {
   title: 'CheckBoxGroup',

@@ -1,1 +1,1 @@
-export { default as CheckBoxGroup, Props as CheckBoxGroupProps, CHECKBOX_DIRECTION } from './CheckBoxGroup';
+export { default as CheckBoxGroup, CHECKBOX_DIRECTION } from './CheckBoxGroup';

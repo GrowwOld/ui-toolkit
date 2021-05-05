@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { CheckBox, CheckBoxProps, CHECKBOX_DIRECTION } from '../../atoms/CheckBox';
+import { CheckBox, CHECKBOX_DIRECTION } from '../../atoms/CheckBox';
 
 import './checkBoxGroup.css';
 
@@ -18,7 +18,7 @@ const CheckBoxGroup = (props: Props) => {
             size={checkBox?.size}
             label={checkBox?.label}
             value={checkBox?.value}
-            isChecked={checkedList.indexOf(checkBox?.value) !== -1}
+            isChecked={checkedList.indexOf(checkBox?.value || '') !== -1}
             disabled={checkBox?.disabled}
             addParentClass={checkBox?.addParentClass}
             activeColor={checkBox?.activeColor}
@@ -51,15 +51,15 @@ type RequiredProps = {
 }
 
 type CheckBox = {
-  size?: number,
-  label?: React.ReactNode,
-  value: string,
-  disabled?: boolean,
-  activeColor?: string,
-  inActiveColor?: string,
-  addParentClass?: string
-  labelComponent?: () => React.ReactNode,
-  checkBoxDirection?: ValueOf<typeof CHECKBOX_DIRECTION>,
+  size?: number;
+  label?: React.ReactNode;
+  value?: string;
+  disabled?: boolean;
+  activeColor?: string;
+  inActiveColor?: string;
+  addParentClass?: string;
+  labelComponent?: () => React.ReactNode;
+  checkBoxDirection?: ValueOf<typeof CHECKBOX_DIRECTION>;
 }
 
 CheckBoxGroup.defaultProps = defaultProps;
