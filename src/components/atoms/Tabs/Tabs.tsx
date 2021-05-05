@@ -56,7 +56,7 @@ const Tabs = (props: Props) => {
 }
 
 
-const getActiveTabDimensions = (data: Array<Tab>, activeIndex: number) => {
+const getActiveTabDimensions = (data: Tab[], activeIndex: number) => {
   let left = 0;
   let width = 0;
 
@@ -116,14 +116,14 @@ type DefaultProps = {
 
 
 type RequiredProps = {
-  data: Array<Tab>;
+  data: Tab[];
   onTabSelect: Function;
 }
 
 type Tab = {
   description: string;
-  name: string | JSX.Element;
-  style: object;
+  name: React.CSSProperties;
+  style: React.CSSProperties;
   width: number;
   left: number;
 }

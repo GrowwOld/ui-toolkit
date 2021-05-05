@@ -2,7 +2,8 @@ import React, { useState } from 'react';
 import { Story } from "@storybook/react";
 import { action } from '@storybook/addon-actions';
 
-import { Tabs, TabsProps } from '../src/components/atoms';
+import { Props as TabsProps } from '../src/components/atoms/Tabs/Tabs';
+import { Tabs } from '../src/components/atoms';
 
 export default {
   title: 'Tabs',
