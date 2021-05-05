@@ -53,7 +53,7 @@ type DefaultProps = {
 
 
 type RequiredProps = {
-  label: JSX.Element | string,
+  label: React.ReactNode,
   selected: boolean,
   onSelect: Function,
 }
