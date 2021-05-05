@@ -93,8 +93,6 @@ const onKeyUp = (event: React.KeyboardEvent<HTMLTextAreaElement>, props: Props) 
 
 
 const defaultProps: DefaultProps = {
-  value: "",
-  disabled: false,
   labelStyle: {},
   errorStyle: {},
   showError: false,
@@ -102,7 +100,6 @@ const defaultProps: DefaultProps = {
   parentDivClass: "",
   disableCopyPaste: false,
   error: "there's an error",
-  placeholder: "start typing here",
 
   onEnterPress: () => { },
   onBackspace: () => { },
@@ -115,14 +112,11 @@ type RequiredProps = {
 
 type DefaultProps = {
   error: string;
-  value: string;
   label?: string;
-  disabled: boolean;
-  labelStyle: object;
-  errorStyle: object;
+  labelStyle: React.CSSProperties;
+  errorStyle: React.CSSProperties;
   showError: boolean;
-  placeholder: string;
-  textAreaStyle: object;
+  textAreaStyle: React.CSSProperties;
   parentDivClass: string;
   disableCopyPaste: boolean,
 
