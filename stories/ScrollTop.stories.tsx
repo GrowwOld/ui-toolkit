@@ -2,7 +2,8 @@ import React from 'react';
 import { Story } from "@storybook/react";
 import { action } from '@storybook/addon-actions';
 
-import { ScrollTop, ScrollTopProps } from '../src/components/atoms';
+import { Props as ScrollTopProps } from '../src/components/atoms/ScrollTop/ScrollTop';
+import { ScrollTop } from '../src/components/atoms';
 import { scrollTopDummyContent } from '../src/utils/content';
 
 export default {

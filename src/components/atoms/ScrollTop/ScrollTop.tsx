@@ -70,7 +70,7 @@ type RequiredProps = {
 
 
 type DefaultProps = {
-  style: object
+  style: React.CSSProperties
 }
 
 ScrollTop.defaultProps = defaultProps;

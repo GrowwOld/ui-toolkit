@@ -1,1 +1,1 @@
-export { default as ScrollTop, Props as ScrollTopProps } from './ScrollTop';
+export { default as ScrollTop } from './ScrollTop';
