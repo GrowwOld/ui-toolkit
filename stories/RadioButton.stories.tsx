@@ -2,7 +2,8 @@ import React from 'react';
 import { Story } from "@storybook/react";
 import { action } from '@storybook/addon-actions';
 
-import { RadioButton, RadioButtonProps, RADIO_DIRECTION } from '../src/components/atoms';
+import { Props as RadioButtonProps } from '../src/components/atoms/RadioButton/RadioButton';
+import { RadioButton, RADIO_DIRECTION } from '../src/components/atoms';
 
 export default {
   title: 'RadioButton',
