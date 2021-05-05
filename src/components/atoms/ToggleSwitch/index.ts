@@ -1,1 +1,1 @@
-export { default as ToggleSwitch, Props as ToggleSwitchProps } from './ToggleSwitch';
+export { default as ToggleSwitch } from './ToggleSwitch';

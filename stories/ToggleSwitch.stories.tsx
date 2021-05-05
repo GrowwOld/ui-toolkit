@@ -2,7 +2,8 @@ import React from 'react';
 import { Story } from "@storybook/react";
 import { action } from '@storybook/addon-actions';
 
-import { ToggleSwitch, ToggleSwitchProps } from '../src/components/atoms';
+import { Props as ToggleSwitchProps } from '../src/components/atoms/ToggleSwitch/ToggleSwitch';
+import { ToggleSwitch } from '../src/components/atoms';
 
 export default {
   title: 'ToggleSwitch',

@@ -84,8 +84,8 @@ type DefaultProps = {
   height: number;
   switchCircleColor: string;
   activeBackgroundColor: string;
-  leftText: JSX.Element | string;
-  rightText: JSX.Element | string;
+  leftText: React.ReactNode;
+  rightText: React.ReactNode;
   inactiveBackgroundColor: string;
 }
 
