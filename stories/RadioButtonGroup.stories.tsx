@@ -8,13 +8,10 @@ import { RadioButtonGroup, RADIO_DIRECTION } from '../src/components/molecules';
 export default {
   title: 'RadioButtonGroup',
   component: RadioButtonGroup,
-  argTypes: {
-  }
 };
 
 const Template: Story<RadioButtonGroupProps> = (args) => {
-  const [value, setValue] = useState("");
-  console.log(value);
+  const [value, setValue] = useState<string>("");
 
   return (
     <div className="valign-wrapper">
@@ -32,7 +29,6 @@ const genderArray = [
 ];
 
 Default.args = {
-  // id: "gender",
   containerClassName: "",
   radioButtons: genderArray,
 };
