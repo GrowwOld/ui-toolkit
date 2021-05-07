@@ -1,1 +1,1 @@
-export { default as LaserBeam, default as LASER_BEAM_UI } from './LaserBeam';
+export { default as LaserBeam, LASER_BEAM_UI } from './LaserBeam';
