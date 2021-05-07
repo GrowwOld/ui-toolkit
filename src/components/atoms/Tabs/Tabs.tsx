@@ -117,7 +117,7 @@ type DefaultProps = {
 
 type RequiredProps = {
   data: Tab[];
-  onTabSelect: Function;
+  onTabSelect: (index?: number) => void;
 }
 
 type Tab = {

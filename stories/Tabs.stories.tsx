@@ -41,6 +41,6 @@ Default.args = {
   data: WALLETS_TABS,
   showBottomBorder: true,
   customStyleTab: "",
-  onSelect: () => { }
+  onTabSelect: action('onSelect')
 }
 
