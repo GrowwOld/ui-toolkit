@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { ChangeEvent, MouseEvent } from 'react';
 
 import './toggleSwitch.css'
 
@@ -50,7 +50,6 @@ const ToggleSwitch = (props: Props) => {
         <div
           style={switchLabelStyle}
           className="sw348reactSwitchLabel"
-        // for="reactSwitchId"
         >
           <div style={switchButtonStyle} className={`sw348reactSwitchButton`} />
         </div>
@@ -75,7 +74,7 @@ const defaultProps: DefaultProps = {
 
 type RequiredProps = {
   isActive: boolean;
-  onChange: Function;
+  onChange: (e?: MouseEvent<HTMLDivElement> | ChangeEvent<HTMLInputElement>) => void;
 }
 
 
