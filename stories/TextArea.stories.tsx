@@ -66,8 +66,6 @@ Basic.args = {
   error: "there's an error",
   placeholder: "start typing here",
 
-  onEnterPress: action('OnEnterPress'),
-  onBackspace: action('onBackspace'),
   onFocus: action('onFocus'),
   onKeyDown: action('onKeyDown'),
   onKeyPress: action('onKeyPress')

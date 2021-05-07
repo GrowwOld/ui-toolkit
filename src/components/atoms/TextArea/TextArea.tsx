@@ -5,24 +5,14 @@ import './textArea.css';
 
 const TextArea = (props: Props) => {
   const {
-    // bools for utility
     disableCopyPaste,
     showError,
-
-    // string content for component
     label,
     error,
-
-    // styling and classNames
     labelStyle,
     errorStyle,
     textAreaStyle,
     parentDivClass,
-
-    // event handlers
-    onEnterPress,
-    onBackspace,
-
     ...restProps
   } = props;
 
@@ -48,7 +38,6 @@ const TextArea = (props: Props) => {
         style={textAreaStyle}
         onCopy={disableCopyPaste ? (e) => onCopy(e) : () => { }}
         onPaste={disableCopyPaste ? (e) => onPaste(e) : () => { }}
-        onKeyUp={(e) => onKeyUp(e, props)}
       />
 
       {
@@ -72,56 +61,34 @@ const onPaste = (event: React.ClipboardEvent<HTMLTextAreaElement>) => {
 }
 
 
-const onKeyUp = (event: React.KeyboardEvent<HTMLTextAreaElement>, props: Props) => {
-  const { onEnterPress, onBackspace } = props;
-  if (event.code === "Enter" || event.keyCode === 13) {
-    if (onEnterPress) {
-      onEnterPress(event);
-    }
-    return false; // returning false will prevent the event from bubbling up.
-  } else if (event.code === "Backspace" || event.keyCode === 8) {
-    if (onBackspace) {
-      onBackspace(event);
-      return false
-    }
-  } else {
-    return true;
-  }
-
-  return true;
-}
-
-
 const defaultProps: DefaultProps = {
   labelStyle: {},
   errorStyle: {},
-  showError: false,
   textAreaStyle: {},
   parentDivClass: "",
+  showError: false,
   disableCopyPaste: false,
   error: "there's an error",
-
-  onEnterPress: () => { },
-  onBackspace: () => { },
 }
 
 
 type RequiredProps = {
+  label?: string;
 }
 
 
 type DefaultProps = {
   error: string;
-  label?: string;
+
+  /** styling and classNames */
   labelStyle: React.CSSProperties;
   errorStyle: React.CSSProperties;
-  showError: boolean;
   textAreaStyle: React.CSSProperties;
   parentDivClass: string;
-  disableCopyPaste: boolean,
 
-  onEnterPress: (e: React.KeyboardEvent) => void;
-  onBackspace: (e: React.KeyboardEvent) => void;
+  /**  bools for utility*/
+  showError: boolean;
+  disableCopyPaste: boolean,
 }
 
 
