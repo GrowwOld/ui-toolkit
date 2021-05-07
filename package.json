@@ -39,6 +39,7 @@
     "@storybook/addon-knobs": "^6.2.9",
     "@storybook/addon-links": "^6.2.8",
     "@storybook/react": "^6.2.8",
+    "@types/object-assign": "^4.0.30",
     "@types/react-lazyload": "^3.1.0",
     "@typescript-eslint/eslint-plugin": "^4.22.0",
     "@typescript-eslint/parser": "^4.22.0",
