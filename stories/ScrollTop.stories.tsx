@@ -9,8 +9,6 @@ import { scrollTopDummyContent } from '../src/utils/content';
 export default {
   title: 'ScrollTop',
   component: ScrollTop,
-  argTypes: {
-  }
 };
 
 const Template: Story<ScrollTopProps> = (args) => {
@@ -23,9 +21,3 @@ const Template: Story<ScrollTopProps> = (args) => {
 }
 
 export const Default = Template.bind({});
-Default.args = {
-  style: {
-
-  }
-}
-

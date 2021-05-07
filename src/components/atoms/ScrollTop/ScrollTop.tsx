@@ -65,16 +65,12 @@ const defaultProps: DefaultProps = {
 }
 
 
-type RequiredProps = {
-}
-
-
 type DefaultProps = {
   style: React.CSSProperties
 }
 
 ScrollTop.defaultProps = defaultProps;
 
-export type Props = DefaultProps & RequiredProps;
+export type Props = DefaultProps;
 
 export default React.memo(ScrollTop);
