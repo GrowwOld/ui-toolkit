@@ -8,12 +8,10 @@ import { CheckBoxGroup, CHECKBOX_DIRECTION } from '../src/components/molecules';
 export default {
   title: 'CheckBoxGroup',
   component: CheckBoxGroup,
-  argTypes: {
-  }
 };
 
 const Template: Story<CheckBoxGroupProps> = (args) => {
-  const [checkedList, setCheckedList]: [string[], Function] = useState([]);
+  const [checkedList, setCheckedList] = useState<string[]>([]);
 
   const onCheck = (value: string, isChecked: boolean) => {
     const newCheckList = [...checkedList];
@@ -22,10 +20,9 @@ const Template: Story<CheckBoxGroupProps> = (args) => {
       newCheckList.push(value);
 
     } else { //checkbox was checked
-      newCheckList.splice(valueIndex);
+      newCheckList.splice(valueIndex, 1);
 
     }
-
     setCheckedList(newCheckList);
   }
 
