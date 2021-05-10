@@ -17,7 +17,7 @@ const RadioButtonGroup = (props: Props) => {
           return (
             <div key={`${item.value}${index}`} {...restProps}>
               <RadioButton
-                selected={selected == item.value}
+                selected={selected === item.value}
                 onSelect={() => onSelect(item.value)}
                 value={item.value}
                 label={item.label}
