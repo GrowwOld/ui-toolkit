@@ -6,7 +6,6 @@ import './textArea.css';
 const TextArea = (props: Props) => {
   const {
     disableCopyPaste,
-    showError,
     label,
     error,
     labelStyle,
@@ -18,8 +17,8 @@ const TextArea = (props: Props) => {
 
   const textAreaClassName = cn({
     "txta37Area": true,
-    "txta37Normal": !showError,
-    "txta37Error": showError
+    "txta37Normal": error?.length === 0,
+    "txta37Error": error && error.length !== 0
   });
 
   return (
@@ -41,7 +40,7 @@ const TextArea = (props: Props) => {
       />
 
       {
-        showError &&
+        error && error.length !== 0 &&
         <div style={errorStyle} className="txta37ErrorMessage">
           {error}
         </div>
@@ -66,9 +65,8 @@ const defaultProps: DefaultProps = {
   errorStyle: {},
   textAreaStyle: {},
   parentDivClass: "",
-  showError: false,
   disableCopyPaste: false,
-  error: "there's an error",
+  error: "",
 }
 
 
@@ -87,7 +85,6 @@ type DefaultProps = {
   parentDivClass: string;
 
   /**  bools for utility*/
-  showError: boolean;
   disableCopyPaste: boolean,
 }
 

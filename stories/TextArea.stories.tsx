@@ -18,15 +18,10 @@ export default {
         ]
       }
     },
-    showError: {
-      control: {
-        type: 'select',
-        options: [
-          true, false
-        ]
-      }
-    },
     label: {
+      control: "text"
+    },
+    error: {
       control: "text"
     },
     disableCopyPaste: {
@@ -59,11 +54,9 @@ Basic.args = {
   disabled: false,
   labelStyle: {},
   errorStyle: {},
-  showError: false,
   textAreaStyle: {},
   parentDivClass: "",
   disableCopyPaste: false,
-  error: "there's an error",
   placeholder: "start typing here",
 
   onFocus: action('onFocus'),
@@ -83,7 +76,6 @@ export const Error = Template.bind({});
 Error.args = {
   ...Basic.args,
   label: "label",
-  showError: true,
   error: "Oops!! some error occured"
 }
 
