@@ -3,11 +3,9 @@ import React from 'react'
 import './tag.css';
 
 const Tag = (props: Props) => {
-
   if (!React.Children.count(props.children)) {
     return null
   }
-
 
   let tagClass = props.tagClass;
 
@@ -20,7 +18,6 @@ const Tag = (props: Props) => {
   } else if (props.isInfo) {
     tagClass = `tg11Info`;
   }
-
 
   return (
     <div className={`tg11Container ${tagClass}`}>
