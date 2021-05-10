@@ -1,4 +1,4 @@
-import React, { ChangeEvent, MouseEvent } from 'react';
+import React from 'react';
 
 import './toggleSwitch.css'
 
@@ -74,7 +74,7 @@ const defaultProps: DefaultProps = {
 
 type RequiredProps = {
   isActive: boolean;
-  onChange: (e?: MouseEvent<HTMLDivElement> | ChangeEvent<HTMLInputElement>) => void;
+  onChange: (e?: React.MouseEvent<HTMLDivElement> | React.ChangeEvent<HTMLInputElement>) => void;
 }
 
 
