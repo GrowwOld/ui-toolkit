@@ -1,0 +1,54 @@
+.tb10Table {
+  width: 100%;
+  border-collapse: collapse;
+  border: 1px solid var(--border);
+}
+
+.tb10ThText {
+  color: var(--subText);
+  opacity: 0.5;
+  font-size: 12px;
+  font-weight: 500;
+  text-transform: uppercase;
+  line-height: 2.17;
+  letter-spacing: 0.17px;
+}
+
+.tb10Td {
+  min-height: 40px;
+  text-align: left;
+  /* border-bottom: 1px solid var(--border); */
+}
+
+.tb10Table thead tr {
+  border-bottom: 1px dashed var(--border);
+}
+
+.tb10Table tbody tr {
+  border-bottom: 1px solid var(--border);
+}
+
+.tb10Table tbody tr:last-child {
+  border-bottom: none;
+}
+
+.tb10Th {
+  min-height: 40px;
+  text-align: left;
+  /* border-bottom: 1px dashed var(--boxShadow); */
+}
+
+.tb10HideIcon {
+  visibility: hidden;
+}
+
+.tb10SelectHeaderCell {
+  font-weight: 500;
+  color: var(--text);
+  opacity: 1;
+}
+
+.tb10IconClass {
+  width: 17px !important;
+  height: 17px !important;
+}
