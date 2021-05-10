@@ -9,11 +9,9 @@ const ScrollTop = (props: Props) => {
   const [show, toggleShow] = useState(false);
 
   useEffect(() => {
-    // componentDidMount
     window.addEventListener('scroll', handleScrollEvent);
 
     return () => {
-      // componentWillUnmount
       window.removeEventListener('scroll', handleScrollEvent);
     }
   }, [show]);
