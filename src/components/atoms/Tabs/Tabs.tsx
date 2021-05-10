@@ -117,13 +117,13 @@ type DefaultProps = {
 
 type RequiredProps = {
   data: Tab[];
-  onTabSelect: (index?: number) => void;
+  onTabSelect: (index: number) => void;
 }
 
 type Tab = {
-  description: string;
-  name: React.CSSProperties;
-  style: React.CSSProperties;
+  description?: string;
+  name: React.ReactNode;
+  style?: React.CSSProperties;
   width: number;
   left: number;
 }
