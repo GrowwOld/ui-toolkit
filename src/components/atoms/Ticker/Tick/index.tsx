@@ -1,5 +1,12 @@
 import React from 'react';
 
+import {
+  tickStyle,
+  hiddenPieceStyle,
+  pieceStyle,
+  rotatorStyle
+} from '../styles';
+
 const Tick = (props: Props) => {
   const {
     value,
@@ -13,26 +20,31 @@ const Tick = (props: Props) => {
   const index = range.indexOf(value);
 
   return (
-    <span className={`ticker42Tick ${className}`}>
+    <span
+      className={className}
+      style={tickStyle}
+    >
       <span
-        className={`ticker42hiddenPiece ${className}`}
+        className={className}
+        style={hiddenPieceStyle}
       >
         {value}
       </span>
       <span
-        className="ticker42Rotator"
-        style={{ transform: `translateY(${height * index * -1}px)` }} >
-        {range.map((v, i) => {
-          return (
-            <span
-              key={v + i}
-              className={`ticker42Piece ${[className, v === value ? currentClassName : hiddenClassName].join(' ')}`}
-              style={{ top: i * height }}
-            >
-              {v}
-            </span>
-          );
-        })}
+        style={{ ...rotatorStyle, transform: `translateY(${height * index * -1}px)` }} >
+        {
+          range.map((v, i) => {
+            return (
+              <span
+                key={v + i}
+                className={[className, v === value ? currentClassName : hiddenClassName].join(' ')}
+                style={{ ...pieceStyle, top: i * height }}
+              >
+                {v}
+              </span>
+            );
+          })
+        }
       </span>
     </span>
   );

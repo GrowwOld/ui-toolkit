@@ -4,9 +4,9 @@ import Tick from './Tick';
 
 import { measureHeight } from './tickerHelper';
 
-const numberRange = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
+import { tickStyle } from './styles';
 
-import './ticker.css';
+const numberRange = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
 
 const Ticker = (props: Props) => {
   const {
@@ -16,6 +16,7 @@ const Ticker = (props: Props) => {
     currentClassName,
     hiddenClassName
   } = props;
+
   const height = measureHeight(textClassName, "0");
 
   if (typeof document === 'undefined') {
@@ -24,28 +25,31 @@ const Ticker = (props: Props) => {
 
   return (
     <span style={{ height: height }}>
-      {(children || text).split("").map((v, i) => {
-        if (isNaN(parseFloat(v)))
+      {
+        (children || text).split("").map((v, i) => {
+          if (isNaN(parseFloat(v)))
+            return (
+              <span
+                key={i}
+                className={textClassName}
+                style={tickStyle}
+              >
+                {v}
+              </span>
+            );
           return (
-            <span
+            <Tick
+              range={numberRange}
+              className={textClassName}
+              currentClassName={currentClassName}
+              hiddenClassName={hiddenClassName}
               key={i}
-              className={`ticker42Tick ${textClassName}`}
-            >
-              {v}
-            </span>
+              value={v}
+              height={height}
+            />
           );
-        return (
-          <Tick
-            range={numberRange}
-            className={textClassName}
-            currentClassName={currentClassName}
-            hiddenClassName={hiddenClassName}
-            key={i}
-            value={v}
-            height={height}
-          />
-        );
-      })}
+        })
+      }
     </span>
   );
 }
