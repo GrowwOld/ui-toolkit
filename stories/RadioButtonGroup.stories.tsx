@@ -11,7 +11,7 @@ export default {
 };
 
 const Template: Story<RadioButtonGroupProps> = (args) => {
-  const [value, setValue] = useState<string>("");
+  const [value, setValue] = useState("");
 
   return (
     <div className="valign-wrapper">
