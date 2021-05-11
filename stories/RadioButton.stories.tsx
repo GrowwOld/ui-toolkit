@@ -33,8 +33,7 @@ export const Default = Template.bind({});
 Default.args = {
   labelClassName: '',
   parentClassName: '',
-  radioDirection: RADIO_DIRECTION.LEFT,
-  label: "Radio Button Label"
+  label: "Radio Button Label",
 };
 
 export const OnRight = Template.bind({});

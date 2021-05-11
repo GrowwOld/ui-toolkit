@@ -19,7 +19,6 @@ const RadioButtonGroup = (props: Props) => {
               <RadioButton
                 selected={selected === item.value}
                 onSelect={() => onSelect(item.value)}
-                value={item.value}
                 label={item.label}
                 labelClassName={item.labelClassName}
                 parentClassName={item.parentClassName}
