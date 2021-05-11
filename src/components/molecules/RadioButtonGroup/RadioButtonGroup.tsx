@@ -4,8 +4,6 @@ import { RadioButton } from '../../atoms';
 
 import './radioButtonGroup.css'
 
-export { RADIO_DIRECTION } from '../../atoms';
-
 const RadioButtonGroup = (props: Props) => {
 
   const { radioButtons, containerClassName, onSelect, selected, ...restProps } = props;
@@ -46,7 +44,7 @@ type DefaultProps = {
 type RequiredProps = {
   radioButtons: RadioButtonType[]
   selected: string | number,
-  onSelect: Function
+  onSelect: (value?: string | number) => void
 }
 
 

@@ -3,7 +3,8 @@ import { Story } from "@storybook/react";
 import { action } from '@storybook/addon-actions';
 
 import { Props as RadioButtonGroupProps } from '../src/components/molecules/RadioButtonGroup/RadioButtonGroup';
-import { RadioButtonGroup, RADIO_DIRECTION } from '../src/components/molecules';
+import { RadioButtonGroup } from '../src/components/molecules';
+import { RADIO_DIRECTION } from '../src/components/atoms';
 
 export default {
   title: 'RadioButtonGroup',
@@ -13,9 +14,19 @@ export default {
 const Template: Story<RadioButtonGroupProps> = (args) => {
   const [value, setValue] = useState("");
 
+  const onSelect = (newValue) => {
+    if (newValue === value) {
+      setValue("");
+
+    } else {
+      setValue(newValue);
+
+    }
+  }
+
   return (
     <div className="valign-wrapper">
-      <RadioButtonGroup {...args} selected={value} onSelect={setValue} />
+      <RadioButtonGroup {...args} selected={value} onSelect={onSelect} />
     </div>
   )
 };
