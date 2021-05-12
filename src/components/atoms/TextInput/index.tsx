@@ -127,8 +127,8 @@ class TextInput extends React.PureComponent<TextInputProps> {
     onEnterPress: () => { },
     onBackspace: () => { }
   }
-
 }
+
 
 type RequiredProps = {
   label: string;
