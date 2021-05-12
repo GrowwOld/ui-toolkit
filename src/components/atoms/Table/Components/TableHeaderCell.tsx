@@ -2,9 +2,9 @@ import React, { ReactNode } from "react";
 
 import cn from "classnames";
 
-import { IconStore, MI_ICON_LIST } from '../IconStore';
+import { IconStore, MI_ICON_LIST } from '../../IconStore';
 
-interface SortConfig {
+type SortConfig = {
   iconClass?: string;
   isSelected?: boolean;
   hideIcon?: boolean;
