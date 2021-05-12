@@ -9,7 +9,6 @@ const Accordion = (props: Props) => {
 
   const [isOpen, setAccordionToggle] = useState(props.onMountOpen)
 
-
   const toggleState = () => {
     setAccordionToggle(!isOpen)
     props.onToggleCallback(isOpen);
