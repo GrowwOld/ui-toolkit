@@ -5,7 +5,7 @@ type Props = {
   children: ReactNode;
   style?: React.CSSProperties;
   textAlign?: 'left' | 'right' | 'center';
-  colSpan?: number | undefined;
+  colSpan?: number;
   onClick?: (e?: React.MouseEvent) => void;
 }
 

@@ -20,7 +20,7 @@ import "./table.css";
 
 type TableProps = {
   className?: string;
-  style?: React.CSSProperties;
+  style?: React.CSSProperties | {};
   children: ReactNode;
 }
 

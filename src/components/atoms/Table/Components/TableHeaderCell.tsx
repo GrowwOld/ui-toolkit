@@ -16,7 +16,7 @@ type Props = {
   className?: string;
   children: ReactNode;
   style?: React.CSSProperties;
-  sortConfig?: SortConfig | undefined;
+  sortConfig?: SortConfig;
   width?: string | number;
   textAlign?: 'left' | 'right' | 'center';
 }

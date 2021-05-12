@@ -6,7 +6,7 @@ type TableRowProps = {
   className?: string;
   horzPadding?: string | number;
   vertPadding?: string | number;
-  id?: string | undefined;
+  id?: string | '';
   onClick?: (e?: React.MouseEvent) => void;
 }
 
