@@ -55,18 +55,18 @@ const defaultProps: DefaultProps = {
 
 
 type DefaultProps = {
-  labelClassName: string,
-  parentClassName: string,
-  radioDirection: string,
+  labelClassName: string;
+  parentClassName: string;
+  radioDirection: ValueOf<typeof RADIO_DIRECTION>;
   iconClassName: string;
 }
 
 
 type RequiredProps = {
-  value?: React.ReactNode,
-  label: React.ReactNode,
-  selected: boolean,
-  onSelect: () => void,
+  value?: React.ReactNode;
+  label: React.ReactNode;
+  selected: boolean;
+  onSelect: () => void;
 }
 
 
