@@ -1,4 +1,4 @@
-import React, { FunctionComponent, ReactNode } from "react";
+import React, { ReactNode } from "react";
 
 type Props = {
   className?: string;
@@ -10,7 +10,7 @@ type Props = {
 }
 
 
-const TableCell: FunctionComponent<Props> = (props) => {
+const TableCell = (props: Props) => {
   const { children, className = "tb10Td", style, textAlign, colSpan = 1, onClick } = props;
 
   return (

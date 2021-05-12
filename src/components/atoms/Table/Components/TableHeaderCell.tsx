@@ -1,4 +1,4 @@
-import React, { FunctionComponent, ReactNode } from "react";
+import React, { ReactNode } from "react";
 
 import cn from "classnames";
 
@@ -22,7 +22,7 @@ type Props = {
 }
 
 
-const TableHeaderCell: FunctionComponent<Props> = (props) => {
+const TableHeaderCell = (props: Props) => {
 
   const {
     children,

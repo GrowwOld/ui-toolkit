@@ -1,11 +1,11 @@
-import React, { FunctionComponent, ReactNode } from "react";
+import React, { ReactNode } from "react";
 
 export type TableHeaderProps = {
   className?: string,
   children: ReactNode,
 }
 
-const TableHeader: FunctionComponent<TableHeaderProps> = (props) => {
+const TableHeader = (props: TableHeaderProps) => {
   const { children, className = "" } = props;
 
   return <thead className={className}>{children}</thead>;

@@ -1,11 +1,11 @@
-import React, { FunctionComponent, ReactNode } from "react";
+import React, { ReactNode } from "react";
 
 type Props = {
   className?: string,
   children: ReactNode,
 }
 
-const TableFooter: FunctionComponent<Props> = (props) => {
+const TableFooter = (props: Props) => {
   const { children, className } = props;
 
   return <tfoot className={className}>{children}</tfoot>;
