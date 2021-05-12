@@ -20,7 +20,7 @@ import "./table.css";
 
 type TableProps = {
   className?: string;
-  style?: React.CSSProperties | {};
+  style?: React.CSSProperties;
   children: ReactNode;
 }
 
@@ -34,7 +34,7 @@ class Table extends React.Component<TableProps, {}> {
   static Row = TableRow;
 
   render() {
-    const { children, className = "", style } = this.props;
+    const { children, className = "", style = {} } = this.props;
     const classes = cn("tb10Table", className);
 
     return (
