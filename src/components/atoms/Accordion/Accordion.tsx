@@ -1,99 +1,86 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 import { IconStore, MI_ICON_LIST } from '../IconStore';
 import AnimateHeight from '../AnimateHeight';
 
 import './accordion.css';
 
-class Accordion extends React.PureComponent<AccordionProps, AccordionState> {
+const Accordion = (props: Props) => {
 
-  state = {
-    isOpen: this.props.onMountOpen,
-  };
+  const [isOpen, setAccordionToggle] = useState(props.onMountOpen)
 
 
-  toggleState = () => {
-    this.setState((prevState) => ({
-      isOpen: !prevState.isOpen
-    }), () => {
-      this.props.onToggleCallback(this.state.isOpen);
-    });
+  const toggleState = () => {
+    setAccordionToggle(!isOpen)
+    props.onToggleCallback(isOpen);
   }
 
+  const {
+    title,
+    children,
+    parentClass,
+    headerClass,
+    iconClass,
+    titleClass,
+    showRightIcon
+  } = props;
 
-  render() {
-    const { isOpen } = this.state;
-    const {
-      title,
-      children,
-      parentClass,
-      headerClass,
-      iconClass,
-      titleClass,
-      showRightIcon
-    } = this.props;
-
-    return (
-      <div className={`cur-po ${parentClass}`}>
-        <div className={`valign-wrapper vspace-between acc11HeaderMain ${headerClass}`} onClick={this.toggleState}>
-          <div className={`acc11Title ${titleClass}`}>{title}</div>
-
-          {
-            showRightIcon ?
-              <IconStore
-                iconName={!isOpen ? MI_ICON_LIST.keyboard_arrow_down : MI_ICON_LIST.keyboard_arrow_up}
-                iconClass={`acc1Icon ${iconClass}`}
-                width={20}
-                height={20}
-              />
-              : null
-          }
-        </div>
-        <div>
-          <AnimateHeight duration={300} height={isOpen ? "auto" : 0}>
-            {children}
-          </AnimateHeight>
-        </div>
+  return (
+    <div className={`cur-po ${parentClass}`}>
+      <div className={`valign-wrapper vspace-between acc11HeaderMain ${headerClass}`} onClick={toggleState}>
+        <div className={`acc11Title ${titleClass}`}>{title}</div>
+        {
+          showRightIcon ?
+            <IconStore
+              iconName={!isOpen ? MI_ICON_LIST.keyboard_arrow_down : MI_ICON_LIST.keyboard_arrow_up}
+              iconClass={`acc1Icon ${iconClass}`}
+              width={20}
+              height={20}
+            />
+            : null
+        }
       </div>
-    );
-  }
-
-
-  public static defaultProps: DefaultProps = {
-    parentClass: '',
-    onMountOpen: true,
-    titleClass: '',
-    headerClass: '',
-    iconClass: '',
-    onToggleCallback: () => { },
-    showRightIcon: true
-  };
+      <div>
+        <AnimateHeight duration={300} height={isOpen ? "auto" : 0}>
+          {children}
+        </AnimateHeight>
+      </div>
+    </div>
+  );
 }
+
+type Props = RequiredProps & DefaultProps;
 
 
 type RequiredProps = {
-  title: string | React.ReactNode;
+  children: React.ReactNode
 }
 
 
 type DefaultProps = {
-  parentClass: string;
-  headerClass: string;
-  iconClass: string;
-  titleClass: string;
+  title: React.ReactNode,
   /**Initial state of accordion that you want to keep i.e true(open) or false(closed)*/
   onMountOpen: boolean;
   /**If you want to show the right arrow icon or not*/
   showRightIcon: boolean;
-  onToggleCallback: (e: boolean) => void
+  onToggleCallback: (isOpen: boolean) => void,
+  parentClass: string,
+  headerClass: string,
+  iconClass: string,
+  titleClass: string
 }
 
 
-type AccordionProps = RequiredProps & DefaultProps;
+Accordion.defaultProps = {
+  parentClass: '',
+  headerClass: '',
+  iconClass: '',
+  titleClass: '',
+  onToggleCallback: () => { },
+  title: '',
+  onMountOpen: true,
+  showRightIcon: true
+} as DefaultProps;
 
 
-type AccordionState = {
-  isOpen: boolean
-}
-
-export default Accordion;
+export default React.memo(Accordion);
