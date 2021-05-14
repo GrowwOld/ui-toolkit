@@ -34,6 +34,6 @@ ImageIcon.args = {
   useLazyLoad: false,
   width: 40,
   height: 40,
-  iconName: IMG_ICON_LIST.withdraw_success,
+  iconName: IMG_ICON_LIST.us_product,
   onIconClick: action('ImageIconClicked')
 }
