@@ -6,12 +6,12 @@ import { ordinalSuffixOf } from "../../../utils/helper";
 
 import "./dateSelector.css";
 
-const ALL_DATES: Array<number> = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30];
+const ALL_DATES = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30];
 
 const INVOKE_MODE = {
   POPUP: 'POPUP',
   TOOLTIP: 'TOOLTIP'
-}
+} as const;
 
 class DateSelector extends PureComponent<Props, State> {
 
@@ -142,7 +142,7 @@ class DateSelector extends PureComponent<Props, State> {
     titleText: 'Select a date',
     tooltipTop: 0,
     tooltipLeft: 0,
-    invokeMode: 'POPUP'
+    invokeMode: INVOKE_MODE.POPUP
   }
 
 }
@@ -158,14 +158,14 @@ type RequiredProps = {
 
 
 type DefaultProps = {
-  availableDates: Array<number>,
+  availableDates: number[],
   visible: boolean,
   onClose: () => void,
   buttonText: string,
   titleText: string,
   tooltipTop: number | string,
   tooltipLeft: number | string,
-  invokeMode: 'POPUP' | 'TOOLTIP'
+  invokeMode: ValueOf<typeof INVOKE_MODE>
 }
 
 export type Props = RequiredProps & DefaultProps;
