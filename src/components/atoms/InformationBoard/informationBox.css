@@ -1,0 +1,15 @@
+.infbd45ParentDiv {
+  align-items: flex-start;
+  border-radius: 6px;
+  padding: 18px;
+}
+
+.infbd45InfoIcon {
+  float: left;
+  margin-right: 8px;
+}
+
+.infbd45Content {
+  letter-spacing: 0.2px;
+  line-height: 22px;
+}

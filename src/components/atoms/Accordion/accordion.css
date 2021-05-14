@@ -1,0 +1,11 @@
+.acc11Title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+}
+
+.acc1Icon {
+  width: 20px;
+  font-size: 20px !important;
+}

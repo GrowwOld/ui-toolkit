@@ -1,0 +1,153 @@
+.pop12Wrapper {
+  display: inline-block;
+  position: relative;
+}
+
+.pop12Popover {
+  position: absolute;
+  border-radius: 4px;
+  padding: 6px;
+  color: var(--text130);
+  background: var(--primaryBg);
+  box-shadow: 0 0 10px var(--boxShadow);
+  font-size: 13px;
+  opacity: 1;
+  z-index: var(--zindex900);
+  border: 1px solid var(--border);
+}
+
+.pop12Popover::before {
+  content: " ";
+  border: solid transparent;
+  height: 0;
+  width: 0;
+  position: absolute;
+  border-width: 6px;
+  margin-left: -6px;
+}
+
+/* popover top positions: start, mid, end */
+
+.pop12Popover.top {
+  bottom: 100%;
+  margin-bottom: 8px;
+  transform: translateX(-50%);
+  left: 50%;
+}
+
+.pop12Popover.top-start {
+  bottom: 100%;
+  margin-bottom: 8px;
+  transform: translateX(-50%);
+  left: 0;
+}
+
+.pop12Popover.top-end {
+  bottom: 100%;
+  margin-bottom: 8px;
+  transform: translateX(-50%);
+  left: 100%;
+}
+
+.pop12Popover.top::before,
+.top-start::before,
+.top-end::before {
+  top: 100%;
+  left: 50%;
+  border-top-color: var(--primaryBg);
+}
+
+/* popover right positions: start, mid, end */
+
+.pop12Popover.right {
+  left: 100%;
+  margin-left: 8px;
+  top: 50%;
+  transform: translate(0, -50%);
+}
+
+.pop12Popover.right-start {
+  left: 100%;
+  margin-left: 8px;
+  top: 0;
+  transform: translate(0, -50%);
+}
+
+.pop12Popover.right-end {
+  left: 100%;
+  margin-left: 8px;
+  top: 100%;
+  transform: translate(0, -50%);
+}
+
+.pop12Popover.right::before,
+.right-start::before,
+.right-end::before {
+  top: 50%;
+  left: -6px;
+  transform: translate(0, -50%);
+  border-right-color: var(--primaryBg);
+}
+
+/* popover bottom positions: start, mid, end */
+
+.pop12Popover.bottom {
+  top: 100%;
+  margin-top: 8px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.pop12Popover.bottom-start {
+  top: 100%;
+  margin-top: 8px;
+  left: 0;
+  transform: translateX(-50%);
+}
+
+.pop12Popover.bottom-end {
+  top: 100%;
+  margin-top: 8px;
+  left: 100%;
+  transform: translateX(-50%);
+}
+
+.pop12Popover.bottom::before,
+.bottom-start::before,
+.bottom-end::before {
+  bottom: 100%;
+  left: 50%;
+  border-bottom-color: var(--primaryBg);
+}
+
+/* popover left positions: start, mid, end */
+
+.pop12Popover.left {
+  right: 100%;
+  margin-right: 8px;
+  top: 50%;
+  transform: translate(0, -50%);
+}
+
+.pop12Popover.left-start {
+  right: 100%;
+  margin-right: 8px;
+  top: 0;
+  transform: translate(0, -50%);
+}
+
+.pop12Popover.left-end {
+  right: 100%;
+  margin-right: 8px;
+  top: 100%;
+  transform: translate(0, -50%);
+}
+
+.pop12Popover.left::before,
+.left-start::before,
+.left-end::before {
+  top: 50%;
+  right: -12px;
+  transform: translate(0, -50%);
+  border-left-color: var(--primaryBg);
+}
