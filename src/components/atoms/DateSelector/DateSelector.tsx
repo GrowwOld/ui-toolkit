@@ -13,9 +13,10 @@ const INVOKE_MODE = {
   TOOLTIP: 'TOOLTIP'
 }
 
-class DateSelector extends PureComponent<Props> {
-  state = {
-    selectedDate: this.props.defaultDate as number
+class DateSelector extends PureComponent<Props, State> {
+
+  state: State = {
+    selectedDate: this.props.defaultDate
   }
 
   render() {
@@ -144,6 +145,10 @@ class DateSelector extends PureComponent<Props> {
     invokeMode: 'POPUP'
   }
 
+}
+
+type State = {
+  selectedDate: number
 }
 
 type RequiredProps = {
