@@ -19,9 +19,7 @@ export function listenToCustomEvent(event: any, callback: (e: any) => void) {
 }
 
 
-/**
- * This function return random number between two integers.
-**/
+/* This function return random number between two integers. */
 export function getIntegerRandomNoBetweenTwoNo(min: number, max: number) {
   return Math.floor(Math.random() * (max - min + 1)) + min;
 }
