@@ -151,5 +151,6 @@ export const MI_ICON_LIST: { [key: string]: string; } = {
   arrow_drop_down: 'arrow_drop_down',
   short_text: 'short_text',
   laptop: 'laptop',
-  help: 'help'
+  help: 'help',
+  arrow_drop_down_circle: 'arrow_drop_down_circle',
 }

@@ -1,0 +1,27 @@
+.scroll11Img {
+  transform: rotate(180deg);
+  color: var(--primaryClr);
+  font-size: 52px !important;
+  cursor: pointer;
+}
+
+.scroll11 {
+  position: fixed;
+  bottom: 48px;
+  right: 48px;
+  opacity: 0;
+}
+
+.scroll11FadeIn {
+  pointer-events: all;
+  opacity: 1;
+  visibility: visible;
+  transition: visibility 0.5s, opacity 0.5s linear;
+}
+
+.scroll11FadeOut {
+  pointer-events: none;
+  opacity: 0;
+  visibility: hidden;
+  transition: visibility 0.5s, opacity 0.5s linear;
+}
