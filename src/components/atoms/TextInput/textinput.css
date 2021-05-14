@@ -1,0 +1,88 @@
+#txtinput88 .txtinput88label {
+  font-size: 13px;
+  letter-spacing: 0.25px;
+  color: var(--subText);
+  text-align: left;
+}
+
+#txtinput88 .txtinput88parent {
+  display: flex;
+  border-bottom: solid 1px var(--border);
+  align-items: center;
+  padding: 10px 0px 5px 0px;
+  caret-color: var(--primaryClr);
+}
+
+#txtinput88 .removeunderline {
+  border-bottom: none;
+}
+
+#txtinput88 .txtinput88parent:focus-within {
+  border-bottom: solid 2px var(--primaryClr);
+}
+
+#txtinput88 .removeunderline:focus-within {
+  border-bottom: none;
+}
+
+#txtinput88 .txtinput88input {
+  border-bottom: none;
+  border: none;
+  font-size: 16px;
+  flex-grow: 1;
+  outline: 0;
+  color: var(--text);
+  background: var(--primaryBg);
+  /* -webkit-box-shadow: 0 0 0px 1000px white inset; */
+}
+
+#txtinput88 .txtinput88input:focus {
+  border-bottom: none;
+  border: none;
+  outline: 0;
+}
+
+#txtinput88 .txtinput88input::placeholder {
+  /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: var(--iconMedium);
+  opacity: 1;
+  /* Firefox */
+}
+
+#txtinput88 .txtinput88input:-ms-input-placeholder {
+  /* Internet Explorer 10-11 */
+  color: var(--iconMedium);
+}
+
+#txtinput88 .txtinput88input::-ms-input-placeholder {
+  /* Microsoft Edge */
+  color: var(--iconMedium);
+}
+
+#txtinput88 .txtinput88input:-webkit-autofill, #txtinput88 .txtinput88input:-webkit-autofill:hover, #txtinput88 .txtinput88input:-webkit-autofill:focus, #txtinput88 .txtinput88input:-webkit-autofill:active {
+  -webkit-box-shadow: 0 0 0 30px var(--primaryBg) inset !important;
+  background-color: var(--primaryBg) !important;
+  -webkit-text-fill-color: var(--text)
+}
+
+#txtinput88 .errorText {
+  color: var(--growwRed);
+  font-size: 14px;
+  margin-top: 3px;
+  text-align: left;
+}
+
+#txtinput88 .pad0 {
+  padding: 0px;
+}
+
+#txtinput88 .infoText {
+  color: var(--growwYellow);
+  font-size: 14px;
+  margin-top: 3px;
+  text-align: left;
+}
+
+.removeParentDivUnderline {
+  border-bottom: none!important;
+}
