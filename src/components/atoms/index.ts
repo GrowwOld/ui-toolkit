@@ -16,3 +16,4 @@ export * from './Tabs';
 export * from './Accordion';
 export * from './InformationBoard';
 export * from './TextArea';
+export * from './DateSelector';
