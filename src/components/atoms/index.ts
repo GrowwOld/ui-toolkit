@@ -17,3 +17,4 @@ export * from './Accordion';
 export * from './InformationBoard';
 export * from './TextArea';
 export * from './DateSelector';
+export * from './Chip';
