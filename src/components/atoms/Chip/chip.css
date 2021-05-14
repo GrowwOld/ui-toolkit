@@ -1,0 +1,53 @@
+.chip12Chip {
+  cursor: pointer;
+  padding: 5px 10px;
+  border-radius: 15px;
+  border: 1px solid var(--border);
+  font-size: 12px;
+  width: fit-content;
+  width: -moz-fit-content;
+  min-width: 50px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  color: var(--subText);
+}
+
+.chip12ChipUnselected:hover {
+  background: var(--boxShadow);
+}
+
+.chip12ChipSelected {
+  color: var(--primaryBg);
+  background: var(--primaryClr);
+}
+
+.chip12ChipUnselected {
+  color: var(--text);
+  background: var(--primaryBg);
+}
+
+.chip12Tag {
+  color: var(--subText);
+  border: 1px solid var(--border);
+  opacity: 0.8;
+}
+
+.chip12Icon {
+  font-size: 14px !important;
+  margin-left: 4px;
+}
+
+.chip12IconLeft {
+  flex-direction: row-reverse;
+}
+
+.chip12Tag:hover {
+  color: var(--text);
+  opacity: 1;
+}
+
+.chip12Chip:hover .chip12Icon {
+  opacity: 1;
+}
