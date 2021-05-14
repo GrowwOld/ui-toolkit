@@ -156,34 +156,45 @@ class ProgressBar extends React.PureComponent<Props> {
     color: 'var(--primaryClr)',
     backgroundColor: 'var(--border)',
     isCircular: false,
-    borderRadius: 5
+    borderRadius: 5,
+    text: '',
+    addTextClass: '',
+    size: ''
   }
 }
 
 
 type DefaultProps = {
-  containerThickness?: number; //thickness of the container of the progress bar
-  color?: string; //Color of the filled Progress
-  backgroundColor?: string; //background Color of the progress bar
-  isCircular?: boolean; //circular / Linear Progress Bar
-  borderRadius?: string | number; // Adds border radius to outer filler in linear bar
+  /*thickness of the container of the progress bar*/
+  containerThickness: number;
+  /*Color of the filled Progress*/
+  color: string;
+  /*background Color of the progress bar*/
+  backgroundColor: string;
+  /*circular / Linear Progress Bar*/
+  isCircular: boolean;
+  /*Adds border radius to outer filler in linear bar*/
+  borderRadius: string | number;
+  /*Adds text to the centre of the circular Progress Bar only*/
+  text: string,
+  addTextClass: string,
+  /*width of the progress bar or square size of the circlular progress bar*/
+  size: string | number
+
+  /*
+  text styling allowed - Note: The text is added using and <svg> <text> element and doesn't support the normal class styling
+  please use fill instead of color and equivalent styling for <text> element
+  */
 }
 
 type RequiredProps = {
-  color: string; //Color of the filled Progress
-  backgroundColor: string; //background Color of the progress bar
-  fillerThickness: number; //thickness of the filler
-  completedValue: number; // percentage of the filled amount
+  /*thickness of the filler*/
+  fillerThickness: number;
+  /*percentage of the filled amount*/
+  completedValue: number;
   name: string;
-  progressbarId: string;
 }
 
-type Props = DefaultProps & RequiredProps & {
-  text?: string, //Adds text to the centre of the circular Progress Bar only
-  addTextClass?: string;
-  size?: string | number; //width of the progress bar or square size of the circlular progress bar
-  //text styling allowed - Note: The text is added using and <svg> <text> element and doesn't support the normal class styling
-  //please use fill instead of color and equivalent styling for <text> element
-}
+type Props = DefaultProps & RequiredProps;
 
 export default ProgressBar;
