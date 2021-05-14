@@ -8,6 +8,14 @@ import { Props as DateSelectorProps } from '../src/components/atoms/DateSelector
 export default {
   title: 'DateSelector',
   component: DateSelector,
+  argTypes: {
+    defaultDate: {
+      control: {
+        type: 'select',
+        options: [...Array(30).keys()].map(item => item + 1)
+      }
+    },
+  }
 };
 
 
