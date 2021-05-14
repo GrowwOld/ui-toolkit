@@ -1,0 +1,113 @@
+.date101MainDiv {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 23px;
+  position: relative;
+}
+
+.date101Label {
+  font-size: 16px;
+  text-align: center;
+  color: var(--subText);
+}
+
+.date101SelectedLabel {
+  margin-top: 25px;
+  font-size: 19px;
+  text-align: center;
+  color: var(--text130);
+}
+
+.date101Grid-container {
+  display: grid;
+  grid-template-columns: auto auto auto auto auto auto;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.date101Grid-item {
+  border-radius: 5px;
+  padding: 6px;
+  font-size: 13px;
+  text-align: center;
+  margin: 10px;
+}
+
+.date101Grid-item.regular {
+  pointer-events: auto;
+  color: var(--text);
+  background-color: var(--primaryBg);
+  cursor: pointer;
+  transition: all .1s ease-in-out;
+}
+
+.date101Grid-item.active {
+  pointer-events: auto;
+  color: var(--primaryBg);
+  background-color: var(--secondaryClr);
+  transform: scale(1.2);
+  cursor: pointer;
+}
+
+.date101Grid-item.disabled {
+  pointer-events: none;
+  background-color: var(--primaryBg);
+  cursor: not-allowed;
+  color: var(--subText50);
+}
+
+.date101Grid-item.regular:hover {
+  transform: scale(1.2);
+  background: var(--constantSecondaryClr10);
+}
+
+.date101DropDiv {
+  border-radius: 4px;
+  box-shadow: 0 4px 10px 0 var(--boxShadow);
+  border: 1px solid var(--border);
+  background-color: var(--primaryBg);
+  padding: 10px;
+}
+
+#userCart .dropdown__content {
+  z-index: 1;
+}
+
+.date101TooltipMainDiv {
+  background: var(--primaryBg);
+  border-radius: 5px;
+  width: 350px;
+  height: auto;
+  position: absolute;
+  box-shadow: 0px 4px 20px 0px var(--boxShadow);
+  transition: all ease-in-out 0.3s;
+}
+
+/* .date101TooltipMainDiv:after {
+  position: absolute;
+  bottom: 138px;
+  right: -15px;
+  transform: rotate(90deg);
+  content: '';
+  width: 0px;
+  height: 0;
+  border-right: solid 10px var(--constantTransparent);
+  border-bottom: solid 10px var(--primaryBg);
+  border-left: solid 10px var(--constantTransparent);
+} */
+
+.date101CrossButton {
+  position: absolute;
+  opacity: 0.5;
+  font-size: 19px !important;
+  top: 10px;
+  right: 10px;
+  color: var(--text);
+  cursor: pointer;
+}
+
+.date101CrossButton:hover {
+  opacity: 0.3;
+}

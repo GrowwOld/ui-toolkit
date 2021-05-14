@@ -1,0 +1,31 @@
+.radioCo11Icon {
+  float: left;
+  color: var(--primaryClr);
+  font-size: 20px !important;
+  max-width: 20px;
+  max-height: 20px;
+}
+
+.radioCo11LabelRight {
+  margin-left: 10px;
+}
+
+.radioCo11LabelLeft {
+  margin-right: 10px;
+}
+
+.radioCo11Box {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  margin-top: 15px;
+}
+
+.radioCo11BoxReverse {
+  flex-direction: row-reverse;
+  justify-content: flex-end;
+}
+
+.radioLs2 {
+  letter-spacing: 0.2px;
+}

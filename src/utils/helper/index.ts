@@ -19,6 +19,12 @@ export function listenToCustomEvent(event: any, callback: (e: any) => void) {
 }
 
 
+/* This function return random number between two integers. */
+export function getIntegerRandomNoBetweenTwoNo(min: number, max: number) {
+  return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+
+
 /**
  * This function removes the event listener for a custom event that was set
  * before by the listenToCustomevent function. It takes the name of the
@@ -35,4 +41,24 @@ export function unListenToCustomEvent(event: any, callback: any) {
   } catch (error) {
     console.error(` Error in unListening to ${event} custom event: `, error);
   }
+}
+
+
+/**
+ * This function returns ordinal suffix of a date
+ *  @param {date} date
+ */
+export function ordinalSuffixOf(date: number) {
+  const j = date % 10, k = date % 100;
+
+  if (j == 1 && k != 11) {
+    return date + "st";
+  }
+  if (j == 2 && k != 12) {
+    return date + "nd";
+  }
+  if (j == 3 && k != 13) {
+    return date + "rd";
+  }
+  return date + "th";
 }
