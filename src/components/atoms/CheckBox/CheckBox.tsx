@@ -2,7 +2,7 @@ import React from 'react';
 
 import './checkBox.css';
 
-const checkBoxDirections = {
+export const CHECKBOX_DIRECTION = {
   LEFT: 'left',
   RIGHT: 'right'
 }
@@ -62,7 +62,7 @@ const CheckBox = (props: Props) => {
   )
 
   return (
-    <div onClick={checkBoxClick} className={`c11AlignCenter c11Pointer ${addParentClass} ${checkBoxDirection === checkBoxDirections.RIGHT ? 'c11checkOnRight' : ''}`}>
+    <div onClick={checkBoxClick} className={`c11AlignCenter c11Pointer ${addParentClass} ${checkBoxDirection === CHECKBOX_DIRECTION.RIGHT ? 'c11checkOnRight' : ''}`}>
       {isChecked ? active_svg : inactive_svg}
       {label && <div className="c11CLabel">{label}</div>}
       {labelComponent && labelComponent()}
@@ -81,7 +81,7 @@ type DefaultProps = {
   inActiveColor: string,
   addParentClass: string
   labelComponent: () => React.ReactNode,
-  checkBoxDirection: ValueOf<typeof checkBoxDirections>,
+  checkBoxDirection: ValueOf<typeof CHECKBOX_DIRECTION>,
 }
 
 type RequiredProps = {
@@ -98,7 +98,7 @@ CheckBox.defaultProps = {
   activeColor: 'var(--secondaryClr)',
   inActiveColor: 'var(--text)',
   labelComponent: () => null,
-  checkBoxDirection: checkBoxDirections.LEFT,
+  checkBoxDirection: CHECKBOX_DIRECTION.LEFT
 } as DefaultProps;
 
 export type Props = DefaultProps & RequiredProps;

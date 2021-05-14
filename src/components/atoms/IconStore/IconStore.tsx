@@ -8,7 +8,7 @@ import { listenToCustomEvent, unListenToCustomEvent } from '../../../utils/helpe
 
 import './iconStore.css';
 
-const IMG_PATH = "https://storage.googleapis.com/groww-assets/web-assets/img/payment/complete_credit.svg";
+const IMG_PATH = "https://storage.googleapis.com/groww-assets/web-assets/img/shared/icons/";
 
 class IconStore extends React.PureComponent<Props, State> {
   static defaultProps: DefaultProps;
@@ -131,15 +131,13 @@ class IconStore extends React.PureComponent<Props, State> {
 
 
   getLightThemeImage = (iconName: string) => {
-    // return require(IMG_PATH + iconName + ".svg");
-    return (IMG_PATH);
+    return require(IMG_PATH + iconName + ".svg");
   }
 
 
   getDarkThemeImage = (iconName: string) => {
     try {
-      return (IMG_PATH);
-      // return require(IMG_PATH + iconName + "_dark" + ".svg");
+      return require(IMG_PATH + iconName + "_dark" + ".svg");
     } catch (e) {
       return this.getLightThemeImage(iconName)
     }

@@ -1,0 +1,21 @@
+.gb6Box {
+  border-bottom: 1px solid var(--border);
+  border-radius: 5px;
+  width: 100%;
+  padding: 16px 0;
+  color: var(--text);
+}
+
+.gb6Icon {
+  font-size: 20px !important;
+  margin-right: 4px;
+}
+
+.gb6Text {
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.gb6Fit {
+  width: fit-content;
+}
