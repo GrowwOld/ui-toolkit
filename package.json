@@ -1,6 +1,6 @@
 {
-  "name": "chidori",
-  "version": "0.0.14",
+  "name": "ui-toolkit",
+  "version": "0.0.1",
   "description": "A lightning nature UI",
   "main": "dist/index.js",
   "module": "dist/index.es.js",
@@ -60,5 +60,8 @@
     "rollup-plugin-terser": "^7.0.2",
     "rollup-plugin-typescript": "^1.0.1",
     "typescript": "^4.2.4"
+  },
+  "dependencies": {
+    "lodash": "^4.17.21"
   }
 }
