@@ -20,6 +20,18 @@ export function listenToCustomEvent(event: any, callback: (e: any) => void) {
 
 
 /**
+ *
+ *
+ * This function return random number between two integers.
+ * @param {number} min
+ * @param {number} max
+ */
+export function getIntegerRandomNoBetweenTwoNo(min: number, max: number) {
+  return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+
+
+/**
  * This function removes the event listener for a custom event that was set
  * before by the listenToCustomevent function. It takes the name of the
  * custom event and the callback to be removed from custom event listener.

@@ -1,0 +1,38 @@
+.pb65LinearMain {
+  border-radius: 5;
+  background-color: var(--border);
+  height: 10px;
+}
+
+.pb65CircleMain {
+  stroke-linecap: round;
+  stroke: var(--border);
+  fill: none;
+}
+
+.pb65LinearFiller {
+  text-align: right;
+  display: none;
+  animation-name: pb65LinearAnim;
+  animation-duration: 1s;
+  transition: all 1s ease-in-out;
+}
+
+.pb65CicleFiller {
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  fill: transparent;
+  display: none;
+  transition: all 1s ease-in-out;
+}
+
+.pb65MainTxt {
+  text-anchor: middle;
+  font-size: 16px;
+}
+
+@keyframes pb65LinearAnim {
+  0% {
+    width: 0;
+  }
+}
