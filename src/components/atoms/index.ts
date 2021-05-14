@@ -5,6 +5,7 @@ export * from './Loader';
 export * from './Button';
 export * from './Image';
 export * from './CheckBox';
+export * from './RadioButton';
 export * from './ToggleSwitch';
 export * from './ScrollTop';
 export * from './Dropdown';
