@@ -11,3 +11,4 @@ export * from './Popover';
 export * from './Popup';
 export * from './Tabs';
 export * from './Accordion';
+export * from './InformationBoard';
