@@ -1,5 +1,5 @@
 import React from 'react';
-import Waypoint from 'react-waypoint';
+import { Waypoint } from 'react-waypoint';
 
 import { getIntegerRandomNoBetweenTwoNo } from '../../../utils/helper';
 
@@ -195,6 +195,6 @@ type RequiredProps = {
   name: string;
 }
 
-type Props = DefaultProps & RequiredProps;
+export type Props = DefaultProps & RequiredProps;
 
 export default ProgressBar;

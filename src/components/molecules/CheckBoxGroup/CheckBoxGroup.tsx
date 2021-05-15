@@ -56,6 +56,5 @@ CheckBoxGroup.defaultProps = defaultProps;
 
 export type Props = DefaultProps & RequiredProps;
 
-export { CHECKBOX_DIRECTION } from '../../atoms/CheckBox';
-
 export default React.memo(CheckBoxGroup);
+export { CHECKBOX_DIRECTION }

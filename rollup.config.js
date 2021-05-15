@@ -1,10 +1,12 @@
 import babel from 'rollup-plugin-babel';
+import commonjs from '@rollup/plugin-commonjs';
 import resolve from '@rollup/plugin-node-resolve';
 import external from 'rollup-plugin-peer-deps-external';
 import { terser } from 'rollup-plugin-terser';
 import postcss from 'rollup-plugin-postcss';
 import typescript from 'rollup-plugin-typescript';
 import filesize from "rollup-plugin-filesize";
+
 
 export default [
   {
@@ -21,6 +23,7 @@ export default [
       }
     ],
     plugins: [
+      commonjs(),
       postcss({
         plugins: [],
         extract: true,
@@ -30,7 +33,11 @@ export default [
       typescript(),
       babel({
         exclude: 'node_modules/**',
-        presets: ['@babel/preset-typescript', '@babel/preset-react']
+        presets: ['@babel/preset-typescript', '@babel/preset-react'],
+        plugins: [
+          '@babel/plugin-proposal-class-properties',
+          '@babel/plugin-proposal-private-methods',
+        ]
       }),
       external(),
       resolve(),
