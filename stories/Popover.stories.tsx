@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Story } from "@storybook/react";
 
 import { Popover, POPOVER_POSITIONS } from '../src/components/atoms';
