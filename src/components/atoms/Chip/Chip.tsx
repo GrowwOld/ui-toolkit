@@ -56,16 +56,37 @@ type RequiredProps = {
 }
 
 type DefaultProps = {
+  /**
+   * Event handler called when the user clicks on the chip
+   */
   onClick: (e: React.MouseEvent<HTMLImageElement>) => void,
+  /**
+   * Position of icon with respect to Chip text, if iconName is provided.
+   */
   iconPosition: IconPosition,
+  /**
+   * Custom iconClass for icon, if iconName is provided.
+   */
   iconClass: string,
+  /**
+   * This class will be applied on both, text and icon
+   */
   parentClass: string,
+  /**
+   * If getImage is true, iconName should be one from IMG_ICON_LIST
+   */
   getImage: boolean,
+  /**
+   * Custom class for text decoration
+   */
   textClass: string,
+  /**
+   * Custom icon, value must be either from MI-ICON-LIST or IMG-ICON-LIST
+   */
   iconName: string,
 }
 
-type Props = RequiredProps & DefaultProps;
+export type Props = RequiredProps & DefaultProps;
 
 Chip.defaultProps = {
   onClick: () => { },

@@ -48,7 +48,7 @@ const Accordion = (props: Props) => {
   );
 }
 
-type Props = RequiredProps & DefaultProps;
+export type Props = RequiredProps & DefaultProps;
 
 
 type RequiredProps = {
