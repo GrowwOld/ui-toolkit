@@ -24,15 +24,19 @@
   "license": "ISC",
   "peerDependencies": {
     "classnames": "^2.2.6",
+    "prop-types": "^15.7.2",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
     "react-lazyload": "^2.6.9"
   },
   "devDependencies": {
     "@babel/core": "^7.13.15",
+    "@babel/plugin-proposal-class-properties": "^7.13.0",
+    "@babel/plugin-proposal-private-methods": "^7.13.0",
     "@babel/preset-react": "^7.13.13",
     "@babel/preset-typescript": "^7.13.0",
     "@groww-tech/eslint-config": "^1.0.0",
+    "@rollup/plugin-commonjs": "^19.0.0",
     "@rollup/plugin-node-resolve": "^11.2.1",
     "@storybook/addon-actions": "^6.2.8",
     "@storybook/addon-essentials": "^6.2.8",
@@ -64,6 +68,6 @@
     "typescript": "^4.2.4"
   },
   "dependencies": {
-    "lodash": "^4.17.21"
+    "react-waypoint": "^10.1.0"
   }
 }
