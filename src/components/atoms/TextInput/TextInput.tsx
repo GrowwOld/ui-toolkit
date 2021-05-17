@@ -109,6 +109,7 @@ class TextInput extends React.PureComponent<TextInputProps> {
     maxNumber: 10000000,
     autoComplete: "on",
     showLabel: true,
+    label: '',
     placeholder: "Enter text",
     prefixComponent: () => null,
     suffixComponent: () => null,
@@ -131,7 +132,6 @@ class TextInput extends React.PureComponent<TextInputProps> {
 
 
 type RequiredProps = {
-  label: string;
   onInput: React.FormEventHandler<HTMLInputElement>;
 }
 
@@ -144,17 +144,18 @@ type DefaultProps = {
   errorText: string,
   disabled: boolean,
   disableCopyPaste: boolean,
-  onEnterPress: (e?: React.KeyboardEvent<HTMLInputElement>) => void,
-  onBackspace: (e?: React.KeyboardEvent<HTMLInputElement>) => void,
+  onEnterPress: (e: React.KeyboardEvent<HTMLInputElement>) => void,
+  onBackspace: (e: React.KeyboardEvent<HTMLInputElement>) => void,
   maxTextLimit: number,
   minNumber: number,
   maxNumber: number,
-  fontSize: string,
+  fontSize: string | number,
   placeholder: string,
   autoComplete: string,
   prefixComponent: () => React.ReactNode,
   suffixComponent: () => React.ReactNode,
   showLabel: boolean,
+  label: string;
   removeUnderLineOnDisabled: boolean,
   removeUnderLine: boolean,
   showInfo: boolean,
@@ -164,9 +165,9 @@ type DefaultProps = {
   inputStyle: object,
   showParentDivUnderline: boolean,
   parentDivClass: string,
-  onFocus: (e?: React.FocusEvent<HTMLInputElement>) => void,
-  onKeyDown: (e?: React.KeyboardEvent<HTMLInputElement>) => void,
-  onKeyPress: (e?: React.KeyboardEvent<HTMLInputElement>) => void,
+  onFocus: (e: React.FocusEvent<HTMLInputElement>) => void,
+  onKeyDown: (e: React.KeyboardEvent<HTMLInputElement>) => void,
+  onKeyPress: (e: React.KeyboardEvent<HTMLInputElement>) => void,
 };
 
 
