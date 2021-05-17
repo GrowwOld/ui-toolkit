@@ -60,6 +60,7 @@
     "react-lazyload": "^2.6.9",
     "rollup": "^2.45.2",
     "rollup-plugin-babel": "^4.4.0",
+    "rollup-plugin-copy": "^3.4.0",
     "rollup-plugin-filesize": "^9.1.1",
     "rollup-plugin-peer-deps-external": "^2.2.4",
     "rollup-plugin-postcss": "^4.0.0",
