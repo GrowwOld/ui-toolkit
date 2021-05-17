@@ -6,7 +6,6 @@ import { terser } from 'rollup-plugin-terser';
 import postcss from 'rollup-plugin-postcss';
 import typescript from 'rollup-plugin-typescript';
 import filesize from "rollup-plugin-filesize";
-import copy from 'rollup-plugin-copy'
 
 
 export default [
@@ -43,12 +42,7 @@ export default [
       external(),
       resolve(),
       terser(),
-      filesize(),
-      copy({
-      targets: [
-        { src: 'src/types', dest: 'dist' },
-      ]
-    })
+      filesize()
     ],
     external: ['react', 'react-dom', 'classnames', 'react-lazyload']
   }
