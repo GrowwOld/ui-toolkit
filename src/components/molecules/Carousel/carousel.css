@@ -1,0 +1,283 @@
+/* Slider */
+
+.carousel14Slider {
+  position: relative;
+
+  display: block;
+  box-sizing: border-box;
+
+  -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+
+  -webkit-touch-callout: none;
+  -khtml-user-select: none;
+  -ms-touch-action: pan-y;
+      touch-action: pan-y;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.carousel14List {
+  position: relative;
+
+  display: block;
+  overflow: hidden;
+
+  margin: 0;
+  padding: 0;
+}
+
+.carousel14List:focus {
+  outline: none;
+}
+
+.carousel14List.dragging {
+  cursor: pointer;
+  cursor: hand;
+}
+
+.carousel14Slider .carousel14Track,
+.carousel14Slider .carousel14List {
+    -webkit-transform: translate3d(0, 0, 0);
+       -moz-transform: translate3d(0, 0, 0);
+        -ms-transform: translate3d(0, 0, 0);
+         -o-transform: translate3d(0, 0, 0);
+            transform: translate3d(0, 0, 0);
+}
+
+.carousel14Track {
+  position: relative;
+  top: 0;
+  left: 0;
+
+  display: inline-block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.carousel14Track:before,
+.carousel14Track:after {
+  display: table;
+  content: '';
+}
+
+.carousel14Track:after {
+  clear: both;
+}
+
+.carousel14Loading .carousel14Track {
+  visibility: hidden;
+}
+
+.carousel14Slide {
+  display: none;
+  float: left;
+
+  height: 100%;
+  min-height: 1px;
+}
+
+[dir='rtl'] .carousel14Slide {
+  float: right;
+}
+
+.carousel14Slide img {
+  display: block;
+}
+
+.carousel14Slide.carousel14Loading img {
+  display: none;
+}
+
+.carousel14Slide.dragging img {
+  pointer-events: none;
+}
+
+.carousel14Initialized .carousel14Slide {
+  display: block;
+}
+
+.carousel14Loading .carousel14Slide {
+  visibility: hidden;
+}
+
+.carousel14Vertical .carousel14Slide {
+  display: block;
+  height: auto;
+  border: 1px solid transparent;
+}
+
+.carousel14Arrow.carousel14Hidden {
+  display: none;
+}
+
+/* Slider */
+/* .carousel14Loading .carousel14List
+{
+    background: var(--primaryBg) url('./ajax-loader.gif') center center no-repeat;
+} */
+
+/* Arrows */
+
+.carousel14Arrow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.carousel14Prev,
+.carousel14Next {
+  position: absolute;
+  cursor: pointer;
+  top: 50%;
+  width: 50px;
+  height: 50px;
+  padding: 0;
+  -webkit-transform: translate(0, -50%);
+  -ms-transform: translate(0, -50%);
+  transform: translate(0, -50%);
+  opacity: 0.6;
+  background: var(--subText);
+  z-index: 1;
+  border-radius: 50%;
+  border: 1px transparent;
+  color: var(--primaryBg);
+}
+
+.carousel14Prev:hover,
+.carousel14Prev:focus,
+.carousel14Next:hover,
+.carousel14Next:focus
+{
+  outline: none;
+}
+
+.carousel14Prev:hover:before,
+.carousel14Prev:focus:before,
+.carousel14Next:hover:before,
+.carousel14Next:focus:before {
+  opacity: 1;
+}
+
+.carousel14Prev.carousel14Disabled,
+.carousel14Next.carousel14Disabled {
+  /* opacity: 0.25;
+  cursor: not-allowed; */
+  display: none;
+}
+
+.carousel14Prev:before,
+.carousel14Next:before
+{
+  font-size: 20px;
+  line-height: 1;
+
+  opacity: 0.75;
+  color: var(--subText);;
+
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.carousel14Prev {
+  left: -16px;
+}
+
+.carousel14Next {
+  right: -16px;
+}
+
+/* Dots */
+.carousel-dotted.carousel14Slider {
+  margin-bottom: 30px;
+}
+
+.carousel14Dots {
+  position: absolute;
+  bottom: -25px;
+
+  display: block;
+
+  width: 100%;
+  padding: 0;
+  margin: 0;
+
+  list-style: none;
+
+  text-align: center;
+}
+
+.carousel14Dots li {
+  position: relative;
+
+  display: inline-block;
+
+  width: 20px;
+  height: 20px;
+  margin: 0 5px;
+  padding: 0;
+
+  cursor: pointer;
+}
+
+.carousel14Dots li button {
+  font-size: 0;
+  line-height: 0;
+
+  display: block;
+
+  width: 20px;
+  height: 20px;
+  padding: 5px;
+
+  cursor: pointer;
+
+  color: transparent;
+  border: 0;
+  outline: none;
+  background: transparent;
+}
+
+.carousel14Dots li button:hover,
+.carousel14Dots li button:focus {
+  outline: none;
+}
+
+.carousel14Dots li button:hover:before,
+.carousel14Dots li button:focus:before {
+  opacity: 1;
+}
+
+.carousel14Dots li button:before {
+  font-family: 'slick';
+  font-size: 20px;
+  line-height: 20px;
+
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  width: 20px;
+  height: 20px;
+
+  content: '•';
+  text-align: center;
+
+  opacity: 0.25;
+  color: var(--text);
+
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.carousel14Dots li.carousel14Active button:before {
+    opacity: 0.75;
+    color: var(--text);
+}
+
+@media screen and (max-width: 768px) {
+  .carousel14List {
+    max-width: 620px;
+  }
+}
