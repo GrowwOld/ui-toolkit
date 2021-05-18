@@ -1,10 +1,12 @@
 import React from 'react';
 import cn from 'classnames';
 
+import { IconStore, MI_ICON_LIST } from '../IconStore';
 import {
-  IconStore, MI_ICON_LIST,
-  Dropdown, DropdownTrigger, DropdownContent
-} from '../index';
+  Dropdown,
+  DropdownTrigger,
+  DropdownContent
+} from '../Dropdown';
 
 import './select.css';
 

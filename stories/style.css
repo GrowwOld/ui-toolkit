@@ -5,3 +5,18 @@
 .select_activeOptionClass {
   width: 200px;
 }
+
+.accordion_parentClass {
+  width: 200px;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  padding: 16px;
+}
+
+.accordion_contentClass {
+  margin: 16px 0;
+}
+
+.chip_iconMargin {
+  margin-top: 2px;
+}

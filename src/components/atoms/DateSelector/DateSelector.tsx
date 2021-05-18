@@ -1,6 +1,11 @@
 import React, { PureComponent } from "react";
 
-import { IconStore, MI_ICON_LIST, Button, Popup } from "..";
+import {
+  IconStore,
+  MI_ICON_LIST
+} from '../IconStore';
+import { Button } from '../Button';
+import { Popup } from '../Popup';
 
 import { ordinalSuffixOf } from "../../../utils/helper";
 
