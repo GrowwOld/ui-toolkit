@@ -1,7 +1,7 @@
 "use strict";
 
 import React from "react";
-import debounce from 'lodash/debounce';
+import debounce from './utils/debounce';
 import classnames from "classnames";
 // import ResizeObserver from "resize-observer-polyfill";
 
