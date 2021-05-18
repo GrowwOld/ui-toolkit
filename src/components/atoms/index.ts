@@ -20,6 +20,7 @@ export * from './ProgressBar';
 export * from './RadioButton';
 export * from './ScrollTop';
 export * from './Select';
+export * from './Slider';
 export * from './Table';
 export * from './Tabs';
 export * from './Tag';
