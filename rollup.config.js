@@ -31,7 +31,7 @@ export default [
         plugins: [postcssImport(), postcssUrl()],
         extract: true,
         extensions: [".css"],
-        // minimize: true
+        minimize: true
       }),
       typescript(),
       babel({
