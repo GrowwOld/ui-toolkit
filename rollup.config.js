@@ -4,6 +4,8 @@ import resolve from '@rollup/plugin-node-resolve';
 import external from 'rollup-plugin-peer-deps-external';
 import { terser } from 'rollup-plugin-terser';
 import postcss from 'rollup-plugin-postcss';
+import postcssImport from 'postcss-import';
+import postcssUrl from 'postcss-url';
 import typescript from 'rollup-plugin-typescript';
 import filesize from "rollup-plugin-filesize";
 import copy from 'rollup-plugin-copy'
@@ -26,10 +28,10 @@ export default [
     plugins: [
       commonjs(),
       postcss({
-        plugins: [],
+        plugins: [postcssImport(), postcssUrl()],
         extract: true,
         extensions: [".css"],
-        minimize: true
+        // minimize: true
       }),
       typescript(),
       babel({
@@ -45,10 +47,20 @@ export default [
       terser(),
       filesize(),
       copy({
-      targets: [
-        { src: 'src/types', dest: 'dist' },
-      ]
-    })
+        targets: [
+          { src: 'src/types', dest: 'dist' },
+          { src: 'src/components/atoms/Loader/images', dest: 'dist' },
+          {
+            src: [
+              'src/utils/styles/fonts/KFOlCnqEu92Fr1MmEU9fBBc4AMP6lQ.woff2',
+              'src/utils/styles/fonts/KFOmCnqEu92Fr1Mu4mxKKTU1Kg.woff2'
+            ], dest: 'dist/fonts'
+          },
+          {
+            src: 'src/utils/styles/icons/flUhRq6tzZclQEJ-Vdg-IuiaDsNcIhQ8tQ.woff2', dest: 'dist/icons'
+          }
+        ]
+      })
     ],
     external: ['react', 'react-dom', 'classnames', 'react-lazyload']
   }
