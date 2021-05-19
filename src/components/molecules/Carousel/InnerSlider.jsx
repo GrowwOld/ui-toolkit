@@ -1,7 +1,7 @@
 "use strict";
 
 import React from "react";
-import debounce from './utils/debounce';
+import debounce from 'lodash.debounce';
 import classnames from "classnames";
 // import ResizeObserver from "resize-observer-polyfill";
 
@@ -142,12 +142,12 @@ class InnerSlider extends React.Component {
         break;
       }
       if (
-        typeof prevProps[ key ] === "object" ||
-        typeof prevProps[ key ] === "function"
+        typeof prevProps[key] === "object" ||
+        typeof prevProps[key] === "function"
       ) {
         continue;
       }
-      if (prevProps[ key ] !== this.props[ key ]) {
+      if (prevProps[key] !== this.props[key]) {
         setTrackStyle = true;
         break;
       }
@@ -251,7 +251,7 @@ class InnerSlider extends React.Component {
       React.Children.count(this.props.children) !==
       React.Children.count(spec.children)
     ) {
-      updatedState[ "trackStyle" ] = trackStyle;
+      updatedState["trackStyle"] = trackStyle;
     }
     this.setState(updatedState, callback);
   };
@@ -277,21 +277,21 @@ class InnerSlider extends React.Component {
         trackWidth += child.props.style.width;
       });
       for (let i = 0; i < preClones; i++) {
-        trackLeft += childrenWidths[ childrenWidths.length - 1 - i ];
-        trackWidth += childrenWidths[ childrenWidths.length - 1 - i ];
+        trackLeft += childrenWidths[childrenWidths.length - 1 - i];
+        trackWidth += childrenWidths[childrenWidths.length - 1 - i];
       }
       for (let i = 0; i < postClones; i++) {
-        trackWidth += childrenWidths[ i ];
+        trackWidth += childrenWidths[i];
       }
       for (let i = 0; i < this.state.currentSlide; i++) {
-        trackLeft += childrenWidths[ i ];
+        trackLeft += childrenWidths[i];
       }
       let trackStyle = {
         width: trackWidth + "px",
         left: -trackLeft + "px"
       };
       if (this.props.centerMode) {
-        let currentWidth = `${childrenWidths[ this.state.currentSlide ]}px`;
+        let currentWidth = `${childrenWidths[this.state.currentSlide]}px`;
         trackStyle.left = `calc(${trackStyle.left} + (100% - ${currentWidth}) / 2 ) `;
       }
       return {
@@ -464,7 +464,7 @@ class InnerSlider extends React.Component {
     this.props.autoplay && this.autoPlay("update");
     if (this.props.focusOnSelect) {
       const nodes = this.list.querySelectorAll(".carousel-current");
-      nodes[ 0 ] && nodes[ 0 ].focus();
+      nodes[0] && nodes[0].focus();
     }
   };
 
@@ -524,7 +524,7 @@ class InnerSlider extends React.Component {
 
     if (!state) return;
 
-    if (state[ "swiping" ]) {
+    if (state["swiping"]) {
       this.clickable = false;
     }
     this.setState(state);
@@ -542,8 +542,8 @@ class InnerSlider extends React.Component {
 
     if (!state) return;
 
-    let triggerSlideHandler = state[ "triggerSlideHandler" ];
-    delete state[ "triggerSlideHandler" ];
+    let triggerSlideHandler = state["triggerSlideHandler"];
+    delete state["triggerSlideHandler"];
     this.setState(state);
 
     if (triggerSlideHandler === undefined) return;
