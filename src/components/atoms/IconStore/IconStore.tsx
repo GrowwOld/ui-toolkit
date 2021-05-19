@@ -37,72 +37,36 @@ class IconStore extends React.PureComponent<Props, State> {
   }
 
   getRequiredIconUI = () => {
-    const { iconName, getImage, imgAlt, width, height, useLazyLoad } = this.props;
+    const { iconName, getImage, imgAlt, width, height, useLazyLoad, iconStyle } = this.props;
     const finalClassName = this.getFinalClassname();
-    const wrapperDivClass = this.getWrapperDivClassname();
 
     if (getImage) {
       const img = this.importRequiredImage(iconName);
       return (
-        <div className={wrapperDivClass}>
-          <Image
-            src={img}
-            alt={imgAlt}
-            width={width}
-            height={height}
-            addClass={finalClassName}
-            onClick={this.onIconClick}
-            useLazyLoad={useLazyLoad}
-            handleBrokenImage={this.getLightThemeImage(iconName)}
-          />
-
-          {this.getBadgeUI()}
-        </div>
+        <Image
+          src={img}
+          alt={imgAlt}
+          width={width}
+          height={height}
+          addClass={finalClassName}
+          onClick={this.onIconClick}
+          useLazyLoad={useLazyLoad}
+          handleBrokenImage={this.getLightThemeImage(iconName)}
+        />
       )
 
     } else {
       const MI_NAME = MI_ICON_LIST[iconName as keyof typeof MI_ICON_LIST];
       return (
-        <div className={wrapperDivClass}>
-          <i
-            className={`material-icons ${finalClassName}`}
-            onClick={this.onIconClick}
-            style={{ width: width, height: height }}
-          >
-            {MI_NAME}
-          </i>
-
-          {this.getBadgeUI()}
-        </div>
+        <i
+          className={`material-icons ${finalClassName}`}
+          onClick={this.onIconClick}
+          style={{ width: width, height: height, ...iconStyle }}
+        >
+          {MI_NAME}
+        </i>
       )
     }
-  }
-
-
-  getWrapperDivClassname = () => {
-    const { badgeValue } = this.props;
-    let tempClass = "is31IconWrapper";
-
-    if (badgeValue) {
-      tempClass += " pos-rel";
-    }
-
-    return tempClass;
-  }
-
-
-  getBadgeUI = () => {
-    const { badgeValue, badgeClass } = this.props;
-
-    if (badgeValue) {
-      return (
-        <div className={"absolute-center is31BadgeDefaultClass" + " " + badgeClass}>{badgeValue}</div>
-      )
-
-    } else {
-      return null;
-    }
-
   }
 
 
