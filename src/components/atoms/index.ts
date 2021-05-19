@@ -1,5 +1,3 @@
-import '../../utils/styles/app.css';
-
 export * from './Accordion';
 export * from './AnchorLink';
 export * from './AnimateHeight';
