@@ -1,0 +1,88 @@
+
+html {
+  /* global colors */
+  --primaryClr: #00D09C;
+  --primaryClr60: #66E3C4;
+  --primaryClr10: #E5FAF5;
+  --secondaryClr: #5367FF;
+  --secondaryClr150: #1E2232;
+  --secondaryClr130: #98A4FF;
+  --secondaryClr60: #98A4FF;
+  --secondaryClr30: #EEF0FF;
+  --growwYellow: #FFB61B;
+  --growwYellow10: #FFF5E0;
+  --growwYellow05: rgba(255; 182; 27; 0.05);
+  --growwRed: #EB5B3C;
+  --growwRed10: #FAE9E5;
+  --growwRed05: rgba(235; 91; 60; 0.05);
+  --border: #ECEDEF;
+  --iconLight: #B0B2BA;
+  --iconMedium: #DDDEE1;
+  --iconStrong: #ECEDEF;
+  --boxShadow: rgba(0; 0; 0; 0.1);
+  --text130: #44475B;
+  --text: #44475B;
+  --subText: #7C7E8C;
+  --subText50: #B0B2BA;
+  --subText70: #ECEDEF;
+  --primaryBg: #FFFFFF;
+  --secondaryBg: #FFFFFF;
+  --tertiaryBg: #ECEDEF;
+  --quaternaryBg: #F6F6F7;
+  --preloaderBg: #F6F6F7;
+  --rippleNormal: rgba(0; 0; 0; 0.10);
+  --constantGrowwYellow150: #D2AB66;
+  --constantText: #44475B;
+  --constantText120: #191C27;
+  --constantSubText10: #636464;
+  --constantWhite: #FFFFFF;
+  --constantTransparent: rgba(0; 0; 0; 0);
+  --constantHalfTransparent: rgba(0; 0; 0; 0.5);
+  --constantSecondaryClr180: #2A2A2A;
+  --constantSecondaryClr10: #F6F6F7;
+  --cardBackground: #1D1D1D;
+}
+
+html[data-theme="dark"] {
+  /* global colors */
+  --primaryClr: #0ABB92;
+  --primaryClr60: #0B5E49;
+  --primaryClr10: #0E231E;
+  --secondaryClr: #98A4FF;
+  --secondaryClr150: #1E2232;
+  --secondaryClr130: #323C89;
+  --secondaryClr60: #181A2A;
+  --secondaryClr30: #181A2A;
+  --growwYellow: #E7A61A;
+  --growwYellow10: #2E2105;
+  --growwYellow05: #222C35;
+  --growwRed: #D55438;
+  --growwRed10: #2A0F09;
+  --growwRed05: rgba(213, 84, 56, 0.05);
+  --border: #2A2A2A;
+  --iconLight: #7C7E8C;
+  --iconMedium: #404042;
+  --iconStrong: #2A2A2A;
+  --boxShadow: rgba(0, 0, 0, 0.6);
+  --text130: #EBEBF5;
+  --text: #DCDCDD;
+  --subText: #B0B2BA;
+  --subText50: #7C7E8C;
+  --subText70: #2A2A2A;
+  --primaryBg: #121212;
+  --secondaryBg: #2A2A2A;
+  --tertiaryBg: #2A2A2A;
+  --quaternaryBg: #1D1D1D;
+  --preloaderBg: #2A2A2A;
+  --rippleNormal: rgba(255, 255, 255, 0.10);
+  --constantGrowwYellow150: #D2AB66;
+  --constantText: #44475B;
+  --constantText120: #191C27;
+  --constantSubText10: #636464;
+  --constantWhite: #EBEBF5;
+  --constantTransparent: rgba(0, 0, 0, 0);
+  --constantHalfTransparent: rgba(0, 0, 0, 0.5);
+  --constantSecondaryClr180: #2A2A2A;
+  --constantSecondaryClr10: #2A2A2A;
+  --cardBackground: #1D1D1D;
+}

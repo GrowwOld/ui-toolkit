@@ -1,0 +1,118 @@
+.btn51Btn {
+  display: inline-block;
+  font-weight: 500;
+  /* border: none; */
+  border-radius: 4px;
+  cursor: pointer;
+  white-space: nowrap;
+  position: relative;
+}
+
+.btn51ParentDimension {
+  height: inherit;
+  /* width: inherit; */
+}
+
+.btn51RipplePrimary {
+  background-position: center;
+  transition: background 0.8s;
+}
+
+.btn51RipplePrimary:hover {
+  background: #26D7AB radial-gradient(circle, transparent 1%, #26D7AB 1%) center/15000%;
+}
+
+.btn51RipplePrimary:active {
+  background-color: #B3F1E1;
+  background-size: 100%;
+  transition: background 0s;
+}
+
+.btn51RippleSecondary {
+  background-position: center;
+  transition: background 0.8s;
+}
+
+.btn51RippleSecondary:hover {
+  background: #f4f7f6 radial-gradient(circle, transparent 1%, #f4f7f6 1%) center/15000%;
+}
+
+.btn51RippleSecondary:active {
+  background-color: #dfe7e3;
+  background-size: 100%;
+  transition: background 0s;
+}
+
+.btn51RippleTertiary {
+  background-position: center;
+  transition: background 0.8s;
+}
+
+.btn51RippleTertiary:hover {
+  background: #E5FAF5 radial-gradient(circle, rgba(0, 0, 0, 0) 1%, #E5FAF5 1%) center/15000%;
+  filter: brightness(105%)
+}
+
+.btn51RippleTertiary:active {
+  background-color: #dfe7e3;
+  background-size: 100%;
+  transition: background 0s;
+}
+
+.btn51Primary {
+  background: var(--primaryClr);
+  color: var(--primaryBg);
+}
+
+.btn51Secondary {
+  border: 1px solid var(--primaryClr);
+  color: var(--primaryClr);
+  background: var(--primaryBg);
+}
+
+.btn51Tertiary {
+  background: var(--primaryClr10);
+  color: var(--primaryClr);
+}
+
+.btn51Loading {
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+.btn51DisabledPrimary {
+  background-color: var(--subText50);
+  pointer-events: none;
+  color: var(--primaryBg);
+}
+
+.btn51DisabledSecondary {
+  border-color: var(--subText50);
+  color: var(--subText50);
+  pointer-events: none;
+}
+
+.btn51DisabledTertiary {
+  color: var(--subText50);
+  background-color: var(--border);
+  pointer-events: none;
+}
+
+.btn51BottomFixed {
+  position: fixed;
+  left: 0;
+  border-top: 1px solid var(--border);
+  background: var(--primaryBg);
+  padding: 12px;
+  width: 100%;
+  z-index: 1000;
+  bottom: 0;
+}
+
+.btn51IconLeft {
+  margin: 0 8px 0 -8px;
+}
+
+.btn51IconRight {
+  margin-left: 8px;
+}

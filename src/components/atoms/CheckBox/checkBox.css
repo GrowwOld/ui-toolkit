@@ -1,0 +1,21 @@
+.c11AlignCenter {
+  display: flex;
+  align-items: center;
+}
+
+.c11CLabel {
+  font-size: 14px;
+  color: var(--text);
+  margin-left: 12px;
+  letter-spacing: 0.3px;
+  -webkit-font-smoothing: auto;
+}
+
+.c11Pointer {
+  cursor: pointer;
+}
+
+.c11checkOnRight {
+  flex-direction: row-reverse;
+  justify-content: flex-end;
+}
