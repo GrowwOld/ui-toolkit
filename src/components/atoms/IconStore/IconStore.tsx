@@ -95,13 +95,13 @@ class IconStore extends React.PureComponent<Props, State> {
 
 
   getLightThemeImage = (iconName: string) => {
-    return require(IMG_PATH + iconName + ".svg");
+    return IMG_PATH + iconName + ".svg";
   }
 
 
   getDarkThemeImage = (iconName: string) => {
     try {
-      return require(IMG_PATH + iconName + "_dark" + ".svg");
+      return IMG_PATH + iconName + "_dark" + ".svg";
     } catch (e) {
       return this.getLightThemeImage(iconName)
     }
@@ -138,8 +138,6 @@ IconStore.defaultProps = {
   iconClass: "",
   iconDarkClass: "",
   useLazyLoad: true,
-  badgeValue: 0,
-  badgeClass: "",
   iconStyle: {},
   onIconClick: () => { }
 };
@@ -170,14 +168,6 @@ type DefaultProps = {
    */
   onIconClick: (e: React.MouseEvent) => void,
   useLazyLoad: boolean,
-  /**
-   *  If you want to add a badge on the Icon then pass badge value
-   */
-  badgeValue: number,
-  /**
-   * Pass badge class for customized style
-   */
-  badgeClass: string
 }
 
 export type Props = DefaultProps & RequiredProps;
