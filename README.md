@@ -5,7 +5,7 @@ React UI library used by Groww.
 Install the dependencies and devDependencies and start the server.
 
 ```sh
-npm i @groww/ui-toolkit
+npm i @groww-tech/ui-toolkit
 ```
 
 ## Development
