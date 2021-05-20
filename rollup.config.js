@@ -28,10 +28,9 @@ export default [
     plugins: [
       commonjs(),
       postcss({
-        plugins: [postcssImport(), postcssUrl()],
+        plugins: [postcssImport(), postcssUrl({ url: 'inline' })],
         extract: true,
         extensions: [".css"],
-        minimize: true
       }),
       typescript(),
       babel({
@@ -48,17 +47,7 @@ export default [
       filesize(),
       copy({
         targets: [
-          { src: 'src/types', dest: 'dist' },
-          { src: 'src/components/atoms/Loader/images', dest: 'dist' },
-          {
-            src: [
-              'src/utils/styles/fonts/KFOlCnqEu92Fr1MmEU9fBBc4AMP6lQ.woff2',
-              'src/utils/styles/fonts/KFOmCnqEu92Fr1Mu4mxKKTU1Kg.woff2'
-            ], dest: 'dist/fonts'
-          },
-          {
-            src: 'src/utils/styles/icons/flUhRq6tzZclQEJ-Vdg-IuiaDsNcIhQ8tQ.woff2', dest: 'dist/icons'
-          }
+          { src: 'src/types', dest: 'dist' }
         ]
       })
     ],
