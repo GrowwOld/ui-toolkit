@@ -9,6 +9,30 @@
     "/dist"
   ],
   "sideEffects": false,
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Groww/ui-toolkit.git"
+  },
+  "author": "Vikas Singh <vikas.singh707@gmail.com> (https://twitter.com/VikasSi25579022)",
+  "contributors": [
+    {
+      "name": "Ankit Chouhan",
+      "url": "https://twitter.com/ankit__chouhan"
+    },
+    {
+      "name": "Rishabh Tripathi",
+      "url": "https://twitter.com/ristripathi"
+    },
+    {
+      "name": "Rishav ",
+      "url": "https://twitter.com/st_tronn"
+    }
+  ],
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Groww/ui-toolkit/issues"
+  },
+  "homepage": "https://github.com/Groww/ui-toolkit#readme",
   "scripts": {
     "prebuild": "rimraf dist",
     "build": "concurrently yarn:build:*",
@@ -20,8 +44,6 @@
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook"
   },
-  "author": "",
-  "license": "ISC",
   "peerDependencies": {
     "classnames": "^2.2.6",
     "prop-types": "^15.7.2",
