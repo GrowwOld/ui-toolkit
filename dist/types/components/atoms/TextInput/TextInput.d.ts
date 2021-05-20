@@ -1,0 +1,50 @@
+import React from 'react';
+import './textinput.css';
+declare class TextInput extends React.PureComponent<TextInputProps> {
+    textInputRef: React.RefObject<HTMLInputElement>;
+    render(): JSX.Element;
+    focus: () => void;
+    onCopy: (e: React.ClipboardEvent<HTMLInputElement>) => void;
+    onPaste: (e: React.ClipboardEvent<HTMLInputElement>) => void;
+    onKeyDown: (event: React.KeyboardEvent<HTMLInputElement>) => void;
+    onKeyUp: (event: React.KeyboardEvent<HTMLInputElement>) => boolean;
+    static defaultProps: DefaultProps;
+}
+declare type RequiredProps = {
+    onInput: React.FormEventHandler<HTMLInputElement>;
+};
+declare type DefaultProps = {
+    value: string | number;
+    id: string;
+    inputType: string;
+    showError: boolean;
+    errorText: string;
+    disabled: boolean;
+    disableCopyPaste: boolean;
+    onEnterPress: (e: React.KeyboardEvent<HTMLInputElement>) => void;
+    onBackspace: (e: React.KeyboardEvent<HTMLInputElement>) => void;
+    maxTextLimit: number;
+    minNumber: number;
+    maxNumber: number;
+    fontSize: string | number;
+    placeholder: string;
+    autoComplete: string;
+    prefixComponent: () => React.ReactNode;
+    suffixComponent: () => React.ReactNode;
+    showLabel: boolean;
+    label: string;
+    removeUnderLineOnDisabled: boolean;
+    removeUnderLine: boolean;
+    showInfo: boolean;
+    infoText: string;
+    labelClass: string;
+    inputClass: string;
+    inputStyle: object;
+    showParentDivUnderline: boolean;
+    parentDivClass: string;
+    onFocus: (e: React.FocusEvent<HTMLInputElement>) => void;
+    onKeyDown: (e: React.KeyboardEvent<HTMLInputElement>) => void;
+    onKeyPress: (e: React.KeyboardEvent<HTMLInputElement>) => void;
+};
+declare type TextInputProps = RequiredProps & DefaultProps;
+export default TextInput;
