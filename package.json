@@ -1,5 +1,5 @@
 {
-  "name": "ui-toolkit",
+  "name": "@groww-tech/ui-toolkit",
   "version": "0.0.2",
   "description": "A lightning nature UI",
   "main": "dist/index.js",
