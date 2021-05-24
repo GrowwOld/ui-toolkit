@@ -12,7 +12,7 @@
   "scripts": {
     "prebuild": "rimraf dist",
     "build": "concurrently yarn:build:*",
-    "build:lib": "rollup -c",
+    "build:lib": "babel src/ --extensions \".ts,.tsx,.jsx\" -d dist",
     "build:types": "tsc --emitDeclarationOnly",
     "lint": "concurrently yarn:lint:*",
     "lint:src": "eslint src",
@@ -72,6 +72,7 @@
     "typescript": "^4.2.4"
   },
   "dependencies": {
+    "@babel/cli": "^7.14.3",
     "lodash.debounce": "^4.0.8",
     "react-router-dom": "^5.2.0",
     "react-waypoint": "^10.1.0"
