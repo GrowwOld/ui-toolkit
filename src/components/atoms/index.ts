@@ -1,5 +1,4 @@
 export * from './Accordion';
-export * from './AnchorLink';
 export * from './AnimateHeight';
 export * from './Button';
 export * from './CheckBox';
