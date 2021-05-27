@@ -64,7 +64,7 @@ const getActiveTabDimensions = (data: Tab[], activeIndex: number) => {
 
   if (activeTab && activeTab.hasOwnProperty('width') && activeTab.hasOwnProperty('left')) {
     width = activeTab.width || 0;
-    left = activeTab.left;
+    left = activeTab.left || 0;
 
     return {
       "width": width,
@@ -125,7 +125,7 @@ type Tab = {
   name: React.ReactNode;
   style?: React.CSSProperties;
   width?: number;
-  left: number;
+  left?: number;
 }
 
 
