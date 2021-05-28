@@ -73,7 +73,6 @@
   },
   "dependencies": {
     "lodash.debounce": "^4.0.8",
-    "react-router-dom": "^5.2.0",
     "react-waypoint": "^10.1.0"
   }
 }
