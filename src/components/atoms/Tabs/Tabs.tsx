@@ -1,7 +1,11 @@
-import React, { useState, useEffect } from 'react';
-import cn from 'classnames';
+import "./tabs.css";
 
-import './tabs.css';
+import React, {
+  useEffect,
+  useState
+} from "react";
+
+import cn from "classnames";
 
 const Tabs = (props: Props) => {
   const {
@@ -79,8 +83,8 @@ const getActiveTabDimensions = (data: Tab[], activeIndex: number) => {
         const currentActiveElement = prevActiveElement[0]?.parentElement?.children[activeIndex] as HTMLElement;
 
         return {
-          "width": activeIndex > 0 ? currentActiveElement?.offsetWidth : currentActiveElement?.offsetWidth - 25,
-          "left": activeIndex > 0 ? currentActiveElement?.offsetLeft - 20 : currentActiveElement?.offsetLeft
+          "width": currentActiveElement?.offsetWidth,
+          "left": currentActiveElement?.offsetLeft
         };
 
       } else {
