@@ -1,11 +1,11 @@
-import "./tabs.css";
-
 import React, {
   useEffect,
   useState
 } from "react";
 
 import cn from "classnames";
+
+import "./tabs.css";
 
 const Tabs = (props: Props) => {
   const {
