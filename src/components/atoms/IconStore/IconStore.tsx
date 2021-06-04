@@ -1,17 +1,12 @@
-import "./iconStore.css";
+import React from 'react';
 
-import React from "react";
+import { IMG_ICON_LIST, MI_ICON_LIST } from './iconList';
+import { Image } from '../Image';
 
-import {
-  listenToCustomEvent,
-  unListenToCustomEvent
-} from "../../../utils/helper";
-import { Theme } from "../../../utils/types/theme";
-import { Image } from "../Image";
-import {
-  IMG_ICON_LIST,
-  MI_ICON_LIST
-} from "./iconList";
+import { Theme } from '../../../utils/types/theme';
+import { listenToCustomEvent, unListenToCustomEvent } from '../../../utils/helper';
+
+import './iconStore.css';
 
 const IMG_PATH = "https://storage.googleapis.com/groww-assets/web-assets/img/shared/icons/";
 
