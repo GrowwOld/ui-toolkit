@@ -1,12 +1,17 @@
-import React from 'react';
+import "./iconStore.css";
 
-import { IMG_ICON_LIST, MI_ICON_LIST } from './iconList';
-import { Image } from '../Image';
+import React from "react";
 
-import { Theme } from '../../../utils/types/theme';
-import { listenToCustomEvent, unListenToCustomEvent } from '../../../utils/helper';
-
-import './iconStore.css';
+import {
+  listenToCustomEvent,
+  unListenToCustomEvent
+} from "../../../utils/helper";
+import { Theme } from "../../../utils/types/theme";
+import { Image } from "../Image";
+import {
+  IMG_ICON_LIST,
+  MI_ICON_LIST
+} from "./iconList";
 
 const IMG_PATH = "https://storage.googleapis.com/groww-assets/web-assets/img/shared/icons/";
 
@@ -37,7 +42,7 @@ class IconStore extends React.PureComponent<Props, State> {
   }
 
   getRequiredIconUI = () => {
-    const { iconName, getImage, imgAlt, width, height, useLazyLoad, iconStyle } = this.props;
+    const { iconName, getImage, imgAlt, width, height, useLazyLoad, fontSize, iconStyle } = this.props;
     const finalClassName = this.getFinalClassname();
 
     if (getImage) {
@@ -57,15 +62,23 @@ class IconStore extends React.PureComponent<Props, State> {
 
     } else {
       const MI_NAME = MI_ICON_LIST[iconName as keyof typeof MI_ICON_LIST];
+      let fontSizeStyle = width;
+
+      if (fontSize) {
+        fontSizeStyle = fontSize;
+      }
+
       return (
-        <i
-          className={`material-icons ${finalClassName}`}
-          onClick={this.onIconClick}
-          style={{ width: width, height: height, ...iconStyle }}
-        >
-          {MI_NAME}
-        </i>
-      )
+        <div>
+          <i
+            className={`material-icons ${finalClassName}`}
+            onClick={this.onIconClick}
+            style={{ width: width, height: height, fontSize: fontSizeStyle, ...iconStyle }}
+          >
+            {MI_NAME}
+          </i>
+        </div >
+      );
     }
   }
 
@@ -134,6 +147,7 @@ IconStore.defaultProps = {
   getImage: false,
   width: 24,
   height: 24,
+  fontSize: null,
   imgAlt: "Groww",
   iconClass: "",
   iconDarkClass: "",
@@ -153,6 +167,7 @@ type DefaultProps = {
   getImage: boolean,
   width: number,
   height: number,
+  fontSize: number | null,
   /**
    * specify alt for image icon
    */
