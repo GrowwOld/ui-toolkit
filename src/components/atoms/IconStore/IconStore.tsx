@@ -57,11 +57,7 @@ class IconStore extends React.PureComponent<Props, State> {
 
     } else {
       const MI_NAME = MI_ICON_LIST[iconName as keyof typeof MI_ICON_LIST];
-      let fontSizeStyle = width;
-
-      if (fontSize) {
-        fontSizeStyle = fontSize;
-      }
+      const fontSizeStyle = fontSize ? fontSize : width;
 
       return (
         <div>
