@@ -82,6 +82,7 @@ class DateSelector extends PureComponent<Props, State> {
             <IconStore
               iconName={MI_ICON_LIST.clear}
               iconClass="date101CrossButton"
+              fontSize={19}
               onIconClick={onClose}
             />
             : null

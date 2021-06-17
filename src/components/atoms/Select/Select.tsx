@@ -71,6 +71,7 @@ class Select extends React.PureComponent<Props> {
                   iconName={MI_ICON_LIST.keyboard_arrow_down}
                   width={22}
                   height={22}
+                  fontSize={22}
                 />
 
                 <input
