@@ -65,7 +65,7 @@ const Image = (props: Props) => {
 
 
 type RequiredProps = {
-  height: number;
+  height: string | number;
   width: string | number;
   alt: string;
   src: string;
