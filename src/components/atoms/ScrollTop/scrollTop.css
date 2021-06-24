@@ -1,7 +1,6 @@
 .scroll11Img {
   transform: rotate(180deg);
   color: var(--primaryClr);
-  font-size: 52px !important;
   cursor: pointer;
 }
 

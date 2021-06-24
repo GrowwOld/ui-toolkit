@@ -1,7 +1,6 @@
 .radioCo11Icon {
   float: left;
   color: var(--primaryClr);
-  font-size: 20px !important;
   max-width: 20px;
   max-height: 20px;
 }

@@ -58,7 +58,8 @@ const InformationBox = (props: Props) => {
         <IconStore
           width={20}
           height={20}
-          iconClass="fs20 clrText infbd45InfoIcon"
+          fontSize={20}
+          iconClass="clrText infbd45InfoIcon"
           iconName={icon}
         />
       }

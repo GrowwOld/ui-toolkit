@@ -35,6 +35,7 @@ const Accordion = (props: Props) => {
               iconClass={`acc1Icon ${iconClass}`}
               width={20}
               height={20}
+              fontSize={20}
             />
             : null
         }

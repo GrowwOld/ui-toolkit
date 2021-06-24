@@ -52,6 +52,7 @@ const ScrollTop = (props: Props) => {
         iconName={MI_ICON_LIST.arrow_drop_down_circle}
         width={52}
         height={52}
+        fontSize={52}
         iconClass="cur-po scroll11Img"
       />
     </div>

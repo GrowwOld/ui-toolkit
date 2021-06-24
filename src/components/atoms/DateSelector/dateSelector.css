@@ -101,7 +101,6 @@
 .date101CrossButton {
   position: absolute;
   opacity: 0.5;
-  font-size: 19px !important;
   top: 10px;
   right: 10px;
   color: var(--text);
