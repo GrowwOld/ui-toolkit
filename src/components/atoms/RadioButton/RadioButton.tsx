@@ -37,6 +37,7 @@ const RadioButton = (props: Props) => {
       <IconStore
         iconName={selected ? MI_ICON_LIST.radio_button_checked : MI_ICON_LIST.radio_button_unchecked}
         iconClass={`radioCo11Icon ${iconClassName}`}
+        fontSize={20}
       />
       <div className={labelParentClassName}>
         {label}

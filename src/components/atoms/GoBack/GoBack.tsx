@@ -28,6 +28,7 @@ const GoBack = (props: Props) => {
               iconName={MI_ICON_LIST.keyboard_arrow_left}
               width={iconWidth}
               height={iconHeight}
+              fontSize={20}
               iconClass={`gb6Icon ${iconClass}`}
             />
           </div>

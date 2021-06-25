@@ -37,7 +37,7 @@ class IconStore extends React.PureComponent<Props, State> {
   }
 
   getRequiredIconUI = () => {
-    const { iconName, getImage, imgAlt, width, height, useLazyLoad, iconStyle } = this.props;
+    const { iconName, getImage, imgAlt, width, height, useLazyLoad, fontSize, iconStyle } = this.props;
     const finalClassName = this.getFinalClassname();
 
     if (getImage) {
@@ -57,15 +57,19 @@ class IconStore extends React.PureComponent<Props, State> {
 
     } else {
       const MI_NAME = MI_ICON_LIST[iconName as keyof typeof MI_ICON_LIST];
+      const fontSizeStyle = fontSize ? fontSize : width;
+
       return (
-        <i
-          className={`material-icons ${finalClassName}`}
-          onClick={this.onIconClick}
-          style={{ width: width, height: height, ...iconStyle }}
-        >
-          {MI_NAME}
-        </i>
-      )
+        <div>
+          <i
+            className={`material-icons ${finalClassName}`}
+            onClick={this.onIconClick}
+            style={{ width: width, height: height, fontSize: fontSizeStyle, ...iconStyle }}
+          >
+            {MI_NAME}
+          </i>
+        </div >
+      );
     }
   }
 
@@ -134,6 +138,7 @@ IconStore.defaultProps = {
   getImage: false,
   width: 24,
   height: 24,
+  fontSize: null,
   imgAlt: "Groww",
   iconClass: "",
   iconDarkClass: "",
@@ -153,6 +158,7 @@ type DefaultProps = {
   getImage: boolean,
   width: number,
   height: number,
+  fontSize: number | null,
   /**
    * specify alt for image icon
    */

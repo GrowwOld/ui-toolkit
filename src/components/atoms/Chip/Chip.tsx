@@ -41,6 +41,7 @@ const Chip = (props: Props) => {
               iconName={iconName}
               width={14}
               height={14}
+              fontSize={14}
               iconClass={`chip12Icon ${iconClass}`}
             />
           </div>

@@ -59,6 +59,7 @@ const TableHeaderCell = (props: Props) => {
         <IconStore
           iconName={sortConfig?.ascending ? MI_ICON_LIST.arrow_drop_up : MI_ICON_LIST.arrow_drop_down}
           iconClass={iconClasses}
+          fontSize={24}
         />
       </th>
     );

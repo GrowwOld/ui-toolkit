@@ -1,7 +1,11 @@
-import React, { useState, useEffect } from 'react';
-import cn from 'classnames';
+import React, {
+  useEffect,
+  useState
+} from "react";
 
-import './tabs.css';
+import cn from "classnames";
+
+import "./tabs.css";
 
 const Tabs = (props: Props) => {
   const {
@@ -63,8 +67,8 @@ const getActiveTabDimensions = (data: Tab[], activeIndex: number) => {
   const activeTab = data[activeIndex];
 
   if (activeTab && activeTab.hasOwnProperty('width') && activeTab.hasOwnProperty('left')) {
-    width = activeTab.width;
-    left = activeTab.left;
+    width = activeTab.width || 0;
+    left = activeTab.left || 0;
 
     return {
       "width": width,
@@ -79,8 +83,8 @@ const getActiveTabDimensions = (data: Tab[], activeIndex: number) => {
         const currentActiveElement = prevActiveElement[0]?.parentElement?.children[activeIndex] as HTMLElement;
 
         return {
-          "width": activeIndex > 0 ? currentActiveElement?.offsetWidth : currentActiveElement?.offsetWidth - 25,
-          "left": activeIndex > 0 ? currentActiveElement?.offsetLeft - 20 : currentActiveElement?.offsetLeft
+          "width": currentActiveElement?.offsetWidth,
+          "left": currentActiveElement?.offsetLeft
         };
 
       } else {
@@ -124,8 +128,8 @@ type Tab = {
   description?: string;
   name: React.ReactNode;
   style?: React.CSSProperties;
-  width: number;
-  left: number;
+  width?: number;
+  left?: number;
 }
 
 

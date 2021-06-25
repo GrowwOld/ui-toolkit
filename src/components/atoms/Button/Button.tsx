@@ -59,13 +59,14 @@ class Button extends React.PureComponent<Props> {
   }
 
   getIconUI = () => {
-    const { iconName, iconPosition } = this.props;
+    const { iconName, iconPosition, fontSize } = this.props;
 
     return (
       <IconStore
         iconName={iconName}
         iconStyle={this.getComputedStyleForIcon()}
         iconClass={`btn51Icon${iconPosition} absolute-center`}
+        fontSize={fontSize ? fontSize : 24}
       />
     );
   }
