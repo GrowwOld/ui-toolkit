@@ -9,44 +9,39 @@ export default {
   title: 'Carousel',
   component: Carousel,
   argTypes: {
+    lazyLoad: {
+      type: 'select',
+      options: ['ondemand', 'progressive'],
+    }
   }
 };
 
 const Template: Story<Settings> = (args) => <Carousel {...args} >
-    <span style={{ marginRight: '87px' }}>React</span>
-    <span style={{ marginRight: '87px' }}>Hello</span>
-    <span style={{ marginRight: '87px' }}>Hello</span>
-    <span style={{ marginRight: '87px' }}>Hello</span>
+  <span style={{ marginRight: '87px' }}>React</span>
+  <span style={{ marginRight: '87px' }}>Hello</span>
+  <span style={{ marginRight: '87px' }}>Hello</span>
+  <span style={{ marginRight: '87px' }}>Hello</span>
 
 </Carousel>;
-
-
-const skillsArray = [
-  <span style={{ marginRight: '87px' }}>React</span>,
-  <span style={{ marginRight: '87px' }}>Angular</span>,
-  <span style={{ marginRight: '87px' }}>Vue</span>,
-  <span style={{ marginRight: '87px' }}>Selvete</span>,
-]
 
 export const OneSlide = Template.bind({});
 OneSlide.args = {
   slidesToShow: 1,
   slidesToScroll: 1,
-  lazyLoad: true,
+  lazyLoad: "ondemand",
   arrows: false,
   swipeToSlide: true,
   infinite: false,
   initialSlide: 0,
-  childrens: skillsArray
 };
 
 
 export const Doted = Template.bind({})
-Doted.args={
+Doted.args = {
   dots: true,
   slidesToShow: 1,
   slidesToScroll: 1,
-  lazyLoad: true,
+  lazyLoad: "ondemand",
   arrows: true,
   swipeToSlide: true,
   infinite: false,
