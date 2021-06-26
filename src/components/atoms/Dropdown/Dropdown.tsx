@@ -148,7 +148,7 @@ type DefaultProps = {
   className: string
 }
 
-type Props = RequiredProps & DefaultProps & {
+export type Props = RequiredProps & DefaultProps & {
   disabled?: boolean,
   active?: boolean,
   onHide?: () => void,
