@@ -40,7 +40,6 @@
 .story_card {
     box-shadow: 0 1px 7px 0 var(--boxShadow);
     background: var(--cardBackground);
-    padding:var(--spacing-small) var(--spacing-small);
 }
 
 .story_dropdown_trigger{
@@ -59,3 +58,12 @@
   transform: rotate(180deg);
 }
 
+.story_dropdown_item {
+    cursor: pointer;
+    padding: var(--spacing-small) var(--spacing-small);
+    background: var(--primaryBg);
+    color: var(--text);
+}
+.story_dropdown_item:hover {
+  background: var(--constantSecondaryClr10);
+}

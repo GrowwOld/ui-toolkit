@@ -30,10 +30,10 @@ const Template: Story<DropdownProps> = (args) => {
         </span>
       </DropdownTrigger>
       <DropdownContent>
-        <div className="story_card">
-          <div>Finance</div>
-          <div>Marketing</div>
-          <div>Engineering</div>
+        <div className="story_card fs14">
+          <div className='story_dropdown_item'>Finance</div>
+          <div className='story_dropdown_item'>Marketing</div>
+          <div className='story_dropdown_item'>Engineering</div>
         </div>
       </DropdownContent>
     </Dropdown>
@@ -55,7 +55,7 @@ export const DropdownIconAnimation = (args) => {
       onHide={() => { setIconOrientation('up') }}
     >
       <DropdownTrigger>
-        <span className="fs21 story_dropdown_trigger">Domains
+        <span className="fs18 story_dropdown_trigger">Domains
           <IconStore
             iconName="keyboard_arrow_down"
             iconClass={`story_dropdown_icon story_dropdown_icon_${iconOrientation}`}
@@ -63,10 +63,10 @@ export const DropdownIconAnimation = (args) => {
         </span>
       </DropdownTrigger>
       <DropdownContent>
-        <div className="story_card">
-          <div>Finance</div>
-          <div>Marketing</div>
-          <div>Engineering</div>
+        <div className="story_card fs14">
+          <div className='story_dropdown_item'>Finance</div>
+          <div className='story_dropdown_item'>Marketing</div>
+          <div className='story_dropdown_item'>Engineering</div>
         </div>
       </DropdownContent>
     </Dropdown>

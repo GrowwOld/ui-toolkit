@@ -28,6 +28,26 @@ Icon.args = {
   onIconClick: action('MiIconClicked')
 }
 
+export const IconWithText = (args) => {
+  const fontSize =14;
+  return (
+    <div style={{display:'flex',gap:'var(--spacing-small)'}} className={`fs${fontSize}`}>
+      Hello
+      <IconStore iconName="calendar_today" fontSize={fontSize} onIconClick={action('MiIconClicked')} />
+    </div>
+  )
+}
+
+export const IconWithTextJustifyBtw = (args) => {
+  const fontSize =14;
+  return (
+    <div style={{display:'flex',justifyContent:'space-between',width:'100px'}} className={`story_card fs${fontSize}`}>
+      Hello
+      <IconStore iconName="calendar_today" fontSize={fontSize} onIconClick={action('MiIconClicked')} />
+    </div>
+  )
+}
+
 export const ImageIcon = Template.bind({});
 ImageIcon.args = {
   getImage: true,
