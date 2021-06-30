@@ -1,5 +1,5 @@
 
-import { Component, HTMLProps, RefCallback } from "react";
+import { Component, HTMLProps, RefCallback } from 'react';
 
 interface HTMLPropsWithRefCallback<T> extends HTMLProps<T> {
   ref: RefCallback<T>;
@@ -51,7 +51,7 @@ export interface ReactSliderProps<T extends number | ReadonlyArray<number> = num
    *
    * @default 0
    */
-  defaultValue?: this["value"] extends T ? never : T;
+  defaultValue?: this['value'] extends T ? never : T;
 
   /**
    * If `true` the thumbs can't be moved.
@@ -142,7 +142,7 @@ export interface ReactSliderProps<T extends number | ReadonlyArray<number> = num
    *
    * @default "horizontal"
    */
-  orientation?: "horizontal" | "vertical";
+  orientation?: 'horizontal' | 'vertical';
 
   /**
    * The result of the function is the value to be added or subtracted

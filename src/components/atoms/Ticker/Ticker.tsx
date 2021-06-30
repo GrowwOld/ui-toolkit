@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 
 import Tick from './Tick';
 
@@ -6,7 +6,8 @@ import { measureHeight } from './tickerHelper';
 
 import { tickStyle } from './styles';
 
-const numberRange = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
+const numberRange = [ '0', '1', '2', '3', '4', '5', '6', '7', '8', '9' ];
+
 
 const Ticker = (props: Props) => {
   const {
@@ -17,17 +18,17 @@ const Ticker = (props: Props) => {
     hiddenClassName
   } = props;
 
-  const height = measureHeight(textClassName, "0");
+  const height = measureHeight(textClassName, '0');
 
   if (typeof document === 'undefined') {
-    return <span className={textClassName}>{text}</span>
+    return <span className={textClassName}>{text}</span>;
   }
 
   return (
     <span style={{ height: height }}>
       {
-        (children || text).split("").map((v, i) => {
-          if (isNaN(parseFloat(v)))
+        (children || text).split('').map((v, i) => {
+          if (isNaN(parseFloat(v))) {
             return (
               <span
                 key={i}
@@ -37,6 +38,8 @@ const Ticker = (props: Props) => {
                 {v}
               </span>
             );
+          }
+
           return (
             <Tick
               range={numberRange}
@@ -52,7 +55,7 @@ const Ticker = (props: Props) => {
       }
     </span>
   );
-}
+};
 
 const defaultProps: DefaultProps = {
   currentClassName: 'currentTicker',
@@ -60,7 +63,8 @@ const defaultProps: DefaultProps = {
   children: '',
   text: '',
   textClassName: ''
-}
+};
+
 
 type DefaultProps = {
   children: string;

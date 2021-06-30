@@ -1,4 +1,5 @@
-import React, { ReactNode } from "react";
+import React, { ReactNode } from 'react';
+
 
 type Props = {
   className?: string;
@@ -11,10 +12,14 @@ type Props = {
 
 
 const TableCell = (props: Props) => {
-  const { children, className = "tb10Td", style, textAlign, colSpan = 1, onClick } = props;
+  const { children, className = 'tb10Td', style, textAlign, colSpan = 1, onClick } = props;
 
   return (
-    <td onClick={onClick} colSpan={colSpan} style={{ ...style, textAlign }} className={className}>
+    <td onClick={onClick}
+      colSpan={colSpan}
+      style={{ ...style, textAlign }}
+      className={className}
+    >
       {children}
     </td>
   );

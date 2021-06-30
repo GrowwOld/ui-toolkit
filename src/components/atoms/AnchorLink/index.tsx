@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link, LinkProps } from 'react-router-dom';
 
+
 const AnchorLink = ({
   isCsr, url, addAnchorClass, children,
   ...rest
@@ -15,7 +16,7 @@ const AnchorLink = ({
       >
         {children}
       </Link >
-    )
+    );
   }
 
   return (
@@ -26,25 +27,28 @@ const AnchorLink = ({
     >
       {children}
     </a>
-  )
-}
+  );
+};
+
 
 type Props = {
-  url: string,
+  url: string;
   /* Prop name is isCsr i.e is client side routing in case of Link tag and server side routing in case of server side routing */
-  children: React.ReactNode
+  children: React.ReactNode;
 }
 
+
 type DefaultProps = {
-  isCsr: boolean,
-  addAnchorClass: string
+  isCsr: boolean;
+  addAnchorClass: string;
 }
+
 
 type AnchorLinkProps = Props & DefaultProps & Partial<LinkProps<unknown>>;
 
 AnchorLink.defaultProps = {
   isCsr: true,
-  addAnchorClass: ""
+  addAnchorClass: ''
 } as DefaultProps;
 
 export default AnchorLink;
