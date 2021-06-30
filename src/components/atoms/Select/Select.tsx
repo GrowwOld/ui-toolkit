@@ -12,9 +12,13 @@ import './select.css';
 
 class Select extends React.PureComponent<Props> {
   optionsRefArr: React.RefObject<HTMLDivElement>[] = [];
+
+
   selectDropdownRef: Dropdown | null = null;
 
+
   static defaultProps: DefaultProps;
+
 
   constructor(props: Props) {
     super(props);
@@ -27,6 +31,7 @@ class Select extends React.PureComponent<Props> {
     */
     this.optionsRefArr = props.data.map((_opt) => React.createRef());
   }
+
 
   render() {
     const { data: options } = this.props;
@@ -50,8 +55,9 @@ class Select extends React.PureComponent<Props> {
     } = this.props;
 
     let selectedOption = null;
+
     if (activeIndex >= 0 && activeIndex < options.length) {
-      selectedOption = options[activeIndex]
+      selectedOption = options[activeIndex];
     }
 
     return (
@@ -93,15 +99,17 @@ class Select extends React.PureComponent<Props> {
                       <div
                         key={`selectOption-${index}`}
                         ref={this.optionsRefArr[index]}
-                        className={cn('se55DropdownPara', {
-                          'se55DropdownParaHover': activeIndex === index,
-                          [optionClass]: true
-                        })}
+                        className={
+                          cn('se55DropdownPara', {
+                            'se55DropdownParaHover': activeIndex === index,
+                            [optionClass]: true
+                          })
+                        }
                         onClick={() => this.onSelectChange(index)}
                       >
                         {item.label}
                       </div>
-                    )
+                    );
                   })
                 }
               </DropdownContent>
@@ -109,13 +117,14 @@ class Select extends React.PureComponent<Props> {
           </DropdownTrigger>
         </Dropdown>
       </div>
-    )
+    );
   }
 
 
   onSelectChange = (index: number) => {
     this.props.onSelectChange(index);
   }
+
 
   onKeyUp = (event: React.KeyboardEvent) => {
     if (event.keyCode === 13) {
@@ -139,6 +148,7 @@ class Select extends React.PureComponent<Props> {
       if (keyCode === 38) {
         if (activeIndex === 0) {
           newActiveIndex = options.length - 1;
+
         } else {
           newActiveIndex = activeIndex - 1;
         }
@@ -148,6 +158,7 @@ class Select extends React.PureComponent<Props> {
 
         if (activeIndex === options.length - 1) {
           newActiveIndex = 0;
+
         } else {
           newActiveIndex = activeIndex + 1;
         }
@@ -171,7 +182,7 @@ Select.defaultProps = {
   data: [],
   activeIndex: -1,
   onSelectChange: () => { },
-  placeholder: "Select",
+  placeholder: 'Select',
   optionClass: '',
   optionsParentClass: '',
   activeOptionBoxClass: ''
@@ -179,27 +190,29 @@ Select.defaultProps = {
 
 
 type SelectData = {
-  label: string,
-  value: string
+  label: string;
+  value: string;
 }
+
 
 type RequiredProps = {
   /* array of objects { label: '', value: '' } */
-  data: SelectData[],
+  data: SelectData[];
   /* activeIndex of data array which is selected */
-  activeIndex: number,
+  activeIndex: number;
   /* callback on option selected */
-  onSelectChange: (index: number) => void,
+  onSelectChange: (index: number) => void;
 }
 
+
 type DefaultProps = {
-  placeholder: string,
+  placeholder: string;
   /* class for a single option show in dropdown */
-  optionClass: string,
+  optionClass: string;
   /* class for a box in which all option shown */
-  optionsParentClass: string,
+  optionsParentClass: string;
   /* class for a box in which selected values is shown */
-  activeOptionBoxClass: string
+  activeOptionBoxClass: string;
 }
 
 export type Props = RequiredProps & DefaultProps;

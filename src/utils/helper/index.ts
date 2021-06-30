@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 
 /**
  * This function sets an event listener for a custom event
@@ -52,13 +52,16 @@ export function ordinalSuffixOf(date: number) {
   const j = date % 10, k = date % 100;
 
   if (j == 1 && k != 11) {
-    return date + "st";
+    return date + 'st';
   }
+
   if (j == 2 && k != 12) {
-    return date + "nd";
+    return date + 'nd';
   }
+
   if (j == 3 && k != 13) {
-    return date + "rd";
+    return date + 'rd';
   }
-  return date + "th";
+
+  return date + 'th';
 }

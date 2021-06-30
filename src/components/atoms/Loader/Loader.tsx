@@ -15,15 +15,16 @@ import './loader.css';
 */
 
 export const LOADER_TYPE = {
-  CIRCULAR: "circular",
-  CIRCULAR_BOLT: "circularBolt",
-  CANDLE_STICK: "candleStick",
-  LINEAR: "linear"
+  CIRCULAR: 'circular',
+  CIRCULAR_BOLT: 'circularBolt',
+  CANDLE_STICK: 'candleStick',
+  LINEAR: 'linear'
 } as const;
 
 
 export class Loader extends React.PureComponent<DefaultProps, {}> {
   static defaultProps: DefaultProps;
+
 
   render() {
     const {
@@ -51,15 +52,17 @@ export class Loader extends React.PureComponent<DefaultProps, {}> {
     const { borderWidth } = this.props;
 
     const containerClasses = this.getContainerClassName();
-    const loaderClassNames = this.getLoaderClassName("loader14Circular");
+    const loaderClassNames = this.getLoaderClassName('loader14Circular');
 
     return (
       <div className={containerClasses}>
-        <div className={loaderClassNames} style={{ borderWidth }}>
+        <div className={loaderClassNames}
+          style={{ borderWidth }}
+        >
           <div></div>
         </div>
       </div>
-    )
+    );
   }
 
 
@@ -67,7 +70,7 @@ export class Loader extends React.PureComponent<DefaultProps, {}> {
     const { borderWidth } = this.props;
 
     const containerClasses = this.getContainerClassName();
-    const loaderClassNames = this.getLoaderClassName("loader14CircularBolt");
+    const loaderClassNames = this.getLoaderClassName('loader14CircularBolt');
 
     return (
       <div className={containerClasses}>
@@ -76,13 +79,13 @@ export class Loader extends React.PureComponent<DefaultProps, {}> {
           <div></div>
         </div>
       </div>
-    )
+    );
   }
 
 
   getCandleStickLoaderUI = () => {
     const containerClasses = this.getContainerClassName();
-    const loaderClassNames = this.getLoaderClassName("loader14CandleStick");
+    const loaderClassNames = this.getLoaderClassName('loader14CandleStick');
 
     return (
       <div className={containerClasses}>
@@ -93,38 +96,38 @@ export class Loader extends React.PureComponent<DefaultProps, {}> {
           <div></div>
         </div>
       </div>
-    )
+    );
   }
 
 
   getLinearLoaderUI = () => {
-    const containerClasses = this.getContainerClassName("loader14Linear");
+    const containerClasses = this.getContainerClassName('loader14Linear');
 
     return (
       <div className={containerClasses}>
         <div className="loader14Indeterminate" />
       </div>
-    )
+    );
   }
 
 
-  getContainerClassName = (defaultClass = "") => {
+  getContainerClassName = (defaultClass = '') => {
     const { active } = this.props;
 
     return cn({
       'loader': true,
       'loader14Active': active,
       'loader14Hidden': !active
-    }, defaultClass)
+    }, defaultClass);
   }
 
 
-  getLoaderClassName = (defaultClass = "") => {
+  getLoaderClassName = (defaultClass = '') => {
     const { dimension, loaderClassName } = this.props;
 
     return cn({
       [ `loader14${dimension}` ]: !!dimension
-    }, [ 'loader14Inner', defaultClass, loaderClassName ])
+    }, [ 'loader14Inner', defaultClass, loaderClassName ]);
   }
 
 }
@@ -138,12 +141,13 @@ Loader.defaultProps = {
   borderWidth: '2px'
 };
 
+
 type DefaultProps = {
-  loaderType: ValueOf<typeof LOADER_TYPE>,
-  loaderClassName: string,
-  active: boolean,
-  dimension: string,
-  borderWidth: string | number
+  loaderType: ValueOf<typeof LOADER_TYPE>;
+  loaderClassName: string;
+  active: boolean;
+  dimension: string;
+  borderWidth: string | number;
 }
 
 export default Loader;

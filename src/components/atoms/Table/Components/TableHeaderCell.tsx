@@ -1,8 +1,9 @@
-import React, { ReactNode } from "react";
+import React, { ReactNode } from 'react';
 
-import cn from "classnames";
+import cn from 'classnames';
 
 import { IconStore, MI_ICON_LIST } from '../../IconStore';
+
 
 type SortConfig = {
   iconClass?: string;
@@ -11,6 +12,7 @@ type SortConfig = {
   ascending?: boolean;
   onSortClick?: (e?: React.MouseEvent, ascending?: boolean) => void;
 }
+
 
 type Props = {
   className?: string;
@@ -26,9 +28,9 @@ const TableHeaderCell = (props: Props) => {
 
   const {
     children,
-    className = "tb10Th tb10ThText",
+    className = 'tb10Th tb10ThText',
     style,
-    textAlign = "left",
+    textAlign = 'left',
     width = '16%',
     sortConfig,
     ...otherProps
@@ -38,20 +40,20 @@ const TableHeaderCell = (props: Props) => {
   const onSortTh = (e: React.MouseEvent) => {
 
     if (sortConfig && sortConfig.onSortClick) {
-      sortConfig.onSortClick(e, !sortConfig?.ascending)
+      sortConfig.onSortClick(e, !sortConfig?.ascending);
     }
-  }
+  };
 
   if (sortConfig) {
 
-    const classes = cn(className, { "tb10SelectHeaderCell": sortConfig?.isSelected });
-    let customIconClass = sortConfig?.iconClass || '';
-    const iconClasses = cn('tb10IconClass', customIconClass, { "tb10HideIcon": sortConfig?.hideIcon, "primaryClr": sortConfig?.isSelected })
+    const classes = cn(className, { 'tb10SelectHeaderCell': sortConfig?.isSelected });
+    const customIconClass = sortConfig?.iconClass || '';
+    const iconClasses = cn('tb10IconClass', customIconClass, { 'tb10HideIcon': sortConfig?.hideIcon, 'primaryClr': sortConfig?.isSelected });
 
     return (
       <th
         onClick={onSortTh}
-        style={{ ...style, textAlign, cursor: "pointer", width }}
+        style={{ ...style, textAlign, cursor: 'pointer', width }}
         className={classes}
         {...otherProps}
       >
@@ -63,6 +65,7 @@ const TableHeaderCell = (props: Props) => {
         />
       </th>
     );
+
   } else {
 
     const classes = cn(className);

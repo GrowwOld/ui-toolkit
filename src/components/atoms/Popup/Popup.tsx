@@ -2,8 +2,9 @@ import React from 'react';
 
 import Rodal from './Rodal/Rodal';
 
-class Popup extends React.PureComponent<Props>{
+class Popup extends React.PureComponent<Props> {
   static defaultProps: DefaultProps;
+
 
   constructor(props: Props) {
     super(props);
@@ -12,11 +13,13 @@ class Popup extends React.PureComponent<Props>{
     }
   }
 
+
   componentWillUnmount() {
     if (this.props.onUnLoad) {
       this.props.onUnLoad();
     }
   }
+
 
   render() {
 
@@ -68,20 +71,22 @@ Popup.defaultProps = {
   popupClass: ''
 } as DefaultProps;
 
+
 type DefaultProps = {
-  width: number,
-  onLoad: () => void,
-  onUnLoad: () => void,
-  onClose: () => void,
-  closeMaskOnClick: boolean,
-  closeOnEsc: boolean,
-  showCloseButton: boolean
-  customStyles: React.CSSProperties,
-  popupClass: string
+  width: number;
+  onLoad: () => void;
+  onUnLoad: () => void;
+  onClose: () => void;
+  closeMaskOnClick: boolean;
+  closeOnEsc: boolean;
+  showCloseButton: boolean;
+  customStyles: React.CSSProperties;
+  popupClass: string;
 }
 
+
 type RequiredProps = {
-  visible: boolean
+  visible: boolean;
 }
 
 export type Props = RequiredProps & DefaultProps;

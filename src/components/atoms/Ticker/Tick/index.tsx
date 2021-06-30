@@ -7,6 +7,7 @@ import {
   rotatorStyle
 } from '../styles';
 
+
 const Tick = (props: Props) => {
   const {
     value,
@@ -31,13 +32,14 @@ const Tick = (props: Props) => {
         {value}
       </span>
       <span
-        style={{ ...rotatorStyle, transform: `translateY(${height * index * -1}px)` }} >
+        style={{ ...rotatorStyle, transform: `translateY(${height * index * -1}px)` }}
+      >
         {
           range.map((v, i) => {
             return (
               <span
                 key={v + i}
-                className={[className, v === value ? currentClassName : hiddenClassName].join(' ')}
+                className={[ className, v === value ? currentClassName : hiddenClassName ].join(' ')}
                 style={{ ...pieceStyle, top: i * height }}
               >
                 {v}
@@ -48,7 +50,8 @@ const Tick = (props: Props) => {
       </span>
     </span>
   );
-}
+};
+
 
 type Props = {
   currentClassName: string;

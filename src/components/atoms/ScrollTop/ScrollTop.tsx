@@ -5,16 +5,18 @@ import { IconStore, MI_ICON_LIST } from '../IconStore';
 
 import './scrollTop.css';
 
+
 const ScrollTop = (props: Props) => {
-  const [show, toggleShow] = useState(false);
+  const [ show, toggleShow ] = useState(false);
 
   useEffect(() => {
     window.addEventListener('scroll', handleScrollEvent);
 
     return () => {
       window.removeEventListener('scroll', handleScrollEvent);
-    }
-  }, [show]);
+    };
+  }, [ show ]);
+
 
   const handleScrollEvent = () => {
     if (typeof window !== 'undefined') {
@@ -47,7 +49,10 @@ const ScrollTop = (props: Props) => {
   };
 
   return (
-    <div className={cn('scroll11', { 'scroll11FadeIn': show, 'scroll11FadeOut': !show })} style={props.style} onClick={handleIconClick}>
+    <div className={cn('scroll11', { 'scroll11FadeIn': show, 'scroll11FadeOut': !show })}
+      style={props.style}
+      onClick={handleIconClick}
+    >
       <IconStore
         iconName={MI_ICON_LIST.arrow_drop_down_circle}
         width={52}
@@ -56,16 +61,16 @@ const ScrollTop = (props: Props) => {
         iconClass="cur-po scroll11Img"
       />
     </div>
-  )
-}
+  );
+};
 
 const defaultProps: DefaultProps = {
   style: {}
-}
+};
 
 
 type DefaultProps = {
-  style: React.CSSProperties
+  style: React.CSSProperties;
 }
 
 ScrollTop.defaultProps = defaultProps;
