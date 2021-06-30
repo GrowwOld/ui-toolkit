@@ -8,25 +8,27 @@ import { listenToCustomEvent, unListenToCustomEvent } from '../../../utils/helpe
 
 import './iconStore.css';
 
-const IMG_PATH = "https://storage.googleapis.com/groww-assets/web-assets/img/shared/icons/";
+const IMG_PATH = 'https://storage.googleapis.com/groww-assets/web-assets/img/shared/icons/';
 
 class IconStore extends React.PureComponent<Props, State> {
   static defaultProps: DefaultProps;
+
 
   state = {
     // initial theme
     darkThemeEnabled: false
   }
 
+
   componentDidMount() {
     // If theme changes
-    listenToCustomEvent("themeChange", this.themeChangeCallback);
+    listenToCustomEvent('themeChange', this.themeChangeCallback);
   }
 
 
   componentWillUnmount() {
     // remove theme event listener
-    unListenToCustomEvent("themeChange", this.themeChangeCallback);
+    unListenToCustomEvent('themeChange', this.themeChangeCallback);
   }
 
 
@@ -36,12 +38,14 @@ class IconStore extends React.PureComponent<Props, State> {
     );
   }
 
+
   getRequiredIconUI = () => {
     const { iconName, getImage, imgAlt, width, height, useLazyLoad, fontSize, iconStyle } = this.props;
     const finalClassName = this.getFinalClassname();
 
     if (getImage) {
       const img = this.importRequiredImage(iconName);
+
       return (
         <Image
           src={img}
@@ -53,7 +57,7 @@ class IconStore extends React.PureComponent<Props, State> {
           useLazyLoad={useLazyLoad}
           handleBrokenImage={this.getLightThemeImage(iconName)}
         />
-      )
+      );
 
     } else {
       const MI_NAME = MI_ICON_LIST[iconName as keyof typeof MI_ICON_LIST];
@@ -77,37 +81,41 @@ class IconStore extends React.PureComponent<Props, State> {
   themeChangeCallback = (e: React.SyntheticEvent) => {
     //@ts-expect-error
     const theme: Theme = e.target?.dataset?.theme || Theme.Light;
+
     if (theme === Theme.Dark) {
       this.setState({
         darkThemeEnabled: true
-      })
+      });
+
     } else {
       this.setState({
         darkThemeEnabled: false
-      })
+      });
     }
   }
 
 
   importRequiredImage = (iconName: string) => {
     const { darkThemeEnabled } = this.state;
-    if (darkThemeEnabled)
-      return this.getDarkThemeImage(iconName)
-    else
-      return this.getLightThemeImage(iconName);
+
+    if (darkThemeEnabled) {
+      return this.getDarkThemeImage(iconName);
+
+    } else { return this.getLightThemeImage(iconName); }
   }
 
 
   getLightThemeImage = (iconName: string) => {
-    return IMG_PATH + iconName + ".svg";
+    return IMG_PATH + iconName + '.svg';
   }
 
 
   getDarkThemeImage = (iconName: string) => {
     try {
-      return IMG_PATH + iconName + "_dark" + ".svg";
+      return IMG_PATH + iconName + '_dark' + '.svg';
+
     } catch (e) {
-      return this.getLightThemeImage(iconName)
+      return this.getLightThemeImage(iconName);
     }
   }
 
@@ -115,10 +123,11 @@ class IconStore extends React.PureComponent<Props, State> {
   getFinalClassname = () => {
     const { darkThemeEnabled } = this.state;
     const { iconClass, iconDarkClass } = this.props;
-    const defaultClass = "is31Default "; // dont remove this extra space at the end
+    const defaultClass = 'is31Default '; // dont remove this extra space at the end
 
     if (darkThemeEnabled && iconDarkClass) {
       return (defaultClass + iconDarkClass).trim();
+
     } else {
       return (defaultClass + iconClass).trim();
     }
@@ -127,6 +136,7 @@ class IconStore extends React.PureComponent<Props, State> {
 
   onIconClick = (e: React.MouseEvent) => {
     const { onIconClick } = this.props;
+
     if (onIconClick) {
       onIconClick(e);
     }
@@ -139,47 +149,50 @@ IconStore.defaultProps = {
   width: 24,
   height: 24,
   fontSize: null,
-  imgAlt: "Groww",
-  iconClass: "",
-  iconDarkClass: "",
+  imgAlt: 'Groww',
+  iconClass: '',
+  iconDarkClass: '',
   useLazyLoad: true,
   iconStyle: {},
   onIconClick: () => { }
 };
 
+
 type RequiredProps = {
-  iconName: string,
+  iconName: string;
 }
+
 
 type DefaultProps = {
   /**
    * whether you want svg or material icon
    */
-  getImage: boolean,
-  width: number,
-  height: number,
-  fontSize: number | null,
+  getImage: boolean;
+  width: number;
+  height: number;
+  fontSize: number | string | null;
   /**
    * specify alt for image icon
    */
-  imgAlt: string,
-  iconStyle: object,
-  iconClass: string,
+  imgAlt: string;
+  iconStyle: object;
+  iconClass: string;
   /**
    * If nothing is passed and only iconClass passed then it will be used
    */
-  iconDarkClass: string,
+  iconDarkClass: string;
   /**
    * Icon click callback method
    */
-  onIconClick: (e: React.MouseEvent) => void,
-  useLazyLoad: boolean,
+  onIconClick: (e: React.MouseEvent) => void;
+  useLazyLoad: boolean;
 }
 
 export type Props = DefaultProps & RequiredProps;
 
+
 type State = {
-  darkThemeEnabled: boolean
+  darkThemeEnabled: boolean;
 }
 
 export default IconStore;
