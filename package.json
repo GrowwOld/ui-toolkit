@@ -1,6 +1,6 @@
 {
   "name": "@groww-tech/ui-toolkit",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "A lightning nature UI",
   "main": "dist/index.js",
   "module": "dist/index.es.js",
@@ -61,8 +61,7 @@
     "prop-types": "^15.7.2",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
-    "react-lazyload": "^3.0.0",
-    "react-router-dom": "^5.2.0"
+    "react-lazyload": "^3.0.0"
   },
   "devDependencies": {
     "@babel/core": "^7.13.15",
@@ -70,7 +69,8 @@
     "@babel/plugin-proposal-private-methods": "^7.13.0",
     "@babel/preset-react": "^7.13.13",
     "@babel/preset-typescript": "^7.13.0",
-    "@groww-tech/eslint-config": "^1.0.0",
+    "@groww-tech/eslint-config": "1.0.4",
+    "@groww-tech/eslint-plugin-internal": "1.0.2",
     "@rollup/plugin-commonjs": "^19.0.0",
     "@rollup/plugin-node-resolve": "^11.2.1",
     "@storybook/addon-actions": "^6.2.8",
@@ -80,15 +80,15 @@
     "@types/object-assign": "^4.0.30",
     "@types/react-dom": "^17.0.3",
     "@types/react-lazyload": "^3.1.0",
-    "@types/react-router-dom": "^5.1.7",
     "@typescript-eslint/eslint-plugin": "^4.22.0",
     "@typescript-eslint/parser": "^4.22.0",
     "babel-eslint": "^10.1.0",
     "babel-loader": "^8.2.2",
     "classnames": "^2.2.6",
     "concurrently": "^6.0.2",
-    "eslint": "^7.24.0",
+    "eslint": "^7.22.0",
     "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-react": "^7.23.1",
     "postcss": "^8.2.13",
     "postcss-import": "^14.0.2",
     "postcss-url": "^10.1.3",
@@ -107,7 +107,6 @@
   },
   "dependencies": {
     "lodash.debounce": "^4.0.8",
-    "react-router-dom": "^5.2.0",
     "react-waypoint": "^10.1.0"
   }
 }

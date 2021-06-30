@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState } from 'react';
 
 import './popover.css';
 
@@ -17,13 +17,16 @@ export const POPOVER_POSITIONS = {
   RIGHT_END: 'right-end'
 };
 
+
 const Popover = (props: Props) => {
-  const [isPopoverVisible, setPopoverVisible] = useState(false);
+  const [ isPopoverVisible, setPopoverVisible ] = useState(false);
   const { direction, content, children, popoverWrapperClass } = props;
+
 
   const showTip = () => {
     setPopoverVisible(true);
-  }
+  };
+
 
   const hideTip = () => {
     setPopoverVisible(false);
@@ -36,14 +39,16 @@ const Popover = (props: Props) => {
       onMouseLeave={hideTip}
     >
       {children}
-      {isPopoverVisible && (
-        <div className={`pop12Popover ${popoverWrapperClass} ${direction || POPOVER_POSITIONS.TOP}`}>
-          {content}
-        </div>
-      )}
+      {
+        isPopoverVisible && (
+          <div className={`pop12Popover ${popoverWrapperClass} ${direction || POPOVER_POSITIONS.TOP}`}>
+            {content}
+          </div>
+        )
+      }
     </div>
   );
-}
+};
 
 
 Popover.defaultProps = {
@@ -51,14 +56,16 @@ Popover.defaultProps = {
   popoverWrapperClass: ''
 } as DefaultProps;
 
+
 type RequiredProps = {
-  content: React.ReactNode,
-  children: React.ReactNode
+  content: React.ReactNode;
+  children: React.ReactNode;
 }
 
+
 type DefaultProps = {
-  popoverWrapperClass: string,
-  direction: ValueOf<typeof POPOVER_POSITIONS>
+  popoverWrapperClass: string;
+  direction: ValueOf<typeof POPOVER_POSITIONS>;
 }
 
 export type Props = RequiredProps & DefaultProps;

@@ -9,6 +9,7 @@ import DropdownContent from './DropdownContent';
 class Dropdown extends React.PureComponent<Props, State> {
   static defaultProps: DefaultProps;
 
+
   constructor(props: Props) {
     super(props);
 
@@ -17,17 +18,20 @@ class Dropdown extends React.PureComponent<Props, State> {
     };
   }
 
+
   componentDidMount() {
     document.addEventListener('click', this._onWindowClick);
     document.addEventListener('touchstart', this._onWindowClick);
     document.addEventListener('keydown', this._onKeyDownHandler);
   }
 
+
   componentWillUnmount() {
     document.removeEventListener('click', this._onWindowClick);
     document.removeEventListener('touchstart', this._onWindowClick);
     document.removeEventListener('keyup', this._onKeyDownHandler);
   }
+
 
   render() {
     const { children, className, disabled, removeElement } = this.props;
@@ -41,11 +45,12 @@ class Dropdown extends React.PureComponent<Props, State> {
     // stick callback on trigger element
     const boundChildren = React.Children.map(children, child => {
       if (!React.isValidElement<EnrichedChildren>(child)) {
-        return child
+        return child;
       }
 
       if (child.type === DropdownTrigger) {
         const originalOnClick = child.props.onClick;
+
         child = cloneElement(child, {
           // ref: 'trigger',
           onClick: (event: MouseEvent) => {
@@ -57,12 +62,15 @@ class Dropdown extends React.PureComponent<Props, State> {
             }
           }
         });
+
       } else if (child.type === DropdownContent && removeElement && !active) {
         child = <></>;
       }
+
       return child;
     });
     const cleanProps = { ...this.props };
+
     delete cleanProps.active;
     delete cleanProps.onShow;
     delete cleanProps.onHide;
@@ -71,17 +79,20 @@ class Dropdown extends React.PureComponent<Props, State> {
     return (
       <div
         {...cleanProps}
-        className={`${dropdownClasses} ${className}`}>
+        className={`${dropdownClasses} ${className}`}
+      >
         {boundChildren}
       </div>
     );
   }
 
+
   isActive = () => {
-    return (typeof this.props.active === 'boolean') ?
-      this.props.active :
-      this.state.active;
+    return (typeof this.props.active === 'boolean')
+      ? this.props.active
+      : this.state.active;
   }
+
 
   hide = () => {
     this.setState({
@@ -93,6 +104,7 @@ class Dropdown extends React.PureComponent<Props, State> {
     });
   }
 
+
   show = () => {
     this.setState({
       active: true
@@ -103,21 +115,26 @@ class Dropdown extends React.PureComponent<Props, State> {
     });
   }
 
+
   _onWindowClick = (event: MouseEvent | TouchEvent) => {
     const dropdownElement = findDOMNode(this);
+
     if (event.target !== dropdownElement && !dropdownElement?.contains(event.target as Node) && this.isActive()) {
       this.hide();
     }
   }
 
+
   _onToggleClick = (event: MouseEvent) => {
     event.preventDefault();
     if (this.isActive()) {
       this.hide();
+
     } else {
       this.show();
     }
   }
+
 
   _onKeyDownHandler = (event: KeyboardEvent) => {
     if (event.key === 'Escape' && this.isActive()) {
@@ -130,31 +147,34 @@ Dropdown.defaultProps = {
   className: ''
 } as DefaultProps;
 
+
 type EnrichedChildren = {
-  onClick: (e: MouseEvent) => void
-  children?: React.ReactNode
+  onClick: (e: MouseEvent) => void;
+  children?: React.ReactNode;
 }
 
 
 type State = {
-  active: boolean
+  active: boolean;
 }
+
 
 type RequiredProps = {
-  children: React.ReactChild | React.ReactChild[],
+  children: React.ReactChild | React.ReactChild[];
 }
+
 
 type DefaultProps = {
-  className: string
+  className: string;
 }
 
-type Props = RequiredProps & DefaultProps & {
-  disabled?: boolean,
-  active?: boolean,
-  onHide?: () => void,
-  onShow?: () => void,
-  removeElement?: boolean,
-  style?: React.CSSProperties,
+export type Props = RequiredProps & DefaultProps & {
+  disabled?: boolean;
+  active?: boolean;
+  onHide?: () => void;
+  onShow?: () => void;
+  removeElement?: boolean;
+  style?: React.CSSProperties;
 };
 
 export { DropdownTrigger, DropdownContent };

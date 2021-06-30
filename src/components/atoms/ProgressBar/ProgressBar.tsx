@@ -9,11 +9,13 @@ class ProgressBar extends React.PureComponent<Props> {
 
   progressbarId = '';
 
+
   constructor(props: Props) {
     super(props);
 
     this.progressbarId = 'prgBar65Id' + props.name + getIntegerRandomNoBetweenTwoNo(1, 100);
   }
+
 
   render() {
     const { isCircular } = this.props;
@@ -30,6 +32,7 @@ class ProgressBar extends React.PureComponent<Props> {
     );
   }
 
+
   getLinearProgressBar = () => {
     const {
       color,
@@ -45,7 +48,7 @@ class ProgressBar extends React.PureComponent<Props> {
       width: size,
       height: containerThickness,
       backgroundColor: backgroundColor
-    }
+    };
 
     const fillerStyle = {
       width: `${completedValue}%`,
@@ -53,7 +56,7 @@ class ProgressBar extends React.PureComponent<Props> {
       backgroundColor: color,
       borderRadius: borderRadius
 
-    }
+    };
 
     return (
       <div
@@ -69,6 +72,7 @@ class ProgressBar extends React.PureComponent<Props> {
       </div>
     );
   }
+
 
   getCircularProgressBar = () => {
     const {
@@ -99,7 +103,7 @@ class ProgressBar extends React.PureComponent<Props> {
       strokeDashoffset: dashOffset,
       strokeWidth: `${fillerThickness}px`,
       stroke: color
-    }
+    };
 
     return (
       <svg
@@ -142,8 +146,9 @@ class ProgressBar extends React.PureComponent<Props> {
 
   }
 
+
   animateProgressBar = () => {
-    let elem = document.getElementById(this.progressbarId);
+    const elem = document.getElementById(this.progressbarId);
 
     if (elem) {
       elem.style.display = 'block';
@@ -176,16 +181,17 @@ type DefaultProps = {
   /*Adds border radius to outer filler in linear bar*/
   borderRadius: string | number;
   /*Adds text to the centre of the circular Progress Bar only*/
-  text: string,
-  addTextClass: string,
+  text: string;
+  addTextClass: string;
   /*width of the progress bar or square size of the circlular progress bar*/
-  size: string | number
+  size: string | number;
 
   /*
   text styling allowed - Note: The text is added using and <svg> <text> element and doesn't support the normal class styling
   please use fill instead of color and equivalent styling for <text> element
   */
 }
+
 
 type RequiredProps = {
   /*thickness of the filler*/

@@ -3,6 +3,7 @@ import cn from 'classnames';
 
 import './textArea.css';
 
+
 const TextArea = (props: Props) => {
   const {
     disableCopyPaste,
@@ -16,9 +17,9 @@ const TextArea = (props: Props) => {
   } = props;
 
   const textAreaClassName = cn({
-    "txta37Area": true,
-    "txta37Normal": error?.length === 0,
-    "txta37Error": error && error.length !== 0
+    'txta37Area': true,
+    'txta37Normal': error?.length === 0,
+    'txta37Error': error && error.length !== 0
   });
 
   return (
@@ -26,7 +27,9 @@ const TextArea = (props: Props) => {
 
       {
         label &&
-        <div style={labelStyle} className="txta37Label">
+        <div style={labelStyle}
+          className="txta37Label"
+        >
           {label}
         </div>
       }
@@ -41,33 +44,35 @@ const TextArea = (props: Props) => {
 
       {
         error && error.length !== 0 &&
-        <div style={errorStyle} className="txta37ErrorMessage">
+        <div style={errorStyle}
+          className="txta37ErrorMessage"
+        >
           {error}
         </div>
       }
     </div>
-  )
-}
+  );
+};
 
 
 const onCopy = (event: React.ClipboardEvent<HTMLTextAreaElement>) => {
   event.preventDefault();
-}
+};
 
 
 const onPaste = (event: React.ClipboardEvent<HTMLTextAreaElement>) => {
   event.preventDefault();
-}
+};
 
 
 const defaultProps: DefaultProps = {
   labelStyle: {},
   errorStyle: {},
   textAreaStyle: {},
-  parentDivClass: "",
+  parentDivClass: '',
   disableCopyPaste: false,
-  error: "",
-}
+  error: ''
+};
 
 
 type RequiredProps = {
@@ -85,7 +90,7 @@ type DefaultProps = {
   parentDivClass: string;
 
   /**  bools for utility*/
-  disableCopyPaste: boolean,
+  disableCopyPaste: boolean;
 }
 
 

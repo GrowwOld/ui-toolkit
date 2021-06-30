@@ -21,14 +21,14 @@ class Button extends React.PureComponent<Props> {
     } = this.props;
 
     const classname = cn({
-      "btn51Btn": true,
-      "btn51RipplePrimary btn51Primary": buttonType === "Primary",
-      "btn51RippleSecondary btn51Secondary": buttonType === "Secondary",
-      "btn51RippleTertiary btn51Tertiary": buttonType === "Tertiary",
-      "btn51Loading": showLoader,
-      "btn51DisabledPrimary": isDisabled && buttonType === "Primary",
-      "btn51DisabledSecondary": isDisabled && buttonType === "Secondary",
-      "btn51DisabledTertiary": isDisabled && buttonType === "Tertiary"
+      'btn51Btn': true,
+      'btn51RipplePrimary btn51Primary': buttonType === 'Primary',
+      'btn51RippleSecondary btn51Secondary': buttonType === 'Secondary',
+      'btn51RippleTertiary btn51Tertiary': buttonType === 'Tertiary',
+      'btn51Loading': showLoader,
+      'btn51DisabledPrimary': isDisabled && buttonType === 'Primary',
+      'btn51DisabledSecondary': isDisabled && buttonType === 'Secondary',
+      'btn51DisabledTertiary': isDisabled && buttonType === 'Tertiary'
     });
 
     return (
@@ -43,7 +43,9 @@ class Button extends React.PureComponent<Props> {
           }
 
           <div className="absolute-center btn51ParentDimension">
-            <span className="absolute-center" style={{ padding: '0px 25px' }}>
+            <span className="absolute-center"
+              style={{ padding: '0px 25px' }}
+            >
               {
                 iconName && iconPosition === 'Left' && this.getIconUI()
               }
@@ -58,6 +60,7 @@ class Button extends React.PureComponent<Props> {
     );
   }
 
+
   getIconUI = () => {
     const { iconName, iconPosition, fontSize } = this.props;
 
@@ -66,10 +69,11 @@ class Button extends React.PureComponent<Props> {
         iconName={iconName}
         iconStyle={this.getComputedStyleForIcon()}
         iconClass={`btn51Icon${iconPosition} absolute-center`}
-        fontSize={fontSize ? fontSize : 24}
+        fontSize={fontSize && typeof fontSize === 'number' ? fontSize : 24}
       />
     );
   }
+
 
   onButtonClick = (e: React.MouseEvent) => {
     const { onClick, showLoader, isDisabled } = this.props;
@@ -78,6 +82,7 @@ class Button extends React.PureComponent<Props> {
       onClick(e);
     }
   }
+
 
   getComputedStyle = () => {
     const {
@@ -96,8 +101,9 @@ class Button extends React.PureComponent<Props> {
       backgroundColor,
       color: textColor,
       ...restProps
-    }
+    };
   }
+
 
   getComputedStyleForIcon = () => {
     const {
@@ -108,25 +114,26 @@ class Button extends React.PureComponent<Props> {
     return {
       fontSize,
       color: textColor
-    }
+    };
   }
+
 
   public static defaultProps: DefaultProps = {
     /**
     * How large should the button be?
     */
-    width: "auto",
-    height: "45px",
+    width: 'auto',
+    height: '45px',
     /**
     * Is this the principal call to action on the page?
     */
-    buttonType: "Primary",
+    buttonType: 'Primary',
     fixToBottom: false,
     isDisabled: false,
     iconName: '',
     iconPosition: 'Left',
     showLoader: false,
-    loadingText: "Loading...",
+    loadingText: 'Loading...',
     fontSize: '',
     textColor: '',
     backgroundColor: ''

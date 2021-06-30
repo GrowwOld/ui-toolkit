@@ -1,11 +1,12 @@
 import React, {
   useEffect,
   useState
-} from "react";
+} from 'react';
 
-import cn from "classnames";
+import cn from 'classnames';
 
-import "./tabs.css";
+import './tabs.css';
+
 
 const Tabs = (props: Props) => {
   const {
@@ -16,13 +17,14 @@ const Tabs = (props: Props) => {
     customStyleTab
   } = props;
 
-  const [activeIndex, setActiveIndex] = useState(activeTabIndexOnMount);
+  const [ activeIndex, setActiveIndex ] = useState(activeTabIndexOnMount);
 
   const { width, left } = getActiveTabDimensions(data, activeIndex);
 
   useEffect(() => {
     setActiveIndex(props.activeTabIndexOnMount);
-  }, [props.activeTabIndexOnMount])
+  }, [ props.activeTabIndexOnMount ]);
+
 
   const onTabClick = (index: number) => {
     if (index !== activeIndex) {
@@ -30,34 +32,38 @@ const Tabs = (props: Props) => {
     }
 
     onTabSelect(index);
-  }
+  };
 
 
   return (
     <div className={cn('tabs8Container', { 'tabs8Shadow': showBottomBorder })}>
       {
         width > 0 &&
-        <div className="tabs8Line mfSelected" style={{ width, left }} />
+        <div className="tabs8Line mfSelected"
+          style={{ width, left }}
+        />
       }
 
       <div className="valign-wrapper">
-        {data.map((item, key) => {
-          return (
-            <div
-              className={`${customStyleTab} ${key === activeIndex && "tabs8TextActive"}`}
-              title={item.description}
-              onClick={onTabClick.bind(null, key)}
-              style={item.style}
-              key={key}
-            >
-              {item.name}
-            </div>
-          )
-        })}
+        {
+          data.map((item, key) => {
+            return (
+              <div
+                className={`${customStyleTab} ${key === activeIndex && 'tabs8TextActive'}`}
+                title={item.description}
+                onClick={onTabClick.bind(null, key)}
+                style={item.style}
+                key={key}
+              >
+                {item.name}
+              </div>
+            );
+          })
+        }
       </div>
     </div>
   );
-}
+};
 
 
 const getActiveTabDimensions = (data: Tab[], activeIndex: number) => {
@@ -71,45 +77,45 @@ const getActiveTabDimensions = (data: Tab[], activeIndex: number) => {
     left = activeTab.left || 0;
 
     return {
-      "width": width,
-      "left": left
+      'width': width,
+      'left': left
     };
 
   } else {
-    if (typeof document !== "undefined") {
-      let prevActiveElement = document?.getElementsByClassName('tabs8TextActive') as HTMLCollectionOf<HTMLElement>;
+    if (typeof document !== 'undefined') {
+      const prevActiveElement = document?.getElementsByClassName('tabs8TextActive') as HTMLCollectionOf<HTMLElement>;
 
       if (prevActiveElement && prevActiveElement.length) {
         const currentActiveElement = prevActiveElement[0]?.parentElement?.children[activeIndex] as HTMLElement;
 
         return {
-          "width": currentActiveElement?.offsetWidth,
-          "left": currentActiveElement?.offsetLeft
+          'width': currentActiveElement?.offsetWidth,
+          'left': currentActiveElement?.offsetLeft
         };
 
       } else {
         return {
-          "width": width,
-          "left": left
+          'width': width,
+          'left': left
         };
       }
 
     } else {
       return {
-        "width": 0,
-        "left": 0
+        'width': 0,
+        'left': 0
       };
     }
   }
 
-}
+};
 
 
 const defaultProps: DefaultProps = {
   showBottomBorder: true,
   activeTabIndexOnMount: 0,
   customStyleTab: 'tabs8Text'
-}
+};
 
 
 type DefaultProps = {
@@ -123,6 +129,7 @@ type RequiredProps = {
   data: Tab[];
   onTabSelect: (index: number) => void;
 }
+
 
 type Tab = {
   description?: string;

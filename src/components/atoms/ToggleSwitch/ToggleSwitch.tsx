@@ -1,6 +1,7 @@
 import React from 'react';
 
-import './toggleSwitch.css'
+import './toggleSwitch.css';
+
 
 const ToggleSwitch = (props: Props) => {
   const {
@@ -19,26 +20,29 @@ const ToggleSwitch = (props: Props) => {
     borderRadius: height,
     top: '0px', // required here, as somewhere in the project(globally) these values are altered
     left: '0px' // required here
-  }
+  };
   const switchDivStyle = {
     width,
     height
-  }
+  };
   const inputStyle = {
     margin: '0px' // required here, as somewhere in the project(globally) these values are altered
-  }
+  };
 
   const switchButtonStyle = {
     background: switchCircleColor,
     width: `${circleDiameter}px`,
     height: `${circleDiameter}px`,
     transform: isActive ? `translateX(${width - circleDiameter - 4}px)` : 'none'
-  }
+  };
 
   return (
     <div className="valign-wrapper">
       {leftText}
-      <div style={switchDivStyle} className='sw348reactSwitchDivision' onClick={(e) => onChange(e)}>
+      <div style={switchDivStyle}
+        className='sw348reactSwitchDivision'
+        onClick={(e) => onChange(e)}
+      >
         <input
           style={inputStyle}
           checked={isActive}
@@ -51,14 +55,16 @@ const ToggleSwitch = (props: Props) => {
           style={switchLabelStyle}
           className="sw348reactSwitchLabel"
         >
-          <div style={switchButtonStyle} className={`sw348reactSwitchButton`} />
+          <div style={switchButtonStyle}
+            className={'sw348reactSwitchButton'}
+          />
         </div>
       </div>
       {rightText}
     </div>
-  )
+  );
 
-}
+};
 
 
 const defaultProps: DefaultProps = {
@@ -69,7 +75,7 @@ const defaultProps: DefaultProps = {
   inactiveBackgroundColor: 'var(--subText)',
   switchCircleColor: 'var(--constantWhite)',
   activeBackgroundColor: 'var(--primaryClr)'
-}
+};
 
 
 type RequiredProps = {

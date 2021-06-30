@@ -10,13 +10,15 @@ enum IconPosition {
   RIGHT = 'right',
 }
 
+
 const Chip = (props: Props) => {
 
   const handleClick = (e: React.MouseEvent<HTMLImageElement>) => {
     e.stopPropagation();
     const { onClick } = props;
+
     onClick(e);
-  }
+  };
 
   const { text, iconName, iconClass, iconPosition,
     textClass, parentClass, getImage } = props;
@@ -29,13 +31,14 @@ const Chip = (props: Props) => {
           'chip12Tag': (iconName),
           'chip12IconLeft': (iconPosition === IconPosition.LEFT),
           [`${parentClass}`]: true
-        })}
+        })
+      }
       onClick={handleClick}
     >
       <span className={textClass}>{text}</span>
       {
-        iconName ?
-          <div>
+        iconName
+          ? <div>
             <IconStore
               getImage={getImage}
               iconName={iconName}
@@ -45,46 +48,47 @@ const Chip = (props: Props) => {
               iconClass={`chip12Icon ${iconClass}`}
             />
           </div>
-          :
-          null
+          : null
       }
     </div >
-  )
-}
+  );
+};
+
 
 type RequiredProps = {
-  text: string,
+  text: string;
 }
+
 
 type DefaultProps = {
   /**
    * Event handler called when the user clicks on the chip
    */
-  onClick: (e: React.MouseEvent<HTMLImageElement>) => void,
+  onClick: (e: React.MouseEvent<HTMLImageElement>) => void;
   /**
    * Position of icon with respect to Chip text, if iconName is provided.
    */
-  iconPosition: IconPosition,
+  iconPosition: IconPosition;
   /**
    * Custom iconClass for icon, if iconName is provided.
    */
-  iconClass: string,
+  iconClass: string;
   /**
    * This class will be applied on both, text and icon
    */
-  parentClass: string,
+  parentClass: string;
   /**
    * If getImage is true, iconName should be one from IMG_ICON_LIST
    */
-  getImage: boolean,
+  getImage: boolean;
   /**
    * Custom class for text decoration
    */
-  textClass: string,
+  textClass: string;
   /**
    * Custom icon, value must be either from MI-ICON-LIST or IMG-ICON-LIST
    */
-  iconName: string,
+  iconName: string;
 }
 
 export type Props = RequiredProps & DefaultProps;

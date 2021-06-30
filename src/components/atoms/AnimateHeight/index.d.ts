@@ -1,4 +1,4 @@
-import { Component, CSSProperties, ReactNode } from "react"
+import { Component, CSSProperties, ReactNode } from 'react';
 
 export interface AnimationStateClasses {
   animating?: string;
@@ -22,7 +22,7 @@ export interface AnimateHeightProps {
   contentClassName?: string;
   delay?: number;
   duration?: number;
-  easing?: "ease" | "linear" | "ease-in" | "ease-out" | "ease-in-out" | string;
+  easing?: 'ease' | 'linear' | 'ease-in' | 'ease-out' | 'ease-in-out' | string;
   height?: string | number;
   onAnimationEnd?(props: { newHeight: number }): void;
   onAnimationStart?(props: { newHeight: number }): void;
