@@ -39,7 +39,7 @@ export const lightColors = {
   constantSecondaryClr180: '#2A2A2A',
   constantSecondaryClr10: '#F6F6F7',
   cardBackground: '#1D1D1D'
-}
+};
 
 export const darkColors = {
   primaryClr: '#0ABB92',
@@ -82,4 +82,4 @@ export const darkColors = {
   constantSecondaryClr180: '#2A2A2A',
   constantSecondaryClr10: '#2A2A2A',
   cardBackground: '#1D1D1D'
-}
+};

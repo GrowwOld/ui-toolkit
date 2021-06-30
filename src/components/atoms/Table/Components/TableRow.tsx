@@ -1,6 +1,7 @@
-import React, { Children, isValidElement, cloneElement } from "react";
+import React, { Children, isValidElement, cloneElement } from 'react';
 
-import cn from "classnames";
+import cn from 'classnames';
+
 
 type TableRowProps = {
   className?: string;
@@ -15,9 +16,9 @@ class TableRow extends React.PureComponent<TableRowProps, {}> {
   render() {
     const {
       children,
-      className = "",
-      horzPadding = "5%",
-      vertPadding = "16px",
+      className = '',
+      horzPadding = '5%',
+      vertPadding = '16px',
       onClick,
       id,
       ...otherProps
@@ -36,7 +37,8 @@ class TableRow extends React.PureComponent<TableRowProps, {}> {
               paddingBottom: vertPadding,
               ...child.props.style
             }
-          }) // for a table cannot add padding on the tr element. so pass padding to td.
+          });
+ // for a table cannot add padding on the tr element. so pass padding to td.
         } else if (index === 0) {
           return cloneElement(child, {
             style: {
@@ -45,7 +47,8 @@ class TableRow extends React.PureComponent<TableRowProps, {}> {
               paddingBottom: vertPadding,
               ...child.props.style
             }
-          }) // for a table cannot add padding on the tr element. so pass padding to td.
+          });
+ // for a table cannot add padding on the tr element. so pass padding to td.
         } else if (index === Children.count(children) - 1) {
           return cloneElement(child, {
             style: {
@@ -54,7 +57,8 @@ class TableRow extends React.PureComponent<TableRowProps, {}> {
               paddingBottom: vertPadding,
               ...child.props.style
             }
-          }) // for a table cannot add padding on the tr element. so pass padding to td.
+          });
+ // for a table cannot add padding on the tr element. so pass padding to td.
         } else {
           return cloneElement(child, {
             style: {
@@ -62,7 +66,7 @@ class TableRow extends React.PureComponent<TableRowProps, {}> {
               paddingBottom: vertPadding,
               ...child.props.style
             }
-          })
+          });
         }
       }
 

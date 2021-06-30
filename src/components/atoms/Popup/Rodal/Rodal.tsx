@@ -8,6 +8,7 @@ const IN_BROWSER = typeof window !== 'undefined';
 const UA = IN_BROWSER && window.navigator.userAgent.toLowerCase();
 const IS_IE_9 = UA && UA.indexOf('msie 9.0') > 0;
 
+
 const Dialog = (props: DialogProps) => {
   const animation =
     (props.animationType === 'enter'
@@ -28,7 +29,9 @@ const Dialog = (props: DialogProps) => {
   const mergedStyles = { ...style };
 
   return (
-    <div style={mergedStyles} className={className}>
+    <div style={mergedStyles}
+      className={className}
+    >
       {props.children}
     </div>
   );
@@ -37,7 +40,10 @@ const Dialog = (props: DialogProps) => {
 
 class Rodal extends React.Component<Props, State> {
   el: HTMLDivElement | null = null;
+
+
   static defaultProps: DefaultProps;
+
 
   state = {
     isShow: false,
@@ -75,11 +81,12 @@ class Rodal extends React.Component<Props, State> {
     if (IS_IE_9) {
       this.setState({
         isShow: false
-      })
+      });
+
     } else {
       this.setState({
         animationType: 'leave'
-      })
+      });
     }
   }
 
@@ -124,7 +131,9 @@ class Rodal extends React.Component<Props, State> {
       popupClass
     } = this.props;
 
-    const CloseButton = showCloseButton ? <span className="rodal-close" onClick={onClose} /> : null;
+    const CloseButton = showCloseButton ? <span className="rodal-close"
+      onClick={onClose}
+    /> : null;
 
     const { isShow, animationType } = this.state;
 
@@ -148,14 +157,20 @@ class Rodal extends React.Component<Props, State> {
         className={cn('rodal', `rodal-fade-${animationType}`, className)}
         onAnimationEnd={this.animationEnd}
         tabIndex={-1}
-        ref={el => {
-          this.el = el;
-        }}
+        ref={
+          el => {
+            this.el = el;
+          }
+        }
         onKeyUp={this.onKeyUp}
       >
         {Mask}
-        <Dialog {...this.props} animationType={animationType}>
-          <div className={`child-wrapper ${popupClass}`} style={{ ...customStyles }}>
+        <Dialog {...this.props}
+          animationType={animationType}
+        >
+          <div className={`child-wrapper ${popupClass}`}
+            style={{ ...customStyles }}
+          >
             {children}
             {CloseButton}
           </div>
@@ -185,46 +200,51 @@ Rodal.defaultProps = {
   customMaskStyles: {}
 } as DefaultProps;
 
+
 type DialogProps = {
-  animation: string,
-  animationType: string,
-  enterAnimation: string,
-  leaveAnimation: string,
-  width: number,
-  height: number,
-  measure: string,
-  duration: number,
-  children: React.ReactNode
+  animation: string;
+  animationType: string;
+  enterAnimation: string;
+  leaveAnimation: string;
+  width: number;
+  height: number;
+  measure: string;
+  duration: number;
+  children: React.ReactNode;
 }
+
 
 type State = {
-  isShow: boolean,
-  animationType: string
+  isShow: boolean;
+  animationType: string;
 }
+
 
 type DefaultProps = {
-  width: number,
-  height: number,
-  measure: string,
-  visible: boolean,
-  showMask: boolean,
-  closeOnEsc: boolean,
-  closeMaskOnClick: boolean,
-  showCloseButton: boolean,
-  animation: string,
-  enterAnimation: string,
-  leaveAnimation: string,
-  onAnimationEnd: () => void,
-  duration: number,
-  className: string,
-  customStyles: React.CSSProperties,
-  customMaskStyles: React.CSSProperties
+  width: number;
+  height: number;
+  measure: string;
+  visible: boolean;
+  showMask: boolean;
+  closeOnEsc: boolean;
+  closeMaskOnClick: boolean;
+  showCloseButton: boolean;
+  animation: string;
+  enterAnimation: string;
+  leaveAnimation: string;
+  onAnimationEnd: () => void;
+  duration: number;
+  className: string;
+  customStyles: React.CSSProperties;
+  customMaskStyles: React.CSSProperties;
 }
 
+
 type RequiredProps = {
-  onClose: (e: React.MouseEvent | React.KeyboardEvent) => void,
-  popupClass: string
+  onClose: (e: React.MouseEvent | React.KeyboardEvent) => void;
+  popupClass: string;
 }
+
 
 type Props = DefaultProps & RequiredProps;
 

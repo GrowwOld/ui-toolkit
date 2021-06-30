@@ -5,7 +5,8 @@ import './checkBox.css';
 export const CHECKBOX_DIRECTION = {
   LEFT: 'left',
   RIGHT: 'right'
-}
+};
+
 
 const CheckBox = (props: Props) => {
 
@@ -18,11 +19,12 @@ const CheckBox = (props: Props) => {
     addParentClass
   } = props;
 
+
   const checkBoxClick = () => {
     if (!disabled) {
       handleOnClick(value, !isChecked);
     }
-  }
+  };
 
   const inactive_svg = (
     <svg
@@ -47,7 +49,9 @@ const CheckBox = (props: Props) => {
       height={size}
       viewBox="0 0 14 14"
     >
-      <g fill="none" fill-rule="evenodd">
+      <g fill="none"
+        fill-rule="evenodd"
+      >
         <path
           fill="var(--primaryBg)"
           stroke={activeColor}
@@ -56,36 +60,40 @@ const CheckBox = (props: Props) => {
         <path
           fill={activeColor}
           fill-rule="nonzero"
-          d="M9.69 5.173a.591.591 0 1 1 .837.836L6.98 9.556a.591.591 0 0 1-.836 0l-1.97-1.97a.591.591 0 0 1 .835-.836l1.553 1.552L9.69 5.173z" />
+          d="M9.69 5.173a.591.591 0 1 1 .837.836L6.98 9.556a.591.591 0 0 1-.836 0l-1.97-1.97a.591.591 0 0 1 .835-.836l1.553 1.552L9.69 5.173z"
+        />
       </g>
     </svg>
-  )
+  );
 
   return (
-    <div onClick={checkBoxClick} className={`c11AlignCenter c11Pointer ${addParentClass} ${checkBoxDirection === CHECKBOX_DIRECTION.RIGHT ? 'c11checkOnRight' : ''}`}>
+    <div onClick={checkBoxClick}
+      className={`c11AlignCenter c11Pointer ${addParentClass} ${checkBoxDirection === CHECKBOX_DIRECTION.RIGHT ? 'c11checkOnRight' : ''}`}
+    >
       {isChecked ? active_svg : inactive_svg}
       {label && <div className="c11CLabel">{label}</div>}
       {labelComponent && labelComponent()}
     </div>
   );
-}
+};
 
 
 type DefaultProps = {
-  size: number,
-  label: React.ReactNode,
-  value: string,
-  isChecked: boolean,
-  disabled: boolean,
-  activeColor: string,
-  inActiveColor: string,
-  addParentClass: string
-  labelComponent: () => React.ReactNode,
-  checkBoxDirection: ValueOf<typeof CHECKBOX_DIRECTION>,
+  size: number;
+  label: React.ReactNode;
+  value: string;
+  isChecked: boolean;
+  disabled: boolean;
+  activeColor: string;
+  inActiveColor: string;
+  addParentClass: string;
+  labelComponent: () => React.ReactNode;
+  checkBoxDirection: ValueOf<typeof CHECKBOX_DIRECTION>;
 }
 
+
 type RequiredProps = {
-  handleOnClick: (value: string, isChecked: boolean) => void,
+  handleOnClick: (value: string, isChecked: boolean) => void;
 }
 
 CheckBox.defaultProps = {

@@ -3,10 +3,11 @@ import assign from 'object-assign';
 import warning from './utils/warning';
 
 const warningMessage = 'To ensure ReactLaserBeam work correctly. The initial prop "show" must be "false".';
+
 export const LASER_BEAM_UI = {
   DASH: 'dash',
   SPREAD: 'spread'
-}
+};
 
 class LaserBeam extends React.Component<Props, State> {
   public static defaultProps: Props = {
@@ -21,6 +22,7 @@ class LaserBeam extends React.Component<Props, State> {
     nextTransitionDuration: '1s',
     currentTransitionDuration: '400ms'
   }
+
 
   constructor(props: Props) {
     super(props);
@@ -98,7 +100,7 @@ class LaserBeam extends React.Component<Props, State> {
     this.setState({
       style: changedStyle,
       addonStyle: changedAddonStyle
-    })
+    });
   }
 
 
@@ -130,7 +132,7 @@ class LaserBeam extends React.Component<Props, State> {
     const { ccStyle, width } = this.props;
 
     if (ccStyle === 'spread') {
-      let rets = [];
+      const rets = [];
       let changedAddonStyle;
 
       changedAddonStyle = assign({}, addonStyle, {
@@ -138,8 +140,12 @@ class LaserBeam extends React.Component<Props, State> {
         right: 0
       });
 
-      rets.push(<div key="after" style={addonStyle}></div>);
-      rets.push(<div key="before" style={changedAddonStyle}></div>);
+      rets.push(<div key="after"
+        style={addonStyle}
+      ></div>);
+      rets.push(<div key="before"
+        style={changedAddonStyle}
+      ></div>);
 
       return rets;
 
@@ -165,22 +171,24 @@ class LaserBeam extends React.Component<Props, State> {
   }
 }
 
+
 type Props = {
-  show: boolean,
-  width: string,
-  background?: string,
-  zIndex?: string,
-  noShadow?: boolean,
-  ccStyle?: ValueOf<typeof LASER_BEAM_UI>,
-  addon?: string,
-  nextTransitionWidth?: string,
-  nextTransitionDuration?: string,
-  currentTransitionDuration?: string
+  show: boolean;
+  width: string;
+  background?: string;
+  zIndex?: string;
+  noShadow?: boolean;
+  ccStyle?: ValueOf<typeof LASER_BEAM_UI>;
+  addon?: string;
+  nextTransitionWidth?: string;
+  nextTransitionDuration?: string;
+  currentTransitionDuration?: string;
 }
 
+
 type State = {
-  style: object,
-  addonStyle: object
+  style: object;
+  addonStyle: object;
 }
 
 export default LaserBeam;

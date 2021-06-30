@@ -1,5 +1,5 @@
 import React from 'react';
-import cn from "classnames";
+import cn from 'classnames';
 
 import { IconStore, MI_ICON_LIST } from '../IconStore';
 
@@ -8,7 +8,8 @@ import './radioButton.css';
 export const RADIO_DIRECTION = {
   LEFT: 'LEFT',
   RIGHT: 'RIGHT'
-}
+};
+
 
 const RadioButton = (props: Props) => {
 
@@ -23,10 +24,10 @@ const RadioButton = (props: Props) => {
   } = props;
 
   const labelParentClassName = cn({
-    "clrText fs15 radioLs2": true,
+    'clrText fs15 radioLs2': true,
     [`${labelClassName}`]: true,
-    "radioCo11LabelRight": radioDirection === RADIO_DIRECTION.RIGHT,
-    "radioCo11LabelLeft": radioDirection === RADIO_DIRECTION.LEFT
+    'radioCo11LabelRight': radioDirection === RADIO_DIRECTION.RIGHT,
+    'radioCo11LabelLeft': radioDirection === RADIO_DIRECTION.LEFT
   });
 
   return (
@@ -44,7 +45,7 @@ const RadioButton = (props: Props) => {
       </div>
     </div>
   );
-}
+};
 
 
 const defaultProps: DefaultProps = {
@@ -52,7 +53,7 @@ const defaultProps: DefaultProps = {
   labelClassName: '',
   parentClassName: 'bas11RadioParent',
   radioDirection: RADIO_DIRECTION.LEFT
-}
+};
 
 
 type DefaultProps = {
@@ -71,7 +72,7 @@ type RequiredProps = {
 }
 
 
-RadioButton.defaultProps = defaultProps
+RadioButton.defaultProps = defaultProps;
 
 export type Props = RequiredProps & DefaultProps;
 

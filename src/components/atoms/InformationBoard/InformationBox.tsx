@@ -11,7 +11,7 @@ const COLOR_TYPE = {
   DEFAULT: 'var(--primaryBg)',
   WARNING: 'var(--growwYellow10)',
   ERROR: 'var(--growwRed10)'
-}
+};
 
 const BORDER_COLOR = {
   POSITIVE: 'var(--primaryClr60)',
@@ -19,7 +19,7 @@ const BORDER_COLOR = {
   DEFAULT: 'var(--border)',
   WARNING: 'var(--growwYellow)',
   ERROR: 'var(--growwRed)'
-}
+};
 
 
 const InformationBox = (props: Props) => {
@@ -36,23 +36,25 @@ const InformationBox = (props: Props) => {
   } = props;
 
   const parentDivClass = cn({
-    "valign-wrapper infbd45ParentDiv fs14": true,
-    informationBoxClass: informationBoxClass !== ""
-  })
+    'valign-wrapper infbd45ParentDiv fs14': true,
+    informationBoxClass: informationBoxClass !== ''
+  });
 
   const parentDivStyle = {
     height: height,
     width: width,
     ...(
-      outlined ?
-        { border: `1px solid ${BORDER_COLOR[type]}` } :
-        { background: COLOR_TYPE[type] }
+      outlined
+        ? { border: `1px solid ${BORDER_COLOR[type]}` }
+        : { background: COLOR_TYPE[type] }
     ),
     ...informationBoxStyle
-  }
+  };
 
   return (
-    <div style={parentDivStyle} className={parentDivClass}>
+    <div style={parentDivStyle}
+      className={parentDivClass}
+    >
       {
         showIcon &&
         <IconStore
@@ -67,25 +69,25 @@ const InformationBox = (props: Props) => {
       <div className="infbd45Content">{content}</div>
 
     </div>
-  )
-}
+  );
+};
 
 
 const defaultProps: DefaultProps = {
   showIcon: true,
   icon: MI_ICON_LIST.info,
   iconClass: '',
-  width: "auto",
-  height: "auto",
+  width: 'auto',
+  height: 'auto',
   outlined: false,
   type: 'DEFAULT',
-  informationBoxClass: "",
+  informationBoxClass: '',
   informationBoxStyle: {}
-}
+};
 
 
 type RequiredProps = {
-  content: string
+  content: string;
 }
 
 

@@ -1,4 +1,4 @@
-import React, { PureComponent } from "react";
+import React, { PureComponent } from 'react';
 
 import {
   IconStore,
@@ -7,11 +7,11 @@ import {
 import { Button } from '../Button';
 import { Popup } from '../Popup';
 
-import { ordinalSuffixOf } from "../../../utils/helper";
+import { ordinalSuffixOf } from '../../../utils/helper';
 
-import "./dateSelector.css";
+import './dateSelector.css';
 
-const ALL_DATES = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30];
+const ALL_DATES = [ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30 ];
 
 const INVOKE_MODE = {
   POPUP: 'POPUP',
@@ -23,6 +23,7 @@ class DateSelector extends PureComponent<Props, State> {
   state: State = {
     selectedDate: this.props.defaultDate
   }
+
 
   render() {
     const {
@@ -43,19 +44,22 @@ class DateSelector extends PureComponent<Props, State> {
         >
           {this.getMainUi()}
         </Popup>
-      )
+      );
+
     } else if (invokeMode === INVOKE_MODE.TOOLTIP) {
       return (
         <div
           className="date101TooltipMainDiv"
-          style={{
-            top: tooltipTop,
-            left: tooltipLeft
-          }}
+          style={
+            {
+              top: tooltipTop,
+              left: tooltipLeft
+            }
+          }
         >
           {this.getMainUi()}
         </div>
-      )
+      );
     }
   }
 
@@ -78,8 +82,8 @@ class DateSelector extends PureComponent<Props, State> {
           {titleText}
         </div>
         {
-          invokeMode === INVOKE_MODE.TOOLTIP ?
-            <IconStore
+          invokeMode === INVOKE_MODE.TOOLTIP
+            ? <IconStore
               iconName={MI_ICON_LIST.clear}
               iconClass="date101CrossButton"
               fontSize={19}
@@ -95,20 +99,26 @@ class DateSelector extends PureComponent<Props, State> {
           {
             ALL_DATES.map((date, index) => {
               const isDisabled = availableDates.indexOf(date) === -1;
-              let itemClass = "date101Grid-item";
+              let itemClass = 'date101Grid-item';
 
               if (selectedDate === date) {
-                itemClass += " active";
+                itemClass += ' active';
+
               } else if (isDisabled) {
-                itemClass += " disabled";
+                itemClass += ' disabled';
+
               } else {
-                itemClass += " regular";
+                itemClass += ' regular';
               }
+
               return (
-                <div className={itemClass} key={index} onClick={() => this.selectDate(date)}>
+                <div className={itemClass}
+                  key={index}
+                  onClick={() => this.selectDate(date)}
+                >
                   {date}
                 </div>
-              )
+              );
             })
           }
         </div>
@@ -121,7 +131,7 @@ class DateSelector extends PureComponent<Props, State> {
           width={270}
         />
       </div>
-    )
+    );
   }
 
 
@@ -137,8 +147,9 @@ class DateSelector extends PureComponent<Props, State> {
   selectDate(date: number) {
     this.setState({
       selectedDate: date
-    })
+    });
   }
+
 
   public static defaultProps: DefaultProps = {
     availableDates: ALL_DATES,
@@ -153,25 +164,27 @@ class DateSelector extends PureComponent<Props, State> {
 
 }
 
+
 type State = {
-  selectedDate: number
+  selectedDate: number;
 }
 
+
 type RequiredProps = {
-  onDateChange: (num: number) => void,
-  defaultDate: number,
+  onDateChange: (num: number) => void;
+  defaultDate: number;
 }
 
 
 type DefaultProps = {
-  availableDates: number[],
-  visible: boolean,
-  onClose: () => void,
-  buttonText: string,
-  titleText: string,
-  tooltipTop: number | string,
-  tooltipLeft: number | string,
-  invokeMode: ValueOf<typeof INVOKE_MODE>
+  availableDates: number[];
+  visible: boolean;
+  onClose: () => void;
+  buttonText: string;
+  titleText: string;
+  tooltipTop: number | string;
+  tooltipLeft: number | string;
+  invokeMode: ValueOf<typeof INVOKE_MODE>;
 }
 
 export type Props = RequiredProps & DefaultProps;

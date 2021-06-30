@@ -1,5 +1,5 @@
-import React, { ReactNode } from "react";
-import cn from "classnames";
+import React, { ReactNode } from 'react';
+import cn from 'classnames';
 
 import {
   TableBody,
@@ -8,9 +8,9 @@ import {
   TableHeader,
   TableHeaderCell,
   TableRow
-} from "./Components";
+} from './Components';
 
-import "./table.css";
+import './table.css';
 
 // Can sort based on the header, Table header takes props -> sortable, ascending, onSortClick
 // To add FilpMove -> instead of table body: <FlipMove typeName="tbody" enterAnimation="accordionVertical" leaveAnimation="none"></FlipMove>
@@ -27,21 +27,34 @@ type TableProps = {
 class Table extends React.Component<TableProps, {}> {
 
   static Body = TableBody;
+
+
   static Cell = TableCell;
+
+
   static Footer = TableFooter;
+
+
   static Header = TableHeader;
+
+
   static HeaderCell = TableHeaderCell;
+
+
   static Row = TableRow;
 
+
   render() {
-    const { children, className = "", style = {} } = this.props;
-    const classes = cn("tb10Table", className);
+    const { children, className = '', style = {} } = this.props;
+    const classes = cn('tb10Table', className);
 
     return (
-      <table style={style} className={classes}>
+      <table style={style}
+        className={classes}
+      >
         {children}
       </table>
-    )
+    );
   }
 }
 

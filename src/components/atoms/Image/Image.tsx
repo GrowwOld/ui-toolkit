@@ -3,6 +3,7 @@ import LazyLoad from 'react-lazyload';
 
 import { Theme } from '../../../utils/types/theme';
 
+
 const Image = (props: Props) => {
   const { src, srcDark, offset, height, addClass, addClassDark,
     width, alt, useLazyLoad, onClick } = props;
@@ -10,13 +11,15 @@ const Image = (props: Props) => {
   let activeSrc = src;
   let activeClass = addClass;
 
-  const [currentTheme, setCurrentTheme] = useState<Theme>(Theme.Light);
-  const [isErrorHandled, setErrorHandled] = useState(false);
+  const [ currentTheme, setCurrentTheme ] = useState<Theme>(Theme.Light);
+  const [ isErrorHandled, setErrorHandled ] = useState(false);
+
 
   const themeChangeCallback = (e: any) => {
     const theme: Theme = e.target?.dataset?.theme || Theme.Light;
+
     setCurrentTheme(theme);
-  }
+  };
 
 
   const handleBrokenImage = (e: any) => {
@@ -24,7 +27,7 @@ const Image = (props: Props) => {
       setErrorHandled(true);
       e.target.src = props.handleBrokenImage;
     }
-  }
+  };
 
 
   if (currentTheme === Theme.Dark) {
@@ -35,7 +38,10 @@ const Image = (props: Props) => {
 
   if (useLazyLoad) {
     return (
-      <LazyLoad height={height} once offset={offset}>
+      <LazyLoad height={height}
+        once
+        offset={offset}
+      >
         <img
           onError={handleBrokenImage}
           className={activeClass}
@@ -61,7 +67,7 @@ const Image = (props: Props) => {
       />
     );
   }
-}
+};
 
 
 type RequiredProps = {
