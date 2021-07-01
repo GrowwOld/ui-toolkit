@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { ReactNode } from 'react';
 
 import { RadioButton } from '../../atoms';
 
@@ -54,8 +54,8 @@ type RequiredProps = {
 
 
 export type RadioButtonType = {
-  value?: string;
-  label?: string;
+  value: string;
+  label: ReactNode;
   labelClassName?: string;
   parentClassName?: string;
   radioDirection?: string;
