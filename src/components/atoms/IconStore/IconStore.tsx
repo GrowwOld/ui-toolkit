@@ -168,7 +168,7 @@ type DefaultProps = {
   getImage: boolean;
   width: number;
   height: number;
-  fontSize: number | null;
+  fontSize: string | number | null;
   /**
    * specify alt for image icon
    */

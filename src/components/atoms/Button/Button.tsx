@@ -69,7 +69,7 @@ class Button extends React.PureComponent<Props> {
         iconName={iconName}
         iconStyle={this.getComputedStyleForIcon()}
         iconClass={`btn51Icon${iconPosition} absolute-center`}
-        fontSize={fontSize && typeof fontSize === 'number' ? fontSize : 24}
+        fontSize={fontSize ? fontSize : 24}
       />
     );
   }
