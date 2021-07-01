@@ -64,15 +64,13 @@ class IconStore extends React.PureComponent<Props, State> {
       const fontSizeStyle = fontSize ? fontSize : width;
 
       return (
-        <div>
-          <i
-            className={`material-icons ${finalClassName}`}
-            onClick={this.onIconClick}
-            style={{ width: width, height: height, fontSize: fontSizeStyle, ...iconStyle }}
-          >
-            {MI_NAME}
-          </i>
-        </div >
+        <i
+          className={`material-icons ${finalClassName}`}
+          onClick={this.onIconClick}
+          style={{ width: width, height: height, fontSize: fontSizeStyle, ...iconStyle }}
+        >
+          {MI_NAME}
+        </i>
       );
     }
   }
