@@ -48,7 +48,7 @@ type DefaultProps = {
 
 type RequiredProps = {
   radioButtons: RadioButtonType[];
-  selected: string | number;
+  selected: string;
   onSelect: (value: string) => void;
 }
 
