@@ -95,25 +95,55 @@ ImageIcon.args = {
 
 const renderIconsArray = (iconList: string[], isImage = false) => {
   return (
-    <div className="story_icon_all_image_list">
-      {
-        iconList.map(icon => (
-          <div
-            key={icon}
-            className="story_icon_all_image_list_item"
-            onClick={() => { copyToClipboard(icon); }}
-          >
-            <IconStore
-              getImage={isImage}
-              iconName={icon}
-              fontSize={48}
-              height={48}
-              width={48}
-            />
-            <div style={{ fontSize: 16, marginTop: 16 }}>{icon}</div>
-          </div>
-        ))
-      }
-    </div >
+    <>
+      <div className="clrSubText">Click on any icon to copy the code.</div>
+      <div className="story_icon_all_image_list">
+        {
+          iconList.map(icon => (
+            <div
+              key={icon}
+              className="story_icon_all_image_list_item"
+              onClick={() => { copyIconStoreCode(icon, isImage); }}
+            >
+              <IconStore
+                getImage={isImage}
+                iconName={icon}
+                fontSize={48}
+                height={48}
+                width={48}
+              />
+              <div style={{ fontSize: 16, marginTop: 16 }}>{icon}</div>
+            </div>
+          ))
+        }
+      </div >
+    </>
   );
+};
+
+
+const copyIconStoreCode = (iconName = '', isImage = false) => {
+  let code = '';
+
+  if (isImage) {
+    code = `<IconStore
+  getImage
+  iconName={IMG_ICON_LIST.${iconName}}
+  fontSize={24}
+  height={24}
+  width={24}
+  iconClass=""
+  />`;
+
+  } else {
+    code = `<IconStore
+  iconName={MI_ICON_LIST.${iconName}}
+  fontSize={24}
+  height={24}
+  width={24}
+  iconClass=""
+  />`;
+  }
+
+  copyToClipboard(code);
 };
