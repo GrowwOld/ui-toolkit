@@ -1,6 +1,5 @@
 @import '../src/utils/styles/app.css';
-
-:root{
+:root {
   --spacing-none: 0;
   --spacing-extra-small: 0.25rem;
   --spacing-small: 0.5rem;
@@ -34,15 +33,14 @@
   margin-top: 2px;
 }
 
-
 /* Dropdown */
 
 .story_card {
-    box-shadow: 0 1px 7px 0 var(--boxShadow);
-    background: var(--cardBackground);
+  box-shadow: 0 1px 7px 0 var(--boxShadow);
+  background: var(--cardBackground);
 }
 
-.story_dropdown_trigger{
+.story_dropdown_trigger {
   display: flex;
 }
 
@@ -59,11 +57,35 @@
 }
 
 .story_dropdown_item {
-    cursor: pointer;
-    padding: var(--spacing-small) var(--spacing-small);
-    background: var(--primaryBg);
-    color: var(--text);
+  cursor: pointer;
+  padding: var(--spacing-small) var(--spacing-small);
+  background: var(--primaryBg);
+  color: var(--text);
 }
+
 .story_dropdown_item:hover {
   background: var(--constantSecondaryClr10);
+}
+
+/* Icon ALL IMAGE LIST */
+
+.story_icon_all_image_list {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 24px;
+}
+
+.story_icon_all_image_list_item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 16px;
+  min-width: 220px;
+  margin-bottom: 24px;
+}
+
+.story_icon_all_image_list_item:hover {
+  cursor: pointer;
+  border: 1px solid var(--border);
+  border-radius: 8px;
 }
