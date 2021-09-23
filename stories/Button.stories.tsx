@@ -1,8 +1,14 @@
 import React from 'react';
-import { Story } from "@storybook/react";
-import { action } from '@storybook/addon-actions';
 
-import { Button, MI_ICON_LIST } from '../src/components/atoms';
+import { ReactIconProps } from '@groww-tech/icon-store/types';
+import Search from '@groww-tech/icon-store/mi/Search';
+import { action } from '@storybook/addon-actions';
+import { Story } from '@storybook/react';
+
+import {
+  Button,
+  MI_ICON_LIST
+} from '../src/components/atoms';
 import { Props as ButtonProps } from '../src/components/atoms/Button/Button';
 
 export default {
@@ -13,9 +19,9 @@ export default {
       control: {
         type: 'select',
         options: [
-          "Primary",
-          "Secondary",
-          "Tertiary"
+          'Primary',
+          'Secondary',
+          'Tertiary'
         ]
       }
     },
@@ -28,42 +34,55 @@ export default {
       }
     },
     loadingText: {
-      control: "text"
+      control: 'text'
     }
   }
 };
+
 
 const Template: Story<ButtonProps> = (args) => <Button {...args} />;
 
 export const Primary = Template.bind({});
 Primary.args = {
-  buttonText: "BUTTON",
+  buttonText: 'BUTTON',
   onClick: action('onButtonClick')
 };
 
 export const Secondary = Template.bind({});
 Secondary.args = {
   ...Primary.args,
-  buttonType: "Secondary"
+  buttonType: 'Secondary'
 };
 
 export const Disabled = Template.bind({});
 Disabled.args = {
   ...Primary.args,
-  isDisabled: true,
+  isDisabled: true
 };
 
 export const Loading = Template.bind({});
 Loading.args = {
   ...Primary.args,
-  loadingText: "LOADING",
+  loadingText: 'LOADING',
   showLoader: true
 };
 
 export const FullWidth = Template.bind({});
 FullWidth.args = {
   ...Primary.args,
-  width: "100%"
+  width: '100%'
+};
+
+export const WithIcon = Template.bind({});
+WithIcon.args = {
+  ...Primary.args,
+  iconPosition: 'Left',
+  iconComponent: (iconProps: ReactIconProps) => (
+    <Search
+      {...iconProps}
+      size={20}
+    />
+  )
 };
 
 export const Custom = Template.bind({});

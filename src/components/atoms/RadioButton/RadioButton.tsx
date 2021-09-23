@@ -1,7 +1,8 @@
 import React from 'react';
 import cn from 'classnames';
 
-import { IconStore, MI_ICON_LIST } from '../IconStore';
+import RadioButtonChecked from '@groww-tech/icon-store/mi/RadioButtonChecked';
+import RadioButtonUnchecked from '@groww-tech/icon-store/mi/RadioButtonUnchecked';
 
 import './radioButton.css';
 
@@ -35,11 +36,21 @@ const RadioButton = (props: Props) => {
       onClick={onSelect}
       className={`radioCo11Box ${parentClassName} ${radioDirection === RADIO_DIRECTION.RIGHT ? 'radioCo11BoxReverse' : ''}`}
     >
-      <IconStore
-        iconName={selected ? MI_ICON_LIST.radio_button_checked : MI_ICON_LIST.radio_button_unchecked}
-        iconClass={`radioCo11Icon ${iconClassName}`}
-        fontSize={20}
-      />
+      {
+        selected
+          ? (
+            <RadioButtonChecked
+              size={20}
+              className={`radioCo11Icon ${iconClassName}`}
+            />
+          )
+          : (
+            <RadioButtonUnchecked
+              size={20}
+              className={`radioCo11Icon ${iconClassName}`}
+            />
+          )
+      }
       <div className={labelParentClassName}>
         {label}
       </div>

@@ -1,8 +1,11 @@
 import React from 'react';
-import { Story } from "@storybook/react";
+import { Story } from '@storybook/react';
+
+import { ReactIconProps } from '@groww-tech/icon-store/types';
+import ThumbUpAlt from '@groww-tech/icon-store/mi/ThumbUpAlt';
 
 import { Props as InformationBoxProps } from '../src/components/atoms/InformationBoard/InformationBox';
-import { InformationBox, MI_ICON_LIST } from '../src/components/atoms';
+import { InformationBox } from '../src/components/atoms';
 
 export default {
   title: 'InformationBox',
@@ -29,44 +32,49 @@ export default {
       }
     },
     outlined: {
-      control: "select",
+      control: 'select',
       options: [
         true, false
       ]
     },
     width: {
-      control: "number"
+      control: 'number'
     },
     height: {
-      control: "number"
+      control: 'number'
     }
   }
 };
+
 
 const Template: Story<InformationBoxProps> = (args) => <InformationBox {...args} />;
 
 export const Default = Template.bind({});
 Default.args = {
   showIcon: true,
-  icon: MI_ICON_LIST.info,
-  iconClass: '',
-  width: "auto",
-  height: "auto",
+  width: 'auto',
+  height: 'auto',
   outlined: false,
   type: 'NEUTRAL',
-  informationBoxClass: "",
+  informationBoxClass: '',
   informationBoxStyle: {
-    color: "var(--text)"
+    color: 'var(--text)'
   },
-  content: 'This is a default informaton box. This can be used for anything, from a notice box to a notification box to anything you need it to be!!. Just kidding it\'s just a template text to fill up space. :P'
-}
+  content: `This is a default informaton box. This can be used for anything,
+   from a notice box to a notification box to anything you need it to be!!.
+  Just kidding it\'s just a template text to fill up space. :P`
+};
 
 
 export const Positive = Template.bind({});
 Positive.args = {
   ...Default.args,
   type: 'POSITIVE',
-  content: 'This is a positive informaton box'
+  iconComponent: (props: ReactIconProps) => <ThumbUpAlt
+    {...props}
+    size={24}
+  />,
+  content: 'This is a positive informaton box with custom icon'
 };
 
 export const Neutral = Template.bind({});
@@ -111,7 +119,7 @@ Custom.args = {
   ...Default.args,
   type: 'DEFAULT',
   informationBoxStyle: {
-    background: "var(--secondaryClr30)",
+    background: 'var(--secondaryClr30)',
     fontSize: 16
   },
   width: 500,

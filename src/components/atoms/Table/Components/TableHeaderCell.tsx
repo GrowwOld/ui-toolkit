@@ -1,8 +1,8 @@
 import React, { ReactNode } from 'react';
-
 import cn from 'classnames';
 
-import { IconStore, MI_ICON_LIST } from '../../IconStore';
+import ArrowDropDown from '@groww-tech/icon-store/mi/ArrowDropDown';
+import ArrowDropUp from '@groww-tech/icon-store/mi/ArrowDropUp';
 
 
 type SortConfig = {
@@ -58,11 +58,11 @@ const TableHeaderCell = (props: Props) => {
         {...otherProps}
       >
         {children}
-        <IconStore
-          iconName={sortConfig?.ascending ? MI_ICON_LIST.arrow_drop_up : MI_ICON_LIST.arrow_drop_down}
-          iconClass={iconClasses}
-          fontSize={24}
-        />
+        {
+          sortConfig?.ascending
+            ? <ArrowDropUp className={iconClasses} />
+            : <ArrowDropDown className={iconClasses} />
+        }
       </th>
     );
 
