@@ -76,6 +76,7 @@ FullWidth.args = {
 export const WithIcon = Template.bind({});
 WithIcon.args = {
   ...Primary.args,
+  buttonText: 'SEARCH',
   iconPosition: 'Left',
   iconComponent: (iconProps: ReactIconProps) => (
     <Search

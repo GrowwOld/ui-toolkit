@@ -72,7 +72,6 @@ Positive.args = {
   type: 'POSITIVE',
   iconComponent: (props: ReactIconProps) => <ThumbUpAlt
     {...props}
-    size={24}
   />,
   content: 'This is a positive informaton box with custom icon'
 };
