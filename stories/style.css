@@ -1,4 +1,4 @@
-@import '../src/utils/styles/app.css';
+@import url(~@groww-tech/base-css/dist/index.css);
 
 :root{
   --spacing-none: 0;
