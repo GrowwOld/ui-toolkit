@@ -12,11 +12,12 @@
 }
 
 .select_optionClass {
-  width: 200px;
+  width: 200px !important;
 }
 
 .select_activeOptionClass {
-  width: 200px;
+  /* needed in storybook, since default classes are imported before this class */
+  width: 200px !important;
 }
 
 .accordion_parentClass {
