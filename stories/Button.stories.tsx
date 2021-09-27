@@ -5,10 +5,7 @@ import Search from '@groww-tech/icon-store/mi/Search';
 import { action } from '@storybook/addon-actions';
 import { Story } from '@storybook/react';
 
-import {
-  Button,
-  MI_ICON_LIST
-} from '../src/components/atoms';
+import { Button } from '../src/components/atoms';
 import { Props as ButtonProps } from '../src/components/atoms/Button/Button';
 
 export default {
@@ -92,7 +89,6 @@ Custom.args = {
   buttonText: 'CHOOSE DATE',
   height: 50,
   width: 260,
-  iconName: MI_ICON_LIST.check,
   textColor: 'var(--constantWhite)',
   backgroundColor: 'var(--growwRed)'
 };
