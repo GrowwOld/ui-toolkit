@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-import { KeyboardArrowDown } from 'beta-icon-store/mi';
+import { KeyboardArrowDown } from '@groww-tech/icon-store/mi';
 
 import { action } from '@storybook/addon-actions';
 import { Story } from '@storybook/react';

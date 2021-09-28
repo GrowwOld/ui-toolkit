@@ -1,7 +1,7 @@
 import React from 'react';
 
-import { ReactIconProps } from 'beta-icon-store';
-import { Search } from 'beta-icon-store/mi';
+import { ReactIconProps } from '@groww-tech/icon-store';
+import { Search } from '@groww-tech/icon-store/mi';
 import { action } from '@storybook/addon-actions';
 import { Story } from '@storybook/react';
 

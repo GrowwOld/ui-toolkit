@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-import { KeyboardArrowDown, KeyboardArrowUp } from 'beta-icon-store/mi';
+import { KeyboardArrowDown, KeyboardArrowUp } from '@groww-tech/icon-store/mi';
 
 import AnimateHeight from '../AnimateHeight';
 

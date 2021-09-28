@@ -1,6 +1,6 @@
 import React from 'react';
 import cn from 'classnames';
-import { ReactIconProps } from 'beta-icon-store';
+import { ReactIconProps } from '@groww-tech/icon-store';
 
 import './chip.css';
 

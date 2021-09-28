@@ -1,7 +1,7 @@
 import React from 'react';
 
-import { ThumbUpAlt } from 'beta-icon-store/mi';
-import { ReactIconProps } from 'beta-icon-store';
+import { ThumbUpAlt } from '@groww-tech/icon-store/mi';
+import { ReactIconProps } from '@groww-tech/icon-store';
 
 import { Story } from '@storybook/react';
 

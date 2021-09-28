@@ -1,6 +1,6 @@
 import React, { ReactNode } from 'react';
 
-import { ArrowDropDown, ArrowDropUp } from 'beta-icon-store/mi';
+import { ArrowDropDown, ArrowDropUp } from '@groww-tech/icon-store/mi';
 import cn from 'classnames';
 
 
