@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import cn from 'classnames';
 
-import ArrowDropDownCircle from '@groww-tech/icon-store/mi/ArrowDropDownCircle';
+import { ArrowDropDownCircle } from 'beta-icon-store/mi';
 
 import './scrollTop.css';
 

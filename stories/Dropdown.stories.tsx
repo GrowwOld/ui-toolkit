@@ -1,14 +1,14 @@
 import React, { useState } from 'react';
 
-import KeyboardArrowDown from '@groww-tech/icon-store/mi/KeyboardArrowDown';
+import { KeyboardArrowDown } from 'beta-icon-store/mi';
 
-import { Story } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
+import { Story } from '@storybook/react';
 
 import {
   Dropdown,
-  DropdownTrigger,
-  DropdownContent
+  DropdownContent,
+  DropdownTrigger
 } from '../src/components/atoms';
 import { Props as DropdownProps } from '../src/components/atoms/Dropdown/Dropdown';
 

@@ -1,6 +1,6 @@
 import React from 'react';
 
-import KeyboardArrowLeft from '@groww-tech/icon-store/mi/KeyboardArrowLeft';
+import { KeyboardArrowLeft } from 'beta-icon-store/mi';
 
 import './goBack.css';
 

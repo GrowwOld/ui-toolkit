@@ -1,7 +1,7 @@
 import React from 'react';
 import cn from 'classnames';
 
-import KeyboardArrowDown from '@groww-tech/icon-store/mi/KeyboardArrowDown';
+import { KeyboardArrowDown } from 'beta-icon-store/mi';
 
 import {
   Dropdown,

@@ -1,8 +1,7 @@
 import React from 'react';
 import cn from 'classnames';
 
-import RadioButtonChecked from '@groww-tech/icon-store/mi/RadioButtonChecked';
-import RadioButtonUnchecked from '@groww-tech/icon-store/mi/RadioButtonUnchecked';
+import { RadioButtonChecked, RadioButtonUnchecked } from 'beta-icon-store/mi';
 
 import './radioButton.css';
 

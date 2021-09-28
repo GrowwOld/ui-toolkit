@@ -107,7 +107,7 @@
     "typescript": "^4.2.4"
   },
   "dependencies": {
-    "@groww-tech/icon-store": "^0.0.1",
+    "beta-icon-store": "0.0.7",
     "lodash.debounce": "^4.0.8",
     "react-waypoint": "^10.1.0"
   }

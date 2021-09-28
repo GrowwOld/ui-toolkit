@@ -1,11 +1,12 @@
 import React from 'react';
+
+import { ThumbUpAlt } from 'beta-icon-store/mi';
+import { ReactIconProps } from 'beta-icon-store';
+
 import { Story } from '@storybook/react';
 
-import { ReactIconProps } from '@groww-tech/icon-store/types';
-import ThumbUpAlt from '@groww-tech/icon-store/mi/ThumbUpAlt';
-
-import { Props as InformationBoxProps } from '../src/components/atoms/InformationBoard/InformationBox';
 import { InformationBox } from '../src/components/atoms';
+import { Props as InformationBoxProps } from '../src/components/atoms/InformationBoard/InformationBox';
 
 export default {
   title: 'InformationBox',

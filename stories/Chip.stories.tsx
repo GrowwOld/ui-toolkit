@@ -1,8 +1,8 @@
 import React from 'react';
 
-import Cancel from '@groww-tech/icon-store/mi/Cancel';
-import FnoIcon from '@groww-tech/icon-store/custom/FnoIcon';
-import { ReactIconProps } from '@groww-tech/icon-store/types';
+import { Cancel } from 'beta-icon-store/mi';
+import { FnoIcon } from 'beta-icon-store/custom';
+import { ReactIconProps } from 'beta-icon-store';
 
 import { action } from '@storybook/addon-actions';
 import { Story } from '@storybook/react';

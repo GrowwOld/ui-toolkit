@@ -1,6 +1,6 @@
 import React, { PureComponent } from 'react';
 
-import Clear from '@groww-tech/icon-store/mi/Clear';
+import { Clear } from 'beta-icon-store/mi';
 
 import { Button } from '../Button';
 import { Popup } from '../Popup';

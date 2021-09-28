@@ -1,8 +1,7 @@
 import React, { ReactNode } from 'react';
-import cn from 'classnames';
 
-import ArrowDropDown from '@groww-tech/icon-store/mi/ArrowDropDown';
-import ArrowDropUp from '@groww-tech/icon-store/mi/ArrowDropUp';
+import { ArrowDropDown, ArrowDropUp } from 'beta-icon-store/mi';
+import cn from 'classnames';
 
 
 type SortConfig = {
