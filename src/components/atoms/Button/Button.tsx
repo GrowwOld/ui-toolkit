@@ -1,10 +1,7 @@
 import React from 'react';
 import cn from 'classnames';
 
-import {
-  ReactIconComponentType,
-  ReactIconProps
-} from '@groww-tech/icon-store/types';
+import { ReactIconProps } from '@groww-tech/icon-store/types';
 
 import {
   Loader,
@@ -147,7 +144,7 @@ type DefaultProps = {
   buttonType: 'Primary' | 'Secondary' | 'Tertiary';
   fixToBottom: boolean;
   isDisabled: boolean;
-  iconComponent: ((props: ReactIconProps) => ReactIconComponentType) | null;
+  iconComponent: ((props: ReactIconProps) => JSX.Element) | null;
   iconPosition: 'Left' | 'Right';
   showLoader: boolean;
   loadingText: string;

@@ -2,9 +2,9 @@ import React from 'react';
 import cn from 'classnames';
 
 import Info from '@groww-tech/icon-store/mi/Info';
+import { ReactIconProps } from '@groww-tech/icon-store/types';
 
 import './informationBox.css';
-import { ReactIconComponentType, ReactIconProps } from '@groww-tech/icon-store/types';
 
 const COLOR_TYPE = {
   POSITIVE: 'var(--primaryClr10)',
@@ -96,7 +96,7 @@ type DefaultProps = {
   /**
    * iconComponent function returns svg icon component, we pass some extra props from InformationBox component
    */
-  iconComponent: (props: ReactIconProps) => ReactIconComponentType | JSX.Element;
+  iconComponent: (props: ReactIconProps) => JSX.Element;
   outlined: boolean;
   width: number | 'auto';
   height: number | 'auto';

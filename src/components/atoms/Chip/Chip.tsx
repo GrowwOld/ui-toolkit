@@ -1,6 +1,6 @@
 import React from 'react';
 import cn from 'classnames';
-import { ReactIconComponentType, ReactIconProps } from '@groww-tech/icon-store/types';
+import { ReactIconProps } from '@groww-tech/icon-store/types';
 
 import './chip.css';
 
@@ -66,7 +66,7 @@ type DefaultProps = {
   /**
    * iconComponent function returns svg icon component, we pass some extra props from Chip component
    */
-  iconComponent: ((props: ReactIconProps) => ReactIconComponentType) | null;
+  iconComponent: ((props: ReactIconProps) => JSX.Element) | null;
   /**
    * This class will be applied on both, text and icon
    */
