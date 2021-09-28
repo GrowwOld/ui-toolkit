@@ -60,7 +60,7 @@ type DefaultProps = {
    */
   onClick: (e: React.MouseEvent<HTMLImageElement>) => void;
   /**
-   * Position of icon with respect to Chip text, if iconName is provided.
+   * Position of icon with respect to Chip text, if IconComponent is provided
    */
   iconPosition: IconPosition;
   /**
@@ -75,10 +75,6 @@ type DefaultProps = {
    * Custom class for text decoration
    */
   textClass: string;
-  /**
-   * Custom icon, value must be either from MI-ICON-LIST or IMG-ICON-LIST
-   */
-  iconName: string;
 }
 
 export type Props = RequiredProps & DefaultProps;
