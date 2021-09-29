@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import cn from 'classnames';
 
-import { IconStore, MI_ICON_LIST } from '../IconStore';
+import { ArrowDropDownCircle } from '@groww-tech/icon-store/mi';
 
 import './scrollTop.css';
 
@@ -53,12 +53,9 @@ const ScrollTop = (props: Props) => {
       style={props.style}
       onClick={handleIconClick}
     >
-      <IconStore
-        iconName={MI_ICON_LIST.arrow_drop_down_circle}
-        width={52}
-        height={52}
-        fontSize={52}
-        iconClass="cur-po scroll11Img"
+      <ArrowDropDownCircle
+        size={52}
+        className="cur-po scroll11Img"
       />
     </div>
   );

@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { IconStore, MI_ICON_LIST } from '../IconStore';
+import { KeyboardArrowLeft } from '@groww-tech/icon-store/mi';
 
 import './goBack.css';
 
@@ -29,12 +29,11 @@ const GoBack = (props: Props) => {
           <div className="valign-wrapper"
             style={iconStyleWrapper}
           >
-            <IconStore
-              iconName={MI_ICON_LIST.keyboard_arrow_left}
+            <KeyboardArrowLeft
+              size={20}
               width={iconWidth}
               height={iconHeight}
-              fontSize={20}
-              iconClass={`gb6Icon ${iconClass}`}
+              className={`gb6Icon ${iconClass}`}
             />
           </div>
           <div className="gb6Text">

@@ -1,21 +1,24 @@
-import React, { useState } from "react";
-import { Story } from "@storybook/react";
+import React, { useState } from 'react';
+
+import { KeyboardArrowDown } from '@groww-tech/icon-store/mi';
+
 import { action } from '@storybook/addon-actions';
+import { Story } from '@storybook/react';
 
 import {
   Dropdown,
-  DropdownTrigger,
   DropdownContent,
-  IconStore
-} from "../src/components/atoms";
-import { Props as DropdownProps } from "../src/components/atoms/Dropdown/Dropdown";
+  DropdownTrigger
+} from '../src/components/atoms';
+import { Props as DropdownProps } from '../src/components/atoms/Dropdown/Dropdown';
 
 export default {
-  title: "Dropdown",
+  title: 'Dropdown',
   component: Dropdown,
   argTypes: {
-  },
+  }
 };
+
 
 const Template: Story<DropdownProps> = (args) => {
   return (
@@ -24,9 +27,7 @@ const Template: Story<DropdownProps> = (args) => {
     >
       <DropdownTrigger>
         <span className="fs21 story_dropdown_trigger">Domains
-          <IconStore
-            iconName="keyboard_arrow_down"
-          />
+          <KeyboardArrowDown />
         </span>
       </DropdownTrigger>
       <DropdownContent>
@@ -44,22 +45,20 @@ export const Default = Template.bind({});
 Default.args = {
   onHide: action('onHide'),
   onShow: action('onShow')
-}
+};
 
 export const DropdownIconAnimation = (args) => {
-  const [iconOrientation, setIconOrientation] = useState('up')
+  const [ iconOrientation, setIconOrientation ] = useState('up');
+
   return (
     <Dropdown
       {...args}
-      onShow={() => { setIconOrientation('down') }}
-      onHide={() => { setIconOrientation('up') }}
+      onShow={() => { setIconOrientation('down'); }}
+      onHide={() => { setIconOrientation('up'); }}
     >
       <DropdownTrigger>
         <span className="fs18 story_dropdown_trigger">Domains
-          <IconStore
-            iconName="keyboard_arrow_down"
-            iconClass={`story_dropdown_icon story_dropdown_icon_${iconOrientation}`}
-          />
+          <KeyboardArrowDown className={`story_dropdown_icon story_dropdown_icon_${iconOrientation}`} />
         </span>
       </DropdownTrigger>
       <DropdownContent>
@@ -87,10 +86,7 @@ DropdownIconAnimation.parameters = {
     >
       <DropdownTrigger>
         <span className="fs21 story_dropdown_trigger">Domains
-          <IconStore
-            iconName="keyboard_arrow_down"
-            iconClass={"story_dropdown_icon story_dropdown_icon_<iconOrientation>"}
-          />
+          <KeyboardArrowDown className={"story_dropdown_icon story_dropdown_icon_{iconOrientation}"} />
         </span>
       </DropdownTrigger>
       <DropdownContent>
@@ -102,7 +98,7 @@ DropdownIconAnimation.parameters = {
       </DropdownContent>
     </Dropdown>
   );
-      `,
-    },
-  },
+      `
+    }
+  }
 };

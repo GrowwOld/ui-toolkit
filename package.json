@@ -1,6 +1,6 @@
 {
   "name": "@groww-tech/ui-toolkit",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "description": "A lightning nature UI",
   "main": "dist/index.js",
   "module": "dist/index.es.js",
@@ -69,6 +69,7 @@
     "@babel/plugin-proposal-private-methods": "^7.13.0",
     "@babel/preset-react": "^7.13.13",
     "@babel/preset-typescript": "^7.13.0",
+    "@groww-tech/base-css": "0.0.3",
     "@groww-tech/eslint-config": "1.0.4",
     "@groww-tech/eslint-plugin-internal": "1.0.2",
     "@rollup/plugin-commonjs": "^19.0.0",
@@ -106,6 +107,7 @@
     "typescript": "^4.2.4"
   },
   "dependencies": {
+    "@groww-tech/icon-store": "0.0.3",
     "lodash.debounce": "^4.0.8",
     "react-waypoint": "^10.1.0"
   }

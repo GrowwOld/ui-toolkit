@@ -35,7 +35,7 @@ const CheckBox = (props: Props) => {
     >
       <path
         fill="var(--primaryBg)"
-        fill-rule="evenodd"
+        fillRule="evenodd"
         stroke={inActiveColor}
         d="M2.564.5c-.737 0-1.017.054-1.305.208a1.317 1.317 0 0 0-.551.551C.554 1.547.5 1.827.5 2.564v8.872c0 .737.054 1.017.208 1.305.128.239.312.423.551.551.288.154.568.208 1.305.208h8.872c.737 0 1.017-.054 1.305-.208.239-.128.423-.312.551-.551.154-.288.208-.568.208-1.305V2.564c0-.737-.054-1.017-.208-1.305a1.317 1.317 0 0 0-.551-.551C12.453.554 12.173.5 11.436.5H2.564z"
       />
@@ -50,7 +50,7 @@ const CheckBox = (props: Props) => {
       viewBox="0 0 14 14"
     >
       <g fill="none"
-        fill-rule="evenodd"
+        fillRule="evenodd"
       >
         <path
           fill="var(--primaryBg)"
@@ -59,7 +59,7 @@ const CheckBox = (props: Props) => {
         />
         <path
           fill={activeColor}
-          fill-rule="nonzero"
+          fillRule="nonzero"
           d="M9.69 5.173a.591.591 0 1 1 .837.836L6.98 9.556a.591.591 0 0 1-.836 0l-1.97-1.97a.591.591 0 0 1 .835-.836l1.553 1.552L9.69 5.173z"
         />
       </g>

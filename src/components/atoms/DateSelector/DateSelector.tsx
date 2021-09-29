@@ -1,9 +1,7 @@
 import React, { PureComponent } from 'react';
 
-import {
-  IconStore,
-  MI_ICON_LIST
-} from '../IconStore';
+import { Clear } from '@groww-tech/icon-store/mi';
+
 import { Button } from '../Button';
 import { Popup } from '../Popup';
 
@@ -83,12 +81,13 @@ class DateSelector extends PureComponent<Props, State> {
         </div>
         {
           invokeMode === INVOKE_MODE.TOOLTIP
-            ? <IconStore
-              iconName={MI_ICON_LIST.clear}
-              iconClass="date101CrossButton"
-              fontSize={19}
-              onIconClick={onClose}
-            />
+            ? (
+              <Clear
+                size={18}
+                className="date101CrossButton"
+                onClick={onClose}
+              />
+            )
             : null
         }
         <div className="date101SelectedLabel">

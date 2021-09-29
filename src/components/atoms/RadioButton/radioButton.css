@@ -1,15 +1,15 @@
 .radioCo11Icon {
   float: left;
-  color: var(--primaryClr);
+  fill: var(--primaryClr);
   max-width: 20px;
   max-height: 20px;
 }
 
-.radioCo11LabelRight {
+.radioCo11LabelLeft {
   margin-left: 10px;
 }
 
-.radioCo11LabelLeft {
+.radioCo11LabelRight {
   margin-right: 10px;
 }
 

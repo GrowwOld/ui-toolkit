@@ -1,11 +1,14 @@
 import React from 'react';
 import cn from 'classnames';
 
-import { Loader, LOADER_TYPE } from '../Loader';
-import { IconStore } from '../IconStore';
+import { ReactIconProps } from '@groww-tech/icon-store';
+
+import {
+  Loader,
+  LOADER_TYPE
+} from '../Loader';
 
 import './button.css';
-
 class Button extends React.PureComponent<Props> {
 
   render() {
@@ -14,7 +17,6 @@ class Button extends React.PureComponent<Props> {
       buttonType,
       fixToBottom,
       isDisabled,
-      iconName,
       iconPosition,
       showLoader,
       loadingText
@@ -46,13 +48,11 @@ class Button extends React.PureComponent<Props> {
             <span className="absolute-center"
               style={{ padding: '0px 25px' }}
             >
-              {
-                iconName && iconPosition === 'Left' && this.getIconUI()
-              }
+              {iconPosition === 'Left' && this.getIconUI()}
+
               <span>{showLoader && !isDisabled ? loadingText : buttonText}</span>
-              {
-                iconName && iconPosition === 'Right' && this.getIconUI()
-              }
+
+              {iconPosition === 'Right' && this.getIconUI()}
             </span>
           </div>
         </div>
@@ -62,16 +62,14 @@ class Button extends React.PureComponent<Props> {
 
 
   getIconUI = () => {
-    const { iconName, iconPosition, fontSize } = this.props;
+    const { iconComponent, iconPosition } = this.props;
 
-    return (
-      <IconStore
-        iconName={iconName}
-        iconStyle={this.getComputedStyleForIcon()}
-        iconClass={`btn51Icon${iconPosition} absolute-center`}
-        fontSize={fontSize && typeof fontSize === 'number' ? fontSize : 24}
-      />
-    );
+    const buttonIconProps = {
+      className: `btn51Icon${iconPosition}`,
+      fill: 'currentColor'
+    };
+
+    return iconComponent?.(buttonIconProps) || null;
   }
 
 
@@ -105,19 +103,6 @@ class Button extends React.PureComponent<Props> {
   }
 
 
-  getComputedStyleForIcon = () => {
-    const {
-      fontSize,
-      textColor
-    } = this.props;
-
-    return {
-      fontSize,
-      color: textColor
-    };
-  }
-
-
   public static defaultProps: DefaultProps = {
     /**
     * How large should the button be?
@@ -130,7 +115,7 @@ class Button extends React.PureComponent<Props> {
     buttonType: 'Primary',
     fixToBottom: false,
     isDisabled: false,
-    iconName: '',
+    iconComponent: null,
     iconPosition: 'Left',
     showLoader: false,
     loadingText: 'Loading...',
@@ -138,7 +123,6 @@ class Button extends React.PureComponent<Props> {
     textColor: '',
     backgroundColor: ''
   }
-
 }
 
 
@@ -160,7 +144,7 @@ type DefaultProps = {
   buttonType: 'Primary' | 'Secondary' | 'Tertiary';
   fixToBottom: boolean;
   isDisabled: boolean;
-  iconName: string;
+  iconComponent: ((props: ReactIconProps) => JSX.Element) | null;
   iconPosition: 'Left' | 'Right';
   showLoader: boolean;
   loadingText: string;

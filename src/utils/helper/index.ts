@@ -1,5 +1,3 @@
-import React from 'react';
-
 /**
  * This function sets an event listener for a custom event
  * at the document level. It takes the name of the custom event
@@ -64,4 +62,17 @@ export function ordinalSuffixOf(date: number) {
   }
 
   return date + 'th';
+}
+
+export function copyToClipboard(str: string) {
+  /**
+   * This function is used to copy anything to the clipboard
+   */
+  const el = document.createElement('textarea');
+
+  el.value = str;
+  document.body.appendChild(el);
+  el.select();
+  document.execCommand('copy');
+  document.body.removeChild(el);
 }
