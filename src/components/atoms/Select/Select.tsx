@@ -1,7 +1,8 @@
 import React from 'react';
 import cn from 'classnames';
 
-import { IconStore, MI_ICON_LIST } from '../IconStore';
+import { KeyboardArrowDown } from '@groww-tech/icon-store/mi';
+
 import {
   Dropdown,
   DropdownTrigger,
@@ -73,12 +74,7 @@ class Select extends React.PureComponent<Props> {
                   {selectedOption ? selectedOption.label : placeholder}
                 </div>
 
-                <IconStore
-                  iconName={MI_ICON_LIST.keyboard_arrow_down}
-                  width={22}
-                  height={22}
-                  fontSize={22}
-                />
+                <KeyboardArrowDown size={22}/>
 
                 <input
                   value={selectedOption?.value}

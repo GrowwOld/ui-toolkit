@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Story } from "@storybook/react";
+import { Story } from '@storybook/react';
 
 import { Select } from '../src/components/atoms';
 import { Props as SelectProps } from '../src/components/atoms/Select/Select';
@@ -24,8 +24,9 @@ const RELATION_DATA = [
   { value: 'GRAND DAUGHTER', label: 'Grand Daughter' }
 ];
 
+
 const Template: Story<SelectProps> = ({ activeIndex, onSelectChange, ...args }) => {
-  const [selectedIndex, setSelectedIndex] = useState(-1);
+  const [ selectedIndex, setSelectedIndex ] = useState(-1);
 
   return (
     <Select
@@ -34,12 +35,12 @@ const Template: Story<SelectProps> = ({ activeIndex, onSelectChange, ...args }) 
       {...args}
     />
   );
-}
+};
 
 export const Basic = Template.bind({});
 Basic.args = {
-  placeholder: "Select Relation",
+  placeholder: 'Select Relation',
   data: RELATION_DATA,
-  activeOptionBoxClass: "select_activeOptionClass",
-  optionsParentClass: "select_optionClass"
-}
+  activeOptionBoxClass: 'select_active_option_class',
+  optionsParentClass: 'select_option_class'
+};

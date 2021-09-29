@@ -1,7 +1,6 @@
 import React from 'react';
 import cn from 'classnames';
-
-import { IconStore } from '../IconStore';
+import { ReactIconProps } from '@groww-tech/icon-store';
 
 import './chip.css';
 
@@ -12,6 +11,11 @@ enum IconPosition {
 
 
 const Chip = (props: Props) => {
+  const {
+    text, textClass, parentClass,
+    iconComponent, iconPosition
+  } = props;
+
 
   const handleClick = (e: React.MouseEvent<HTMLImageElement>) => {
     e.stopPropagation();
@@ -20,15 +24,17 @@ const Chip = (props: Props) => {
     onClick(e);
   };
 
-  const { text, iconName, iconClass, iconPosition,
-    textClass, parentClass, getImage } = props;
+  const chipIconProps = {
+    className: 'chip12Icon',
+    size: 14
+  };
 
   return (
     <div
       className={
         cn({
           'chip12Chip': true,
-          'chip12Tag': (iconName),
+          'chip12Tag': iconComponent,
           'chip12IconLeft': (iconPosition === IconPosition.LEFT),
           [`${parentClass}`]: true
         })
@@ -36,20 +42,8 @@ const Chip = (props: Props) => {
       onClick={handleClick}
     >
       <span className={textClass}>{text}</span>
-      {
-        iconName
-          ? <div>
-            <IconStore
-              getImage={getImage}
-              iconName={iconName}
-              width={14}
-              height={14}
-              fontSize={14}
-              iconClass={`chip12Icon ${iconClass}`}
-            />
-          </div>
-          : null
-      }
+
+      {iconComponent?.(chipIconProps)}
     </div >
   );
 };
@@ -66,29 +60,21 @@ type DefaultProps = {
    */
   onClick: (e: React.MouseEvent<HTMLImageElement>) => void;
   /**
-   * Position of icon with respect to Chip text, if iconName is provided.
+   * Position of icon with respect to Chip text, if IconComponent is provided
    */
   iconPosition: IconPosition;
   /**
-   * Custom iconClass for icon, if iconName is provided.
+   * iconComponent function returns svg icon component, we pass some extra props from Chip component
    */
-  iconClass: string;
+  iconComponent: ((props: ReactIconProps) => JSX.Element) | null;
   /**
    * This class will be applied on both, text and icon
    */
   parentClass: string;
   /**
-   * If getImage is true, iconName should be one from IMG_ICON_LIST
-   */
-  getImage: boolean;
-  /**
    * Custom class for text decoration
    */
   textClass: string;
-  /**
-   * Custom icon, value must be either from MI-ICON-LIST or IMG-ICON-LIST
-   */
-  iconName: string;
 }
 
 export type Props = RequiredProps & DefaultProps;
@@ -96,11 +82,9 @@ export type Props = RequiredProps & DefaultProps;
 Chip.defaultProps = {
   onClick: () => { },
   iconPosition: IconPosition.RIGHT,
-  iconClass: '',
+  iconComponent: null,
   textClass: '',
-  iconName: '',
-  parentClass: '',
-  getImage: false
+  parentClass: ''
 };
 
 export default React.memo(Chip);

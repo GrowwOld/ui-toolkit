@@ -1,4 +1,4 @@
-@import '../src/utils/styles/app.css';
+@import url(~@groww-tech/base-css/dist/index.css);
 
 :root{
   --spacing-none: 0;
@@ -11,38 +11,35 @@
   --spacing-extra-extra-extra-large: 16rem;
 }
 
-.select_optionClass {
-  width: 200px;
+.select_option_class {
+  width: 200px !important;
 }
 
-.select_activeOptionClass {
-  width: 200px;
+.select_active_option_class {
+  /* needed in storybook, since default classes are imported before this class */
+  width: 200px !important;
 }
 
-.accordion_parentClass {
+.accordion_parent_class {
   width: 200px;
   border: 1px solid var(--border);
   border-radius: 4px;
   padding: 16px;
 }
 
-.accordion_contentClass {
+.accordion_content_class {
   margin: 16px 0;
-}
-
-.chip_iconMargin {
-  margin-top: 2px;
 }
 
 
 /* Dropdown */
 
 .story_card {
-    box-shadow: 0 1px 7px 0 var(--boxShadow);
-    background: var(--cardBackground);
+  box-shadow: 0 1px 7px 0 var(--boxShadow);
+  background: var(--cardBackground);
 }
 
-.story_dropdown_trigger{
+.story_dropdown_trigger {
   display: flex;
 }
 
@@ -59,11 +56,43 @@
 }
 
 .story_dropdown_item {
-    cursor: pointer;
-    padding: var(--spacing-small) var(--spacing-small);
-    background: var(--primaryBg);
-    color: var(--text);
+  cursor: pointer;
+  padding: var(--spacing-small) var(--spacing-small);
+  background: var(--primaryBg);
+  color: var(--text);
 }
+
 .story_dropdown_item:hover {
   background: var(--constantSecondaryClr10);
+}
+
+/* Icon ALL IMAGE LIST */
+
+.story_icon_all_image_list {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 24px;
+}
+
+.story_icon_all_image_list_item {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px;
+  min-width: 220px;
+  min-height: 120px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  margin: 16px 8px;
+}
+
+.story_icon_all_image_list_item:hover {
+  cursor: pointer;
+  border: 1px solid var(--text);
+}
+
+.story_icon_all_image_list_item:active {
+  cursor: pointer;
+  border: 2px solid var(--text);
 }

@@ -1,7 +1,8 @@
 import React from 'react';
 import cn from 'classnames';
 
-import { IconStore, MI_ICON_LIST } from '../IconStore';
+import { ReactIconProps } from '@groww-tech/icon-store';
+import { Info } from '@groww-tech/icon-store/mi';
 
 import './informationBox.css';
 
@@ -25,11 +26,11 @@ const BORDER_COLOR = {
 const InformationBox = (props: Props) => {
   const {
     type,
-    icon,
     width,
     height,
     content,
     showIcon,
+    iconComponent,
     outlined,
     informationBoxClass,
     informationBoxStyle
@@ -51,22 +52,22 @@ const InformationBox = (props: Props) => {
     ...informationBoxStyle
   };
 
+  const infoIconProps = {
+    size: 20,
+    className: 'clrText infbd45InfoIcon'
+  };
+
   return (
     <div style={parentDivStyle}
       className={parentDivClass}
     >
       {
-        showIcon &&
-        <IconStore
-          width={20}
-          height={20}
-          fontSize={20}
-          iconClass="clrText infbd45InfoIcon"
-          iconName={icon}
-        />
+        showIcon
+          ? iconComponent?.(infoIconProps)
+          : null
       }
 
-      <div className="infbd45Content">{content}</div>
+      <span>{content}</span>
 
     </div>
   );
@@ -75,8 +76,7 @@ const InformationBox = (props: Props) => {
 
 const defaultProps: DefaultProps = {
   showIcon: true,
-  icon: MI_ICON_LIST.info,
-  iconClass: '',
+  iconComponent: (props: ReactIconProps) => <Info {...props} />,
   width: 'auto',
   height: 'auto',
   outlined: false,
@@ -92,9 +92,11 @@ type RequiredProps = {
 
 
 type DefaultProps = {
-  icon: string;
   showIcon: boolean;
-  iconClass: string;
+  /**
+   * iconComponent function returns svg icon component, we pass some extra props from InformationBox component
+   */
+  iconComponent: (props: ReactIconProps) => JSX.Element;
   outlined: boolean;
   width: number | 'auto';
   height: number | 'auto';

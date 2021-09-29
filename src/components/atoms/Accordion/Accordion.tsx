@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 
-import { IconStore, MI_ICON_LIST } from '../IconStore';
+import { KeyboardArrowDown, KeyboardArrowUp } from '@groww-tech/icon-store/mi';
+
 import AnimateHeight from '../AnimateHeight';
 
 import './accordion.css';
@@ -34,13 +35,7 @@ const Accordion = (props: Props) => {
         <div className={`acc11Title ${titleClass}`}>{title}</div>
         {
           showRightIcon
-            ? <IconStore
-              iconName={!isOpen ? MI_ICON_LIST.keyboard_arrow_down : MI_ICON_LIST.keyboard_arrow_up}
-              iconClass={`acc1Icon ${iconClass}`}
-              width={20}
-              height={20}
-              fontSize={20}
-            />
+            ? (isOpen ? <KeyboardArrowUp size={20} /> : <KeyboardArrowDown size={20} />)
             : null
         }
       </div>
