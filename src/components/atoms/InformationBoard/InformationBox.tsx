@@ -1,8 +1,8 @@
 import React from 'react';
 import cn from 'classnames';
 
-import Info from '@groww-tech/icon-store/mi/Info';
 import { ReactIconProps } from '@groww-tech/icon-store';
+import { Info } from '@groww-tech/icon-store/mi';
 
 import './informationBox.css';
 

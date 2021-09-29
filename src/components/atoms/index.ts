@@ -5,7 +5,6 @@ export * from './Chip';
 export * from './DateSelector';
 export * from './Dropdown';
 export * from './GoBack';
-export * from './IconStore';
 export * from './Image';
 export * from './InformationBoard';
 export * from './LaserBeam';

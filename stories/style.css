@@ -11,29 +11,26 @@
   --spacing-extra-extra-extra-large: 16rem;
 }
 
-.select_optionClass {
+.select_option_class {
   width: 200px !important;
 }
 
-.select_activeOptionClass {
+.select_active_option_class {
   /* needed in storybook, since default classes are imported before this class */
   width: 200px !important;
 }
 
-.accordion_parentClass {
+.accordion_parent_class {
   width: 200px;
   border: 1px solid var(--border);
   border-radius: 4px;
   padding: 16px;
 }
 
-.accordion_contentClass {
+.accordion_content_class {
   margin: 16px 0;
 }
 
-.chip_iconMargin {
-  margin-top: 2px;
-}
 
 /* Dropdown */
 
@@ -80,15 +77,22 @@
 .story_icon_all_image_list_item {
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
   align-items: center;
   padding: 16px;
   min-width: 220px;
   min-height: 120px;
-  margin-bottom: 24px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  margin: 16px 8px;
 }
 
 .story_icon_all_image_list_item:hover {
   cursor: pointer;
-  border: 1px solid var(--border);
-  border-radius: 8px;
+  border: 1px solid var(--text);
+}
+
+.story_icon_all_image_list_item:active {
+  cursor: pointer;
+  border: 2px solid var(--text);
 }
