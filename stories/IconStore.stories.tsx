@@ -18,18 +18,24 @@ export const AllImageIcons = () => {
       Object.keys(imgIcons).map(icon => {
         const IconComponent = imgIcons[icon];
         const importCode = `import { ${icon} } from '@groww-tech/icon-store/custom';`;
+        const isDarkIcon = icon.includes('Dark');
+        const darkStyles = {
+          backgroundColor: '#121212',
+          color: '#FFF'
+        };
 
         return (
           <div
             key={icon}
             className="story_icon_all_image_list_item"
             onClick={() => { copyToClipboard(importCode); }}
+            style={isDarkIcon ? darkStyles : {}}
           >
             <IconComponent
               custom
-              style={{ maxWidth: 220, maxHeight: 120 }}
+              size={48}
             />
-            <div style={{ fontSize: 16, marginTop: 16 }}>{icon}</div>
+            <div style={{ fontSize: 16, marginTop: 32 }}>{icon}</div>
           </div>
         );
       })
@@ -51,7 +57,7 @@ export const AllMaterialIcons = () => {
             className="story_icon_all_image_list_item"
             onClick={() => { copyToClipboard(importCode); }}
           >
-            <IconComponent />
+            <IconComponent size={48}/>
             <div className="fs16">{icon}</div>
           </div>
         );
