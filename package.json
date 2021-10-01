@@ -1,6 +1,6 @@
 {
   "name": "@groww-tech/ui-toolkit",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "description": "A lightning nature UI",
   "main": "dist/index.js",
   "module": "dist/index.es.js",
@@ -107,7 +107,7 @@
     "typescript": "^4.2.4"
   },
   "dependencies": {
-    "@groww-tech/icon-store": "0.0.3",
+    "@groww-tech/icon-store": "0.0.4",
     "lodash.debounce": "^4.0.8",
     "react-waypoint": "^10.1.0"
   }
