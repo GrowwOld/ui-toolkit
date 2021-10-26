@@ -90,7 +90,7 @@ type DefaultProps = {
 }
 
 
-export type Props = RequiredProps & DefaultProps;
+export type Props = RequiredProps & DefaultProps & Partial<HTMLImageElement>;
 
 
 Image.defaultProps = {
