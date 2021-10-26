@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 import { KeyboardArrowDown, KeyboardArrowUp } from '@groww-tech/icon-store/mi';
 
@@ -11,10 +11,13 @@ const Accordion = (props: Props) => {
 
   const [ isOpen, setAccordionToggle ] = useState(props.onMountOpen);
 
+  useEffect(() => {
+    props.onToggleCallback(isOpen);
+  }, [ isOpen ]);
+
 
   const toggleState = () => {
     setAccordionToggle(!isOpen);
-    props.onToggleCallback(isOpen);
   };
 
   const {
