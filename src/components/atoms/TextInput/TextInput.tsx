@@ -1,4 +1,3 @@
-// import Loader from '../Loader';
 import "./textinput.css";
 
 import React from "react";
