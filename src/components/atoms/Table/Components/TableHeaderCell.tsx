@@ -23,7 +23,7 @@ type Props = {
 }
 
 
-const TableHeaderCell = (props: Props) => {
+const TableHeaderCell = (props: React.ThHTMLAttributes<HTMLTableCellElement> & Props) => {
 
   const {
     children,
