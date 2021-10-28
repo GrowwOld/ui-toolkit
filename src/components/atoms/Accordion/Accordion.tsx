@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 
 import { KeyboardArrowDown, KeyboardArrowUp } from '@groww-tech/icon-store/mi';
 
@@ -9,9 +9,15 @@ import './accordion.css';
 
 const Accordion = (props: Props) => {
 
+  const isFirstRender = useRef(true);
   const [ isOpen, setAccordionToggle ] = useState(props.onMountOpen);
 
   useEffect(() => {
+    if (isFirstRender.current) {
+      isFirstRender.current = false;
+      return;
+    }
+
     props.onToggleCallback(isOpen);
   }, [ isOpen ]);
 
