@@ -157,6 +157,6 @@ type DefaultProps = {
 }
 
 
-export type Props = RequiredProps & DefaultProps & Partial<HTMLButtonElement>;
+export type Props = RequiredProps & DefaultProps;
 
 export default Button;
