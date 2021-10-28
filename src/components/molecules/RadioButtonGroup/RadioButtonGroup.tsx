@@ -48,13 +48,13 @@ type DefaultProps = {
 
 type RequiredProps = {
   radioButtons: RadioButtonType[];
-  selected: string;
+  selected: string | number;
   onSelect: (value: string) => void;
 }
 
 
 export type RadioButtonType = {
-  value: string;
+  value: string | number;
   label: React.ReactNode;
   labelClassName?: string;
   parentClassName?: string;
