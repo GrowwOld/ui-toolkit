@@ -1,7 +1,8 @@
-import React from 'react';
-import cn from 'classnames';
-// import Loader from '../Loader';
-import './textinput.css';
+import "./textinput.css";
+
+import React from "react";
+
+import cn from "classnames";
 
 class TextInput extends React.PureComponent<TextInputProps> {
   textInputRef = React.createRef<HTMLInputElement>()
@@ -155,10 +156,12 @@ type DefaultProps = {
   onEnterPress: (e: React.KeyboardEvent<HTMLInputElement>) => void;
   onBackspace: (e: React.KeyboardEvent<HTMLInputElement>) => void;
   maxTextLimit: number;
-  minNumber: number;
-  maxNumber: number;
+  min?: string | number;
+  max?: string | number;
+  minNumber: string | number;
+  maxNumber: string | number;
   fontSize: string | number;
-  placeholder: string;
+  placeholder?: string;
   autoComplete: string;
   prefixComponent: () => React.ReactNode;
   suffixComponent: () => React.ReactNode;
