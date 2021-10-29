@@ -15,8 +15,8 @@ jobs:
       - run: git config --global user.name "github-bot"
       - run: npm install
       - run: npm run build
-      - run: npm publish --access public --ignore-scripts
       - run: npm run pushTags
+      - run: npm publish --access public --ignore-scripts
         env:
           NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
           github-token: ${{secrets.GITHUB_TOKEN}}
