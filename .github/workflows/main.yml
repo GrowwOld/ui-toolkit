@@ -14,7 +14,9 @@ jobs:
       - run: git config --global user.email "release-bot@groww.in"
       - run: git config --global user.name "github-bot"
       - run: npm install
-      - run: npm publish --access public
+      - run: npm run build
+      - run: npm publish --access public --ignore-scripts
+      - run: npm run pushTags
         env:
           NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
           github-token: ${{secrets.GITHUB_TOKEN}}
