@@ -62,10 +62,10 @@ const TableHeaderCell = (props: React.ThHTMLAttributes<HTMLTableCellElement> & P
         {children}
         {
           sortConfig?.ascending
-            ? <ArrowDropUp size={24}
+            ? <ArrowDropUp
               className={iconClasses}
             />
-            : <ArrowDropDown size={24}
+            : <ArrowDropDown
               className={iconClasses}
             />
         }
