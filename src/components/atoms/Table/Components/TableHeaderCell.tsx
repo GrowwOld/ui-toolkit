@@ -1,8 +1,11 @@
-import React, { ReactNode } from 'react';
+import React, { ReactNode } from "react";
 
-import { ArrowDropDown, ArrowDropUp } from '@groww-tech/icon-store/mi';
-import cn from 'classnames';
+import cn from "classnames";
 
+import {
+  ArrowDropDown,
+  ArrowDropUp,
+} from "@groww-tech/icon-store/mi";
 
 type SortConfig = {
   iconClass?: string;
@@ -47,7 +50,7 @@ const TableHeaderCell = (props: React.ThHTMLAttributes<HTMLTableCellElement> & P
 
     const classes = cn(className, { 'tb10SelectHeaderCell': sortConfig?.isSelected });
     const customIconClass = sortConfig?.iconClass || '';
-    const iconClasses = cn('tb10IconClass', customIconClass, { 'tb10HideIcon': sortConfig?.hideIcon, 'primaryClr': sortConfig?.isSelected });
+    const iconClasses = cn('pos-rel tb10IconClass', customIconClass, { 'tb10HideIcon': sortConfig?.hideIcon, 'primaryClr': sortConfig?.isSelected });
 
     return (
       <th
