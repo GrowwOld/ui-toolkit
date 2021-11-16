@@ -1,9 +1,9 @@
 {
-  "name": "@groww-tech/ui-toolkit",
-  "version": "0.0.9",
+  "name": "groww-beta-ui-toolkit",
+  "version": "0.0.10",
   "description": "A lightning nature UI",
-  "main": "dist/index.js",
-  "module": "dist/index.es.js",
+  "main": "dist/cjs/index.js",
+  "module": "dist/esm/index.js",
   "types": "dist/types",
   "files": [
     "/dist"
@@ -13,8 +13,11 @@
     "type": "git",
     "url": "git+https://github.com/Groww/ui-toolkit.git"
   },
-  "author": "Vikas Singh <vikas.singh707@gmail.com> (https://twitter.com/VikasSi25579022)",
+  "author": "Aditya Sharma <aditya.sharma@groww.in> (https://twitter.com/VikasSi25579022)",
   "contributors": [
+    {
+      "name":"Aditya Vandan Sharma"
+    },
     {
       "name": "Ankit Chouhan",
       "url": "https://twitter.com/ankit__chouhan"
