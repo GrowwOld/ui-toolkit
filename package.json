@@ -1,6 +1,6 @@
 {
   "name": "groww-beta-ui-toolkit",
-  "version": "0.0.10",
+  "version": "0.0.9",
   "description": "A lightning nature UI",
   "main": "dist/cjs/index.js",
   "module": "dist/esm/index.js",
@@ -13,11 +13,8 @@
     "type": "git",
     "url": "git+https://github.com/Groww/ui-toolkit.git"
   },
-  "author": "Aditya Sharma <aditya.sharma@groww.in> (https://twitter.com/VikasSi25579022)",
+  "author": "Vikas Singh <vikas.singh707@gmail.com> (https://twitter.com/VikasSi25579022)",
   "contributors": [
-    {
-      "name":"Aditya Vandan Sharma"
-    },
     {
       "name": "Ankit Chouhan",
       "url": "https://twitter.com/ankit__chouhan"
@@ -41,6 +38,10 @@
     {
       "name": "Ganesh Hegde",
       "url": "https://twitter.com/the_ganeshhegde"
+    },
+    {
+      "name": "Aditya Vandan Sharma",
+      "url": "https://twitter.com/AdityaVandan"
     }
   ],
   "license": "MIT",
@@ -58,7 +59,7 @@
     "lint:types": "tsc --noEmit",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
-    "pushTags" : "PACKAGE_VERSION=$(cat package.json | grep \\\"version\\\" | head -1 | awk -F: '{ print $2 }' | sed 's/[\",]//g' | tr -d '[[:space:]]') && git tag -a v$PACKAGE_VERSION -m \"@groww-tech/ui-toolkit-v$PACKAGE_VERSION\" && git push --tags"
+    "pushTags": "PACKAGE_VERSION=$(cat package.json | grep \\\"version\\\" | head -1 | awk -F: '{ print $2 }' | sed 's/[\",]//g' | tr -d '[[:space:]]') && git tag -a v$PACKAGE_VERSION -m \"@groww-tech/ui-toolkit-v$PACKAGE_VERSION\" && git push --tags"
   },
   "peerDependencies": {
     "classnames": "^2.2.6",
@@ -91,6 +92,7 @@
     "babel-loader": "^8.2.2",
     "classnames": "^2.2.6",
     "concurrently": "^6.0.2",
+    "copyfiles": "^2.4.1",
     "eslint": "^7.22.0",
     "eslint-plugin-import": "^2.22.1",
     "eslint-plugin-react": "^7.23.1",
@@ -100,6 +102,7 @@
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
     "react-lazyload": "^2.6.9",
+    "rimraf": "^3.0.2",
     "rollup": "^2.45.2",
     "rollup-plugin-babel": "^4.4.0",
     "rollup-plugin-copy": "^3.4.0",
