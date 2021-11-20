@@ -11,7 +11,7 @@ import typescript from "rollup-plugin-typescript";
 import commonjs from "@rollup/plugin-commonjs";
 import resolve from "@rollup/plugin-node-resolve";
 
-import FILE_INPUTS from "./rollup.input";
+import { getInputFiles } from "./rollup.input";
 
 // import pkg from './package.json';
 
@@ -21,6 +21,7 @@ const commonConfig = {
     postcss({
       plugins: [ postcssImport(), postcssUrl({ url: 'inline' }) ],
       extract: true,
+      extract: 'index.css',
       extensions: [ '.css' ]
     }),
     typescript(),
@@ -51,11 +52,6 @@ export default [
     input: './src/index.ts',
     output: [
       {
-        dir: 'dist/es',
-        format: 'es',
-        exports: 'named'
-      },
-      {
         dir: 'dist/cjs',
         format: 'cjs'
       }
@@ -63,11 +59,11 @@ export default [
     ...commonConfig
   },
   {
-    input: FILE_INPUTS,
+    input: getInputFiles(),
     output: [
       {
         dir: 'dist/esm',
-        format: 'cjs'
+        format: 'es'
       }
     ],
     ...commonConfig
