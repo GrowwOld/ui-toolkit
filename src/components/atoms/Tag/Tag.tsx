@@ -4,24 +4,33 @@ import './tag.css';
 
 
 const Tag = (props: Props) => {
-  if (!React.Children.count(props.children)) {
+  const childrenCount = React.Children.count(props.children);
+
+  if (!childrenCount) {
     return null;
   }
 
   let tagClass = props.tagClass;
 
   if (props.isWarning) {
-    tagClass = 'tg11Warning';
+    tagClass = 'tg11Warning width100';
 
   } else if (props.isError) {
-    tagClass = 'tg11Error';
+    tagClass = 'tg11Error width100';
 
   } else if (props.isInfo) {
-    tagClass = 'tg11Info';
+    tagClass = 'tg11Info width100';
+  }
+
+  if (childrenCount === 1) {
+    tagClass += ' absolute-center';
+
+  } else {
+    tagClass += ' valign-wrapper vspace-between';
   }
 
   return (
-    <div className={`tg11Container ${tagClass}`}>
+    <div className={`fs12 tg11Container ${tagClass}`}>
       {props.children}
     </div>
   );
