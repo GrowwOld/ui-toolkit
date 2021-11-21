@@ -28,6 +28,7 @@ function getModulePaths(path, componentType) {
 
 export function getInputFiles() {
   return [
+    './src/index.ts',
     ...getModulePaths('./src/components', 'atoms'),
     ...getModulePaths('./src/components', 'molecules')
   ];
