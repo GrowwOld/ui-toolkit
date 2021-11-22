@@ -2,6 +2,15 @@ const fs = require('fs');
 
 const fileTypes = [ '.ts', '.jsx', '.ts', '.tsx' ];
 
+/*
+  getModulePath generates an array of paths to components present in the atom or molecule
+  for e.g. by calling getModulePaths('./src/components','molecules') the function will generate the following array:
+  [
+    './src/components/molecules/Carousel/index.jsx',
+    './src/components/molecules/CheckBoxGroup/index.ts',
+    './src/components/molecules/RadioButtonGroup/index.ts',
+  ]
+ */
 
 function getModulePaths(path, componentType) {
   const moduleList = fs.readdirSync(path + '/' + componentType);
@@ -24,7 +33,6 @@ function getModulePaths(path, componentType) {
 
   return modulePaths;
 }
-
 
 export function getInputFiles() {
   return [
