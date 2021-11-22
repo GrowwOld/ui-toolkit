@@ -13,13 +13,13 @@ const Tag = (props: Props) => {
   let tagClass = props.tagClass;
 
   if (props.isWarning) {
-    tagClass = 'tg11Warning width100';
+    tagClass = 'tg11Warning';
 
   } else if (props.isError) {
-    tagClass = 'tg11Error width100';
+    tagClass = 'tg11Error';
 
   } else if (props.isInfo) {
-    tagClass = 'tg11Info width100';
+    tagClass = 'tg11Info';
   }
 
   if (childrenCount === 1) {
@@ -30,7 +30,7 @@ const Tag = (props: Props) => {
   }
 
   return (
-    <div className={`fs12 tg11Container ${tagClass}`}>
+    <div className={`fs12 width100 tg11Container ${tagClass}`}>
       {props.children}
     </div>
   );
