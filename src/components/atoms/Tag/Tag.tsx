@@ -4,7 +4,9 @@ import './tag.css';
 
 
 const Tag = (props: Props) => {
-  if (!React.Children.count(props.children)) {
+  const childrenCount = React.Children.count(props.children);
+
+  if (!childrenCount) {
     return null;
   }
 
@@ -20,8 +22,15 @@ const Tag = (props: Props) => {
     tagClass = 'tg11Info';
   }
 
+  if (childrenCount === 1) {
+    tagClass += ' absolute-center';
+
+  } else {
+    tagClass += ' valign-wrapper vspace-between';
+  }
+
   return (
-    <div className={`tg11Container ${tagClass}`}>
+    <div className={`fs12 width100 tg11Container ${tagClass}`}>
       {props.children}
     </div>
   );
