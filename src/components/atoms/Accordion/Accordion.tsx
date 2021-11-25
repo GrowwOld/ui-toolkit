@@ -19,13 +19,14 @@ const Accordion = (props: Props) => {
     titleClass,
     showRightIcon,
     useAnimateHeight,
-    maxHeight } = props;
+    maxHeight
+  } = props;
 
-  const [ isOpen, toggleAccordion ] = useState(onMountOpen);
-
+  const [isOpen, toggleAccordion] = useState(onMountOpen);
 
   const childRef = useRef<HTMLDivElement>(null);
   const isFirstRender = useRef(true);
+
 
   useEffect(() => {
     if (isFirstRender.current) {
@@ -36,12 +37,12 @@ const Accordion = (props: Props) => {
     if (onToggleCallback) {
       onToggleCallback(isOpen);
     }
-  }, [ isOpen ]);
+  }, [isOpen]);
 
 
   const toggleState = useCallback(() => {
     toggleAccordion(isOpen => !isOpen);
-  }, [ isOpen ]);
+  }, [isOpen]);
 
 
   const childClass = isOpen ? 'ac11Show' : 'ac11Hidden';
@@ -90,12 +91,12 @@ const Accordion = (props: Props) => {
 
       {
         useAnimateHeight ? getAnimateHeightUI()
-        : <div className={childClass}
-          style={childStyle}
-          ref={childRef}
-        >
-          {children}
-        </div>
+          : <div className={childClass}
+            style={childStyle}
+            ref={childRef}
+          >
+            {children}
+          </div>
       }
     </div>
   );
