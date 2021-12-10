@@ -42,7 +42,7 @@ const Accordion = (props: Props) => {
 
   const toggleState = useCallback(() => {
     toggleAccordion(isOpen => !isOpen);
-  }, [isOpen]);
+  }, []);
 
 
   const childClass = isOpen ? 'ac11Show' : 'ac11Hidden';
