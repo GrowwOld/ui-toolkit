@@ -26,12 +26,14 @@ class Popup extends React.PureComponent<Props> {
     const {
       visible,
       width,
+      height,
       customStyles,
       closeMaskOnClick,
       closeOnEsc,
       showCloseButton,
       children,
-      popupClass
+      popupClass,
+      animation
     } = this.props;
 
     return (
@@ -39,11 +41,13 @@ class Popup extends React.PureComponent<Props> {
         visible={visible}
         onClose={this.onClose}
         width={width}
+        height={height}
         customStyles={customStyles}
         closeMaskOnClick={closeMaskOnClick}
         closeOnEsc={closeOnEsc}
         showCloseButton={showCloseButton}
         popupClass={popupClass}
+        animation={animation}
       >
         {children}
       </Rodal>
@@ -61,19 +65,22 @@ class Popup extends React.PureComponent<Props> {
 
 Popup.defaultProps = {
   width: 400,
-  onLoad: () => { },
-  onUnLoad: () => { },
-  onClose: () => { },
   closeMaskOnClick: true,
   closeOnEsc: true,
-  showCloseButton: true,
   customStyles: {},
-  popupClass: ''
+  animation: 'zoom',
+  showCloseButton: true,
+  popupClass: '',
+  onLoad: () => { },
+  onUnLoad: () => { },
+  onClose: () => { }
 } as DefaultProps;
 
 
 type DefaultProps = {
-  width: number;
+  width: number | string;
+  height?: number | string;
+  animation?: string;
   onLoad: () => void;
   onUnLoad: () => void;
   onClose: () => void;

@@ -540,3 +540,7 @@
   position: relative;
   width: 100%;
 }
+
+.rodal-background {
+  background: var(--constantHalfTransparent);
+}
