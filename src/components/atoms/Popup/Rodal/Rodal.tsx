@@ -1,41 +1,14 @@
 import React from 'react';
 import cn from 'classnames';
 
+import Dialog from './Dialog';
+
 import './rodal.css';
 
 // env
 const IN_BROWSER = typeof window !== 'undefined';
 const UA = IN_BROWSER && window.navigator.userAgent.toLowerCase();
 const IS_IE_9 = UA && UA.indexOf('msie 9.0') > 0;
-
-
-const Dialog = (props: DialogProps) => {
-  const animation =
-    (props.animationType === 'enter'
-      ? props.enterAnimation
-      : props.leaveAnimation) || props.animation;
-
-  const className = `rodal-dialog rodal-${animation}-${props.animationType}`;
-
-  const { width, height, measure, duration } = props;
-
-  const style = {
-    width: width + measure,
-    height: height + measure,
-    animationDuration: duration + 'ms',
-    WebkitAnimationDuration: duration + 'ms'
-  };
-
-  const mergedStyles = { ...style };
-
-  return (
-    <div style={mergedStyles}
-      className={className}
-    >
-      {props.children}
-    </div>
-  );
-};
 
 
 class Rodal extends React.Component<Props, State> {
@@ -126,7 +99,6 @@ class Rodal extends React.Component<Props, State> {
       duration,
       className,
       children,
-      customStyles,
       showCloseButton,
       popupClass
     } = this.props;
@@ -154,7 +126,7 @@ class Rodal extends React.Component<Props, State> {
     return (
       <div
         style={style}
-        className={cn('rodal', `rodal-fade-${animationType}`, className)}
+        className={cn('rodal', `rodal-fade-${animationType}`, className, 'rodal-background')}
         onAnimationEnd={this.animationEnd}
         tabIndex={-1}
         ref={
@@ -168,9 +140,7 @@ class Rodal extends React.Component<Props, State> {
         <Dialog {...this.props}
           animationType={animationType}
         >
-          <div className={`child-wrapper ${popupClass}`}
-            style={{ ...customStyles }}
-          >
+          <div className={`child-wrapper ${popupClass}`}>
             {children}
             {CloseButton}
           </div>
@@ -184,34 +154,21 @@ class Rodal extends React.Component<Props, State> {
 Rodal.defaultProps = {
   width: 400,
   height: 240,
-  measure: 'px',
   visible: false,
   showMask: true,
   closeOnEsc: false,
   closeMaskOnClick: true,
   showCloseButton: true,
-  animation: 'zoom',
-  enterAnimation: '',
-  leaveAnimation: '',
-  onAnimationEnd: () => { },
+  animation: 'zoom', // slideup for msite;
   duration: 300,
   className: '',
   customStyles: {},
-  customMaskStyles: {}
+  customMaskStyles: {},
+  popupClass: 'popup-border',
+  enterAnimation: '',
+  leaveAnimation: '',
+  onAnimationEnd: () => { }
 } as DefaultProps;
-
-
-type DialogProps = {
-  animation: string;
-  animationType: string;
-  enterAnimation: string;
-  leaveAnimation: string;
-  width: number;
-  height: number;
-  measure: string;
-  duration: number;
-  children: React.ReactNode;
-}
 
 
 type State = {
@@ -221,9 +178,8 @@ type State = {
 
 
 type DefaultProps = {
-  width: number;
-  height: number;
-  measure: string;
+  width: number | string;
+  height: number | string;
   visible: boolean;
   showMask: boolean;
   closeOnEsc: boolean;
