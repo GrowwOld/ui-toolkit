@@ -1,0 +1,26 @@
+.tc341ToggleWrapper {
+  width: 88px;
+  height: 32px;
+  border-radius: 30px;
+  border: 1px solid var(--primaryClr);
+  justify-content: space-evenly;
+  overflow: hidden;
+}
+
+
+.tc341Divider {
+  height: 100%;
+  width: 1px;
+  background-color: var(--primaryClr);
+  z-index: var(--zindex300);
+}
+
+
+.tc341ActiveChoice {
+  background-color: var(--primaryClr10);
+}
+
+
+.tc341ChoiceClass {
+  height: 100%;
+}
