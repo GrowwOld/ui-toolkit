@@ -70,7 +70,7 @@ Popup.defaultProps = {
   customStyles: {},
   animation: 'zoom',
   showCloseButton: true,
-  popupClass: '',
+  popupClass: 'popup-border',
   onLoad: () => { },
   onUnLoad: () => { },
   onClose: () => { }

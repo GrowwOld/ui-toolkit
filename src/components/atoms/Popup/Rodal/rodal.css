@@ -541,6 +541,10 @@
   width: 100%;
 }
 
+.popup-border {
+  border-radius: 6px;
+}
+
 .rodal-background {
   background: var(--constantHalfTransparent);
 }

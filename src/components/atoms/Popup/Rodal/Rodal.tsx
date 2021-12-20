@@ -99,7 +99,6 @@ class Rodal extends React.Component<Props, State> {
       duration,
       className,
       children,
-      // customStyles,
       showCloseButton,
       popupClass
     } = this.props;
@@ -127,7 +126,6 @@ class Rodal extends React.Component<Props, State> {
     return (
       <div
         style={style}
-        // className={cn('rodal', `rodal-fade-${animationType}`, className)}
         className={cn('rodal', `rodal-fade-${animationType}`, className, 'rodal-background')}
         onAnimationEnd={this.animationEnd}
         tabIndex={-1}
@@ -161,12 +159,12 @@ Rodal.defaultProps = {
   closeOnEsc: false,
   closeMaskOnClick: true,
   showCloseButton: true,
-  animation: 'zoom', // 'slideup;
+  animation: 'zoom', // slideup for msite;
   duration: 300,
   className: '',
   customStyles: {},
   customMaskStyles: {},
-
+  popupClass: 'popup-border',
   enterAnimation: '',
   leaveAnimation: '',
   onAnimationEnd: () => { }
