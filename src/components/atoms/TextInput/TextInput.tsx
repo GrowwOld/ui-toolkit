@@ -13,7 +13,7 @@ class TextInput extends React.PureComponent<TextInputProps> {
       showLabel, prefixComponent, suffixComponent, placeholder, showError, labelClass, inputStyle,
       errorText, fontSize, id, autoComplete, value, inputType, onInput, maxTextLimit, inputClass,
       minNumber, maxNumber, disabled, disableCopyPaste, removeUnderLineOnDisabled, showInfo, infoText, removeUnderLine,
-      parentDivClass, onFocus, showParentDivUnderline, onKeyPress
+      parentDivClass, onFocus, showParentDivUnderline, onKeyPress, autoFocus
     } = this.props;
 
     const cssForInputParent = parentDivClass ? parentDivClass : cn('txtinput88parent', { 'removeunderline': ((disabled && (!removeUnderLineOnDisabled)) || removeUnderLine), 'removeParentDivUnderline': showParentDivUnderline, 'pad0': !showLabel });
@@ -36,6 +36,7 @@ class TextInput extends React.PureComponent<TextInputProps> {
             min={minNumber}
             max={maxNumber}
             placeholder={placeholder}
+            autoFocus={autoFocus}
             disabled={disabled}
             onCopy={disableCopyPaste ? (e) => this.onCopy(e) : () => { }}
             onPaste={disableCopyPaste ? (e) => this.onPaste(e) : () => { }}
@@ -46,6 +47,7 @@ class TextInput extends React.PureComponent<TextInputProps> {
             autoComplete={autoComplete}
             required
             ref={this.textInputRef}
+            { ...this.props }
           />
           {suffixComponent()}
         </div>
@@ -119,6 +121,7 @@ class TextInput extends React.PureComponent<TextInputProps> {
     autoComplete: 'on',
     showLabel: true,
     label: '',
+    autoFocus: false,
     placeholder: 'Enter text',
     prefixComponent: () => null,
     suffixComponent: () => null,
@@ -174,6 +177,7 @@ type DefaultProps = {
   labelClass: string;
   inputClass: string;
   inputStyle: object;
+  autoFocus: boolean,
   showParentDivUnderline: boolean;
   parentDivClass: string;
   onFocus: (e: React.FocusEvent<HTMLInputElement>) => void;
