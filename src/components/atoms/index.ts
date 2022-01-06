@@ -23,3 +23,4 @@ export * from './TextArea';
 export * from './TextInput';
 export * from './Ticker';
 export * from './ToggleSwitch';
+export * from './ToggleSelection';
