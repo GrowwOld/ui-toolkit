@@ -129,7 +129,7 @@ type DefaultProps = {
 }
 
 const defaultProps = {
-  onMountOpen: false,
+  onMountOpen: true,
   showRightIcon: true,
   parentClass: '',
   headerClass: '',
