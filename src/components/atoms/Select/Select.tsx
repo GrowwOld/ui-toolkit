@@ -9,6 +9,8 @@ import {
   DropdownContent
 } from '../Dropdown';
 
+import { SelectData } from './selectTypes';
+
 import './select.css';
 
 class Select extends React.PureComponent<Props> {
@@ -183,12 +185,6 @@ Select.defaultProps = {
   optionsParentClass: '',
   activeOptionBoxClass: ''
 } as DefaultProps;
-
-
-type SelectData = {
-  label: string;
-  value: string;
-}
 
 
 type RequiredProps = {

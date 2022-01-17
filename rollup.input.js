@@ -1,6 +1,6 @@
 const fs = require('fs');
 
-const fileTypes = [ '.ts', '.jsx', '.ts', '.tsx' ];
+const fileTypes = [ '.js', '.ts', '.jsx', '.ts', '.tsx' ];
 
 /*
   getModulePath generates an array of paths to components present in the atom or molecule
