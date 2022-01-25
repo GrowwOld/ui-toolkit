@@ -115,6 +115,7 @@
   },
   "dependencies": {
     "@groww-tech/icon-store": "1.0.1",
+    "flat-carousel": "0.0.1",
     "lodash.debounce": "^4.0.8",
     "react-waypoint": "^10.1.0"
   }

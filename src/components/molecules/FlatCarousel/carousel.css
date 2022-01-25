@@ -1,0 +1,51 @@
+.carousel,
+.carousel__main {
+  overflow: inherit;
+  height: inherit;
+}
+
+.carousel__dot {
+  background: var(--subText70) !important;
+  transition: width 0.3s ease-in, background 0.2s ease-out;
+}
+
+.carousel__dot--active {
+  width: 12px !important;
+  background: var(--primaryClr) !important;
+}
+
+.carousel-item-hidden {
+  display: none;
+}
+
+.common171CarouselTitle {
+  position: absolute;
+  width: 100vw;
+  margin: 0 auto;
+  left: 0;
+  right: 0;
+  bottom: 57px;
+  font-size: 20px;
+  font-weight: 500;
+  color: var(--text);
+}
+
+.common171CarouselDesc {
+  position: absolute;
+  margin: 0 auto;
+  width: 100vw;
+  left: 0;
+  right: 0;
+  bottom: 33px;
+  font-size: 13px;
+  font-weight: 400;
+  color: var(--text);
+}
+
+.common171CarouselImg {
+  position: absolute;
+  margin: 0 auto;
+  left: 0;
+  right: 0;
+  bottom: 140px;
+}
