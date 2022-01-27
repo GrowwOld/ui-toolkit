@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
+import "./popover.css";
 
-import './popover.css';
+import React, { useState } from "react";
 
 export const POPOVER_POSITIONS = {
   TOP: 'top',
@@ -35,8 +35,10 @@ const Popover = (props: Props) => {
   return (
     <div
       className="pop12Wrapper"
+      onClick={showTip}
       onMouseEnter={showTip}
       onMouseLeave={hideTip}
+      onTouchStart={hideTip}
     >
       {children}
       {

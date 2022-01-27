@@ -1,12 +1,20 @@
-import React from 'react';
+import "./dropDown.css";
 
+import React from "react";
+
+import cx from "classnames";
 
 const DropdownContent = (props: Props) => {
-  const { children, className, ...dropdownContentProps } = props;
+  const { children, className, animate, ...dropdownContentProps } = props;
 
   return (
-    <div className={`dropdown__content ${className}`}
-      {...dropdownContentProps}
+    <div className={
+      cx(
+        'dropdown__content', className, {
+          'dropdown__fadein': animate
+        })
+    }
+    {...dropdownContentProps}
     >
       {children}
     </div>
@@ -16,7 +24,8 @@ const DropdownContent = (props: Props) => {
 DropdownContent.displayName = 'DropdownContent';
 
 DropdownContent.defaultProps = {
-  className: ''
+  className: '',
+  animate: true
 } as DefaultProps;
 
 
@@ -27,6 +36,7 @@ type RequiredProps = {
 
 type DefaultProps = {
   className: string;
+  animate: boolean;
 }
 
 
