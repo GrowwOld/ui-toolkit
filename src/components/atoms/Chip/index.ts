@@ -1,1 +1,1 @@
-export { default as Chip } from './Chip';
+export { default as Chip, IconPosition } from './Chip';

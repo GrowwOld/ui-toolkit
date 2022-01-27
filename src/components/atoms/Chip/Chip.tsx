@@ -4,7 +4,7 @@ import { ReactIconProps } from '@groww-tech/icon-store';
 
 import './chip.css';
 
-enum IconPosition {
+export enum IconPosition {
   LEFT = 'left',
   RIGHT = 'right',
 }
@@ -50,7 +50,7 @@ const Chip = (props: Props) => {
 
 
 type RequiredProps = {
-  text: string;
+  text: React.ReactNode;
 }
 
 
