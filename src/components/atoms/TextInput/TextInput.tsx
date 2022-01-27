@@ -200,7 +200,7 @@ class TextInput extends React.PureComponent<TextInputProps> {
 
 
 type RequiredProps = {
-  onInput?: React.FormEventHandler<HTMLInputElement>;
+  onInput: React.FormEventHandler<HTMLInputElement>;
 }
 
 
