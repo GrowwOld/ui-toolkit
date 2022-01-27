@@ -1,6 +1,6 @@
-import "./popover.css";
+import React, { useState } from 'react';
 
-import React, { useState } from "react";
+import './popover.css';
 
 export const POPOVER_POSITIONS = {
   TOP: 'top',

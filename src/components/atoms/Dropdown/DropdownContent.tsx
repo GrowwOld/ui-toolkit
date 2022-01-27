@@ -1,8 +1,9 @@
-import "./dropDown.css";
+import React from 'react';
 
-import React from "react";
+import cx from 'classnames';
 
-import cx from "classnames";
+import './dropDown.css';
+
 
 const DropdownContent = (props: Props) => {
   const { children, className, animate, ...dropdownContentProps } = props;
