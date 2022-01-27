@@ -14,7 +14,8 @@ const Tabs = (props: Props) => {
     activeTabIndexOnMount,
     data,
     showBottomBorder,
-    customStyleTab
+    customStyleTab,
+    isHorizScrollable
   } = props;
 
   const [ activeIndex, setActiveIndex ] = useState(activeTabIndexOnMount);
@@ -36,7 +37,7 @@ const Tabs = (props: Props) => {
 
 
   return (
-    <div className={cn('tabs8Container', { 'tabs8Shadow': showBottomBorder })}>
+    <div className={cn('tabs8Container', { 'tabs8Shadow': showBottomBorder, 'tabs8PageWidth20Mgn': isHorizScrollable })}>
       {
         width > 0 &&
         <div className="tabs8Line mfSelected"
@@ -114,7 +115,8 @@ const getActiveTabDimensions = (data: Tab[], activeIndex: number) => {
 const defaultProps: DefaultProps = {
   showBottomBorder: true,
   activeTabIndexOnMount: 0,
-  customStyleTab: 'tabs8Text'
+  customStyleTab: 'tabs8Text',
+  isHorizScrollable: false
 };
 
 
@@ -122,6 +124,7 @@ type DefaultProps = {
   showBottomBorder: boolean;
   activeTabIndexOnMount: number;
   customStyleTab: string;
+  isHorizScrollable: boolean;
 }
 
 
