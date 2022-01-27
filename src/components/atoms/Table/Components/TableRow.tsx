@@ -1,7 +1,10 @@
-import React, { Children, isValidElement, cloneElement } from 'react';
+import React, {
+  Children,
+  cloneElement,
+  isValidElement,
+} from "react";
 
-import cn from 'classnames';
-
+import cn from "classnames";
 
 type TableRowProps = {
   className?: string;
@@ -11,7 +14,10 @@ type TableRowProps = {
   onClick?: (e?: React.MouseEvent) => void;
 }
 
-class TableRow extends React.PureComponent<TableRowProps, {}> {
+
+type Props = TableRowProps & Partial<React.ThHTMLAttributes<HTMLTableRowElement>>;
+
+class TableRow extends React.PureComponent<Props, {}> {
 
   render() {
     const {

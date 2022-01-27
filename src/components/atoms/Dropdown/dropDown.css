@@ -5,8 +5,31 @@
 .dropdown__content {
   display: none;
   position: absolute;
+  z-index: var(--zindex900);
 }
 
 .dropdown--active .dropdown__content {
   display: block;
+}
+
+@media only screen and (min-width: 601px) {
+
+  .dropdown--active .dropdown__fadein {
+    animation: ddFadeIn 0.2s normal;
+  }
+
+  @keyframes ddFadeIn {
+
+    0% {
+      transform: translateY(16px);
+    }
+
+    80% {
+      opacity: 1;
+    }
+
+    100% {
+      transform: translateY(0);
+    }
+  }
 }
