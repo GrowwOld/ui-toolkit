@@ -14,7 +14,7 @@ class TextInput extends React.PureComponent<TextInputProps> {
       errorText, fontSize, id, autoComplete, value, inputType, onInput, maxTextLimit, inputClass,
       minNumber, maxNumber, disabled, disableCopyPaste, removeUnderLineOnDisabled, showInfo, infoText, removeUnderLine,
       parentDivClass, onFocus, showParentDivUnderline, onKeyPress, isMaterialUI, fullWidth, name, inputMode,
-      errorTextClass, pattern, step, autoFocus, onKeyDown, label, ...rest
+      errorTextClass, pattern, step, onKeyDown, label, ...rest
     } = this.props;
 
     let labelClassName = '';
@@ -65,7 +65,6 @@ class TextInput extends React.PureComponent<TextInputProps> {
             onInput={onInput}
             value={value}
             pattern={pattern}
-            autoFocus={autoFocus}
             maxLength={maxTextLimit}
             min={minNumber}
             max={maxNumber}
@@ -84,28 +83,26 @@ class TextInput extends React.PureComponent<TextInputProps> {
             {...rest}
           />
           {
-            isMaterialUI
-              ? <>
+            isMaterialUI &&
+              <>
                 <span className={barClass} />
 
                 <label className={labelClass}
                   style={fontSize === '' ? {} : { fontSize: fontSize }}
                 >{label}</label>
 
-                {errorText ? <div className="txt88MErrorText">{errorText}</div> : null}
+                {errorText && errorText === 'Please recheck your input' && <div className="txt88MErrorText">{errorText}</div> }
 
               </>
-              : null
           }
           {suffixComponent()}
         </div>
         {
-          !isMaterialUI
-            ? <div>
+          !isMaterialUI &&
+            <div>
               {showError ? <div className={`errorText ${errorTextClass}`}>{errorText}</div> : null}
               {showInfo ? <div className="infoText">{infoText}</div> : null}
             </div>
-            : null
         }
       </div>
     );
@@ -192,9 +189,7 @@ class TextInput extends React.PureComponent<TextInputProps> {
     onKeyPress: () => { },
     onEnterPress: () => { },
     onBackspace: () => { },
-    inputMode: undefined,
-    step: 1,
-    autoFocus: false
+    step: 1
   }
 }
 
@@ -241,11 +236,9 @@ type DefaultProps = {
   fullWidth?: boolean;
   errorTextClass?: string;
   isMaterialUI?: boolean;
-  inputMode: 'search' | 'text' | 'none' | 'tel' | 'url' | 'email' | 'numeric' | 'decimal' | undefined;
   name?: string;
   pattern?: string;
   step: number;
-  autoFocus: boolean;
 };
 
 
