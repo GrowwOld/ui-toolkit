@@ -17,7 +17,7 @@
 
 .tabs8Line {
   position: absolute;
-  bottom: 0px;
+  bottom: 0;
   height: 3px;
   background: var(--primaryClr);
   will-change: left, width;
@@ -25,10 +25,48 @@
 }
 
 .tabs8Shadow {
-  box-shadow: 0px 3px 3px -1px var(--boxShadow);
+  box-shadow: 0 3px 3px -1px var(--boxShadow);
 }
 
-.tabs8PageWidth20Mgn {
-  width: calc(100vw - 40px);
-  overflow-y: auto;
+
+@media (max-width: 1025px) {
+  .tabs8Container {
+    position: relative;
+    max-height: 25px;
+    overflow-x: auto;
+
+    /* IE and Edge */
+    -ms-overflow-style: none;
+
+    /* Firefox */
+    scrollbar-width: none;
+  }
+
+  .tabs8Container::-webkit-scrollbar {
+    display: none;
+  }
+
+  .tabs8PageWidth20Mgn {
+    width: calc(100vw - 40px);
+    overflow-y: auto;
+  }
+
+  .tabs8Text {
+    font-size: 15px;
+    font-weight: 500;
+    border-radius: 25px;
+    line-height: 15px;
+    padding-right: 24px;
+    height: 25px;
+    -webkit-font-smoothing: auto;
+  }
+
+
+
+ .tabs8Parent {
+    min-width: max-content;
+  }
+  .tabs8Shadow {
+    box-shadow: 0 2px 3px 0 var(--boxShadow);
+  }
 }
