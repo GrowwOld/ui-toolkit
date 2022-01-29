@@ -31,7 +31,6 @@
 
 @media (max-width: 1025px) {
   .tabs8Container {
-    position: relative;
     max-height: 25px;
     overflow-x: auto;
 
@@ -55,13 +54,19 @@
     font-size: 15px;
     font-weight: 500;
     border-radius: 25px;
-    line-height: 15px;
     padding-right: 24px;
     height: 25px;
     -webkit-font-smoothing: auto;
   }
 
+  .tabs8TextActive {
+    color: var(--primaryClr);
+  }
 
+  .tabs8Line {
+    will-change: left, width;
+    transition: left 0.2s linear, width 0.2s linear;
+  }
 
  .tabs8Parent {
     min-width: max-content;
