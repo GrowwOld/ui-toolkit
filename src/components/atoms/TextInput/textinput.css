@@ -134,43 +134,29 @@
   right: 50%;
 }
 
-input:focus ~ .txt88Bar::before,
-input:focus ~ .txt88Bar::after {
-  width: 50%;
-}
-
-@keyframes inputHighlighter {
-
-  from {
-    background: var(--primaryClr);
-  }
-
-  to {
-    width: 100;
-    background: transparent;
-  }
-}
-
-.txt88MErrorText {
-  color: var(--growwRed);
-  font-size: 14px;
-  margin-top: 3px;
-  text-align: left;
-}
-
-.txt88MNoErrorText {
-  color: var(--subText);
-  font-size: 14px;
-  margin-top: 3px;
-}
-
-input:-webkit-autofill ~ label {
-  top: -15px;
-  font-size: 14px;
-  color: var(--primaryClr);
-}
-
 .txt88Mgroup {
   position: relative;
 }
 
+@media (max-width: 800px) {
+
+  .txtinput88input {
+    margin-top: 2px;
+    padding: 1px;
+  }
+
+  .errorText {
+    font-size: 12px;
+    padding: 5px 0;
+    margin-top: 0;
+  }
+
+  .pad0 {
+    padding: 5px 0;
+  }
+
+  .infoText {
+    padding: 5px 0;
+    margin-top: 0;
+  }
+}
