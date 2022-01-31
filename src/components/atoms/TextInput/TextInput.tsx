@@ -56,7 +56,7 @@ class TextInput extends React.PureComponent<TextInputProps> {
         >
           {prefixComponent()}
           <input
-            className={`txt88Input ${inputClass} ${isMaterialUI ? 'txt88InputMUI' : ''}`}
+            className={`txtinput88input ${inputClass} ${isMaterialUI ? 'txt88InputMUI' : ''}`}
             style={fontSize === '' ? isMaterialUI ? { padding: '10px 10px 10px 2px', ...inputStyle } : { ...inputStyle } : isMaterialUI ? { padding: '10px 10px 10px 2px', fontSize: fontSize, ...inputStyle } : { fontSize: fontSize, ...inputStyle }}
             id={id}
             name={name}
@@ -251,3 +251,4 @@ type InputProps = Partial<React.InputHTMLAttributes<HTMLInputElement>>
 type TextInputProps = Overwrite<InputProps, RequiredProps & DefaultProps>;
 
 export default TextInput;
+
