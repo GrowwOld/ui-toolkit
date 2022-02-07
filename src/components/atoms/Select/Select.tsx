@@ -90,6 +90,7 @@ class Select extends React.PureComponent<Props> {
 
               <DropdownContent
                 className={`se55DropdownContent ${optionsParentClass}`}
+                animate={false}
               >
                 {
                   options.map((item, index) => {
