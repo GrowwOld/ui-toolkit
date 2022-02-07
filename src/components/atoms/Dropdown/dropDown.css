@@ -5,7 +5,7 @@
 .dropdown__content {
   display: none;
   position: absolute;
-  z-index: var(--zindex900);
+  z-index: var(--zindex10001);
 }
 
 .dropdown--active .dropdown__content {
