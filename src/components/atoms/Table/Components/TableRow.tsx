@@ -11,7 +11,9 @@ type TableRowProps = {
   onClick?: (e?: React.MouseEvent) => void;
 }
 
-class TableRow extends React.PureComponent<TableRowProps, {}> {
+
+type Props = TableRowProps & Partial<React.TableHTMLAttributes<HTMLTableRowElement>>;
+class TableRow extends React.PureComponent<Props, {}> {
 
   render() {
     const {
