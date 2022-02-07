@@ -50,7 +50,7 @@ class TextInput extends React.PureComponent<TextInputProps> {
       <div id="txtinput88"
         className={cn({ 'txt88Width': fullWidth })}
       >
-        {!isMaterialUI && showLabel && <div className={`txtinput88label ${labelClassName}`}>{this.props.label}</div>}
+        {!isMaterialUI && showLabel && <div className={`txtinput88label ${labelClassName}`}>{this.props?.label}</div>}
         <div
           className={cssForInputParent}
         >
@@ -91,7 +91,7 @@ class TextInput extends React.PureComponent<TextInputProps> {
                   style={fontSize === '' ? {} : { fontSize: fontSize }}
                 >{label}</label>
 
-                {errorText && errorText === 'Please recheck your input' && <div className="txt88MErrorText">{errorText}</div> }
+                {errorText && errorText === 'Please recheck your input' && <div className="txt88MErrorText">{errorText}</div> /* fix issue*/ }
 
               </>
           }
@@ -100,8 +100,8 @@ class TextInput extends React.PureComponent<TextInputProps> {
         {
           !isMaterialUI &&
             <div>
-              {showError ? <div className={`errorText ${errorTextClass}`}>{errorText}</div> : null}
-              {showInfo ? <div className="infoText">{infoText}</div> : null}
+              {showError ? <div className={`errorText ${errorTextClass}`}>{errorText}</div> : null /* fix issue*/}
+              {showInfo ? <div className="infoText">{infoText}</div> : null /* fix issue*/}
             </div>
         }
       </div>
@@ -251,4 +251,3 @@ type InputProps = Partial<React.InputHTMLAttributes<HTMLInputElement>>
 type TextInputProps = Overwrite<InputProps, RequiredProps & DefaultProps>;
 
 export default TextInput;
-

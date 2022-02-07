@@ -1,10 +1,11 @@
 import React, {
   Children,
   cloneElement,
-  isValidElement,
-} from "react";
+  isValidElement
+} from 'react';
 
-import cn from "classnames";
+import cn from 'classnames';
+
 
 type TableRowProps = {
   className?: string;
@@ -15,7 +16,7 @@ type TableRowProps = {
 }
 
 
-type Props = TableRowProps & Partial<React.ThHTMLAttributes<HTMLTableRowElement>>;
+type Props = TableRowProps & Partial<React.TableHTMLAttributes<HTMLTableRowElement>>;
 
 class TableRow extends React.PureComponent<Props, {}> {
 
