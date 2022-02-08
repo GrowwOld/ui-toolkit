@@ -37,11 +37,6 @@
   /* -webkit-box-shadow: 0 0 0px 1000px white inset; */
 }
 
-.txtinput88input:focus {
-  border-bottom: none;
-  border: none;
-  outline: 0;
-}
 
 .txtinput88input::placeholder {
   /* Chrome, Firefox, Opera, Safari 10.1+ */
@@ -71,6 +66,12 @@
   -webkit-text-fill-color: var(--text);
 }
 
+
+.txtinput88input:focus {
+  border-bottom: none;
+  border: none;
+  outline: 0;
+}
 .errorText {
   color: var(--growwRed);
   font-size: 14px;
@@ -113,7 +114,7 @@
 
 .txt88Bar::before,
 .txt88Bar::after {
-  content: '';
+  content: "";
   height: 2px;
   width: 0;
   bottom: 0;
@@ -153,15 +154,19 @@
 } */
 
 @media (max-width: 800px) {
-
   .txtinput88input {
     margin-top: 2px;
     padding: 1px;
   }
-
-  .txt88Input::placeholder,
-  .txt88Input::-webkit-input-placeholder {
-    opacity: 0.5;
+  .txtinput88input::-ms-input-placeholder {
+    /* Microsoft Edge */
+    color: var(--iconMedium);
+    opacity: 0.2;
+  }
+  .txtinput88input::placeholder,
+  .txtinput88input::-webkit-input-placeholder {
+    opacity: 0.2;
+    color: var(--iconMedium);
   }
 
   .errorText {
@@ -197,15 +202,15 @@
   input:-webkit-autofill,
   textarea:-webkit-autofill,
   select:-webkit-autofill {
-  background-color: var(--primaryBg) !important;
+    background-color: var(--primaryBg) !important;
   }
 
   input:-webkit-autofill {
     -webkit-box-shadow: 0 0 0 1000px var(--primaryBg) inset;
   }
 
-  input[type=number]::-webkit-inner-spin-button,
-  input[type=number]::-webkit-outer-spin-button {
+  input[type="number"]::-webkit-inner-spin-button,
+  input[type="number"]::-webkit-outer-spin-button {
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;

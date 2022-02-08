@@ -34,23 +34,39 @@ class TextInput extends React.PureComponent<TextInputProps> {
     }
 
 
+    //TODO logic for cssForInputParent
     let cssForInputParent = parentDivClass ? parentDivClass
       : cn('txtinput88parent',
         {
           'removeunderline': ((disabled && (!removeUnderLineOnDisabled)) || removeUnderLine),
           'removeParentDivUnderline': showParentDivUnderline,
-          'pad0': !showLabel
+          'pad0': !showLabel || !label
         });
+
+    //check if window.width is less than 800px
+    if (window && window.innerWidth < 800) {
+
+      cssForInputParent =
+        cn('txtinput88parent',
+          parentDivClass,
+          {
+            'removeunderline': ((disabled && (!removeUnderLineOnDisabled)) || removeUnderLine),
+            'removeParentDivUnderline': showParentDivUnderline,
+            'pad0': !showLabel || !label
+          });
+    }
 
     if (isMaterialUI) {
       cssForInputParent = 'txt88Mgroup';
     }
+    //TODO logic for cssForInputParent
+
 
     return (
       <div id="txtinput88"
         className={cn({ 'txt88Width': fullWidth })}
       >
-        {!isMaterialUI && showLabel && <div className={`txtinput88label ${labelClassName}`}>{this.props?.label}</div>}
+        {!isMaterialUI && (showLabel || label) && <div className={`txtinput88label ${labelClassName}`}>{this.props.label}</div>}
         <div
           className={cssForInputParent}
         >
@@ -84,25 +100,25 @@ class TextInput extends React.PureComponent<TextInputProps> {
           />
           {
             isMaterialUI &&
-              <>
-                <span className={barClass} />
+            <>
+              <span className={barClass} />
 
-                <label className={labelClass}
-                  style={fontSize === '' ? {} : { fontSize: fontSize }}
-                >{label}</label>
+              <label className={labelClass}
+                style={fontSize === '' ? {} : { fontSize: fontSize }}
+              >{label}</label>
 
-                {errorText && errorText === 'Please recheck your input' && <div className="txt88MErrorText">{errorText}</div> /* fix issue*/ }
+              {showError && <div className="txt88MErrorText">{errorText}</div>}
 
-              </>
+            </>
           }
           {suffixComponent()}
         </div>
         {
           !isMaterialUI &&
-            <div>
-              {showError ? <div className={`errorText ${errorTextClass}`}>{errorText}</div> : null /* fix issue*/}
-              {showInfo ? <div className="infoText">{infoText}</div> : null /* fix issue*/}
-            </div>
+          <div>
+            {showError ? <div className={`errorText ${errorTextClass}`}>{errorText}</div> : null}
+            {showInfo ? <div className="infoText">{infoText}</div> : null}
+          </div>
         }
       </div>
     );
