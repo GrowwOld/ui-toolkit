@@ -40,7 +40,7 @@ class TextInput extends React.PureComponent<TextInputProps> {
         {
           'removeunderline': ((disabled && (!removeUnderLineOnDisabled)) || removeUnderLine),
           'removeParentDivUnderline': showParentDivUnderline,
-          'pad0': !showLabel || !label
+          'pad0': !showLabel
         });
 
     //check if window.width is less than 800px
@@ -52,9 +52,8 @@ class TextInput extends React.PureComponent<TextInputProps> {
         cn('txtinput88parent',
           parentDivClass,
           {
-            'removeunderline': ((disabled && (!removeUnderLineOnDisabled)) || removeUnderLine),
-            'removeParentDivUnderline': showParentDivUnderline,
-            'pad0': !showLabel || !label
+            'removeunderline': (disabled && (!removeUnderLineOnDisabled)) || (!showParentDivUnderline),
+            'pad0': !label
           });
     }
 
