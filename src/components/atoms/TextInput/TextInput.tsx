@@ -44,7 +44,9 @@ class TextInput extends React.PureComponent<TextInputProps> {
         });
 
     //check if window.width is less than 800px
-    if (window && window.innerWidth < 800) {
+    const hasWindow = typeof window !== 'undefined';
+
+    if (hasWindow && window.innerWidth < 800) {
 
       cssForInputParent =
         cn('txtinput88parent',
