@@ -50,7 +50,7 @@ const Chip = (props: Props) => {
 
 
 type RequiredProps = {
-  text: string;
+  text: React.ReactNode;
 }
 
 

@@ -87,7 +87,7 @@ const defaultProps: DefaultProps = {
 
 
 type RequiredProps = {
-  content: string;
+  content: React.ReactNode;
 }
 
 

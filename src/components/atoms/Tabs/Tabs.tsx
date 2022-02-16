@@ -14,7 +14,8 @@ const Tabs = (props: Props) => {
     activeTabIndexOnMount,
     data,
     showBottomBorder,
-    customStyleTab
+    customStyleTab,
+    isHorizScrollable
   } = props;
 
   const [ activeIndex, setActiveIndex ] = useState(activeTabIndexOnMount);
@@ -36,15 +37,15 @@ const Tabs = (props: Props) => {
 
 
   return (
-    <div className={cn('tabs8Container', { 'tabs8Shadow': showBottomBorder })}>
+    <div className={cn('tabs8Container', { 'tabs8Shadow': showBottomBorder, 'tabs8PageWidth20Mgn': isHorizScrollable })}>
       {
-        width > 0 &&
+        ((typeof width === 'number' ? width : parseInt(width)) > 0) &&
         <div className="tabs8Line mfSelected"
           style={{ width, left }}
         />
       }
 
-      <div className="valign-wrapper">
+      <div className="valign-wrapper tabs8Parent">
         {
           data.map((item, key) => {
             return (
@@ -68,7 +69,7 @@ const Tabs = (props: Props) => {
 
 const getActiveTabDimensions = (data: Tab[], activeIndex: number) => {
   let left = 0;
-  let width = 0;
+  let width:number|string = 0;
 
   const activeTab = data[activeIndex];
 
@@ -114,7 +115,8 @@ const getActiveTabDimensions = (data: Tab[], activeIndex: number) => {
 const defaultProps: DefaultProps = {
   showBottomBorder: true,
   activeTabIndexOnMount: 0,
-  customStyleTab: 'tabs8Text'
+  customStyleTab: 'tabs8Text',
+  isHorizScrollable: false
 };
 
 
@@ -122,6 +124,7 @@ type DefaultProps = {
   showBottomBorder: boolean;
   activeTabIndexOnMount: number;
   customStyleTab: string;
+  isHorizScrollable: boolean;
 }
 
 
@@ -135,7 +138,7 @@ type Tab = {
   description?: string;
   name: React.ReactNode;
   style?: React.CSSProperties;
-  width?: number;
+  width?: number | string;
   left?: number;
 }
 

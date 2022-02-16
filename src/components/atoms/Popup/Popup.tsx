@@ -2,6 +2,17 @@ import React from 'react';
 
 import Rodal from './Rodal/Rodal';
 
+export const RESPONSIVE_POPUP_STYLES = {
+  display: 'block',
+  background: 'var(--primaryBg)',
+  borderTopLeftRadius: '7px',
+  borderTopRightRadius: '7px',
+  marginBottom: '0px',
+  width: '100%',
+  height: 'fit-content',
+  padding: 15
+};
+
 class Popup extends React.PureComponent<Props> {
   static defaultProps: DefaultProps;
 
@@ -80,7 +91,7 @@ Popup.defaultProps = {
 type DefaultProps = {
   width: number | string;
   height?: number | string;
-  animation?: string;
+  animation: 'fade' | 'zoom' | 'slideUp' | 'slideDown' | 'slideLeft' | 'slideRight' | 'slideUp' | 'rotate' | 'door';
   onLoad: () => void;
   onUnLoad: () => void;
   onClose: () => void;

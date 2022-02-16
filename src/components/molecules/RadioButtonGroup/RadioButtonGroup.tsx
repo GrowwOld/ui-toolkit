@@ -1,6 +1,7 @@
 import React from 'react';
 
 import { RadioButton } from '../../atoms';
+import { RadioButtonType } from './radioButtonGroupTypes';
 
 import './radioButtonGroup.css';
 
@@ -50,15 +51,6 @@ type RequiredProps = {
   radioButtons: RadioButtonType[];
   selected: string | number;
   onSelect: (value: string | number) => void;
-}
-
-
-export type RadioButtonType = {
-  value: string | number;
-  label: React.ReactNode;
-  labelClassName?: string;
-  parentClassName?: string;
-  radioDirection?: string;
 }
 
 

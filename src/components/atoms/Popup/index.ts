@@ -1,1 +1,1 @@
-export { default as Popup } from './Popup';
+export { default as Popup, RESPONSIVE_POPUP_STYLES } from './Popup';

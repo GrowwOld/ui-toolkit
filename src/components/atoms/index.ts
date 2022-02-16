@@ -1,3 +1,4 @@
+export { default as AnimateHeight } from './AnimateHeight';
 export * from './Accordion';
 export * from './Button';
 export * from './CheckBox';

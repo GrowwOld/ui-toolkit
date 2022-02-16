@@ -9,6 +9,8 @@ import {
   DropdownContent
 } from '../Dropdown';
 
+import { SelectData } from './selectTypes';
+
 import './select.css';
 
 class Select extends React.PureComponent<Props> {
@@ -88,6 +90,7 @@ class Select extends React.PureComponent<Props> {
 
               <DropdownContent
                 className={`se55DropdownContent ${optionsParentClass}`}
+                animate={false}
               >
                 {
                   options.map((item, index) => {
@@ -183,12 +186,6 @@ Select.defaultProps = {
   optionsParentClass: '',
   activeOptionBoxClass: ''
 } as DefaultProps;
-
-
-type SelectData = {
-  label: string;
-  value: string;
-}
 
 
 type RequiredProps = {

@@ -185,7 +185,7 @@ type DefaultProps = {
   closeOnEsc: boolean;
   closeMaskOnClick: boolean;
   showCloseButton: boolean;
-  animation: string;
+  animation: 'fade' | 'zoom' | 'slideUp' | 'slideDown' | 'slideLeft' | 'slideRight' | 'slideUp' | 'rotate' | 'door';
   enterAnimation: string;
   leaveAnimation: string;
   onAnimationEnd: () => void;
@@ -193,12 +193,12 @@ type DefaultProps = {
   className: string;
   customStyles: React.CSSProperties;
   customMaskStyles: React.CSSProperties;
+  popupClass: string;
 }
 
 
 type RequiredProps = {
   onClose: (e: React.MouseEvent | React.KeyboardEvent) => void;
-  popupClass: string;
 }
 
 
