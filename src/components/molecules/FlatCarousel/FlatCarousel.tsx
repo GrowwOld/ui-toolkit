@@ -20,9 +20,13 @@ const Carousel = (props:Props) => {
   const [ hidden, setHidden ] = useState(true);
 
   useEffect(() => {
-    setTimeout(function() {
+    const carouselTimeout = setTimeout(function() {
       setHidden(false);
     }, 400);
+
+    return () => {
+      clearTimeout(carouselTimeout);
+    };
   }, []);
 
   return (
