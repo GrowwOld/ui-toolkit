@@ -91,7 +91,7 @@ Popup.defaultProps = {
 type DefaultProps = {
   width: number | string;
   height?: number | string;
-  animation?: 'fade' | 'zoom' | 'slideUp' | 'slideDown' | 'slideLeft' | 'slideRight' | 'slideUp' | 'rotate' | 'door';
+  animation: 'fade' | 'zoom' | 'slideUp' | 'slideDown' | 'slideLeft' | 'slideRight' | 'slideUp' | 'rotate' | 'door';
   onLoad: () => void;
   onUnLoad: () => void;
   onClose: () => void;
