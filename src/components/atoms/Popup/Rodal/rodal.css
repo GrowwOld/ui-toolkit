@@ -55,6 +55,13 @@
   height: 16px;
 }
 
+@media (max-width: 800px) {
+  .rodal-close {
+    top: 5px;
+    right: 0px;
+  }
+}
+
 .rodal-close::before,
 .rodal-close::after {
   position: absolute;

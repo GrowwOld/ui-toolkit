@@ -13,7 +13,8 @@ const ALL_DATES = [ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 1
 
 const INVOKE_MODE = {
   POPUP: 'POPUP',
-  TOOLTIP: 'TOOLTIP'
+  TOOLTIP: 'TOOLTIP',
+  DEFAULT: 'DEFAULT'
 } as const;
 
 class DateSelector extends PureComponent<Props, State> {
@@ -58,6 +59,9 @@ class DateSelector extends PureComponent<Props, State> {
           {this.getMainUi()}
         </div>
       );
+
+    } else if (invokeMode === INVOKE_MODE.DEFAULT) {
+      return this.getCalendarUI();
     }
   }
 
@@ -65,7 +69,6 @@ class DateSelector extends PureComponent<Props, State> {
   getMainUi = () => {
 
     const {
-      availableDates,
       titleText,
       onClose,
       invokeMode,
@@ -94,33 +97,7 @@ class DateSelector extends PureComponent<Props, State> {
           {selectedDateLabel}
         </div>
 
-        <div className="date101Grid-container">
-          {
-            ALL_DATES.map((date, index) => {
-              const isDisabled = availableDates.indexOf(date) === -1;
-              let itemClass = 'date101Grid-item';
-
-              if (selectedDate === date) {
-                itemClass += ' active';
-
-              } else if (isDisabled) {
-                itemClass += ' disabled';
-
-              } else {
-                itemClass += ' regular';
-              }
-
-              return (
-                <div className={itemClass}
-                  key={index}
-                  onClick={() => this.selectDate(date)}
-                >
-                  {date}
-                </div>
-              );
-            })
-          }
-        </div>
+        {this.getCalendarUI()}
 
         <Button
           buttonText={buttonText}
@@ -129,6 +106,45 @@ class DateSelector extends PureComponent<Props, State> {
           height={43}
           width={270}
         />
+      </div>
+    );
+  }
+
+
+  getCalendarUI = () => {
+    const { availableDates, invokeMode, defaultDate } = this.props;
+    const { selectedDate } = this.state;
+
+    return (
+      <div className="date101Grid-container">
+        {
+          ALL_DATES.map((date, index) => {
+            const isDisabled = availableDates.indexOf(date) === -1;
+            let itemClass = 'date101Grid-item';
+
+            if (defaultDate === date) {
+              itemClass += ' previously-active';
+
+            } else if (selectedDate === date) {
+              itemClass += invokeMode === INVOKE_MODE.DEFAULT ? ' default-active' : ' active';
+
+            } else if (isDisabled) {
+              itemClass += ' disabled';
+
+            } else {
+              itemClass += ' regular';
+            }
+
+            return (
+              <div className={itemClass}
+                key={index}
+                onClick={() => this.selectDate(date)}
+              >
+                {date}
+              </div>
+            );
+          })
+        }
       </div>
     );
   }
@@ -144,8 +160,14 @@ class DateSelector extends PureComponent<Props, State> {
 
 
   selectDate(date: number) {
+    const { invokeMode, onDateChange } = this.props;
+
     this.setState({
       selectedDate: date
+    }, () => {
+      if (invokeMode === INVOKE_MODE.DEFAULT) {
+        onDateChange(date);
+      }
     });
   }
 
@@ -160,7 +182,6 @@ class DateSelector extends PureComponent<Props, State> {
     tooltipLeft: 0,
     invokeMode: INVOKE_MODE.POPUP
   }
-
 }
 
 

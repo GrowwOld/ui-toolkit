@@ -17,8 +17,6 @@ const Dialog = (props: Props) => {
     height: height,
     animationDuration: duration + 'ms',
     WebkitAnimationDuration: duration + 'ms'
-    // borderTopLeftRadius: '7px',
-    // borderTopRightRadius: '7px'
   };
 
   const mergedStyles = { ...style, ...customStyles };

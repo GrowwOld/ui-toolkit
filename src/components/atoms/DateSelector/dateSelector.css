@@ -51,11 +51,27 @@
   cursor: pointer;
 }
 
+.date101Grid-item.default-active {
+  pointer-events: auto;
+  color: var(--primaryBg);
+  background-color: var(--primaryClr);
+  transform: scale(1.2);
+  cursor: pointer;
+}
+
 .date101Grid-item.disabled {
   pointer-events: none;
   background-color: var(--primaryBg);
   cursor: not-allowed;
   color: var(--subText50);
+}
+
+.date101Grid-item.previously-active {
+  pointer-events: auto;
+  color: var(--text);
+  transform: scale(1.2);
+  background-color: var(--boxShadow);
+  cursor: pointer;
 }
 
 .date101Grid-item.regular:hover {

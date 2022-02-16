@@ -9,7 +9,7 @@
   display: flex;
   border-bottom: solid 1px var(--border);
   align-items: center;
-  padding: 10px 0px 5px 0px;
+  padding: 10px 0 5px 0;
   caret-color: var(--primaryClr);
 }
 
@@ -18,7 +18,7 @@
 }
 
 .txtinput88parent:focus-within {
-  border-bottom: solid 2px var(--primaryClr);
+  border-bottom: 2px solid var(--primaryClr);
 }
 
 .removeunderline:focus-within {
@@ -33,19 +33,16 @@
   outline: 0;
   color: var(--text);
   background: var(--primaryBg);
+
   /* -webkit-box-shadow: 0 0 0px 1000px white inset; */
 }
 
-.txtinput88input:focus {
-  border-bottom: none;
-  border: none;
-  outline: 0;
-}
 
 .txtinput88input::placeholder {
   /* Chrome, Firefox, Opera, Safari 10.1+ */
   color: var(--iconMedium);
   opacity: 1;
+
   /* Firefox */
 }
 
@@ -59,12 +56,22 @@
   color: var(--iconMedium);
 }
 
-.txtinput88input:-webkit-autofill, .txtinput88input:-webkit-autofill:hover, .txtinput88input:-webkit-autofill:focus, .txtinput88input:-webkit-autofill:active {
+.txtinput88input:-webkit-autofill,
+.txtinput88input:-webkit-autofill:hover,
+.txtinput88input:-webkit-autofill:focus,
+.txtinput88input:-webkit-autofill:active {
+  /* box-shadow: 0 0 0 30px var(--primaryBg) inset !important; msite change */
   -webkit-box-shadow: 0 0 0 30px var(--primaryBg) inset !important;
   background-color: var(--primaryBg) !important;
-  -webkit-text-fill-color: var(--text)
+  -webkit-text-fill-color: var(--text);
 }
 
+
+.txtinput88input:focus {
+  border-bottom: none;
+  border: none;
+  outline: 0;
+}
 .errorText {
   color: var(--growwRed);
   font-size: 14px;
@@ -73,7 +80,7 @@
 }
 
 .pad0 {
-  padding: 0px;
+  padding: 0;
 }
 
 .infoText {
@@ -84,5 +91,172 @@
 }
 
 .removeParentDivUnderline {
-  border-bottom: none!important;
+  border-bottom: none !important;
+}
+
+.txt88Width {
+  width: 100%;
+}
+
+.txt88InputMUI {
+  border-bottom: 1px solid var(--subText) !important;
+}
+
+.txt88MlabelError {
+  color: var(--growwRed) !important;
+}
+
+.txt88Bar {
+  position: relative;
+  display: block;
+  width: 100%;
+}
+
+.txt88Bar::before,
+.txt88Bar::after {
+  content: "";
+  height: 2px;
+  width: 0;
+  bottom: 0;
+  position: absolute;
+  background: var(--primaryClr);
+  transition: 0.2s ease all;
+}
+
+.txt88BarError::before,
+.txt88BarError::after {
+  background: var(--growwRed);
+}
+
+.txt88Bar::before {
+  left: 50%;
+}
+
+.txt88Bar::after {
+  right: 50%;
+}
+
+.txt88Mgroup {
+  position: relative;
+}
+
+.txt88MErrorText {
+  color: var(--growwRed);
+  font-size: 14px;
+  margin-top: 3px;
+  text-align: left;
+}
+
+/* .txt88MNoErrorText {
+  color: var(--subText);
+  font-size: 14px;
+  margin-top: 3px;
+} */
+
+@media (max-width: 800px) {
+  .txtinput88input {
+    margin-top: 2px;
+    padding: 1px;
+  }
+  .txtinput88input::-ms-input-placeholder {
+    /* Microsoft Edge */
+    color: var(--iconMedium);
+    opacity: 0.2;
+  }
+  .txtinput88input::placeholder,
+  .txtinput88input::-webkit-input-placeholder {
+    opacity: 0.2;
+    color: var(--iconMedium);
+  }
+
+  .errorText {
+    font-size: 12px;
+    padding: 5px 0;
+    margin-top: 0;
+  }
+
+  .pad0 {
+    padding: 5px 0;
+  }
+
+  .infoText {
+    padding: 5px 0;
+    margin-top: 0;
+  }
+
+  input {
+    font-size: 18px;
+    display: block;
+    width: 100%;
+    border: none;
+    -webkit-text-fill-color: var(--text);
+    border-bottom: 1px solid var(--subText);
+    background: var(--primaryBg);
+    color: var(--text);
+  }
+
+  input:focus {
+    outline: none;
+  }
+
+  input:-webkit-autofill,
+  textarea:-webkit-autofill,
+  select:-webkit-autofill {
+    background-color: var(--primaryBg) !important;
+  }
+
+  input:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0 1000px var(--primaryBg) inset;
+  }
+
+  input[type="number"]::-webkit-inner-spin-button,
+  input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    margin: 0;
+  }
+
+  label {
+    color: #999;
+    font-size: 18px;
+    font-weight: normal;
+    position: absolute;
+    pointer-events: none;
+    left: 2px;
+    top: 10px;
+    transition: 0.2s ease all;
+  }
+
+  input:focus ~ label,
+  input:valid ~ label {
+    top: -15px;
+    font-size: 14px;
+    color: var(--primaryClr);
+  }
+
+  input:focus ~ .txt88Bar::before,
+  input:focus ~ .txt88Bar::after {
+    width: 50%;
+  }
+  input:-webkit-autofill ~ label {
+    top: -15px;
+    font-size: 14px;
+    color: var(--primaryClr);
+  }
+
+  input:focus ~ .highlight {
+    animation: inputHighlighter 0.3s ease;
+  }
+
+  @keyframes inputHighlighter {
+    from {
+      background: var(--primaryClr);
+    }
+
+    to {
+      width: 100;
+      background: transparent;
+    }
+  }
 }
