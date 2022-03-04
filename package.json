@@ -114,7 +114,7 @@
     "typescript": "^4.2.4"
   },
   "dependencies": {
-    "@groww-tech/icon-store": "1.0.1",
+    "@groww-tech/icon-store": "1.0.4",
     "flat-carousel": "0.0.1",
     "lodash.debounce": "^4.0.8",
     "react-waypoint": "^10.1.0"
