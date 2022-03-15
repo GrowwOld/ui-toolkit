@@ -1,0 +1,12 @@
+.numpad98Wrapper {
+  border: 1px solid var(--primaryClr10);
+  box-shadow: 0 1px 4px 0 var(--boxShadow);
+  background-color: var(--primaryBg);
+}
+
+.numpad98Button {
+  font-size: 22px;
+  font-weight: 400;
+  padding: 12px;
+  text-align: center;
+}

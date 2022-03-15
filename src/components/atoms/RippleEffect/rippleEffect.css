@@ -1,0 +1,12 @@
+.rip100ParentWrapper {
+  position: relative;
+  overflow: hidden;
+}
+
+.rip100StaticStyle {
+  position: absolute;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  pointer-events: none;
+}
