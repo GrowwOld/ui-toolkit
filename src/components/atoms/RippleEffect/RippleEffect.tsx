@@ -22,12 +22,14 @@ const RippleEffect = (props:Props) => {
 
   const [ rippleStyle, setRippleStyle ] = useState(rippleInitialStyle);
 
+  const elementId = String(id);
+
 
   const handleClick = (event: React.MouseEvent) => {
-    const wid = document.getElementById(id)?.offsetWidth || 0;
-    const hei = document.getElementById(id)?.offsetHeight || 0;
-    const top = hei / 2;
-    const left = wid / 2;
+    const elementWidth = document.getElementById(elementId)?.offsetWidth || 0;
+    const elementHeight = document.getElementById(elementId)?.offsetHeight || 0;
+    const top = elementHeight / 2;
+    const left = elementWidth / 2;
 
     const startingRippleStyle = {
       top,
@@ -41,7 +43,7 @@ const RippleEffect = (props:Props) => {
     setRippleStyle(startingRippleStyle);
 
     setTimeout(() => {
-      const size = Math.max(wid, hei);
+      const size = Math.max(elementWidth, elementHeight);
 
       const finalRippleStyle = {
         left,
@@ -67,7 +69,7 @@ const RippleEffect = (props:Props) => {
 
   return (
     <div
-      id={id}
+      id={elementId}
       className={`rip100ParentWrapper ${addParentClass}`}
       onClick={handleClick}
     >
@@ -94,7 +96,7 @@ RippleEffect.defaultProps = {
 type DefaultProps = {
   color: string;
   duration: number;
-  id: string;
+  id: string | number;
   addParentClass: string;
   onClick: Function;
   delayOnClick: boolean; // If true, onClick will be called after 200ms so Ripple is visible and feedback is better
