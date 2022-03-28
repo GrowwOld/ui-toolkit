@@ -22,7 +22,7 @@ const Accordion = (props: Props) => {
     maxHeight
   } = props;
 
-  const [isOpen, toggleAccordion] = useState(onMountOpen);
+  const [ isOpen, toggleAccordion ] = useState(onMountOpen);
 
   const childRef = useRef<HTMLDivElement>(null);
   const isFirstRender = useRef(true);
@@ -37,7 +37,7 @@ const Accordion = (props: Props) => {
     if (onToggleCallback) {
       onToggleCallback(isOpen);
     }
-  }, [isOpen]);
+  }, [ isOpen ]);
 
 
   const toggleState = useCallback(() => {
@@ -91,12 +91,12 @@ const Accordion = (props: Props) => {
 
       {
         useAnimateHeight ? getAnimateHeightUI()
-          : <div className={childClass}
-            style={childStyle}
-            ref={childRef}
-          >
-            {children}
-          </div>
+        : <div className={childClass}
+          style={childStyle}
+          ref={childRef}
+        >
+          {children}
+        </div>
       }
     </div>
   );

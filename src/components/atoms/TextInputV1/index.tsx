@@ -1,5 +1,5 @@
 import React from 'react';
-import { PrimaryInput, Label, ErrorLabel, Container } from './styles';
+import { PrimaryInput, Label, ErrorLabel, Container, TrailingVisContainer, LeadingVisContainer, WrapperContainer } from './styles';
 
 
 const TextInputV1 = (props: InputProps) => {
@@ -9,26 +9,36 @@ const TextInputV1 = (props: InputProps) => {
     onCopy = _onCopy,
     onPaste = _onPaste,
     error,
-    type,
+    type = 'shortText',
     label,
+    TrailingVis,
+    LeadingVis,
     ...rest
   } = props;
 
   return (
     <>
       {label && <Label className='fs14 fw500'>{label}</Label>}
-      <Container
-        error={error ? true : false}
-        {...rest}
-      >
-        <PrimaryInput
-          onCopy={onCopy}
-          onPaste={onPaste}
-          onKeyUp={onKeyUp}
-          onKeyDown={onKeyDown}
+      <div>
+        <Container
+          error={error ? true : false}
           {...rest}
-        />
-      </Container>
+          type={type}
+        >
+          <WrapperContainer>
+            {LeadingVis && <LeadingVisContainer type={type}>  {LeadingVis()} </LeadingVisContainer>}
+            <PrimaryInput
+              onCopy={onCopy}
+              onPaste={onPaste}
+              onKeyUp={onKeyUp}
+              onKeyDown={onKeyDown}
+              type={type}
+              {...rest}
+            />
+            {TrailingVis && <TrailingVisContainer type={type}>{TrailingVis()}</TrailingVisContainer>}
+          </WrapperContainer>
+        </Container>
+      </div>
       {error && <ErrorLabel className='fs14 fw500'>{error}</ErrorLabel> }
     </>
   );
@@ -54,10 +64,11 @@ export type TextInputProps = {
   disabled?: boolean;
   error?: string | boolean;
   required?: boolean;
-  leadingVis: React.ReactNode;
-  TrailingVis: React.ReactNode;
+  LeadingVis:()=> React.ReactNode;
+  TrailingVis:()=> React.ReactNode;
   ref?: React.Ref<HTMLInputElement>;
   label: string;
+  type: 'shortText' | 'exclusive';
 };
 
 

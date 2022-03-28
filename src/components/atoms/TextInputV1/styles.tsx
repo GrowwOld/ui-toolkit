@@ -1,10 +1,18 @@
+import { Padding } from '@groww-tech/icon-store/mi';
 import { styled } from '@stitches/react';
 
 export const Container = styled('div', {
   borderBottom: '2px solid var(--subText70)',
-  width: 'fit-content',
+  // width: 'fit-content',
   position: 'relative',
   variants: {
+    type: {
+      shortText: {
+      },
+      exclusive: {
+        background: 'var(--quaternaryBg)'
+      }
+    },
     disabled: {
       true: {
         borderBottom: 'none',
@@ -58,6 +66,15 @@ export const PrimaryInput = styled('input', {
   background: 'var(--primaryBg)',
   caretColor: 'var(--primaryClr)',
   variants: {
+    type: {
+      shortText: {
+      },
+      exclusive: {
+        background: 'var(--quaternaryBg)',
+        padding: '12px 12px 12px 12px',
+        borderRadius: '4px 4px 0px 0px'
+      }
+    },
     disabled: {
       true: {
         borderBottom: 'none',
@@ -96,5 +113,36 @@ export const Label = styled('div', {
 
 export const ErrorLabel = styled('div', {
   color: 'var(--growwRed)',
-  marginTop: '8px'
+  marginTop: '4px'
+});
+
+export const WrapperContainer = styled('div', {
+  display: 'flex',
+  alignItems: 'center'
+});
+
+export const TrailingVisContainer = styled('span', {
+  height: '100%',
+  variants: {
+    type: {
+      shortText: {
+      },
+      exclusive: {
+        background: 'var(--quaternaryBg)'
+      }
+    }
+  }
+});
+
+export const LeadingVisContainer = styled('span', {
+  height: '100%',
+  variants: {
+    type: {
+      shortText: {
+      },
+      exclusive: {
+        background: 'var(--quaternaryBg)'
+      }
+    }
+  }
 });
