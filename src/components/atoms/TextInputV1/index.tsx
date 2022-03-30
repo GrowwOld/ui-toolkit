@@ -1,74 +1,44 @@
-import React from 'react';
+import { Cancel, Visibility, VisibilityOff } from '@groww-tech/icon-store/mi';
+import { Value } from 'classnames';
+import React, { useState } from 'react';
 import { PrimaryInput, Label, ErrorLabel, Container, TrailingVisContainer, LeadingVisContainer, WrapperContainer } from './styles';
+import { BaseTextInputV1 } from './BaseTextInput';
+import { PasswordTextInputV1 } from './Pasword';
+import { ClerableTextInput } from './Clerable';
 
 
-const TextInputV1 = (props: InputProps) => {
-  const {
-    onKeyDown = () => { },
-    onKeyUp = () => { },
-    onCopy = _onCopy,
-    onPaste = _onPaste,
-    error,
-    type = 'shortText',
-    label,
-    TrailingVis,
-    LeadingVis,
-    ...rest
-  } = props;
+const TextInputV1 = (props: TextInputProps) => {
+  const { type, clearable } = props;
 
-  return (
-    <>
-      {label && <Label className='fs14 fw500'>{label}</Label>}
-      <div>
-        <Container
-          error={error ? true : false}
-          {...rest}
-          type={type}
-        >
-          <WrapperContainer>
-            {LeadingVis && <LeadingVisContainer type={type}>  {LeadingVis()} </LeadingVisContainer>}
-            <PrimaryInput
-              onCopy={onCopy}
-              onPaste={onPaste}
-              onKeyUp={onKeyUp}
-              onKeyDown={onKeyDown}
-              type={type}
-              {...rest}
-            />
-            {TrailingVis && <TrailingVisContainer type={type}>{TrailingVis()}</TrailingVisContainer>}
-          </WrapperContainer>
-        </Container>
-      </div>
-      {error && <ErrorLabel className='fs14 fw500'>{error}</ErrorLabel> }
-    </>
-  );
+  if (type === 'password') {
+    return <PasswordTextInputV1 {...props}/>;
+  }
+
+  if (clearable) {
+    return (
+      <ClerableTextInput {...props}/>
+    );
+  }
+
+  return <BaseTextInputV1 {...props}/>;
 };
 
 
-const _onCopy = (e: React.ClipboardEvent<HTMLInputElement>) => {
-  e.preventDefault();
-  // return false;
-};
+export type TextInputProps = React.InputHTMLAttributes<HTMLInputElement> &
+_TextInputProps;
 
 
-const _onPaste = (e: React.ClipboardEvent<HTMLInputElement>) => {
-  e.preventDefault();
-  // return false
-};
-
-
-type InputProps = Partial<React.InputHTMLAttributes<HTMLInputElement>> &
-TextInputProps;
-
-export type TextInputProps = {
+type _TextInputProps = {
   disabled?: boolean;
   error?: string | boolean;
   required?: boolean;
-  LeadingVis:()=> React.ReactNode;
-  TrailingVis:()=> React.ReactNode;
+  LeadingVis: () => React.ReactNode;
+  TrailingVis: () => React.ReactNode;
   ref?: React.Ref<HTMLInputElement>;
   label: string;
-  type: 'shortText' | 'exclusive';
+  variant?: 'shortText' | 'exclusive';
+  onChange: React.FormEventHandler<HTMLInputElement>;
+  clearable: boolean;
 };
 
 

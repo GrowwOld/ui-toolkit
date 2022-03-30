@@ -6,7 +6,7 @@ export const Container = styled('div', {
   // width: 'fit-content',
   position: 'relative',
   variants: {
-    type: {
+    variant: {
       shortText: {
       },
       exclusive: {
@@ -66,7 +66,7 @@ export const PrimaryInput = styled('input', {
   background: 'var(--primaryBg)',
   caretColor: 'var(--primaryClr)',
   variants: {
-    type: {
+    variant: {
       shortText: {
       },
       exclusive: {
@@ -124,7 +124,7 @@ export const WrapperContainer = styled('div', {
 export const TrailingVisContainer = styled('span', {
   height: '100%',
   variants: {
-    type: {
+    variant: {
       shortText: {
       },
       exclusive: {
@@ -137,7 +137,7 @@ export const TrailingVisContainer = styled('span', {
 export const LeadingVisContainer = styled('span', {
   height: '100%',
   variants: {
-    type: {
+    variant: {
       shortText: {
       },
       exclusive: {

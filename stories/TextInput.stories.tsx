@@ -13,7 +13,22 @@ export default {
 };
 
 
-const Template: Story<TextInputProps> = (args) => <TextInput {...args}/>;
+const Template: Story<TextInputProps> = (args) => {
+  const [ value, setValue ] = React.useState('');
+
+
+  const onChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setValue(e.target.value);
+  };
+
+  return (
+    <TextInput
+      {...args}
+      value={value}
+      onChange={onChange}
+    />
+  );
+};
 
 export const Primary = Template.bind({});
 Primary.args = {
@@ -63,18 +78,36 @@ export const Password = Template.bind({});
 Password.args = {
   label: 'Password',
   placeholder: 'Enter Password',
-  type: 'password',
-  TrailingVis: () => <> <Visibility size={18} /></>
+  type: 'password'
 
 };
 
 export const Clearable = Template.bind({});
 Clearable.args = {
   label: 'Email',
-  TrailingVis: () => <Cancel size={18} />
+  clearable: true
 };
 
 export const NoLabel = Template.bind({
   label: '',
   placeholder: 'No Label'
 });
+
+export const CalculatorsWithCustomLabel = Template.bind({});
+CalculatorsWithCustomLabel.decorators = [
+  (Story) => (
+    <div style={{ display: 'flex', flexDirection: 'column' }}>
+      <div
+        className='fs16 clrSubText'
+        style={{ marginBottom: '8px' }}
+      >Shares to buy NSE</div>
+      <Story />
+    </div>
+  )
+];
+
+CalculatorsWithCustomLabel.args = {
+  label: '',
+  placeholder: 'Enter Email',
+  TrailingVis: () => <> <Cancel size={18} /></>
+};
