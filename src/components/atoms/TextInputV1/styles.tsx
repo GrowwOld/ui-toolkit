@@ -108,12 +108,12 @@ export const PrimaryInput = styled('input', {
 
 export const Label = styled('div', {
   color: 'var(--subText)',
-  marginBottom: '8px'
+  marginBottom: '9px'
 });
 
 export const ErrorLabel = styled('div', {
   color: 'var(--growwRed)',
-  marginTop: '4px'
+  marginTop: '6px'
 });
 
 export const WrapperContainer = styled('div', {

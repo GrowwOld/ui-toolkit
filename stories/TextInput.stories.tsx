@@ -47,7 +47,8 @@ export const Error = Template.bind({});
 Error.args = {
   label: 'Email',
   error: 'There\'s an error',
-  value: 'type something'
+  value: 'type something',
+  placeholder: 'Enter Email'
 };
 
 export const Exclusive = Template.bind({});

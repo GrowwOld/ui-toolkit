@@ -40,7 +40,7 @@ export const BaseTextInputV1 = (props: TextInputProps) => {
           </WrapperContainer>
         </Container>
       </div>
-      {error && <ErrorLabel className='fs14 fw500'>{error}</ErrorLabel>}
+      {error && <ErrorLabel className='fs14 fw400'>{error}</ErrorLabel>}
     </>
   );
 };
