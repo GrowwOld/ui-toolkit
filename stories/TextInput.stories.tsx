@@ -55,7 +55,7 @@ export const Exclusive = Template.bind({});
 Exclusive.args = {
   label: 'Email',
   placeholder: 'Enter Email',
-  type: 'exclusive'
+  variant: 'exclusive'
 };
 
 
@@ -63,7 +63,7 @@ export const ExclusiveDisabled = Template.bind({});
 ExclusiveDisabled.args = {
   label: 'Email',
   placeholder: 'Email',
-  type: 'exclusive',
+  variant: 'exclusive',
   disabled: true
 };
 
@@ -72,7 +72,7 @@ ExclusiveError.args = {
   label: 'Email',
   error: 'There\'s an error',
   value: 'type something',
-  type: 'exclusive'
+  variant: 'exclusive'
 };
 
 export const Password = Template.bind({});
