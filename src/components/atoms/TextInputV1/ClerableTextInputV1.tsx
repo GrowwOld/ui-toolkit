@@ -1,10 +1,10 @@
 import { Cancel } from '@groww-tech/icon-store/mi';
 import React, { useState } from 'react';
-import { BaseTextInputV1 } from './BaseTextInput';
-import { TextInputProps } from './index';
+import BaseTextInputV1 from './BaseTextInputV1';
+import { TextInputProps } from './TextInputV1';
 
 
-export const ClerableTextInput = (props: TextInputProps) => {
+const ClerableTextInput = (props: TextInputProps) => {
   const { value, onChange } = props;
 
   return (
@@ -29,3 +29,6 @@ const ClearableTextInputTrailingVisual = ({ value, onChange }:Pick<TextInputProp
     />
   );
 };
+
+
+export default ClerableTextInput;

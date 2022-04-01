@@ -1,11 +1,11 @@
 
 import { Visibility, VisibilityOff } from '@groww-tech/icon-store/mi';
 import React, { useState } from 'react';
-import { BaseTextInputV1 } from './BaseTextInput';
-import { TextInputProps } from './index';
+import BaseTextInputV1 from './BaseTextInputV1';
+import { TextInputProps } from './TextInputV1';
 
 
-export const PasswordTextInputV1 = (props: TextInputProps) => {
+const PasswordTextInputV1 = (props: TextInputProps) => {
   const { type } = props;
   const [ typeState, _setTypeState ] = useState(type);
 
@@ -47,3 +47,5 @@ const PasswordTrailingVisual = ({ type, setType }:{type:string | undefined; setT
     />
   );
 };
+
+export default PasswordTextInputV1;

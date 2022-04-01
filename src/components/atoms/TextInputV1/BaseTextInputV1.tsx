@@ -1,9 +1,9 @@
 import React from 'react';
-import { TextInputProps } from '.';
+import { TextInputProps } from './TextInputV1';
 import { PrimaryInput, Label, ErrorLabel, Container, TrailingVisContainer, LeadingVisContainer, WrapperContainer } from './styles';
 
 
-export const BaseTextInputV1 = (props: TextInputProps) => {
+const BaseTextInputV1 = (props: TextInputProps) => {
   const {
     onKeyDown = () => { },
     onKeyUp = () => { },
@@ -56,3 +56,6 @@ const _onPaste = (e: React.ClipboardEvent<HTMLInputElement>) => {
   e.preventDefault();
   // return false
 };
+
+
+export default BaseTextInputV1;

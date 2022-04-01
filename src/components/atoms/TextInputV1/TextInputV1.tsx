@@ -1,10 +1,7 @@
-import { Cancel, Visibility, VisibilityOff } from '@groww-tech/icon-store/mi';
-import { Value } from 'classnames';
-import React, { useState } from 'react';
-import { PrimaryInput, Label, ErrorLabel, Container, TrailingVisContainer, LeadingVisContainer, WrapperContainer } from './styles';
-import { BaseTextInputV1 } from './BaseTextInput';
-import { PasswordTextInputV1 } from './Pasword';
-import { ClerableTextInput } from './Clerable';
+import React from 'react';
+import BaseTextInputV1 from './BaseTextInputV1';
+import PasswordTextInputV1 from './PaswordTextInputV1';
+import ClerableTextInputV1 from './ClerableTextInputV1';
 
 
 const TextInputV1 = (props: TextInputProps) => {
@@ -16,7 +13,7 @@ const TextInputV1 = (props: TextInputProps) => {
 
   if (clearable) {
     return (
-      <ClerableTextInput {...props}/>
+      <ClerableTextInputV1 {...props}/>
     );
   }
 
