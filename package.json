@@ -83,6 +83,7 @@
     "@storybook/addon-essentials": "^6.2.8",
     "@storybook/addon-links": "^6.2.8",
     "@storybook/react": "^6.2.8",
+    "@stitches/react": "^1.2.7",
     "@types/object-assign": "^4.0.30",
     "@types/react-dom": "^17.0.3",
     "@types/react-lazyload": "^3.1.0",
@@ -115,7 +116,6 @@
   },
   "dependencies": {
     "@groww-tech/icon-store": "1.0.4",
-    "@stitches/react": "^1.2.7",
     "flat-carousel": "0.0.1",
     "lodash.debounce": "^4.0.8",
     "react-waypoint": "^10.1.0"
