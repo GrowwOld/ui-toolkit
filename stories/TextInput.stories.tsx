@@ -2,7 +2,7 @@ import React from 'react';
 
 import { Story } from '@storybook/react';
 
-import { Cancel, Visibility } from '@groww-tech/icon-store/mi';
+import { Cancel } from '@groww-tech/icon-store/mi';
 import TextInput from '../src/components/atoms/TextInputV1/TextInputV1';
 import { TextInputProps } from '../src/components/atoms/TextInputV1/TextInputV1';
 
