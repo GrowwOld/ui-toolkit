@@ -6,7 +6,7 @@ export const Container = styled('div', {
   position: 'relative',
   variants: {
     variant: {
-      shortText: {
+      default: {
       },
       exclusive: {
         background: 'var(--quaternaryBg)'
@@ -66,7 +66,7 @@ export const PrimaryInput = styled('input', {
   caretColor: 'var(--primaryClr)',
   variants: {
     variant: {
-      shortText: {
+      default: {
       },
       exclusive: {
         background: 'var(--quaternaryBg)',
@@ -124,7 +124,7 @@ export const TrailingVisContainer = styled('span', {
   height: '100%',
   variants: {
     variant: {
-      shortText: {
+      default: {
       },
       exclusive: {
         background: 'var(--quaternaryBg)'
@@ -137,7 +137,7 @@ export const LeadingVisContainer = styled('span', {
   height: '100%',
   variants: {
     variant: {
-      shortText: {
+      default: {
       },
       exclusive: {
         background: 'var(--quaternaryBg)'

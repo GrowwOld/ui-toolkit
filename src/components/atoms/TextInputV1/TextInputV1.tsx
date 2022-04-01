@@ -14,9 +14,7 @@ const TextInputV1 = (props: TextInputProps) => {
   }
 
   if (clearable) {
-    return (
-      <ClerableTextInputV1 {...props}/>
-    );
+    return <ClerableTextInputV1 {...props}/>;
   }
 
   return <BaseTextInputV1 {...props}/>;
@@ -34,39 +32,9 @@ type _TextInputProps = {
   TrailingVis?: () => React.ReactNode;
   ref?: React.Ref<HTMLInputElement>;
   label: string;
-  variant?: 'shortText' | 'exclusive';
+  variant?: 'default' | 'exclusive';
   onChange: React.FormEventHandler<HTMLInputElement>;
   clearable?: boolean;
 };
-
-
-// const computeStyles = classNames('textInput', {
-//   ['textInput--error']: error
-// });
-
-
-// const TextInput = (props: InputProps) => {
-//   const { error } = props;
-
-//   // return <TextInputV1RenderProps render={( disabled, error, required, leadingVis, TrailingVis, ...rest )=>( <Input />) />
-//   return (
-//     <TextInputV1RenderProps
-//       {...props}
-//       render={
-//         (props) => (<PrimaryInput
-//           {...props}
-//           error={error ? true : false}
-//         />)
-//       }
-//     />
-//   );
-//   // return (
-//   //   <Input
-//   //     disabled={disabled}
-//   //     {...rest}
-//   //   />
-//   // )
-// };
-
 
 export default TextInputV1;

@@ -33,7 +33,8 @@ const Template: Story<TextInputProps> = (args) => {
 export const Primary = Template.bind({});
 Primary.args = {
   label: 'Email',
-  placeholder: 'Enter Email'
+  placeholder: 'Enter Email',
+  variant: 'default'
 };
 
 export const Disabled = Template.bind({});

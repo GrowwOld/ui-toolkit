@@ -12,7 +12,7 @@ const BaseTextInputV1 = (props: TextInputProps) => {
     onCopy = _onCopy,
     onPaste = _onPaste,
     error,
-    variant = 'shortText',
+    variant = 'default',
     label,
     TrailingVis,
     LeadingVis,
