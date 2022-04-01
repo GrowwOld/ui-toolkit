@@ -1,8 +1,9 @@
-
-import { Visibility, VisibilityOff } from '@groww-tech/icon-store/mi';
 import React, { useState } from 'react';
+
 import BaseTextInputV1 from './BaseTextInputV1';
 import { TextInputProps } from './TextInputV1';
+
+import { Visibility, VisibilityOff } from '@groww-tech/icon-store/mi';
 
 
 const PasswordTextInputV1 = (props: TextInputProps) => {

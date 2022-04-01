@@ -1,4 +1,3 @@
-import { Padding } from '@groww-tech/icon-store/mi';
 import { styled } from '@stitches/react';
 
 export const Container = styled('div', {

@@ -1,6 +1,8 @@
 import React from 'react';
-import { TextInputProps } from './TextInputV1';
+
 import { PrimaryInput, Label, ErrorLabel, Container, TrailingVisContainer, LeadingVisContainer, WrapperContainer } from './styles';
+
+import { TextInputProps } from './TextInputV1';
 
 
 const BaseTextInputV1 = (props: TextInputProps) => {
