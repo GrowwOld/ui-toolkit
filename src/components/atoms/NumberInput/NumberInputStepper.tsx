@@ -1,7 +1,8 @@
 import { Add, Remove } from '@groww-tech/icon-store/mi';
 import React from 'react';
-import { BaseNumberInput, NumberInputProps } from './NumberInput';
+import { NumberInputProps } from './NumberInput';
 
+import BaseNumberInput from './BaseNumberInput';
 
 export const NumberInputStepper = (props:NumberInputProps) => {
   return (
