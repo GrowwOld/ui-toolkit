@@ -56,11 +56,10 @@ export const PrimaryInput = styled('input', {
   border: 'none',
   // borderBottom: '2px solid var(--subText70)',
   // var(--border)
-  fontSize: '16px',
   flexGrow: 1,
   outline: 0,
-  opacity: 1,
-  paddingBottom: '5px',
+  padding: 0,
+  // paddingBottom: '5px',
   color: 'var(--text)',
   background: 'var(--primaryBg)',
   caretColor: 'var(--primaryClr)',
@@ -95,8 +94,8 @@ export const PrimaryInput = styled('input', {
     // borderBottom: '2px solid var(--primaryClr)'
   },
   '&::placeholder': {
-    color: 'var(--iconMedium)',
-    opacity: 1
+    // opacity: 0.2,
+    color: 'var(--iconMedium)'
   },
   '&:-webkit-autofill': {
     boxShadow: '0 0 0 30px var(--primaryBg) inset !important',
@@ -107,12 +106,12 @@ export const PrimaryInput = styled('input', {
 
 export const Label = styled('div', {
   color: 'var(--subText)',
-  marginBottom: '9px'
+  marginBottom: '8px'
 });
 
 export const ErrorLabel = styled('div', {
   color: 'var(--growwRed)',
-  marginTop: '6px'
+  marginTop: '8px'
 });
 
 export const WrapperContainer = styled('div', {

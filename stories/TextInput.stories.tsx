@@ -113,3 +113,10 @@ CalculatorsWithCustomLabel.args = {
   placeholder: 'Enter Email',
   TrailingVis: () => <> <Cancel size={18} /></>
 };
+
+export const EditPhoneNumber = Template.bind({});
+EditPhoneNumber.args = {
+  LeadingVis: () => (<span className='fs16'>+91 </span>),
+  placeholder: '+91',
+  disabled: true
+};

@@ -31,6 +31,7 @@ const BaseTextInputV1 = (props: TextInputProps) => {
           <WrapperContainer>
             {LeadingVis && <LeadingVisContainer variant={variant}>  {LeadingVis()} </LeadingVisContainer>}
             <PrimaryInput
+              className='fs16'
               onCopy={onCopy}
               onPaste={onPaste}
               onKeyUp={onKeyUp}
