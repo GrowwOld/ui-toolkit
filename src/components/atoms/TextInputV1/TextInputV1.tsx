@@ -30,7 +30,7 @@ type _TextInputProps = {
   error?: string | boolean;
   LeadingVis?: () => React.ReactNode;
   TrailingVis?: () => React.ReactNode;
-  ref?: React.Ref<HTMLInputElement>;
+  // ref?: React.Ref<HTMLInputElement>;
   label: string;
   variant?: 'default' | 'exclusive';
   onChange: React.FormEventHandler<HTMLInputElement>;
