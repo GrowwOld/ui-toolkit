@@ -111,12 +111,12 @@ CalculatorsWithCustomLabel.decorators = [
 CalculatorsWithCustomLabel.args = {
   label: '',
   placeholder: 'Enter Email',
-  TrailingVis: () => <> <Cancel size={18} /></>
+  SuffixComponent: () => <> <Cancel size={18} /></>
 };
 
 export const EditPhoneNumber = Template.bind({});
 EditPhoneNumber.args = {
-  LeadingVis: () => (<span className='fs16'>+91 </span>),
+  PrefixComponent: () => (<span className='fs16'>+91 </span>),
   placeholder: '+91',
   disabled: true
 };

@@ -13,7 +13,7 @@ const ClerableTextInput = (props: TextInputProps) => {
   return (
     <BaseTextInputV1
       {...props}
-      TrailingVis={() => ClearableTextInputTrailingVisual({ value, onChange })}
+      SuffixComponent={() => ClearableTextInputTrailingVisual({ value, onChange })}
     />
   );
 };

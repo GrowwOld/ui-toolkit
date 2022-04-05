@@ -28,8 +28,8 @@ _TextInputProps;
 type _TextInputProps = {
   disabled?: boolean;
   error?: string | boolean;
-  LeadingVis?: () => React.ReactNode;
-  TrailingVis?: () => React.ReactNode;
+  SuffixComponent?: () => React.ReactNode;
+  PrefixComponent?: () => React.ReactNode;
   // ref?: React.Ref<HTMLInputElement>;
   label: string;
   variant?: 'default' | 'exclusive';

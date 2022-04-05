@@ -24,7 +24,7 @@ const PasswordTextInputV1 = (props: TextInputProps) => {
     <BaseTextInputV1
       {...props}
       type={typeState}
-      TrailingVis={() => PasswordTrailingVisual({ type: typeState, setType })}
+      SuffixComponent={() => PasswordTrailingVisual({ type: typeState, setType })}
     />
   );
 };

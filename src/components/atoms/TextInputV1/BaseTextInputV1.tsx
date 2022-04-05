@@ -5,7 +5,7 @@ import { PrimaryInput, Label, ErrorLabel, Container, TrailingVisContainer, Leadi
 import { TextInputProps } from './TextInputV1';
 
 
-const BaseTextInputV1 = (props: TextInputProps) => {
+const BaseTextInputV1 = React.forwardRef<HTMLInputElement, TextInputProps>((props, ref) => {
   const {
     onKeyDown = () => { },
     onKeyUp = () => { },
@@ -14,8 +14,8 @@ const BaseTextInputV1 = (props: TextInputProps) => {
     error,
     variant = 'default',
     label,
-    TrailingVis,
-    LeadingVis,
+    PrefixComponent,
+    SuffixComponent,
     ...rest
   } = props;
 
@@ -29,8 +29,9 @@ const BaseTextInputV1 = (props: TextInputProps) => {
           variant={variant}
         >
           <WrapperContainer>
-            {LeadingVis && <LeadingVisContainer variant={variant}>  {LeadingVis()} </LeadingVisContainer>}
+            {PrefixComponent && <TrailingVisContainer variant={variant}>{PrefixComponent()}</TrailingVisContainer>}
             <PrimaryInput
+              ref={ref}
               className='fs16'
               onCopy={onCopy}
               onPaste={onPaste}
@@ -39,14 +40,14 @@ const BaseTextInputV1 = (props: TextInputProps) => {
               variant={variant}
               {...rest}
             />
-            {TrailingVis && <TrailingVisContainer variant={variant}>{TrailingVis()}</TrailingVisContainer>}
+            {SuffixComponent && <LeadingVisContainer variant={variant}>  {SuffixComponent()} </LeadingVisContainer>}
           </WrapperContainer>
         </Container>
       </div>
       {error && <ErrorLabel className='fs14 fw400'>{error}</ErrorLabel>}
     </>
   );
-};
+});
 
 
 const _onCopy = (e: React.ClipboardEvent<HTMLInputElement>) => {
