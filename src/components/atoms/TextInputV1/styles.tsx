@@ -21,7 +21,6 @@ export const Container = styled('div', {
     disabled: {
       true: {
         borderBottom: 'none',
-        pointerEvents: 'none',
         '&:focus-within::after': {
           background: 'var(--growwRed)',
           height: '2px'
