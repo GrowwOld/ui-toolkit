@@ -10,6 +10,12 @@ export const Container = styled('div', {
       },
       exclusive: {
         background: 'var(--quaternaryBg)'
+      },
+      unstyled: {
+        '&:after': {
+          display: 'none',
+          borderBottom: 'none'
+        }
       }
     },
     disabled: {
@@ -71,6 +77,9 @@ export const PrimaryInput = styled('input', {
         background: 'var(--quaternaryBg)',
         padding: '12px 12px 12px 12px',
         borderRadius: '4px 4px 0px 0px'
+      },
+      unstyled: {
+
       }
     },
     disabled: {
@@ -127,6 +136,9 @@ export const TrailingVisContainer = styled('span', {
       },
       exclusive: {
         background: 'var(--quaternaryBg)'
+      },
+      unstyled: {
+
       }
     }
   }
@@ -140,6 +152,8 @@ export const LeadingVisContainer = styled('span', {
       },
       exclusive: {
         background: 'var(--quaternaryBg)'
+      },
+      unstyled: {
       }
     }
   }

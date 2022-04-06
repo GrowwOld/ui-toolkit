@@ -25,8 +25,8 @@ const BaseTextInputV1 = React.forwardRef<HTMLInputElement, TextInputProps>((prop
       <div>
         <Container
           error={error ? true : false}
-          {...rest}
           variant={variant}
+          {...rest}
         >
           <WrapperContainer>
             {PrefixComponent && <TrailingVisContainer variant={variant}>{PrefixComponent()}</TrailingVisContainer>}

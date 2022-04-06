@@ -120,3 +120,9 @@ EditPhoneNumber.args = {
   placeholder: '+91',
   disabled: true
 };
+
+export const Unstyled = Template.bind({});
+Unstyled.args = {
+  placeholder: 'Enter Email',
+  variant: 'unstyled'
+};
