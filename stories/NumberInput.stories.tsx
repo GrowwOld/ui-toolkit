@@ -53,7 +53,7 @@ Error.args = {
 export const DisabledSpecialChar = Template.bind({});
 DisabledSpecialChar.args = {
   value: 100,
-  disableSpecialCharacters: true
+  allowSpecialCharacters: true
 };
 
 export const DisableDecimal = Template.bind({});
