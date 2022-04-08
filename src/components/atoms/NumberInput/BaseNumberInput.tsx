@@ -7,16 +7,17 @@ import { Container, Input } from './styles';
 
 const BaseNumberInput = (props: NumberInputProps) => {
   const {
-    SuffixComponent,
-    PrefixComponent,
-    value,
+    SuffixComponent = null,
+    PrefixComponent = null,
+    value = 0,
     onChange,
     min = Number.NEGATIVE_INFINITY,
     max = Number.POSITIVE_INFINITY,
     step = 1,
-    disableSpecialCharacters,
-    disableDecimal,
-    onKeyDown
+    allowSpecialCharacters = false,
+    disableDecimal = false,
+    onKeyDown = () => {},
+    variant = 'default'
   } = props;
 
   const numberValue = Number(value);
@@ -31,7 +32,7 @@ const BaseNumberInput = (props: NumberInputProps) => {
     const keyValue = e.key;
     const hasUnnecessaryZero = keyValue === '0' && numberValue === 0;
 
-    if ((disableSpecialCharacters && [ '+', '-', 'e' ].includes(e.key)) || (disableDecimal && [ '.' ].includes(e.key)) || hasUnnecessaryZero) {
+    if ((allowSpecialCharacters && [ '+', '-', 'e' ].includes(e.key)) || (disableDecimal && [ '.' ].includes(e.key)) || hasUnnecessaryZero) {
       e.preventDefault();
     }
 
