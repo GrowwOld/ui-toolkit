@@ -33,9 +33,9 @@ const Template: Story<NumberInputProps> = (args) => {
 };
 
 export const Primary = Template.bind({});
-// Primary.args = {
-// value:
-// };
+Primary.args = {
+  placeholder: 0
+};
 
 export const Warning = Template.bind({});
 Warning.args = {
@@ -65,7 +65,7 @@ DisableDecimal.args = {
 export const RupeeSymbol = Template.bind({});
 RupeeSymbol.args = {
   value: 100,
-  LeadingVis: () => <span>₹</span>
+  PrefixComponent: () => <span>₹</span>
 };
 
 export const StepValue = Template.bind({});

@@ -59,5 +59,9 @@ export const Input = styled('input', {
         width: '60px'
       }
     }
+  },
+  '&::placeholder': {
+    // opacity: 0.2,
+    color: 'var(--iconMedium)'
   }
 });
