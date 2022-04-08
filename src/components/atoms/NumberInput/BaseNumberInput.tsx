@@ -7,8 +7,8 @@ import { Container, Input } from './styles';
 
 const BaseNumberInput = (props: NumberInputProps) => {
   const {
-    TrailingVis,
-    LeadingVis,
+    SuffixComponent,
+    PrefixComponent,
     value,
     onChange,
     min = Number.NEGATIVE_INFINITY,
@@ -28,13 +28,13 @@ const BaseNumberInput = (props: NumberInputProps) => {
 
 
   const _onKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
-    if (disableSpecialCharacters && [ '+', '-', 'e' ].includes(e.key)) {
+    const keyValue = e.key;
+    const hasUnnecessaryZero = keyValue === '0' && numberValue === 0;
+
+    if ((disableSpecialCharacters && [ '+', '-', 'e' ].includes(e.key)) || (disableDecimal && [ '.' ].includes(e.key)) || hasUnnecessaryZero) {
       e.preventDefault();
     }
 
-    if (disableDecimal && [ '.' ].includes(e.key)) {
-      e.preventDefault();
-    }
 
     //detect down arrow key
     if (e.key === 'ArrowDown') {
@@ -72,7 +72,7 @@ const BaseNumberInput = (props: NumberInputProps) => {
 
   return (
     <Container {...props}>
-      {LeadingVis && <span>{LeadingVis()} </span>}
+      {PrefixComponent && <span>{PrefixComponent()} </span>}
       <Input
         className="fs18 fw500"
         {...props}
@@ -80,7 +80,7 @@ const BaseNumberInput = (props: NumberInputProps) => {
         onChange={_onChange}
         type="number"
       />
-      {TrailingVis && <span>{TrailingVis()}</span>}
+      {SuffixComponent && <span>{SuffixComponent()}</span>}
     </Container>
   );
 };

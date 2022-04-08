@@ -13,12 +13,13 @@ const NumberInput = (props:NumberInputProps) => {
   return <BaseNumberInput {...props} />;
 };
 
+export type NumberInputProps = React.InputHTMLAttributes<HTMLInputElement> &
+_NumberInputProps;
 
-export type NumberInputProps = {
+export type _NumberInputProps = {
   min: number;
   max: number;
   step: number;
-  value: string;
   onChange: React.FormEventHandler<HTMLInputElement>;
   variant: 'warning' | 'error' | 'default';
   showSteper?: boolean;
@@ -26,8 +27,8 @@ export type NumberInputProps = {
   disabled: boolean;
   disableDecimal?: boolean;
   onKeyDown: (e: React.KeyboardEvent<HTMLInputElement>) => void;
-  LeadingVis: () => React.ReactNode;
-  TrailingVis: () => React.ReactNode;
+  PrefixComponent: () => React.ReactNode;
+  SuffixComponent: () => React.ReactNode;
 };
 
 export default NumberInput;

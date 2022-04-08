@@ -8,14 +8,14 @@ export const NumberInputStepper = (props:NumberInputProps) => {
   return (
     <BaseNumberInput
       {...props}
-      LeadingVis={() => StepLeadingVis(props)}
-      TrailingVis={() => StepTrailingVis(props)}
+      PrefixComponent={() => StepPrefixComponent(props)}
+      SuffixComponent={() => StepSuffixComponent(props)}
     />
   );
 };
 
 
-const StepTrailingVis = ({ step = 1, max = Number.POSITIVE_INFINITY, value, onChange }:NumberInputProps) => {
+const StepSuffixComponent = ({ step = 1, max = Number.POSITIVE_INFINITY, value, onChange }:NumberInputProps) => {
   const numberValue = Number(value);
 
 
@@ -40,7 +40,7 @@ const StepTrailingVis = ({ step = 1, max = Number.POSITIVE_INFINITY, value, onCh
 };
 
 
-const StepLeadingVis = ({ step = 1, min = Number.NEGATIVE_INFINITY, value, onChange }: NumberInputProps) => {
+const StepPrefixComponent = ({ step = 1, min = Number.NEGATIVE_INFINITY, value, onChange }: NumberInputProps) => {
 
   const numberValue = Number(value);
 
