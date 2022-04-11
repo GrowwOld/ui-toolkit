@@ -6,19 +6,28 @@ import ClerableTextInputV1 from './ClerableTextInputV1';
 
 
 //The Following component is used to manage different variants implemented
-const TextInputV1 = (props: TextInputProps) => {
+const TextInputV1 = React.forwardRef<HTMLInputElement, TextInputProps>((props, ref) => {
   const { type, clearable } = props;
 
   if (type === 'password') {
-    return <PasswordTextInputV1 {...props}/>;
+    return <PasswordTextInputV1
+      {...props}
+      ref={ref}
+    />;
   }
 
   if (clearable) {
-    return <ClerableTextInputV1 {...props}/>;
+    return <ClerableTextInputV1
+      ref={ref}
+      {...props}
+    />;
   }
 
-  return <BaseTextInputV1 {...props}/>;
-};
+  return <BaseTextInputV1
+    {...props}
+    ref={ref}
+  />;
+});
 
 
 export type TextInputProps = React.InputHTMLAttributes<HTMLInputElement> &
