@@ -12,6 +12,7 @@ export const Container = styled('div', {
         background: 'var(--quaternaryBg)'
       },
       unstyled: {
+        borderBottom: 'none',
         '&:after': {
           display: 'none',
           borderBottom: 'none'
