@@ -7,16 +7,17 @@ import { Cancel } from '@groww-tech/icon-store/mi';
 import { TextInputProps } from './TextInputV1';
 
 
-const ClerableTextInput = (props: TextInputProps) => {
+const ClerableTextInput = React.forwardRef<HTMLInputElement, TextInputProps>((props, ref) => {
   const { value, onChange } = props;
 
   return (
     <BaseTextInputV1
+      ref={ref}
       {...props}
       SuffixComponent={() => ClearableTextInputTrailingVisual({ value, onChange })}
     />
   );
-};
+});
 
 
 const ClearableTextInputTrailingVisual = ({ value, onChange }:Pick<TextInputProps, 'value'| 'onChange' >) => {
