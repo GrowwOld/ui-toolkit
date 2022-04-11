@@ -33,7 +33,6 @@ export type _NumberInputProps = {
   ref?: React.Ref<HTMLInputElement>;
   allowSpecialCharacters?: boolean;
   disabled?: boolean;
-  ref?: React.Ref<HTMLInputElement>;
   disableDecimal?: boolean;
   onKeyDown?: (e: React.KeyboardEvent<HTMLInputElement>) => void;
   PrefixComponent?: () => React.ReactNode;
