@@ -4,6 +4,7 @@ export const Container = styled('div', {
   borderBottom: '2px solid var(--subText70)',
   // width: 'fit-content',
   position: 'relative',
+  textAlign: 'left',
   variants: {
     variant: {
       default: {
