@@ -50,7 +50,7 @@ export const Input = styled('input', {
         caretColor: 'var(--growwRed)'
       },
       default: {
-        caretColor: 'var(--growwRed)'
+        caretColor: 'var(--primaryClr)'
       }
     },
     showSteper: {
