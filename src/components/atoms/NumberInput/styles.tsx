@@ -21,8 +21,8 @@ export const Container = styled('div', {
         color: 'var(--growwRed)'
       },
       default: {
-        background: 'var(--growwRed10)',
-        color: 'var(--growwRed)'
+        background: 'var(--primaryClr10)',
+        color: 'var(--primaryClr)'
       }
     }
   }
