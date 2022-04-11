@@ -3,15 +3,21 @@ import { NumberInputStepper } from './NumberInputStepper';
 import BaseNumberInput from './BaseNumberInput';
 
 
-const NumberInput = (props:NumberInputProps) => {
+const NumberInput = React.forwardRef<HTMLInputElement, NumberInputProps>((props, ref) => {
   const { showSteper } = props;
 
   if (showSteper) {
-    return <NumberInputStepper {...props} />;
+    return <NumberInputStepper
+      {...props}
+      ref={ref}
+    />;
   }
 
-  return <BaseNumberInput {...props} />;
-};
+  return <BaseNumberInput
+    {...props}
+    ref={ref}
+  />;
+});
 
 export type NumberInputProps = React.InputHTMLAttributes<HTMLInputElement> &
 _NumberInputProps;

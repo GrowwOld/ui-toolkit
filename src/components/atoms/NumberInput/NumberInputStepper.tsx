@@ -4,15 +4,16 @@ import { NumberInputProps } from './NumberInput';
 
 import BaseNumberInput from './BaseNumberInput';
 
-export const NumberInputStepper = (props:NumberInputProps) => {
+export const NumberInputStepper = React.forwardRef<HTMLInputElement, NumberInputProps>((props, ref) => {
   return (
     <BaseNumberInput
       {...props}
+      ref={ref}
       PrefixComponent={() => StepPrefixComponent(props)}
       SuffixComponent={() => StepSuffixComponent(props)}
     />
   );
-};
+});
 
 
 const StepSuffixComponent = ({ step = 1, max = Number.POSITIVE_INFINITY, value, onChange }:NumberInputProps) => {

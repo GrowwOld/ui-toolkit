@@ -5,7 +5,7 @@ import { NumberInputProps } from './NumberInput';
 import { Container, Input } from './styles';
 
 
-const BaseNumberInput = (props: NumberInputProps) => {
+const BaseNumberInput = React.forwardRef<HTMLInputElement, NumberInputProps>((props, ref) => {
   const {
     SuffixComponent = null,
     PrefixComponent = null,
@@ -80,10 +80,11 @@ const BaseNumberInput = (props: NumberInputProps) => {
         onKeyDown={_onKeyDown}
         onChange={_onChange}
         type="number"
+        ref={ref}
       />
       {SuffixComponent && <span>{SuffixComponent()}</span>}
     </Container>
   );
-};
+});
 
 export default BaseNumberInput;
