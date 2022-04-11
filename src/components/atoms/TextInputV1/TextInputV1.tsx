@@ -40,7 +40,7 @@ type _TextInputProps = {
   SuffixComponent?: () => React.ReactNode;
   PrefixComponent?: () => React.ReactNode;
   ref?: React.Ref<HTMLInputElement>;
-  label: string;
+  label?: string;
   variant?: 'default' | 'exclusive'| 'unstyled';
   onChange: React.FormEventHandler<HTMLInputElement>;
   clearable?: boolean;
