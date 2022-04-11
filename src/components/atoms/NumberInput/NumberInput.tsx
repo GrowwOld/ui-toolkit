@@ -30,6 +30,7 @@ export type _NumberInputProps = {
   value: string | number;
   variant?: 'warning' | 'error' | 'default';
   showSteper?: boolean;
+  ref?: React.Ref<HTMLInputElement>;
   allowSpecialCharacters?: boolean;
   disabled?: boolean;
   disableDecimal?: boolean;
