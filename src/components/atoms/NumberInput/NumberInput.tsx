@@ -28,7 +28,7 @@ export type _NumberInputProps = {
   step?: number;
   onChange: React.FormEventHandler<HTMLInputElement>;
   value: string | number;
-  variant?: 'warning' | 'error' | 'default';
+  variant?: 'warning' | 'error' | 'default' | 'disabled';
   showSteper?: boolean;
   ref?: React.Ref<HTMLInputElement>;
   allowSpecialCharacters?: boolean;
