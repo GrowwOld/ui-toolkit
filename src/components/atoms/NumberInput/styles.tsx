@@ -6,6 +6,7 @@ export const Container = styled('div', {
   alignItems: 'center',
   background: 'var(--primaryClr10)',
   width: 'fit-content',
+  height: '30px',
   color: 'var(--primaryClr)',
   borderRadius: '2px',
   padding: '0px 5px',
