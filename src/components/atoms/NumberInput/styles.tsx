@@ -20,6 +20,10 @@ export const Container = styled('div', {
         background: 'var(--growwRed10)',
         color: 'var(--growwRed)'
       },
+      disabled: {
+        background: 'var(--constantSecondaryClr10)',
+        color: 'var(--text)'
+      },
       default: {
         background: 'var(--primaryClr10)',
         color: 'var(--primaryClr)'
@@ -48,6 +52,10 @@ export const Input = styled('input', {
       },
       error: {
         caretColor: 'var(--growwRed)'
+      },
+      disabled: {
+        pointerEvents: 'none',
+        caretColor: 'var(--Text)'
       },
       default: {
         caretColor: 'var(--primaryClr)'

@@ -68,6 +68,19 @@ RupeeSymbol.args = {
   PrefixComponent: () => <span>₹</span>
 };
 
+export const Disabled = Template.bind({});
+Disabled.args = {
+  value: 100,
+  variant: 'disabled',
+  SuffixComponent: () => <span> %</span>
+};
+
+export const StepperControls = Template.bind({});
+StepperControls.args = {
+  value: 100,
+  showSteper: true
+};
+
 export const StepValue = Template.bind({});
 StepValue.args = {
   value: 100,
@@ -79,12 +92,6 @@ MinimumValue.args = {
   value: 100,
   min: 99,
   step: 5
-};
-
-export const StepperControls = Template.bind({});
-StepperControls.args = {
-  value: 100,
-  showSteper: true
 };
 
 export const MaxValue = Template.bind({});
