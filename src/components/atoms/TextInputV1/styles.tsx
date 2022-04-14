@@ -121,7 +121,8 @@ export const Label = styled('div', {
 
 export const ErrorLabel = styled('div', {
   color: 'var(--growwRed)',
-  marginTop: '8px'
+  marginTop: '8px',
+  textAlign: 'left'
 });
 
 export const WrapperContainer = styled('div', {
