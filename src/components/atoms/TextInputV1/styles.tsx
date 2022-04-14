@@ -4,7 +4,6 @@ export const Container = styled('div', {
   borderBottom: '2px solid var(--subText70)',
   // width: 'fit-content',
   position: 'relative',
-  textAlign: 'left',
   variants: {
     variant: {
       default: {
@@ -116,7 +115,8 @@ export const PrimaryInput = styled('input', {
 
 export const Label = styled('div', {
   color: 'var(--subText)',
-  marginBottom: '8px'
+  marginBottom: '8px',
+  textAlign: 'left'
 });
 
 export const ErrorLabel = styled('div', {
