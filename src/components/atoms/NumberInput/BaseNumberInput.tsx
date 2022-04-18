@@ -29,8 +29,10 @@ const BaseNumberInput = React.forwardRef<HTMLInputElement, NumberInputProps>((pr
 
 
   const _onKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
+    const preventSpecialChar = (allowSpecialCharacters && [ '+', '-', 'e' ].includes(e.key));
+    const preventDecimal = disableDecimal && [ '.' ].includes(e.key);
 
-    if ((allowSpecialCharacters && [ '+', '-', 'e' ].includes(e.key)) || (disableDecimal && [ '.' ].includes(e.key))) {
+    if (preventSpecialChar || preventDecimal) {
       e.preventDefault();
     }
 
