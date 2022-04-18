@@ -2,7 +2,7 @@ import { styled } from '@stitches/react';
 
 export const Container = styled('div', {
   borderBottom: '2px solid var(--subText70)',
-  // width: 'fit-content',
+  width: '100%',
   position: 'relative',
   variants: {
     variant: {
@@ -75,7 +75,7 @@ export const PrimaryInput = styled('input', {
       },
       exclusive: {
         background: 'var(--quaternaryBg)',
-        padding: '12px 12px 12px 12px',
+        // padding: '12px 0px 12px 0px',
         borderRadius: '4px 4px 0px 0px'
       },
       unstyled: {
@@ -121,13 +121,36 @@ export const Label = styled('div', {
 
 export const ErrorLabel = styled('div', {
   color: 'var(--growwRed)',
+  minHeight: '24px',
   marginTop: '8px',
-  textAlign: 'left'
+  textAlign: 'left',
+  variants: {
+    error: {
+      true: {
+        visibility: 'visible'
+      },
+      false: {
+        visibility: 'hidden'
+      }
+    }
+  }
 });
 
 export const WrapperContainer = styled('div', {
   display: 'flex',
-  alignItems: 'center'
+  alignItems: 'center',
+  variants: {
+    variant: {
+      default: {
+      },
+      exclusive: {
+        padding: '12px 12px 12px 12px'
+      },
+      unstyled: {
+
+      }
+    }
+  }
 });
 
 export const TrailingVisContainer = styled('span', {

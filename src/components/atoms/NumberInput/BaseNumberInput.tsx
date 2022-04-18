@@ -29,10 +29,8 @@ const BaseNumberInput = React.forwardRef<HTMLInputElement, NumberInputProps>((pr
 
 
   const _onKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
-    const keyValue = e.key;
-    const hasUnnecessaryZero = keyValue === '0' && numberValue === 0;
 
-    if ((allowSpecialCharacters && [ '+', '-', 'e' ].includes(e.key)) || (disableDecimal && [ '.' ].includes(e.key)) || hasUnnecessaryZero) {
+    if ((allowSpecialCharacters && [ '+', '-', 'e' ].includes(e.key)) || (disableDecimal && [ '.' ].includes(e.key))) {
       e.preventDefault();
     }
 
@@ -76,6 +74,8 @@ const BaseNumberInput = React.forwardRef<HTMLInputElement, NumberInputProps>((pr
       {PrefixComponent && <span>{PrefixComponent()} </span>}
       <Input
         className="fs18 fw500"
+        max={max}
+        min={min}
         {...props}
         onKeyDown={_onKeyDown}
         onChange={_onChange}

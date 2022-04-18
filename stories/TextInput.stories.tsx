@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useRef } from 'react';
 
 import { Story } from '@storybook/react';
 
@@ -15,6 +15,7 @@ export default {
 
 const Template: Story<TextInputProps> = (args) => {
   const [ value, setValue ] = React.useState('');
+  const ref = useRef<HTMLInputElement>(null);
 
 
   const onChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -24,6 +25,7 @@ const Template: Story<TextInputProps> = (args) => {
   return (
     <TextInput
       {...args}
+      ref={ref}
       value={value}
       onChange={onChange}
     />
@@ -95,6 +97,7 @@ export const NoLabel = Template.bind({
   placeholder: 'No Label'
 });
 
+
 export const CalculatorsWithCustomLabel = Template.bind({});
 CalculatorsWithCustomLabel.decorators = [
   (Story) => (
@@ -104,6 +107,7 @@ CalculatorsWithCustomLabel.decorators = [
         style={{ marginBottom: '8px' }}
       >Shares to buy NSE</div>
       <Story />
+      <div style={{ marginBottom: '8px' }}>Shares to buy NSE</div>
     </div>
   )
 ];
@@ -119,6 +123,13 @@ EditPhoneNumber.args = {
   PrefixComponent: () => (<span className='fs16'>+91 </span>),
   placeholder: '+91',
   disabled: true
+};
+
+export const EditPhoneNumberExclusive = Template.bind({});
+EditPhoneNumber.args = {
+  PrefixComponent: () => (<span className='fs16'>+91 </span>),
+  placeholder: '+91',
+  variant: 'exclusive'
 };
 
 export const Unstyled = Template.bind({});

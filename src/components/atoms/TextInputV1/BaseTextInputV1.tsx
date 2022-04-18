@@ -22,42 +22,45 @@ const BaseTextInputV1 = React.forwardRef<HTMLInputElement, TextInputProps>((prop
   return (
     <>
       {label && <Label className='fs14 fw500'>{label}</Label>}
-      <div>
-        <Container
-          error={error ? true : false}
-          variant={variant}
-          {...rest}
-        >
-          <WrapperContainer>
-            {PrefixComponent && <TrailingVisContainer variant={variant}>{PrefixComponent()}</TrailingVisContainer>}
-            <PrimaryInput
-              ref={ref}
-              className='fs16'
-              onCopy={onCopy}
-              onPaste={onPaste}
-              onKeyUp={onKeyUp}
-              onKeyDown={onKeyDown}
-              variant={variant}
-              {...rest}
-            />
-            {SuffixComponent && <LeadingVisContainer variant={variant}>  {SuffixComponent()} </LeadingVisContainer>}
-          </WrapperContainer>
-        </Container>
-      </div>
-      {error && <ErrorLabel className='fs14 fw400'>{error}</ErrorLabel>}
+      <Container
+        error={error ? true : false}
+        variant={variant}
+        {...rest}
+      >
+        <WrapperContainer variant={variant}>
+          {PrefixComponent && <TrailingVisContainer variant={variant}>{PrefixComponent()}</TrailingVisContainer>}
+          <PrimaryInput
+            ref={ref}
+            className='fs16'
+            onCopy={onCopy}
+            onPaste={onPaste}
+            onKeyUp={onKeyUp}
+            onKeyDown={onKeyDown}
+            variant={variant}
+            {...rest}
+          />
+          {SuffixComponent && <LeadingVisContainer variant={variant}>  {SuffixComponent()} </LeadingVisContainer>}
+        </WrapperContainer>
+      </Container>
+      <ErrorLabel
+        className='fs14 fw400'
+        error={error ? true : false}
+      >
+        {error}
+      </ErrorLabel>
     </>
   );
 });
 
 
 const _onCopy = (e: React.ClipboardEvent<HTMLInputElement>) => {
-  e.preventDefault();
+  // e.preventDefault();
   // return false;
 };
 
 
 const _onPaste = (e: React.ClipboardEvent<HTMLInputElement>) => {
-  e.preventDefault();
+  // e.preventDefault();
   // return false
 };
 
