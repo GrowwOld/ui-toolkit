@@ -98,8 +98,8 @@ export const NoLabel = Template.bind({
 });
 
 
-export const CalculatorsWithCustomLabel = Template.bind({});
-CalculatorsWithCustomLabel.decorators = [
+export const CustomLabel = Template.bind({});
+CustomLabel.decorators = [
   (Story) => (
     <div style={{ display: 'flex', flexDirection: 'column' }}>
       <div
@@ -112,7 +112,7 @@ CalculatorsWithCustomLabel.decorators = [
   )
 ];
 
-CalculatorsWithCustomLabel.args = {
+CustomLabel.args = {
   label: '',
   placeholder: 'Enter Email',
   SuffixComponent: () => <> <Cancel size={18} /></>
