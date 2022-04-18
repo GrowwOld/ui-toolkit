@@ -9,8 +9,8 @@ const BaseTextInputV1 = React.forwardRef<HTMLInputElement, TextInputProps>((prop
   const {
     onKeyDown = () => { },
     onKeyUp = () => { },
-    onCopy = _onCopy,
-    onPaste = _onPaste,
+    onCopy = () => {},
+    onPaste = () => {},
     error,
     variant = 'default',
     label,
@@ -51,18 +51,6 @@ const BaseTextInputV1 = React.forwardRef<HTMLInputElement, TextInputProps>((prop
     </>
   );
 });
-
-
-const _onCopy = (e: React.ClipboardEvent<HTMLInputElement>) => {
-  // e.preventDefault();
-  // return false;
-};
-
-
-const _onPaste = (e: React.ClipboardEvent<HTMLInputElement>) => {
-  // e.preventDefault();
-  // return false
-};
 
 
 export default BaseTextInputV1;

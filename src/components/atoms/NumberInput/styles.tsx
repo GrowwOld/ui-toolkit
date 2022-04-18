@@ -10,7 +10,6 @@ export const Container = styled('div', {
   color: 'var(--primaryClr)',
   borderRadius: '2px',
   padding: '0px 5px',
-  // width: '100px',
   variants: {
     variant: {
       warning: {
@@ -56,7 +55,7 @@ export const Input = styled('input', {
       },
       disabled: {
         pointerEvents: 'none',
-        caretColor: 'var(--Text)'
+        caretColor: 'var(--text)'
       },
       default: {
         caretColor: 'var(--primaryClr)'
@@ -70,7 +69,6 @@ export const Input = styled('input', {
     }
   },
   '&::placeholder': {
-    // opacity: 0.2,
     color: 'var(--iconMedium)'
   }
 });

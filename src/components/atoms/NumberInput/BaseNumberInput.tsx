@@ -35,7 +35,6 @@ const BaseNumberInput = React.forwardRef<HTMLInputElement, NumberInputProps>((pr
     }
 
 
-    //detect down arrow key
     if (e.key === 'ArrowDown') {
       onDecrement();
     }
@@ -53,7 +52,8 @@ const BaseNumberInput = React.forwardRef<HTMLInputElement, NumberInputProps>((pr
       const increasedVal = numberValue + step; //this one increases above next value, so floor it
       const floorValue = Math.floor(increasedVal / step) * step;
 
-      // @ts-ignore
+      // @ts-ignore : to prevent onChange re writing as it can be passed by user
+      //we are synthentically generating custome event to set value
       onChange({ target: { value: floorValue } });
     }
   };
@@ -64,7 +64,8 @@ const BaseNumberInput = React.forwardRef<HTMLInputElement, NumberInputProps>((pr
       const increasedVal = numberValue - step; //this one increases above next value, so floor it
       const floorValue = Math.floor(increasedVal / step) * step;
 
-      // @ts-ignore
+      // @ts-ignore : to prevent onChange re writing as it can be passed by user
+      //we are synthentically generating custome event to set value
       onChange({ target: { value: floorValue } });
     }
   };

@@ -5,7 +5,7 @@ import PasswordTextInputV1 from './PaswordTextInputV1';
 import ClerableTextInputV1 from './ClerableTextInputV1';
 
 
-//The Following component is used to manage different variants implemented
+//The Following component is a wrapper used to manage different variants implemented. Main Logic written in BaseTextInputV1
 const TextInputV1 = React.forwardRef<HTMLInputElement, TextInputProps>((props, ref) => {
   const { type, clearable } = props;
 

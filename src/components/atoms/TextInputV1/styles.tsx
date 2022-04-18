@@ -40,13 +40,11 @@ export const Container = styled('div', {
   '&:focus-within': {
     outline: 0,
     border: 'none'
-    // borderBottom: '2px solid var(--primaryClr)'
   },
   '&:after': {
     content: '',
     display: 'block',
     margin: 'auto',
-    // height: '2px',
     width: '0px',
     background: 'transparent',
     transition: '0.2s ease all'
@@ -60,12 +58,9 @@ export const Container = styled('div', {
 
 export const PrimaryInput = styled('input', {
   border: 'none',
-  // borderBottom: '2px solid var(--subText70)',
-  // var(--border)
   flexGrow: 1,
   outline: 0,
   padding: 0,
-  // paddingBottom: '5px',
   color: 'var(--text)',
   background: 'var(--primaryBg)',
   caretColor: 'var(--primaryClr)',
@@ -75,7 +70,6 @@ export const PrimaryInput = styled('input', {
       },
       exclusive: {
         background: 'var(--quaternaryBg)',
-        // padding: '12px 0px 12px 0px',
         borderRadius: '4px 4px 0px 0px'
       },
       unstyled: {
@@ -91,19 +85,12 @@ export const PrimaryInput = styled('input', {
         }
       }
     }
-    // error: {
-    //   true: {
-    //     borderBottom: '2px solid var(--growwRed)'
-    //   }
-    // }
   },
   '&:focus': {
     outline: 0,
     border: 'none'
-    // borderBottom: '2px solid var(--primaryClr)'
   },
   '&::placeholder': {
-    // opacity: 0.2,
     color: 'var(--iconMedium)'
   },
   '&:-webkit-autofill': {

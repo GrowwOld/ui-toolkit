@@ -25,7 +25,8 @@ const StepSuffixComponent = ({ step = 1, max = Number.POSITIVE_INFINITY, value, 
       const increasedVal = numberValue + step; //this one increases above next value, so floor it
       const floorValue = Math.floor(increasedVal / step) * step;
 
-      // @ts-ignore
+      // @ts-ignore : to prevent onChange re writing as it can be passed by user
+      //we are synthentically generating custome event to set value
       onChange({ target: { value: floorValue } });
     }
   };
@@ -52,7 +53,8 @@ const StepPrefixComponent = ({ step = 1, min = Number.NEGATIVE_INFINITY, value, 
       const increasedVal = numberValue - step; //this one increases above next value, so floor it
       const floorValue = Math.floor(increasedVal / step) * step;
 
-      // @ts-ignore
+      // @ts-ignore : to prevent onChange re writing as it can be passed by user
+      //we are synthentically generating custome event to set value
       onChange({ target: { value: floorValue } });
     }
   };
