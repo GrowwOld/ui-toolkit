@@ -16,8 +16,7 @@ const BaseNumberInput = React.forwardRef<HTMLInputElement, NumberInputProps>((pr
     step = 1,
     allowSpecialCharacters = false,
     disableDecimal = false,
-    onKeyDown = () => {},
-    variant = 'default'
+    onKeyDown = () => {}
   } = props;
 
   const numberValue = Number(value);
@@ -31,11 +30,15 @@ const BaseNumberInput = React.forwardRef<HTMLInputElement, NumberInputProps>((pr
   const _onKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
     const preventSpecialChar = (allowSpecialCharacters && [ '+', '-', 'e' ].includes(e.key));
     const preventDecimal = disableDecimal && [ '.' ].includes(e.key);
+    const preventDoubleDecimal = (e.key === '.' && value.toString().includes('.'));
 
-    if (preventSpecialChar || preventDecimal) {
+    const isDelete = e.code === 'Delete' || e.code === 'Backspace' || e.key === 'Delete' || e.key === 'Backspace';
+    const isArrowKey = /^Arrow/.test(e.code) || /^Arrow/.test(e.key);
+    const isValidKey = /^[0-9]*$/.test(e.key) || /^\./.test(e.key) || isDelete || isArrowKey;
+
+    if (!isValidKey || preventSpecialChar || preventDecimal || preventDoubleDecimal) {
       e.preventDefault();
     }
-
 
     if (e.key === 'ArrowDown') {
       onDecrement();

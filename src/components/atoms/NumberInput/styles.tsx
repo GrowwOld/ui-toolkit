@@ -69,6 +69,7 @@ export const Input = styled('input', {
     }
   },
   '&::placeholder': {
-    color: 'var(--iconMedium)'
+    color: 'var(--iconMedium)',
+    webkitTextFillColor: 'var(--iconMedium)'
   }
 });
