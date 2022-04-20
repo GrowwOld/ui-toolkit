@@ -1,4 +1,5 @@
 import React from 'react';
+import { KEYBOARD_EVENTS } from '../../../utils/constant';
 
 import { NumberInputProps } from './NumberInput';
 
@@ -32,7 +33,7 @@ const BaseNumberInput = React.forwardRef<HTMLInputElement, NumberInputProps>((pr
     const preventDecimal = disableDecimal && [ '.' ].includes(e.key);
     const preventDoubleDecimal = (e.key === '.' && value.toString().includes('.'));
 
-    const isDelete = e.code === 'Delete' || e.code === 'Backspace' || e.key === 'Delete' || e.key === 'Backspace';
+    const isDelete = e.code === KEYBOARD_EVENTS.delete || e.code === KEYBOARD_EVENTS.backspace || e.key === KEYBOARD_EVENTS.delete || e.key === KEYBOARD_EVENTS.backspace;
     const isArrowKey = /^Arrow/.test(e.code) || /^Arrow/.test(e.key);
     const isValidKey = /^[0-9]*$/.test(e.key) || /^\./.test(e.key) || isDelete || isArrowKey;
 
@@ -40,11 +41,11 @@ const BaseNumberInput = React.forwardRef<HTMLInputElement, NumberInputProps>((pr
       e.preventDefault();
     }
 
-    if (e.key === 'ArrowDown') {
+    if (e.key === KEYBOARD_EVENTS.arrowDown) {
       onDecrement();
     }
 
-    if (e.key === 'ArrowUp') {
+    if (e.key === KEYBOARD_EVENTS.arrowUp) {
       onIncrement();
     }
 
@@ -54,7 +55,7 @@ const BaseNumberInput = React.forwardRef<HTMLInputElement, NumberInputProps>((pr
 
   const onIncrement = () => {
     if (max >= numberValue + step) {
-      const increasedVal = numberValue + step; //this one increases above next value, so floor it
+      const increasedVal = numberValue + step;
       const floorValue = Math.floor(increasedVal / step) * step;
 
       // @ts-ignore : to prevent onChange re writing as it can be passed by user
@@ -66,7 +67,7 @@ const BaseNumberInput = React.forwardRef<HTMLInputElement, NumberInputProps>((pr
 
   const onDecrement = () => {
     if (min <= numberValue - step) {
-      const increasedVal = numberValue - step; //this one increases above next value, so floor it
+      const increasedVal = numberValue - step;
       const floorValue = Math.floor(increasedVal / step) * step;
 
       // @ts-ignore : to prevent onChange re writing as it can be passed by user

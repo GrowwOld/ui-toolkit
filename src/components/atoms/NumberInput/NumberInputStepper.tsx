@@ -22,7 +22,7 @@ const StepSuffixComponent = ({ step = 1, max = Number.POSITIVE_INFINITY, value, 
 
   const onClick = () => {
     if (max >= numberValue + step) {
-      const increasedVal = numberValue + step; //this one increases above next value, so floor it
+      const increasedVal = numberValue + step;
       const floorValue = Math.floor(increasedVal / step) * step;
 
       // @ts-ignore : to prevent onChange re writing as it can be passed by user
@@ -50,7 +50,7 @@ const StepPrefixComponent = ({ step = 1, min = Number.NEGATIVE_INFINITY, value, 
   const onClick = () => {
 
     if (min <= numberValue - step) {
-      const increasedVal = numberValue - step; //this one increases above next value, so floor it
+      const increasedVal = numberValue - step;
       const floorValue = Math.floor(increasedVal / step) * step;
 
       // @ts-ignore : to prevent onChange re writing as it can be passed by user
