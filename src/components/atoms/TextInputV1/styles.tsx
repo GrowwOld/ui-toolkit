@@ -91,7 +91,8 @@ export const PrimaryInput = styled('input', {
     border: 'none'
   },
   '&::placeholder': {
-    color: 'var(--iconMedium)'
+    color: 'var(--iconMedium)',
+    WebkitTextFillColor: 'var(--iconMedium)'
   },
   '&:-webkit-autofill': {
     boxShadow: '0 0 0 30px var(--primaryBg) inset !important',

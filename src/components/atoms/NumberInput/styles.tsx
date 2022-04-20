@@ -70,6 +70,6 @@ export const Input = styled('input', {
   },
   '&::placeholder': {
     color: 'var(--iconMedium)',
-    webkitTextFillColor: 'var(--iconMedium)'
+    WebkitTextFillColor: 'var(--iconMedium)'
   }
 });
