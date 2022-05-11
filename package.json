@@ -1,6 +1,6 @@
 {
   "name": "groww-beta-ui-toolkit",
-  "version": "0.7.75",
+  "version": "0.7.78",
   "description": "A lightning nature UI",
   "main": "dist/cjs/index.js",
   "module": "dist/esm/index.js",
