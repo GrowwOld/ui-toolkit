@@ -44,21 +44,26 @@ export const Input = styled('input', {
   outline: 0,
   opacity: 1,
   caretColor: 'var(--primaryClr)',
+  WebkitTextFillColor: 'var(--primaryClr)',
   padding: 0,
   variants: {
     variant: {
       warning: {
-        caretColor: 'var(--growwYellow)'
+        caretColor: 'var(--growwYellow)',
+        WebkitTextFillColor: 'var(--growwYellow)'
       },
       error: {
-        caretColor: 'var(--growwRed)'
+        caretColor: 'var(--growwRed)',
+        WebkitTextFillColor: 'var(--growwRed)'
       },
       disabled: {
         pointerEvents: 'none',
-        caretColor: 'var(--text)'
+        caretColor: 'var(--text)',
+        WebkitTextFillColor: 'var(--text)'
       },
       default: {
-        caretColor: 'var(--primaryClr)'
+        caretColor: 'var(--primaryClr)',
+        WebkitTextFillColor: 'var(--primaryClr)'
       }
     },
     showSteper: {

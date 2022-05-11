@@ -77,16 +77,16 @@ const BaseNumberInput = React.forwardRef<HTMLInputElement, NumberInputProps>((pr
   };
 
   return (
-    <Container {...props}>
+    <Container variant={props.variant}>
       {PrefixComponent && <span>{PrefixComponent()} </span>}
       <Input
         className="fs18 fw500"
         max={max}
         min={min}
-        {...props}
         onKeyDown={_onKeyDown}
-        onChange={_onChange}
         type="number"
+        {...props}
+        onChange={_onChange}
         ref={ref}
       />
       {SuffixComponent && <span>{SuffixComponent()}</span>}

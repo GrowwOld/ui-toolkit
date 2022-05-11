@@ -9,29 +9,30 @@ const BaseTextInputV1 = React.forwardRef<HTMLInputElement, TextInputProps>((prop
   const {
     onKeyDown = () => { },
     onKeyUp = () => { },
-    onCopy = () => {},
-    onPaste = () => {},
+    onCopy = () => { },
+    onPaste = () => { },
     error,
     variant = 'default',
+    size = 'medium',
     label,
     PrefixComponent,
     SuffixComponent,
     ...rest
   } = props;
 
+  //switch for size
   return (
     <>
       {label && <Label className='fs14 fw500'>{label}</Label>}
       <Container
         error={error ? true : false}
         variant={variant}
-        {...rest}
       >
         <WrapperContainer variant={variant}>
           {PrefixComponent && <TrailingVisContainer variant={variant}>{PrefixComponent()}</TrailingVisContainer>}
           <PrimaryInput
             ref={ref}
-            className='fs16'
+            className={calculateInputClass(size)}
             onCopy={onCopy}
             onPaste={onPaste}
             onKeyUp={onKeyUp}
@@ -48,9 +49,36 @@ const BaseTextInputV1 = React.forwardRef<HTMLInputElement, TextInputProps>((prop
       >
         {error}
       </ErrorLabel>
+
     </>
   );
 });
+
+
+const calculateInputClass = (size:TextInputProps['size']):string => {
+  let className = 'fw500 ';
+
+  switch (size) {
+    case 'small':
+      className += 'fs14';
+      break;
+
+    case 'medium':
+      className += 'fs16';
+      break;
+
+    case 'large':
+      className += 'fs22';
+      break;
+
+    default:
+      className += 'fs16';
+      break;
+
+  }
+
+  return className;
+};
 
 
 export default BaseTextInputV1;

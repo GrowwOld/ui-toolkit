@@ -30,7 +30,7 @@ const TextInputV1 = React.forwardRef<HTMLInputElement, TextInputProps>((props, r
 });
 
 
-export type TextInputProps = React.InputHTMLAttributes<HTMLInputElement> &
+export type TextInputProps = Omit<React.InputHTMLAttributes<HTMLInputElement>, 'size'> &
 _TextInputProps;
 
 
@@ -44,6 +44,7 @@ type _TextInputProps = {
   variant?: 'default' | 'exclusive'| 'unstyled';
   onChange: React.FormEventHandler<HTMLInputElement>;
   clearable?: boolean;
+  size?: 'small' | 'medium'| 'large';
 };
 
 export default TextInputV1;

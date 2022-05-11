@@ -92,6 +92,20 @@ Clearable.args = {
   clearable: true
 };
 
+export const Small = Template.bind({});
+Small.args = {
+  label: 'Email',
+  placeholder: 'Enter Email',
+  size: 'small'
+};
+
+export const Large = Template.bind({});
+Large.args = {
+  label: 'Email',
+  placeholder: 'Enter Email',
+  size: 'large'
+};
+
 export const NoLabel = Template.bind({
   label: '',
   placeholder: 'No Label'
@@ -136,4 +150,19 @@ export const Unstyled = Template.bind({});
 Unstyled.args = {
   placeholder: 'Enter Email',
   variant: 'unstyled'
+};
+
+export const UnstyledLarge = Template.bind({});
+UnstyledLarge.args = {
+  placeholder: 'Enter Email',
+  variant: 'unstyled',
+  size: 'large'
+};
+
+export const UnstyledLargeRupeeSymbol = Template.bind({});
+UnstyledLargeRupeeSymbol.args = {
+  placeholder: 'Enter Email',
+  variant: 'unstyled',
+  size: 'large',
+  PrefixComponent: () => <div className='fs22 fw500'>₹ </div>
 };

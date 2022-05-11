@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 
 import BaseTextInputV1 from './BaseTextInputV1';
 import { TextInputProps } from './TextInputV1';
@@ -23,7 +23,6 @@ const PasswordTextInputV1 = React.forwardRef<HTMLInputElement, TextInputProps>((
   return (
     <BaseTextInputV1
       {...props}
-      ref={ref}
       type={typeState}
       SuffixComponent={() => PasswordTrailingVisual({ type: typeState, setType })}
     />
