@@ -1,0 +1,45 @@
+.mn12Box {
+  padding: 14px;
+  width: 220px;
+}
+
+.mn12YearRow {
+  justify-content: space-between;
+}
+
+.mn12Month {
+  text-align: center;
+  min-width: 33%;
+}
+
+.mn12MonthText {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  justify-content: center;
+  margin: 3px auto;
+  background: var(--primaryBg);
+}
+
+.mn12MonthBack {
+  background: var(--primaryBg);
+}
+
+.mn12MonthBack:hover {
+  background-color: var(--boxShadow);
+}
+
+.mn12MonthTextSelected {
+  background-color: var(--primaryClr);
+  color: var(--primaryBg);
+}
+
+.mn12MonthBox {
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-top: 12px;
+}
+
+.mn12YearIcon {
+  font-size: 22px !important;
+}
