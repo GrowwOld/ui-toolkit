@@ -48,7 +48,7 @@ const Calendar = (props:Props) => {
 
 
 type Props = {
-  type: 'MONTH' | 'DATE';
+  type: ValueOf<typeof CALENDAR_TYPE>;
 } & Partial<React.ComponentProps<typeof MonthCalendar>>
 & Partial<React.ComponentProps<typeof DateCalendar>>;
 
