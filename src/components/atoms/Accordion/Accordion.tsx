@@ -2,12 +2,24 @@ import React, { useState, useEffect, useRef, useCallback } from 'react';
 
 import { KeyboardArrowDown } from '@groww-tech/icon-store/mi';
 
-import AnimateHeight from '../AnimateHeight';
+import AnimateHeight from './AnimateHeight';
 
 import './accordion.css';
 
 
-const Accordion = (props: Props) => {
+const Accordion = (props:Props) => {
+  const { mutable } = props;
+
+  if (mutable) {
+    return <MutableAccordion {...props} />;
+
+  } else {
+    return <AnimateHeight {...props} />;
+  }
+};
+
+
+const MutableAccordion = (props: Props) => {
   const {
     onMountOpen,
     onToggleCallback,
@@ -22,7 +34,7 @@ const Accordion = (props: Props) => {
     maxHeight
   } = props;
 
-  const [isOpen, toggleAccordion] = useState(onMountOpen);
+  const [ isOpen, toggleAccordion ] = useState(onMountOpen);
 
   const childRef = useRef<HTMLDivElement>(null);
   const isFirstRender = useRef(true);
@@ -37,7 +49,7 @@ const Accordion = (props: Props) => {
     if (onToggleCallback) {
       onToggleCallback(isOpen);
     }
-  }, [isOpen]);
+  }, [ isOpen ]);
 
 
   const toggleState = useCallback(() => {
@@ -91,24 +103,22 @@ const Accordion = (props: Props) => {
 
       {
         useAnimateHeight ? getAnimateHeightUI()
-          : <div className={childClass}
-            style={childStyle}
-            ref={childRef}
-          >
-            {children}
-          </div>
+        : <div className={childClass}
+          style={childStyle}
+          ref={childRef}
+        >
+          {children}
+        </div>
       }
     </div>
   );
 };
 
-
-export type Props = RequiredProps & OptionalProps & DefaultProps
+export type Props = RequiredProps & OptionalProps & DefaultProps & Partial<AnimateHeight['props']>;
 
 
 type RequiredProps = {
   children: React.ReactNode;
-  title: string | React.ReactNode;
 }
 
 
@@ -119,6 +129,7 @@ type OptionalProps = {
 
 
 type DefaultProps = {
+  title: string | React.ReactNode;
   onMountOpen: boolean;
   showRightIcon: boolean;
   parentClass: string;
@@ -126,16 +137,23 @@ type DefaultProps = {
   iconClass: string;
   titleClass: string;
   useAnimateHeight: boolean;
+  mutable: boolean;
+  // duration?: number;
+  // className?: string;
+  // height?: string | number;
+  // style?: string |
 }
 
 const defaultProps = {
+  title: '',
   onMountOpen: true,
   showRightIcon: true,
   parentClass: '',
   headerClass: '',
   iconClass: '',
   titleClass: '',
-  useAnimateHeight: false
+  useAnimateHeight: false,
+  mutable: true
 };
 
 
