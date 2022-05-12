@@ -22,6 +22,8 @@ export * from './Tabs';
 export * from './Tag';
 export * from './TextArea';
 export * from './TextInput';
+export * from './TextInputV1';
 export * from './Ticker';
 export * from './ToggleSwitch';
 export * from './ToggleSelection';
+export * from './NumberInput';
