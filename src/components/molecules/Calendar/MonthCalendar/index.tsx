@@ -16,7 +16,9 @@ class MonthCalendar extends React.PureComponent<Props, State> {
   render() {
     const { dateToShow } = this.state;
     const { currentDate } = this.props;
+
     const currentMonthIndex = currentDate.getMonth();
+    const presentDate = new Date();
 
     return (
       <div className="clrText">
@@ -46,7 +48,8 @@ class MonthCalendar extends React.PureComponent<Props, State> {
                     className={
                       cn('fs13 mn12MonthText valign-wrapper cur-po', {
                         'mn12MonthTextSelected': ((index === currentMonthIndex) && (currentDate.getFullYear() === dateToShow.getFullYear())),
-                        'mn12MonthBack': !((index === currentMonthIndex) && (currentDate.getFullYear() === dateToShow.getFullYear()))
+                        'mn12MonthBack': !((index === currentMonthIndex) && (currentDate.getFullYear() === dateToShow.getFullYear())),
+                        'cc12DisableDate': ((index > presentDate.getMonth()) && (presentDate.getFullYear() === dateToShow.getFullYear()))
                       })
                     }
                     onClick={() => this.onMonthClick(index)}
@@ -66,6 +69,12 @@ class MonthCalendar extends React.PureComponent<Props, State> {
   onMonthClick = (index:number) => {
     const dateToShow = this.state.dateToShow;
     const newDate = new Date(dateToShow);
+    const presentDate = new Date();
+    const presentMonth = presentDate.getMonth();
+
+    if ((index > presentMonth) && (presentDate.getFullYear() === newDate.getFullYear())) {
+      return;
+    }
 
     newDate.setDate(1);
     newDate.setMonth(index);
