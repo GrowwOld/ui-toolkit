@@ -51,10 +51,10 @@
   "homepage": "https://github.com/Groww/ui-toolkit#readme",
   "scripts": {
     "prebuild": "rimraf dist",
-    "build": "concurrently yarn:build:*",
+    "build": "concurrently npm:build:*",
     "build:lib": "rollup -c",
     "build:types": "tsc --emitDeclarationOnly",
-    "lint": "concurrently yarn:lint:*",
+    "lint": "concurrently npm:lint:*",
     "lint:src": "eslint src",
     "lint:types": "tsc --noEmit",
     "storybook": "start-storybook -p 6006",
