@@ -191,6 +191,7 @@ type DefaultProps = {
   onAnimationEnd: () => void;
   duration: number;
   className: string;
+  children: React.ReactNode;
   customStyles: React.CSSProperties;
   customMaskStyles: React.CSSProperties;
   popupClass: string;
