@@ -99,6 +99,7 @@ type DefaultProps = {
   closeOnEsc: boolean;
   showCloseButton: boolean;
   customStyles: React.CSSProperties;
+  children: React.ReactNode;
   popupClass: string;
 }
 
