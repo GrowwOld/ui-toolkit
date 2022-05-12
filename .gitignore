@@ -77,4 +77,3 @@ src/parser.ts
 .puppet-master/
 
 storybook-static/
-yarn.lock
