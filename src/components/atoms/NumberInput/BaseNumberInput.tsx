@@ -17,8 +17,9 @@ const BaseNumberInput = React.forwardRef<HTMLInputElement, NumberInputProps>((pr
     step = 1,
     allowSpecialCharacters = false,
     disableDecimal = false,
-    onKeyDown = () => {}
+    onKeyDown = () => { }
   } = props;
+  const { size, ...rest } = props;
 
   const numberValue = Number(value);
 
@@ -80,12 +81,12 @@ const BaseNumberInput = React.forwardRef<HTMLInputElement, NumberInputProps>((pr
     <Container variant={props.variant}>
       {PrefixComponent && <span>{PrefixComponent()} </span>}
       <Input
-        className="fs18 fw500"
+        className={calculateInputClass(size)}
         max={max}
         min={min}
         onKeyDown={_onKeyDown}
         type="number"
-        {...props}
+        {...rest}
         onChange={_onChange}
         ref={ref}
       />
@@ -93,5 +94,32 @@ const BaseNumberInput = React.forwardRef<HTMLInputElement, NumberInputProps>((pr
     </Container>
   );
 });
+
+
+const calculateInputClass = (size: NumberInputProps['size']): string => {
+  let className = 'fw500 ';
+
+  switch (size) {
+    case 'small':
+      className += 'fs16';
+      break;
+
+    case 'medium':
+      className += 'fs18';
+      break;
+
+    case 'large':
+      className += 'fs22';
+      break;
+
+    default:
+      className += 'fs18';
+      break;
+
+  }
+
+  return className;
+};
+
 
 export default BaseNumberInput;
