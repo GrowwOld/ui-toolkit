@@ -1,0 +1,56 @@
+.cc12Box {
+  width: 300px;
+  color: var(--text);
+  padding: 15px;
+  cursor: auto;
+}
+
+.cc12YearBox {
+  justify-content: space-between;
+}
+
+.cc12WeekNameBox {
+  justify-content: space-between;
+  margin-top: 14px;
+  text-align: center;
+}
+
+.cc12WeekName {
+  flex-basis: 14.285%;
+}
+
+.cc12DateBlock {
+  flex-basis: 14.285%;
+}
+
+.cc12Date {
+  width: 32px;
+  height: 32px;
+  justify-content: center;
+  margin: 0 auto;
+}
+
+.cc12DateNotSelected {}
+
+.cc12DateSelected {
+  background: var(--primaryClr);
+  color: var(--primaryBg);
+}
+
+.cc12DateNotSelected:hover {
+  background: var(--boxShadow);
+}
+
+.cc12DateRow {
+  justify-content: space-between;
+  margin-top: 8px;
+}
+
+.cc12Year {
+  width: 100px;
+  text-align: center;
+}
+
+.cc12DisableDate {
+  opacity: 0.2;
+}
