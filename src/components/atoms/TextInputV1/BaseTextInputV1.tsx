@@ -23,7 +23,7 @@ const BaseTextInputV1 = React.forwardRef<HTMLInputElement, TextInputProps>((prop
   //switch for size
   return (
     <>
-      {label && <Label className='fs14 fw500'>{label}</Label>}
+      {label && <Label className='fs14 fw400'>{label}</Label>}
       <Container
         error={error ? true : false}
         variant={variant}
@@ -43,20 +43,33 @@ const BaseTextInputV1 = React.forwardRef<HTMLInputElement, TextInputProps>((prop
           {SuffixComponent && <LeadingVisContainer variant={variant}>  {SuffixComponent()} </LeadingVisContainer>}
         </WrapperContainer>
       </Container>
-      <ErrorLabel
-        className='fs14 fw400'
-        error={error ? true : false}
-      >
-        {error}
-      </ErrorLabel>
+      {/* In case of unstyled variant don't create space for error */}
+      {
+        error && variant === 'unstyled' &&
 
+        <ErrorLabel
+          className='fs14 fw400'
+          error={error ? true : false}
+        >
+          {error}
+        </ErrorLabel>
+      }
+      {
+        variant !== 'unstyled' &&
+        <ErrorLabel
+          className='fs14 fw400'
+          error={error ? true : false}
+        >
+          {error}
+        </ErrorLabel>
+      }
     </>
   );
 });
 
 
-const calculateInputClass = (size:TextInputProps['size']):string => {
-  let className = 'fw500 ';
+const calculateInputClass = (size: TextInputProps['size']): string => {
+  let className = 'fw400 ';
 
   switch (size) {
     case 'small':
