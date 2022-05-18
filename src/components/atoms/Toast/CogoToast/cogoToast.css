@@ -1,0 +1,142 @@
+#ct-container {
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  z-index: 2000;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  pointer-events: none;
+}
+
+.ct-row {
+  display: flex;
+  justify-content: space-between;
+}
+
+.ct-group {
+  flex: 1;
+  margin: 10px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.ct-group:first-child {
+  align-items: flex-start;
+}
+
+.ct-group:last-child {
+  align-items: flex-end;
+}
+
+.ct-flex-bottom {
+  justify-content: flex-end;
+}
+
+.ct-toast {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 12px 20px;
+  background-color: var(--primaryBg);
+  box-shadow: 0 4px 12px var(--boxShadow);
+  color: var(--text);
+  border-radius: 4px;
+  margin: 0;
+  opacity: 1;
+  transition: 0.3s all ease-in-out;
+  min-height: 45px;
+  pointer-events: all;
+}
+
+.ct-toast:focus {
+  outline: none;
+}
+
+.ct-toast svg {
+  min-width: 18px;
+}
+
+.ct-cursor-pointer {
+  cursor: pointer;
+}
+
+.ct-icon-loading {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+}
+
+.ct-icon-loading::after {
+  content: ' ';
+  display: block;
+  width: 14px;
+  height: 14px;
+  margin: 1px;
+  border-radius: 50%;
+  border: 2px solid var(--secondaryClr);
+  border-color: var(--secondaryClr) transparent var(--secondaryClr) transparent;
+  animation: ct-icon-loading 1.2s linear infinite;
+}
+
+@keyframes ct-icon-loading {
+
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.ct-text-group {
+  margin: 0 15px;
+}
+
+.ct-text-group-heading {
+  margin-left: 25px;
+}
+
+.ct-heading {
+  font-size: 16px;
+  margin: 0 0 6px 0;
+  font-weight: 500;
+}
+
+.ct-text {
+  font-size: 14px;
+  line-height: 20px;
+}
+
+@media (max-width: 768px) {
+
+  .ct-row {
+    justify-content: flex-start;
+    flex-direction: column;
+    margin: 7px 0;
+  }
+
+  .ct-group {
+    flex: none;
+    margin: 0;
+  }
+
+  .ct-toast {
+    margin: 8px 15px;
+    width: initial;
+  }
+}
+
+.ct-close-icon {
+  font-size: 20px;
+  margin-top: 2px;
+  cursor: pointer;
+}
+
+.ct-type-icon {
+  margin-top: 3px;
+}

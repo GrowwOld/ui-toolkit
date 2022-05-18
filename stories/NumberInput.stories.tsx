@@ -50,6 +50,21 @@ Error.args = {
   variant: 'error'
 };
 
+export const Unstyled = Template.bind({});
+Unstyled.args = {
+  placeholder: 0,
+  value: 100,
+  variant: 'unstyled'
+};
+
+export const UnstyledLarge = Template.bind({});
+UnstyledLarge.args = {
+  placeholder: 0,
+  value: 100,
+  variant: 'unstyled',
+  size: 'large'
+};
+
 export const DisabledSpecialChar = Template.bind({});
 DisabledSpecialChar.args = {
   value: 100,

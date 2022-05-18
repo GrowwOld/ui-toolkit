@@ -1,4 +1,3 @@
-export { default as AnimateHeight } from './AnimateHeight';
 export * from './Accordion';
 export * from './Button';
 export * from './CheckBox';
@@ -26,4 +25,6 @@ export * from './TextInputV1';
 export * from './Ticker';
 export * from './ToggleSwitch';
 export * from './ToggleSelection';
+export * from './Toast';
+export * from './Toastify';
 export * from './NumberInput';

@@ -22,7 +22,7 @@ const CheckBox = (props: Props) => {
 
   const checkBoxClick = () => {
     if (!disabled) {
-      handleOnClick(value, !isChecked);
+      handleOnClick?.(value, !isChecked);
     }
   };
 
