@@ -19,7 +19,7 @@ const NumberInput = React.forwardRef<HTMLInputElement, NumberInputProps>((props,
   />;
 });
 
-export type NumberInputProps = React.InputHTMLAttributes<HTMLInputElement> &
+export type NumberInputProps = Omit<React.InputHTMLAttributes<HTMLInputElement>, 'size'> &
 _NumberInputProps;
 
 export type _NumberInputProps = {
@@ -28,9 +28,10 @@ export type _NumberInputProps = {
   step?: number;
   onChange: React.FormEventHandler<HTMLInputElement>;
   value: string | number;
-  variant?: 'warning' | 'error' | 'default' | 'disabled';
+  variant?: 'warning' | 'error' | 'default' | 'disabled' | 'unstyled';
   showSteper?: boolean;
   ref?: React.Ref<HTMLInputElement>;
+  size?: 'small' | 'medium' | 'large';
   allowSpecialCharacters?: boolean;
   disabled?: boolean;
   disableDecimal?: boolean;

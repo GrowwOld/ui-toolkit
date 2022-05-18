@@ -24,6 +24,11 @@ export const Container = styled('div', {
         background: 'var(--constantSecondaryClr10)',
         color: 'var(--text)'
       },
+      unstyled: {
+        background: 'transparent',
+        color: 'var(--text)',
+        border: 'none'
+      },
       default: {
         background: 'var(--primaryClr10)',
         color: 'var(--primaryClr)'
@@ -58,6 +63,10 @@ export const Input = styled('input', {
       },
       disabled: {
         pointerEvents: 'none',
+        caretColor: 'var(--text)',
+        WebkitTextFillColor: 'var(--text)'
+      },
+      unstyled: {
         caretColor: 'var(--text)',
         WebkitTextFillColor: 'var(--text)'
       },
