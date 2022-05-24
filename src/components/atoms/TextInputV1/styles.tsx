@@ -110,7 +110,8 @@ export const Label = styled('div', {
 export const ErrorLabel = styled('div', {
   color: 'var(--growwRed)',
   minHeight: '24px',
-  marginTop: '8px',
+  marginTop: '4px',
+  marginBottom: '4px',
   textAlign: 'left',
   variants: {
     error: {
