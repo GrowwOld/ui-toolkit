@@ -142,7 +142,7 @@ Loader.defaultProps = {
 };
 
 
-type DefaultProps = {
+export type DefaultProps = {
   loaderType: ValueOf<typeof LOADER_TYPE>;
   loaderClassName: string;
   active: boolean;

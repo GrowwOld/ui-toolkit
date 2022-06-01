@@ -2,7 +2,7 @@ import React from 'react';
 
 import { Story } from '@storybook/react';
 
-import { Tag } from '../src/components/atoms/Tag';
+import { Tag } from '../src/components/atoms';
 import { Props as TagProps } from '../src/components/atoms/Tag/Tag';
 
 export default {
