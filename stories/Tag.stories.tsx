@@ -10,10 +10,12 @@ export default {
   component: Tag
 };
 
+const tagText = '0 shares are available to sell';
+
 
 const Template: Story<TagProps> = (args) => <Tag {...args}>
   <div className="absolute-center">
-    0 shares are available to sell
+    {tagText}
   </div>
 </Tag>;
 
