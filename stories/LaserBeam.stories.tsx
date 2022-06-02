@@ -2,7 +2,7 @@ import React from 'react';
 
 import { Story } from '@storybook/react';
 
-import { LaserBeam } from '../src/components/atoms';
+import { Button, LaserBeam } from '../src/components/atoms';
 import { Props as LaserBeamProps, LASER_BEAM_UI } from '../src/components/atoms/LaserBeam/LaserBeam';
 
 export default {
@@ -11,7 +11,29 @@ export default {
 };
 
 
-const Template: Story<LaserBeamProps> = (args) => <LaserBeam {...args} />;
+const Template: Story<LaserBeamProps> = (args) => {
+  const [ active, setActive ] = React.useState(false);
+
+
+  const alterActive = () => {
+    setActive(!active);
+  };
+
+  return (
+    <div style={{ marginTop: '20px' }}>
+      <LaserBeam
+        {...args}
+        show={active}
+      />
+
+      <Button
+        buttonText='Activate Laser Beam'
+        isDisabled={active}
+        onClick={alterActive}
+      />
+    </div>
+  );
+};
 
 
 export const Dashed = Template.bind({});

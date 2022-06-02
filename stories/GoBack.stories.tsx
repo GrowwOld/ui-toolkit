@@ -11,8 +11,8 @@ export default {
 };
 
 const CustomGoBack = (
-  <div className='fs16'>
-    Go Back To Wallet Page
+  <div className='fs14'>
+    Back
   </div>
 );
 
@@ -25,7 +25,6 @@ export const Default = Template.bind({});
 export const Custom = Template.bind({});
 Custom.args = {
   text: CustomGoBack,
-  iconWidth: 30,
-  iconHeight: 30,
-  iconClass: 'primaryClr'
+  iconWidth: 20,
+  iconHeight: 20
 };
