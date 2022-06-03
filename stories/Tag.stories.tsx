@@ -28,3 +28,10 @@ Error.args = {
   isError: true,
   isInfo: false
 };
+
+export const Info = Template.bind({});
+Info.args = {
+  isWarning: false,
+  isError: false,
+  isInfo: true
+};

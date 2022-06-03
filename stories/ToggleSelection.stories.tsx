@@ -30,3 +30,12 @@ export const Default = Template.bind({});
 Default.args = {
   parentClass: 'cur-po'
 };
+
+export const Custom = Template.bind({});
+Custom.args = {
+  parentClass: 'cur-po',
+  leftText: 'English',
+  rightText: 'हिन्दी',
+  activeBackgroundColor: 'var(--growwRed)',
+  inactiveBackgroundColor: 'var(--growwYellow05)'
+};
