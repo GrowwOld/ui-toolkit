@@ -18,7 +18,7 @@ import './table.css';
 // Add padding to Table.Row -> HorzPadding, VertPadding
 // Width provided to Table.HeaderCell + HorzPadding = 100%
 
-type TableProps = {
+export type TableProps = {
   className?: string;
   style?: React.CSSProperties;
   children: ReactNode;

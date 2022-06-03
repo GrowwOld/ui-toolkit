@@ -37,7 +37,7 @@ const Tag = (props: Props) => {
 };
 
 
-type Props = {
+export type Props = {
   isWarning: boolean;
   isError: boolean;
   isInfo: boolean;

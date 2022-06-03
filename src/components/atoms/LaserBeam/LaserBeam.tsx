@@ -13,7 +13,7 @@ class LaserBeam extends React.Component<Props, State> {
   public static defaultProps: Props = {
     show: false,
     width: '2px',
-    background: 'var(--secondaryClr)',
+    background: 'var(--primaryClr)',
     zIndex: '1200',
     noShadow: false,
     ccStyle: 'dash',
@@ -172,7 +172,7 @@ class LaserBeam extends React.Component<Props, State> {
 }
 
 
-type Props = {
+export type Props = {
   show: boolean;
   width: string;
   background?: string;

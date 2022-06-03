@@ -47,7 +47,7 @@ const Calendar = (props:Props) => {
 };
 
 
-type Props = {
+export type Props = {
   type: ValueOf<typeof CALENDAR_TYPE>;
 } & Partial<React.ComponentProps<typeof MonthCalendar>>
 & Partial<React.ComponentProps<typeof DateCalendar>>;
