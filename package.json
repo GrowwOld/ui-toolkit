@@ -1,10 +1,6 @@
 {
   "name": "@groww-tech/ui-toolkit",
-<<<<<<< HEAD
   "version": "0.1.7",
-=======
-  "version": "0.1.6",
->>>>>>> develop
   "description": "A lightning nature UI",
   "main": "dist/cjs/index.js",
   "module": "dist/esm/index.js",
