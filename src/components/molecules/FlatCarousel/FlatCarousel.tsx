@@ -90,7 +90,7 @@ type RequiredProps = {
 }
 
 
-type Props = RequiredProps & DefaultProps;
+export type Props = RequiredProps & DefaultProps;
 
 Carousel.defaultProps = {
   parentClass: '',

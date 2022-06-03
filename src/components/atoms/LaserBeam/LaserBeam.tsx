@@ -172,7 +172,7 @@ class LaserBeam extends React.Component<Props, State> {
 }
 
 
-type Props = {
+export type Props = {
   show: boolean;
   width: string;
   background?: string;
