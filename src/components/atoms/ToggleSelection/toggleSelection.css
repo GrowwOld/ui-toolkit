@@ -1,5 +1,6 @@
 .tc341ToggleWrapper {
-  width: 88px;
+  min-width: 88px;
+  max-width: fit-content;
   height: 32px;
   border-radius: 30px;
   border: 1px solid var(--primaryClr);
@@ -23,4 +24,5 @@
 
 .tc341ChoiceClass {
   height: 100%;
+  padding-inline: 7px;
 }

@@ -18,3 +18,8 @@
   background-color: var(--growwRed10);
   color: var(--text);
 }
+
+.tg11Info {
+  background-color: var(--primaryClr10);
+  color: var(--text);
+}
