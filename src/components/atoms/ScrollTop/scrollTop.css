@@ -11,16 +11,20 @@
   opacity: 0;
 }
 
+.scroll11:hover {
+  transform: scale(1.05);
+}
+
 .scroll11FadeIn {
   pointer-events: all;
   opacity: 1;
   visibility: visible;
-  transition: visibility 0.5s, opacity 0.5s linear;
+  transition: visibility 0.5s, opacity 0.5s linear, transform .25s linear;
 }
 
 .scroll11FadeOut {
   pointer-events: none;
   opacity: 0;
   visibility: hidden;
-  transition: visibility 0.5s, opacity 0.5s linear;
+  transition: visibility 0.5s, opacity 0.5s linear, transform .25s linear;
 }

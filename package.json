@@ -1,6 +1,6 @@
 {
   "name": "@groww-tech/ui-toolkit",
-  "version": "0.1.7",
+  "version": "0.1.8",
   "description": "A lightning nature UI",
   "main": "dist/cjs/index.js",
   "module": "dist/esm/index.js",
@@ -42,6 +42,10 @@
     {
       "name": "Aditya Vandan Sharma",
       "url": "https://twitter.com/AdityaVandan"
+    },
+    {
+      "name": "Akshay Kumar Barya",
+      "url": "https://twitter.com/akshay_barya"
     }
   ],
   "license": "MIT",
