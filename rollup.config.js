@@ -1,17 +1,17 @@
-import postcssImport from "postcss-import";
-import postcssUrl from "postcss-url";
-import babel from "rollup-plugin-babel";
-import copy from "rollup-plugin-copy";
-import filesize from "rollup-plugin-filesize";
-import external from "rollup-plugin-peer-deps-external";
-import postcss from "rollup-plugin-postcss";
-import { terser } from "rollup-plugin-terser";
-import typescript from "rollup-plugin-typescript";
+import postcssImport from 'postcss-import';
+import postcssUrl from 'postcss-url';
+import babel from 'rollup-plugin-babel';
+import copy from 'rollup-plugin-copy';
+import filesize from 'rollup-plugin-filesize';
+import external from 'rollup-plugin-peer-deps-external';
+import postcss from 'rollup-plugin-postcss';
+import { terser } from 'rollup-plugin-terser';
+import typescript from 'rollup-plugin-typescript';
 
-import commonjs from "@rollup/plugin-commonjs";
-import resolve from "@rollup/plugin-node-resolve";
+import commonjs from '@rollup/plugin-commonjs';
+import resolve from '@rollup/plugin-node-resolve';
 
-import { getInputFiles } from "./rollup.input";
+import { getInputFiles } from './rollup.input';
 
 // import pkg from './package.json';
 
@@ -50,6 +50,7 @@ const commonConfig = {
 export default [
   {
     input: './src/index.ts',
+    context: '(global || self || globalThis || window || undefined)',
     output: [
       {
         dir: 'dist/cjs',
