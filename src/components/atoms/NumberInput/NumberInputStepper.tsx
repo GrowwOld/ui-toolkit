@@ -16,7 +16,7 @@ export const NumberInputStepper = React.forwardRef<HTMLInputElement, NumberInput
 });
 
 
-const StepSuffixComponent = ({ step = 1, max = Number.POSITIVE_INFINITY, value, onChange }:NumberInputProps) => {
+const StepSuffixComponent = ({ step = 1, max = Number.POSITIVE_INFINITY, value, onChange }: NumberInputProps) => {
   const numberValue = Number(value);
 
 
@@ -34,6 +34,7 @@ const StepSuffixComponent = ({ step = 1, max = Number.POSITIVE_INFINITY, value, 
   return (
     <Add
       size={28}
+      style={{ marginTop: '3px' }}
       className="cur-po"
       onClick={onClick}
     />
@@ -62,6 +63,7 @@ const StepPrefixComponent = ({ step = 1, min = Number.NEGATIVE_INFINITY, value, 
   return (
     <Remove
       size={28}
+      style={{ marginTop: '3px' }}
       className="cur-po"
       onClick={onClick}
     />
