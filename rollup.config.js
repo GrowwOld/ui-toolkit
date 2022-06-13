@@ -1,17 +1,17 @@
-import postcssImport from "postcss-import";
-import postcssUrl from "postcss-url";
-import babel from "rollup-plugin-babel";
-import copy from "rollup-plugin-copy";
-import filesize from "rollup-plugin-filesize";
-import external from "rollup-plugin-peer-deps-external";
-import postcss from "rollup-plugin-postcss";
-import { terser } from "rollup-plugin-terser";
-import typescript from "rollup-plugin-typescript";
+import postcssImport from 'postcss-import';
+import postcssUrl from 'postcss-url';
+import babel from 'rollup-plugin-babel';
+import copy from 'rollup-plugin-copy';
+import filesize from 'rollup-plugin-filesize';
+import external from 'rollup-plugin-peer-deps-external';
+import postcss from 'rollup-plugin-postcss';
+import { terser } from 'rollup-plugin-terser';
+import typescript from 'rollup-plugin-typescript';
 
-import commonjs from "@rollup/plugin-commonjs";
-import resolve from "@rollup/plugin-node-resolve";
+import commonjs from '@rollup/plugin-commonjs';
+import resolve from '@rollup/plugin-node-resolve';
 
-import { getInputFiles } from "./rollup.input";
+import { getInputFiles } from './rollup.input';
 
 // import pkg from './package.json';
 
@@ -53,7 +53,24 @@ export default [
     output: [
       {
         dir: 'dist/cjs',
-        format: 'cjs'
+        format: 'cjs',
+        intro: `
+        (function (Object) {
+  typeof globalThis !== 'object' && (
+    this ?
+      get() :
+      (Object.defineProperty(Object.prototype, '_T_', {
+        configurable: true,
+        get: get
+      }), _T_)
+  );
+  function get() {
+    var global = this || self;
+    global.globalThis = global;
+    delete Object.prototype._T_;
+  }
+}(Object));
+        `
       }
     ],
     ...commonConfig
@@ -63,7 +80,24 @@ export default [
     output: [
       {
         dir: 'dist/esm',
-        format: 'es'
+        format: 'es',
+        intro: `
+        (function (Object) {
+  typeof globalThis !== 'object' && (
+    this ?
+      get() :
+      (Object.defineProperty(Object.prototype, '_T_', {
+        configurable: true,
+        get: get
+      }), _T_)
+  );
+  function get() {
+    var global = this || self;
+    global.globalThis = global;
+    delete Object.prototype._T_;
+  }
+}(Object));
+        `
       }
     ],
     ...commonConfig
