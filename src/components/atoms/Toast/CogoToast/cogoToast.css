@@ -39,7 +39,7 @@
 .ct-toast {
   display: flex;
   justify-content: center;
-  align-items: flex-start;
+  align-items: center;
   padding: 12px 20px;
   background-color: var(--primaryBg);
   box-shadow: 0 4px 12px var(--boxShadow);
@@ -133,7 +133,6 @@
 
 .ct-close-icon {
   font-size: 20px;
-  margin-top: 2px;
   cursor: pointer;
 }
 
