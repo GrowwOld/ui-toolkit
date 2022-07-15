@@ -39,7 +39,7 @@
 .ct-toast {
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
   padding: 12px 20px;
   background-color: var(--primaryBg);
   box-shadow: 0 4px 12px var(--boxShadow);
@@ -103,12 +103,13 @@
 
 .ct-heading {
   font-size: 16px;
-  margin: 0 0 6px 0;
+  margin: 0 0 4px 0;
   font-weight: 500;
 }
 
 .ct-text {
   font-size: 14px;
+  margin-top: 2px;
   line-height: 20px;
 }
 
