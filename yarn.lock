@@ -1228,10 +1228,10 @@
   dependencies:
     requireindex "~1.1.0"
 
-"@groww-tech/icon-store@1.0.1":
-  version "1.0.1"
-  resolved "https://registry.npmjs.org/@groww-tech/icon-store/-/icon-store-1.0.1.tgz"
-  integrity sha512-VvLAly1y881E3mzoaHLPn0Ao29EDH0IYM2QXeytuTh2UCA4mW4H87TCklL3VLR2fbtq/BuIw88JRNNC8ye9Glw==
+"@groww-tech/icon-store@1.0.4":
+  version "1.0.4"
+  resolved "https://registry.yarnpkg.com/@groww-tech/icon-store/-/icon-store-1.0.4.tgz#fa8336fa5e74dac97fda1305196098f6abde3fd1"
+  integrity sha512-7H15kpEmtTg+RAt0El/4eqsnJulzSQj+THr4JRqWt2XmAMu08QaJ83feA717fRYNCWPJJnV7CA+JHNYsp9eeiQ==
 
 "@humanwhocodes/config-array@^0.5.0":
   version "0.5.0"
@@ -1486,6 +1486,11 @@
     "@types/estree" "0.0.39"
     estree-walker "^1.0.1"
     picomatch "^2.2.2"
+
+"@stitches/react@^1.2.7":
+  version "1.2.8"
+  resolved "https://registry.yarnpkg.com/@stitches/react/-/react-1.2.8.tgz#954f8008be8d9c65c4e58efa0937f32388ce3a38"
+  integrity sha512-9g9dWI4gsSVe8bNLlb+lMkBYsnIKCZTmvqvDG+Avnn69XfmHZKiaMrx7cgTaddq7aTPPmXiTsbFcUy0xgI4+wA==
 
 "@storybook/addon-actions@6.2.9", "@storybook/addon-actions@^6.2.8":
   version "6.2.9"
@@ -4493,9 +4498,9 @@ debug@^3.0.0:
     ms "^2.1.1"
 
 decode-uri-component@^0.2.0:
-  version "0.2.0"
-  resolved "https://registry.npmjs.org/decode-uri-component/-/decode-uri-component-0.2.0.tgz"
-  integrity sha1-6zkTMzRYd1y4TNGh+uBiEGu4dUU=
+  version "0.2.2"
+  resolved "https://registry.yarnpkg.com/decode-uri-component/-/decode-uri-component-0.2.2.tgz#e69dbe25d37941171dd540e024c444cd5188e1e9"
+  integrity sha512-FqUYQ+8o158GyGTrMFJms9qh3CqTKvAqgqsTnkLI8sKu0028orqBhxNMFkFen0zGyg6epACD32pjVk58ngIErQ==
 
 dedent@^0.7.0:
   version "0.7.0"
